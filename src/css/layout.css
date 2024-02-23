@@ -1,0 +1,14 @@
+.layout svg{
+    width: 100vw;
+    height: 100vh;
+}
+
+.layout{
+    height: 100vh;
+    top: 17px;
+    width: 100vw;
+}
+
+.layout-top{
+    width: 100%;
+}

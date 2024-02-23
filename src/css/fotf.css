@@ -1,0 +1,23 @@
+.fotf{
+    color: black;
+    font-size: 100px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.char{
+    margin-left: 50%;
+}
+
+.char-1{
+    top: 0%;
+}
+.char-2{
+    top: 25%;
+}
+.char-3{
+    top: 50%;
+}
+.char-4{
+    top: 75%;
+}

@@ -1,0 +1,140 @@
+.page1{
+    overflow: hidden;
+    background-color: black;
+}
+
+.page1-comp1{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.page1-bg{
+    right: 0%;
+    bottom: -10%;
+    overflow: hidden;
+}
+
+.alien1-img{
+    width: 1200px;
+}
+
+/* comp1-front------------- */
+
+.page1-front{
+    height: 100vh;
+    font-size: 150px;
+    overflow: hidden;
+}
+
+.comp1-line{
+    font-weight: 900;
+    line-height: 130px;
+    color: #07CE02;
+    letter-spacing: 20px;
+    z-index: 20;
+    backdrop-filter: blur(2px);
+}
+
+.webkit-the{
+    -webkit-text-stroke:2px #07CE02;
+    color: transparent;
+}
+
+.page1-line3{
+    -webkit-text-stroke: 2px #07CE02;
+    color: transparent;
+}
+
+/* buttons------------------ */
+
+.join-btns{
+    font-size: 20px;
+}
+
+.discord{
+    border-radius: 0%;
+    background-color: #07CE0242;
+    color: #07CE02;
+    backdrop-filter: blur(2px);
+}
+
+.world-btn{
+    border-radius: 0%;
+    background-color: #07CE0242;
+    color: #07CE02;
+    backdrop-filter: blur(2px);
+    z-index: 20;
+}
+
+/* comp2---------- */
+
+.space-comp1{
+    height: 100vh;
+    width: 100vw;
+}
+
+.page1-comp2{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.comp2-top , .comp2-bottom{
+    width: 40vw;
+    z-index: 20;
+}
+
+.comp2-head{
+    font-size: 24px;
+    color: #07CE02;
+}
+
+.comp2-text{
+    font-size: 16px;
+    color: #07CE02;
+}
+
+.community-top{
+    font-size: 50px;
+    color: #07CE02;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.community-bottom{
+    font-size: 40px;
+    -webkit-text-stroke: 1px #07CE02;
+    color: transparent;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+/* comp3----------------- */
+
+.page1-comp3{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.comp3-text{
+    font-size: 100px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.webkit-1{
+    color: #07CE02;
+}
+
+.webkit-2{
+    -webkit-text-stroke: 1px #07CE02;
+    color: transparent;
+}
+
+.webkit-4{
+    -webkit-text-stroke: 1px #07CE02;
+    color: transparent;
+}
