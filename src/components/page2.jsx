@@ -13,10 +13,10 @@ export default function Page2() {
 
     tl1.to(".box", {
       scrollTrigger: {
-        trigger: ".page2-comp2",
+        trigger: ".box",
         start: "top bottom",
         end: "top center",
-        scrub: .8
+        scrub: 1
       },
       rotate: "-45deg",
     })
@@ -24,15 +24,14 @@ export default function Page2() {
     tl1.to(".box", {
       scrollTrigger: {
         trigger: ".page2-comp2",
-        start: "top 10%",
-        end: "top 10%",
+        start: "top 2%",
+        end: "top top",
         scrub: .8
       },
       rotate: "0deg",
-      // width: "100vw",
-      // height: "100vh",
+      transformOrigin: "center center",
       transform: "scale(40)",
-      duration: .5,
+      duration: .8,
     })
 
 
@@ -51,26 +50,27 @@ export default function Page2() {
 
     gsap.to(".shuffle-bottom", {
       scrollTrigger: {
-        trigger: ".box",
-        start: "top 20%",
-        end: "top 20%",
+        trigger: ".layer-1",
+        start: "top bottom",
+        end: "top 95%",
         scrub: .8
       },
-      y: 0
+      y: 0,
+      duration: .8
     })
 
     gsap.to(".shuffle-top", {
       scrollTrigger: {
         trigger: ".shuffle-top",
-        start: "top 20%",
-        end: "top 20%",
+        start: "bottom 20%",
+        end: "bottom 20%",
         scrub: .8
       },
       y: "-50vh"
     })
 
-    // ---------black box animation 
 
+    // ---------black box svg animation ------------------
     const tl2 = gsap.timeline({
       paused: true,
       onComplete: () => {
@@ -88,9 +88,9 @@ export default function Page2() {
 
     ScrollTrigger.create({
       trigger: ".shuffle-top",
-      start: "top 20%",
-      end: "top 20%",
-      scrub: .8,
+      start: "bottom 20%",
+      end: "bottom 20%",
+      scrub: 1,
       onEnter: () => {
         tl2.play()
         ScrollTrigger.update()
@@ -103,55 +103,81 @@ export default function Page2() {
     gsap.to(".box-2", {
       scrollTrigger: {
         trigger: ".box-2",
-        start: "top 60%",
-        end: "top 60%",
+        start: "top 50%",
+        end: "top 50%",
         scrub: .5
       },
-      // transform: "scale(2)",
-      scale:2,
-      height:"fit-content",
-      width:"fit-content",
-      duration: .5
+      scaleX: 4,
+      scaleY: 2,
+      transformOrigin: "top center",
+      duration: .5,
     })
 
-    gsap.to(".box2-bottom", {
+    gsap.to(".box2-content", {
       scrollTrigger: {
         trigger: ".box-2",
         start: "top 50%",
         end: "top 50%",
         scrub: .5
       },
-      transform:"scale(1)",
-      // transformOrigin:"top center",
+      transform: "scale(1)",
+      transformOrigin:"top center",
       duration: .5
     })
+
+    gsap.to(".box-2", {
+      scrollTrigger: {
+        trigger: ".box-2",
+        start: "top 35%",
+        end: "top 35%",
+        scrub: .5
+      },
+      height:"100vh",
+      width:"100vw",
+      duration:1
+    })
+
+    // gsap.to(".box2-content", {
+    //   scrollTrigger: {
+    //     trigger: ".box-2",
+    //     start: "top 20%",
+    //     end: "top 20%",
+    //     scrub: .5
+    //   },
+    //   transform: "scale(1.4)",
+    //   transformOrigin:"top center",
+    //   duration: .5
+    // })
 
   }, [])
 
   return (
     <>
-      <div className="page-2 pt-5">
+      <div className="page-2">
 
-        <div className="page2-comp2 mt-5 position-relative d-flex flex-column justify-content-evenly align-items-center">
+        <div className="page2-comp2 position-relative d-flex flex-column align-items-center">
 
           <div className="box position-absolute">
           </div>
 
-          <div className="shuffle-top d-flex justify-content-center align-items-center">
+          <div className="spacing"></div>
+
+          <div className="shuffle-top mt-5 d-flex justify-content-center align-items-center">
             <div className="shuffle-left px-5 col-6 d-flex justify-content-start align-items-center">
-              3,314 unique digital collectibles.
+              3,314 unique digital <br /> collectibles.
             </div>
             <div className="shuffle-right col-6 px-5 d-flex justify-content-start align-items-center">
               <div className="shuffle-text1 px-5">
-                nft collection
+                NFT COLLECTION
               </div>
               <div className="shuffle-text2 pe-5">
-                Friends of the Future avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
+                <span style={{ textDecoration: "underline", fontWeight: "500" }}>Friends of the Future</span> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
               </div>
             </div>
           </div>
 
           <div className="shuffle-bottom position-relative d-flex flex-column justify-content-center align-items-center">
+
             <div className="layers position-relative d-flex justify-content-center align-items-center">
               <div className="layer-1 position-absolute d-flex">
                 <img className='lr1-img1' src="/ALIENS01.png" alt="" />
@@ -171,12 +197,16 @@ export default function Page2() {
               </div>
             </div>
 
-            <div className="box-2 position-absolute d-flex justify-content-center align-items-center">
-              <div className="box2-top box2-content d-flex flex-column align-items-center justify-content-center">
-                 <div className="box2-line1">we are not here to take part, we are here to take over.</div>
-                 <div className="box2-line2">there a four major groups</div>
+            <div className="box-2 position-absolute">
+            </div>
+
+            <div className="box2-content position-absolute d-flex flex-column justify-content-center align-items-center">
+              <div className="box2-top d-flex flex-column align-items-center justify-content-center">
+                <div className="box2-line1">we are not here to take <br /> part, we are here to <br /> take over.</div>
+                <div className="box2-line2">there a four <br /> major groups</div>
               </div>
-              <div className="box2-bottom box2-content d-flex">
+
+              <div className="box2-bottom d-flex align-items-center justify-content-center">
                 <div className="box2-img1 px-2 d-flex flex-column">
                   <div className="img1-text img-text">normies 1800 spots</div>
                   <img className='img1-img box2-img' src="/IMG-20240130-WA0117.png" alt="" />

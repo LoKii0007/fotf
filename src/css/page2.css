@@ -8,7 +8,7 @@
 }
 
 .box{
-    top: 0%;
+    top: 15%;
     height: 50px;
     width: 50px;
     background-color: #07CE02;
@@ -21,19 +21,34 @@
 /* comp2--------------- */
 
 .page2-comp2{
-    height: 100vh;
+    height: 170vh;
     width: 100vw;
     color: black;
     overflow: hidden;
+    /* background-image: url(/grid-bg.avif); */
+    /* mix-blend-mode:overlay; */
+    
 }
 
 .shuffle-top{
     z-index: 20;
+    margin-top: 150px;
+    margin-bottom: 300px;
+}
+
+.spacing{
+    height: 200px;
+}
+
+.shuffle-left{
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .shuffle-bottom{
     z-index: 20;
-    transform: translateY(200px);
+    transform: translateY(100px);
 }
 
 .layers{
@@ -54,44 +69,42 @@
 }
 
 .lr1-img1, .lr1-img2{
-    height: 200px;
+    height: 250px;
 }
 
 .lr2-img1{
-    height: 170px;
-    margin-right: 170px;
+    height: 210px;
+    margin-right: 420px;
 }
 .lr2-img2{
-    height: 170px;
-    margin-left: 170px;
+    height: 210px;
 }
 
 .lr3-img1{
-    height: 140px;
-    margin-right:310px;
+    height: 170px;
+    margin-right:760px;
 }
 .lr3-img2{
-    height: 140px;
-    margin-left: 310px;
+    height: 170px;
 }
 
 .lr4-img1{
-    height: 110px;
-    margin-right: 420px;
+    height: 130px;
+    margin-right: 1020px;
 }
 .lr4-img2{
-    height: 110px;
-    margin-left: 420px;
+    height: 130px;
 }
 
+
+/* ----------black svg------------------------------ */
 .box-2{
-    /* top: -100px;
-    left: -100px; */
     height: 200px;
     width: 200px;
     transform: rotateY(90deg);
-    background-color: black;
+    background-color: black !important;
     scale: 1;
+    overflow: hidden;
 }
 
 .box2-line1{

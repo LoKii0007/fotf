@@ -1,0 +1,43 @@
+.page-3{
+    width: 100vw;
+}
+
+.page3-comp1{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chadi{
+    height: 100vh;
+}
+
+.sound-img{
+    height: 50px;
+}
+
+.crystal-img{
+    height: 200px;
+}
+
+.world-img{
+    height: 80px;
+}
+
+.page3-comp2{
+    bottom: 0%;
+    right: 0%;
+}
+
+.hero{
+    z-index: 500;
+    height: 200px;
+}
+
+
+.page3-comp3{
+    font-size: 100px;
+    -webkit-text-stroke: 1px #70CE02;
+    color: transparent;
+    text-transform: uppercase;
+}

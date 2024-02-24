@@ -10,6 +10,15 @@ export default function Page1() {
     const tl1 = gsap.timeline()
 
     useEffect(() => {
+
+        // window.addEventListener('scroll', () => {
+        //     const scrollY = window.scrollY;
+        
+        //     if (scrollY > 0) {
+        //         window.scrollTo({ top: scrollY + 100, behavior: 'instant' });
+        //     }
+        // });
+
         // tl1.to(".page1-bg",{
         //     scrollTrigger:{
         //         trigger:".page1-comp1",
