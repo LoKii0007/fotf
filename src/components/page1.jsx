@@ -65,24 +65,26 @@ export default function Page1() {
             scrollTrigger: {
                 trigger: ".page1-comp3",
                 start: "top 20%",
-                end:"top 15%",
+                end:"top 20%",
                 scrub: 0.5,
             },
             duration:1,
             color:"#07CE02",
-            stroke:"none"
+            stroke:"none",
+            // transition:".5s ease"
         })
 
         gsap.to(".webkit-4", {
             scrollTrigger: {
                 trigger: ".page1-comp3",
-                start: "bottom center",
-                end:"bottom 45%",
+                start: "bottom 60%",
+                end:"bottom 60%",
                 scrub: 0.5,
             },
             duration:1,
             color:"#07CE02",
-            stroke:"none"
+            stroke:"none",
+            // transition:".5s ease"
         })
 
     }, [])

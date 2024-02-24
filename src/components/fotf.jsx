@@ -13,39 +13,91 @@ export default function Fotf() {
 
         tl1.to(".char-1",
             {
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub:1,
+                },
                 marginLeft: "20%",
-            }, 1);
+            });
+
         tl1.to(".char-1",
             {
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub:1,
+                },
                 top: "50%",
-            }, 1.1);
+            }, 0);
 
         tl1.to(".char-2",
             {
+                scrollTrigger:{
+                    trigger:".fotf",
+                    start:"top 1%",
+                    end:"top 1%",
+                    scrub:1,
+                },
                 marginLeft: "40%",
-            }, 1);
+            }, 0);
+
         tl1.to(".char-2",
             {
+                scrollTrigger:{
+                    trigger:".fotf",
+                    start:"top 1%",
+                    end:"top 1%",
+                    scrub:1,
+                },
                 top: "50%",
-            }, 1.1);
+            }, 0);
 
         tl1.to(".char-3",
             {
+                scrollTrigger:{
+                    trigger:".fotf",
+                    start:"top 1%",
+                    end:"top 1%",
+                    scrub:1,
+                },
                 marginLeft: "60%",
-            }, 1);
+            }, 0)
+
         tl1.to(".char-3",
             {
+                scrollTrigger:{
+                    trigger:".fotf",
+                    start:"top 1%",
+                    end:"top 1%",
+                    scrub:1,
+                },
                 top: "50%",
-            }, 1.1);
+            }, 0)
 
         tl1.to(".char-4",
             {
+                scrollTrigger:{
+                    trigger:".fotf",
+                    start:"top 1%",
+                    end:"top 1%",
+                    scrub:1,
+                },
                 marginLeft: "80%",
-            }, 1);
+            }, 0)
+
         tl1.to(".char-4",
             {
+                scrollTrigger:{
+                    trigger:".fotf",
+                    start:"top 1%",
+                    end:"top 1%",
+                    scrub:1,
+                },
                 top: "50%",
-            }, 1.1);
+            }, 0)
 
     }, []);
 

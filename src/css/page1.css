@@ -120,9 +120,12 @@
 }
 
 .comp3-text{
-    font-size: 100px;
+    font-size: 90px;
     font-weight: 800;
     text-transform: uppercase;
+    line-height: 110px;
+    transition: .5s ease;
+    /* word-spacing: 20px; */
 }
 
 .webkit-1{
