@@ -145,7 +145,7 @@ export default function Page1() {
                             This project tells the story of 4 friends that come together thanks to web 3.
                             Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br />
 
-                            Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
+                            Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
                         </div>
                     </div>
                     <div className="comp2-bottom pe-5 d-flex flex-column align-items-end">
@@ -160,10 +160,10 @@ export default function Page1() {
 
                 <div className="page1-comp3 d-flex justify-content-center align-items-center">
                     <div className="comp3-text flex-column d-flex justify-content-center align-items-center">
-                        <div className='webkit-1 d-flex justify-content-center align-items-center'>we ar<span className='webkit-2'>e not here</span></div>
-                        <div className='webkit-2 d-flex justify-content-center align-items-center'>to take part, we</div>
-                        <div className='webkit-2 d-flex justify-content-center align-items-center'>are her<span className='webkit-4'>e to</span></div>
-                        <div className='webkit-4 d-flex justify-content-center align-items-center'>take over.</div>
+                        <div className='webkit-1 text-center'>we ar<span className='webkit-2'>e not here</span></div>
+                        <div className='webkit-2 text-center'>to take part, we</div>
+                        <div className='webkit-2 text-center'>are her<span className='webkit-4'>e to</span></div>
+                        <div className='webkit-4 text-center'>take over.</div>
                     </div>
                 </div>
             </div>

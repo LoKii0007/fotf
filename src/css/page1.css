@@ -213,4 +213,16 @@
         line-height: 34px;
         word-break: no-break;
     }
+
+    /* page1 comp3--------- */
+    
+    .page1-comp3{
+        padding: 48px !important;
+    }
+
+    .comp3-text{
+        font-size: 35px;
+        padding: 48px !important;
+        line-height: 50px;
+    }
 }
