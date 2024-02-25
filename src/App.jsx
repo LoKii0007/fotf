@@ -16,8 +16,8 @@ function App() {
     <>
       {/* <Layout/> */}
       <Page1/>
-      <Page2/>
-      <Page3/>
+      {/* <Page2/> */}
+      {/* <Page3/> */}
       <Fotf/>
     </>
   )

@@ -141,3 +141,76 @@
     -webkit-text-stroke: 1px #07CE02;
     color: transparent;
 }
+
+
+/* -------------media queries----------- */
+
+
+@media screen and (max-width:600px) {
+
+    .page1-front{
+        justify-content: start !important;
+        margin-top: 20%;
+    }
+
+    .comp1-line{
+        font-size: 100px;
+        line-height: 100px;
+        word-spacing: normal;
+        letter-spacing: normal;
+    }
+
+    .alien1-img{
+        width: 100vw;
+    }
+
+    .page1-line3 , .page1-line1{
+        padding-left: 0% !important;
+    }
+
+    .join-btns{
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .discord , .world-btn{
+        width: fit-content;
+    }
+    .world-btn{
+        margin-top: 8px !important;
+        margin-left: 100px;
+    }
+
+    /* page1-comp2---------- */
+
+    .page1-comp2{
+        align-items: center !important;
+        padding: 32px !important;
+        justify-content: space-evenly !important;
+    }
+    .comp2-top{
+        width: 100%;
+        max-height: 600px;
+        padding: 48px !important;
+    }
+    .comp2-head{
+        font-size: 22px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .comp2-text{
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .comp2-bottom {
+        padding: 0% !important;
+    }
+    .community-top , .community-bottom{
+        padding: 0% !important;
+        font-size: 25px;
+        line-height: 34px;
+        word-break: no-break;
+    }
+}

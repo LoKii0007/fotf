@@ -11,14 +11,6 @@ export default function Page1() {
 
     useEffect(() => {
 
-        // window.addEventListener('scroll', () => {
-        //     const scrollY = window.scrollY;
-        
-        //     if (scrollY > 0) {
-        //         window.scrollTo({ top: scrollY + 100, behavior: 'instant' });
-        //     }
-        // });
-
         // tl1.to(".page1-bg",{
         //     scrollTrigger:{
         //         trigger:".page1-comp1",
@@ -29,20 +21,6 @@ export default function Page1() {
         //     duration:.8,
         //     right:"10%"
         // })
-
-        gsap.to(".page1-bg", {
-            scrollTrigger: {
-                trigger: ".page1-comp2",
-                start: "top bottom",
-                end: "top top",
-                scrub: 0.5,
-                // pin:true,
-                // pinSpacing:true
-            },
-            transformOrigin: "left bottom",
-            transform: "scale(0.7)",
-            left: "0%"
-        })
 
         gsap.to(".page1-front", {
             scrollTrigger: {
@@ -97,6 +75,43 @@ export default function Page1() {
         })
 
     }, [])
+
+    // ----responsive 
+
+    useEffect(()=>{
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth < 601) {
+                gsap.to(".page1-bg", {
+                    scrollTrigger: {
+                        trigger: ".page1-comp2",
+                        start: "top 90%",
+                        end: "top 90%",
+                        scrub: 0.5,
+                    },
+                    transformOrigin: "left bottom",
+                    left: "-20%"
+                })
+            }
+            // else{
+            //     gsap.to(".page1-bg", {
+            //         scrollTrigger: {
+            //             trigger: ".page1-comp2",
+            //             start: "top bottom",
+            //             end: "top top",
+            //             scrub: 0.5,
+            //         },
+            //         transformOrigin: "left bottom",
+            //         transform: "scale(0.7)",
+            //         left: "0%"
+            //     })
+            // }
+        });
+
+        // return()=>{
+        //     window.removeEventListener("scroll")
+        // }
+
+    },[])
 
     return (
         <>
