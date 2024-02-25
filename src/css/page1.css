@@ -152,27 +152,22 @@
         justify-content: start !important;
         margin-top: 20%;
     }
-
     .comp1-line{
-        font-size: 100px;
-        line-height: 100px;
+        font-size: 50px;
+        line-height: 50px;
         word-spacing: normal;
         letter-spacing: normal;
     }
-
     .alien1-img{
         width: 100vw;
     }
-
     .page1-line3 , .page1-line1{
         padding-left: 0% !important;
     }
-
     .join-btns{
         flex-direction: column !important;
         width: 100%;
     }
-
     .discord , .world-btn{
         width: fit-content;
     }
@@ -190,28 +185,31 @@
     }
     .comp2-top{
         width: 100%;
-        max-height: 600px;
         padding: 48px !important;
     }
     .comp2-head{
         font-size: 22px;
         font-weight: 400;
-        text-align: center;
+        text-align: start;
+        padding-bottom: 24px !important;
     }
     .comp2-text{
         font-size: 16px;
         line-height: 24px;
         font-weight: 400;
-        text-align: center;
+        text-align: start;
+        max-height: 300px;
+        overflow-y: scroll;
     }
     .comp2-bottom {
-        padding: 0% !important;
+        padding: 0px 48px !important;
+        width: 100%;
+        align-items: start !important;
     }
     .community-top , .community-bottom{
         padding: 0% !important;
         font-size: 25px;
         line-height: 34px;
-        word-break: no-break;
     }
 
     /* page1 comp3--------- */

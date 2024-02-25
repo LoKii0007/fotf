@@ -87,9 +87,9 @@ export default function Page2() {
     })
 
     ScrollTrigger.create({
-      trigger: ".shuffle-top",
-      start: "bottom 20%",
-      end: "bottom 20%",
+      trigger: ".shuffle-bottom",
+      start: "top 80%",
+      end: "top 80%",
       scrub: 1,
       onEnter: () => {
         tl2.play()
@@ -171,7 +171,7 @@ export default function Page2() {
                 NFT COLLECTION
               </div>
               <div className="shuffle-text2 pe-5">
-                <span style={{ textDecoration: "underline", fontWeight: "500" }}>Friends of the Future</span> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
+                <span style={{ textDecoration: "underline", fontWeight: "500" }}>Friends of the Future</span> <br /> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
               </div>
             </div>
           </div>

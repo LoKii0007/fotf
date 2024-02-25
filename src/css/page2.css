@@ -128,3 +128,58 @@
     color: #07CE02;
     font-size: 10px;
 }
+
+
+/* media qyueries------------- */
+
+@media screen and (max-width:600px) {
+    .shuffle-top{
+        flex-direction: column !important;
+    }
+    .shuffle-left{
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 48px !important;
+    }
+    .shuffle-right{
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: start !important;
+        padding: 0% !important;
+    }
+    .shuffle-text1{
+        padding: 0% !important;
+        text-align: start;
+        width: 100%;
+        padding-bottom: 16px !important;
+    }
+    .shuffle-text2{
+        padding: 0% !important;
+    }
+
+    .lr1-img1, .lr1-img2{
+        height: 132px;
+    }
+    .lr2-img1{
+        height: 116px;
+        margin-right: 232px;
+    }
+    .lr2-img2{
+        height: 116px;
+    }
+    .lr3-img1{
+        height: 100px;
+        margin-right:400px;
+    }
+    .lr3-img2{
+        height: 100px;
+    }
+    .lr4-img1{
+        height: 84px;
+        margin-right: 530px;
+    }
+    .lr4-img2{
+        height: 84px;
+    }
+
+}
