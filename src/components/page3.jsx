@@ -102,7 +102,7 @@ export default function Page3() {
         start: "top -10%",
         end: "top -40%",
         scrub: .5,
-        markers: true
+        // markers: true
       },
       y: "-100vh"
     })

@@ -158,6 +158,10 @@
         word-spacing: normal;
         letter-spacing: normal;
     }
+    .page1-bg{
+        bottom: 0% !important;
+        left: 0% !important;
+    }
     .alien1-img{
         width: 100vw;
     }

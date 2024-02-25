@@ -79,7 +79,8 @@ export default function Page1() {
     // ----responsive 
 
     useEffect(()=>{
-        window.addEventListener('scroll', () => {
+
+        const resize = () =>{
             if (window.innerWidth < 601) {
                 gsap.to(".page1-bg", {
                     scrollTrigger: {
@@ -92,20 +93,23 @@ export default function Page1() {
                     left: "-20%"
                 })
             }
-            // else{
-            //     gsap.to(".page1-bg", {
-            //         scrollTrigger: {
-            //             trigger: ".page1-comp2",
-            //             start: "top bottom",
-            //             end: "top top",
-            //             scrub: 0.5,
-            //         },
-            //         transformOrigin: "left bottom",
-            //         transform: "scale(0.7)",
-            //         left: "0%"
-            //     })
-            // }
-        });
+            else{
+                gsap.to(".page1-bg", {
+                    scrollTrigger: {
+                        trigger: ".page1-comp2",
+                        start: "top bottom",
+                        end: "top top",
+                        scrub: 0.5,
+                    },
+                    transformOrigin: "left bottom",
+                    transform: "scale(0.7)",
+                    left: "0%"
+                })
+            }
+        }
+        resize()
+
+        window.addEventListener('resize', resize);
 
         // return()=>{
         //     window.removeEventListener("scroll")
