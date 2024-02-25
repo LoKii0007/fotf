@@ -1,5 +1,6 @@
 .page-3{
     width: 100vw;
+    background-color: black;
 }
 
 .page3-comp1{
@@ -59,13 +60,6 @@
     z-index: 600;
 }
 
-.circle-space{
-    height: 100vh;
-    width: 100vw;
-    top: 100%;
-    left: 0%;
-}
-
 .comp3-bg{
     top: 0%;
     left: 0%;
@@ -106,4 +100,68 @@
     width: 50%;
 }
 
+.circle-space{
+    height: 50vh;
+    width: 100vw;
+}
+
 /* -------------comp -4 ---------------------- */
+
+.roadmap{
+    width: 100vw;
+    height: 100vh;
+}
+
+.roadmap-top{
+    font-size: 50px;
+    font-weight: 700;
+    color: #70CE02;
+}
+
+.road{
+    border:1px solid #70CE02;
+    height: 5px;
+    top: 150px;
+    width: 100vw;
+    z-index: 20;
+}
+
+.progress{
+    background-color: #70CE02;
+    height: 100%;
+    border-radius: 0%;
+}
+
+.pro-sq{
+    z-index: 30;
+    height: 20px;
+    top: 150px;
+    width: 100vw;
+    transform: translateY(-7.5px);
+}
+
+.sq{
+    width: 10px;
+    height: 10px;
+    rotate: 45deg;
+    border: 1px solid #70CE02;
+    background-color: black;
+}
+
+.roadmap-bottom{
+    height: 300px;
+    color: #70CE02;
+}
+
+.road-1, .road-3 , .road-5{
+    transform: translateY(150px);
+}
+
+.road-top{
+    font-size: 20px;
+    font-weight: 500;
+}
+.road-bottom{
+    font-size: 12px;
+    opacity: .6;
+}

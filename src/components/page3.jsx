@@ -83,7 +83,7 @@ export default function Page3() {
         end: "top -5%",
         scrub: 1,
       },
-      y:-500
+      y: -500
     })
     gsap.to(".comp3-bg", {
       scrollTrigger: {
@@ -93,7 +93,7 @@ export default function Page3() {
         scrub: 1,
         // markers:true
       },
-      opacity:1
+      opacity: 1
     })
 
     gsap.to(".comp3-bg", {
@@ -102,9 +102,9 @@ export default function Page3() {
         start: "top -10%",
         end: "top -40%",
         scrub: .5,
-        markers:true
+        markers: true
       },
-      y:"-100vh"
+      y: "-100vh"
     })
 
   }, [])
@@ -161,12 +161,10 @@ export default function Page3() {
 
         <div style={{ height: "100vh" }} className="page3-comp2"> </div>
 
-
         <div className="page3-comp3 d-flex flex-column position-relative">
           <div className="page3-comp3-text text-center">
             legendary <br />20 spots
           </div>
-          <div className="circle-space position-absolute"></div>
         </div>
 
         <div className="comp3-bg position-fixed d-flex justify-content-center align-items-center">
@@ -182,6 +180,56 @@ export default function Page3() {
                   <div className="circle-bottom2 text-center">4</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="circle-space"></div>
+
+        <div className="roadmap d-flex flex-column justify-content-center align-items-center">
+          <div className="roadmap-top p-5 text-center">
+            ROADMAP
+          </div>
+
+          <div className="roadmap-bottom px-5 d-flex position-relative justify-content-evenly align-items-start">
+
+            <div className="road position-absolute d-flex justify-content-start align-items-center">
+              <div className="progress col-2 "></div>
+            </div>
+
+            <div className="pro-sq position-absolute d-flex justify-content-evenly align-items-center">
+              <div className="sq-1 sq col-2"></div>
+              <div className="sq-2 sq col-2"></div>
+              <div className="sq-3 sq col-2"></div>
+              <div className="sq-4 sq col-2"></div>
+              <div className="sq-5 sq col-2"></div>
+              <div className="sq-6 sq col-2"></div>
+            </div>
+
+            <div className="road-1 col-2 p-5 d-flex flex-column text-center">
+              <div className="road-top">kick off</div>
+              <div className="road-bottom">We launch the Friends of the Future website and social media</div>
+            </div>
+            <div className="road-2 col-2 p-5 d-flex flex-column text-center">
+              <div className="road-top">normies reveal</div>
+              <div className="road-bottom">We reveal Normies perks</div>
+            </div>
+            <div className="road-3 col-2 p-5 d-flex flex-column text-center">
+              <div className="road-top">goldies reveal</div>
+              <div className="road-bottom">We reveal Goldies perks</div>
+            </div>
+            <div className="road-4 col-2 p-5 d-flex flex-column text-center">
+              <div className="road-top">goldies reveal</div>
+              <div className="road-bottom">We reveal Platinum perks</div>
+            </div>
+            <div className="road-5 col-2 p-5 d-flex flex-column text-center">
+              <div className="road-top">legendaries reveal</div>
+              <div className="road-bottom">We reveal Legendaries perks</div>
+            </div>
+            <div className="road-6 col-2 p-5 d-flex flex-column text-center">
+              <div className="road-top">Minting time</div>
+              <div className="road-bottom">in favouritism
+                for avatars</div>
             </div>
           </div>
         </div>
