@@ -24,10 +24,19 @@
     height: 80px;
 }
 
-.page3-comp2{
-    bottom: 0%;
-    right: 0%;
+.page3-right{
+    height: 100vh;
 }
+
+.crystal-text{
+    font-size: 24px;
+    color: #70CE02;
+    line-height: 24px;
+    width: 100%;
+}
+
+
+/* -------------------- comp-2--------------- */
 
 .hero{
     z-index: 500;
@@ -35,9 +44,66 @@
 }
 
 
+/* -------------------- comp-3--------------- */
+
 .page3-comp3{
+    width: 100vw;
+}
+
+.page3-comp3-text{
+    width: 100vw;
     font-size: 100px;
     -webkit-text-stroke: 1px #70CE02;
     color: transparent;
     text-transform: uppercase;
+    z-index: 600;
 }
+
+.circle-space{
+    height: 100vh;
+    width: 100vw;
+    top: 100%;
+    left: 0%;
+}
+
+.comp3-bg{
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 600;
+    opacity: 0;
+}
+
+.circle-1{
+    height: 600px;
+    width: 600px;
+    border: 50px solid #025200;
+    border-radius: 50%;
+}
+
+.circle-2{
+    height: 100%;
+    width: 100%;
+    border: 5px solid #04930059;
+    border-radius: 50%;
+}
+.circle-3{
+    height: 100%;
+    width: 100%;
+    border: 25px solid blue;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+.circle3-top , .circle3-bottom{
+    height: 100%;
+    width: 100%;
+}
+
+.circle-top1, .circle-top2 , .circle-bottom1, .circle-bottom2{
+    height: 50%;
+    width: 50%;
+}
+
+/* -------------comp -4 ---------------------- */
