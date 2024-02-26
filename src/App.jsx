@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      {/* <Layout/> */}
+      <Layout/>
       <Page1/>
       <Page2/>
       <Page3/>

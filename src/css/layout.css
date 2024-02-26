@@ -4,9 +4,9 @@
 }
 
 .layout{
-    height: 100vh;
     top: 17px;
-    width: 100vw;
+    width: 100%;
+    z-index: 1000;
 }
 
 .layout-top{

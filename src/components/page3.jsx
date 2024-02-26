@@ -115,7 +115,7 @@ export default function Page3() {
         <div className="page3-comp1 ps-5 d-flex position-relative justify-content-between align-items-center">
 
           <div className="page3-left">
-            <img className='chadi' src="IMG-20240130-WA0117.png" alt="" />
+            <img className='chadi' src="/chadi.png" alt="" />
           </div>
 
           <div className="page3-right d-flex flex-column justify-content-between ">
@@ -148,10 +148,10 @@ export default function Page3() {
             <div className="comp31-bottom d-flex justify-content-end align-items-end">
               <div className="hero-comp d-flex">
                 <div className="hero-1">
-                  <img className='hero-img1 hero' src="/IMG-20240130-WA0123.png" alt="" />
+                  <img className='hero-img1 hero' src="/fire.png" alt="" />
                 </div>
                 <div className="hero-2">
-                  <img className='hero-img2 hero' src="/IMG-20240130-WA0122.png" alt="" />
+                  <img className='hero-img2 hero' src="/ice.png" alt="" />
                 </div>
               </div>
             </div>
