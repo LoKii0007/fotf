@@ -80,10 +80,11 @@ export default function Page3() {
       scrollTrigger: {
         trigger: ".page3-comp3",
         start: "top -5%",
-        end: "top -5%",
+        end: "+=25px",
         scrub: 1,
       },
-      y: -500
+      y: -500,
+      duration:1,
     })
     gsap.to(".comp3-bg", {
       scrollTrigger: {
@@ -100,7 +101,7 @@ export default function Page3() {
       scrollTrigger: {
         trigger: ".page3-comp3",
         start: "top -10%",
-        end: "top -40%",
+        end: "top -80%",
         scrub: .5,
         // markers: true
       },
@@ -170,15 +171,17 @@ export default function Page3() {
         <div className="comp3-bg position-fixed d-flex justify-content-center align-items-center">
           <div className="circle-1 d-flex justify-content-center align-items-center">
             <div className="circle-2 d-flex justify-content-center align-items-center">
+              <div className="circle-4 d-flex justify-content-center align-items-center">
               <div className="circle-3 d-flex flex-column justify-content-center align-items-center">
                 <div className="circle3-top d-flex justify-content-center align-items-center">
-                  <div className="circle-top1 text-center">1</div>
-                  <div className="circle-top2 text-center">2</div>
+                  <div className="circle-top1 d-flex justify-content-center align-items-center">4</div>
+                  <div className="circle-top2 d-flex justify-content-center align-items-center">1</div>
                 </div>
                 <div className="circle3-bottom d-flex justify-content-center align-items-center">
-                  <div className="circle-bottom1 text-center">3</div>
-                  <div className="circle-bottom2 text-center">4</div>
+                  <div className="circle-bottom1 d-flex justify-content-center align-items-center text-center">3</div>
+                  <div className="circle-bottom2 d-flex justify-content-center align-items-center text-center">2</div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
@@ -228,8 +231,7 @@ export default function Page3() {
             </div>
             <div className="road-6 col-2 p-5 d-flex flex-column text-center">
               <div className="road-top">Minting time</div>
-              <div className="road-bottom">in favouritism
-                for avatars</div>
+              <div className="road-bottom">in favouritism for avatars</div>
             </div>
           </div>
         </div>

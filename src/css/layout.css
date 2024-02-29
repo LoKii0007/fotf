@@ -1,14 +1,21 @@
 .layout svg{
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .layout{
     top: 17px;
-    width: 100%;
-    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }
 
 .layout-top{
-    width: 100%;
+    font-size: 48px;
+    font-weight: 600;
+    color: #07CE02;
+    width: 100vw;
 }

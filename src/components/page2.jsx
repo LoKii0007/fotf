@@ -7,11 +7,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Page2() {
 
+
+  // animation1-----------------------
+
   useEffect(() => {
-
-    const tl1 = gsap.timeline()
-
-    tl1.to(".box", {
+    gsap.to(".box", {
       scrollTrigger: {
         trigger: ".box",
         start: "top bottom",
@@ -20,149 +20,130 @@ export default function Page2() {
       },
       rotate: "-45deg",
     })
+  }, [])
 
+  // animation2-----------
+
+  useEffect(() => {
+
+    const tl1 = gsap.timeline({
+      paused: true
+    })
     tl1.to(".box", {
-      scrollTrigger: {
-        trigger: ".page2-comp2",
-        start: "top 2%",
-        end: "top top",
-        scrub: .8
-      },
-      rotate: "0deg",
+      rotate: "45deg",
       transformOrigin: "center center",
       transform: "scale(40)",
-      duration: .8,
+      // height:"100vh",
+      // width:"100vw",
+      duration: .5,
     })
-
-
-    gsap.to(".page2-comp2", {
-      scrollTrigger: {
-        trigger: ".page2-comp2",
-        start: "top top",
-        end: "top top",
-        scrub: .8
+    tl1.to(".shuffle-bottom", {
+      y:0,
+      duration: .5,
+    }, 0)
+    tl1.to(".shuffle-top", {
+      y:0,
+      duration: .5,
+    }, 0)
+    ScrollTrigger.create({
+      trigger: ".box",
+      start: "center center",
+      end: "center center",
+      scrub: 1,
+      onEnter:()=>{
+        tl1.play()
       },
-      backgroundColor: "#07CE02"
+      onLeaveBack:()=>{
+        tl1.reverse()
+      }
     })
 
-
-    //-------------shuffle animation
-
-    gsap.to(".shuffle-bottom", {
-      scrollTrigger: {
-        trigger: ".layer-1",
-        start: "top bottom",
-        end: "top 95%",
-        scrub: .8
-      },
-      y: 0,
-      duration: .8
-    })
+    // ---------black box svg animation ------------------
 
     gsap.to(".shuffle-top", {
       scrollTrigger: {
-        trigger: ".shuffle-top",
-        start: "bottom 20%",
-        end: "bottom 20%",
+        trigger: ".shuffle-bottom",
+        start: "center center",
+        end: "center center",
+        markers:true,
         scrub: .8
       },
-      y: "-50vh"
+      y: "-300px"
     })
-
-
-    // ---------black box svg animation ------------------
     const tl2 = gsap.timeline({
       paused: true,
       onComplete: () => {
         ScrollTrigger.update()
       }
     })
-
     tl2.to(".layers", {
       rotateY: "90deg"
     })
-
     tl2.to(".box-2", {
       transform: "rotateY(0deg)"
     })
-
     ScrollTrigger.create({
       trigger: ".shuffle-bottom",
-      start: "top 80%",
-      end: "top 80%",
-      scrub: 1,
+      start: "center center",
+      end: "center center",
+      markers:true,
+      scrub: .8,
       onEnter: () => {
         tl2.play()
-        ScrollTrigger.update()
       },
       onLeaveBack: () => {
         tl2.reverse()
       }
     })
 
-    gsap.to(".box-2", {
-      scrollTrigger: {
-        trigger: ".box-2",
-        start: "top 50%",
-        end: "top 50%",
-        scrub: .5
-      },
-      scaleX: 4,
-      scaleY: 2,
-      transformOrigin: "top center",
-      duration: .5,
-    })
+    // let observer
 
-    gsap.to(".box2-content", {
-      scrollTrigger: {
-        trigger: ".box-2",
-        start: "top 50%",
-        end: "top 50%",
-        scrub: .5
-      },
-      transform: "scale(1)",
-      transformOrigin:"top center",
-      duration: .5
-    })
+    // const tl3 = gsap.timeline({
+    //   paused: true
+    // })
+    // tl3.to(".box-2", {
+    //   scaleX: 4,
+    //   scaleY: 2,
+    //   transformOrigin: "center center",
+    // })
+    // tl3.to(".box2-content", {
+    //   transform: "scale(1)",
+    //   transformOrigin: "top center",
+    // }, 0)
+    // ScrollTrigger.create({
+    //   trigger: ".shuffle-bottom",
+    //   start: "top 65%",
+    //   end: "top 65%",
+    //   scrub: 5,
+    //   onEnter: () => {
+    //     tl3.play()
+    //   },
+    //   onLeaveBack: () => {
+    //     tl3.reverse()
+    //   }
+    // })
 
-    gsap.to(".box-2", {
-      scrollTrigger: {
-        trigger: ".box-2",
-        start: "top 35%",
-        end: "top 35%",
-        scrub: .5
-      },
-      height:"100vh",
-      width:"100vw",
-      duration:1
-    })
-
-    // gsap.to(".box2-content", {
+    // gsap.to(".box-2", {
     //   scrollTrigger: {
     //     trigger: ".box-2",
-    //     start: "top 20%",
-    //     end: "top 20%",
+    //     start: "top 35%",
+    //     end: "top 35%",
     //     scrub: .5
     //   },
-    //   transform: "scale(1.4)",
-    //   transformOrigin:"top center",
-    //   duration: .5
+    //   height: "100vh",
+    //   width: "100vw",
+    //   duration: 1
     // })
 
   }, [])
 
   return (
     <>
-      <div className="page-2">
-
-        <div className="page2-comp2 position-relative d-flex flex-column align-items-center">
-
+      <div className="page-2 d-flex flex-column align-items-center justify-content-center">
+        <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
           <div className="box position-absolute">
           </div>
-
-          <div className="spacing"></div>
-
-          <div className="shuffle-top mt-5 d-flex justify-content-center align-items-center">
+          <div className="shuffle-top container d-flex justify-content-center align-items-center">
             <div className="shuffle-left px-5 col-6 d-flex justify-content-start align-items-center">
               3,314 unique digital <br /> collectibles.
             </div>
@@ -175,11 +156,9 @@ export default function Page2() {
               </div>
             </div>
           </div>
-
           <div className="shuffle-bottom position-relative d-flex flex-column justify-content-center align-items-center">
-
             <div className="layers position-relative d-flex justify-content-center align-items-center">
-              <div className="layer-1 position-absolute d-flex">
+              <div className="layer-1 d-flex">
                 <img className='lr1-img1' src="/ALIENS01.png" alt="" />
                 <img className='lr1-img2' src="/ALIENS02.png" alt="" />
               </div>
@@ -196,10 +175,8 @@ export default function Page2() {
                 <img className='lr4-img2' src="/ALIENS04.png" alt="" />
               </div>
             </div>
-
             <div className="box-2 position-absolute">
             </div>
-
             <div className="box2-content position-absolute d-flex flex-column justify-content-center align-items-center">
               <div className="box2-top d-flex flex-column align-items-center justify-content-center">
                 <div className="box2-line1">we are not here to take <br /> part, we are here to <br /> take over.</div>
@@ -226,9 +203,10 @@ export default function Page2() {
               </div>
             </div>
           </div>
-
         </div>
 
+        <div className="page2-comp2">
+        </div>
 
       </div>
     </>

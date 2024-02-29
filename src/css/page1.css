@@ -53,27 +53,25 @@
     font-size: 20px;
 }
 
-.discord{
+.discord, .world-btn{
     border-radius: 0%;
-    background-color: #07CE0242;
     color: #07CE02;
+    background-color: transparent;
     backdrop-filter: blur(2px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.tedi-line{
+    transform:translate(-25px, -8px);
 }
 
 .world-btn{
-    border-radius: 0%;
-    background-color: #07CE0242;
-    color: #07CE02;
-    backdrop-filter: blur(2px);
-    z-index: 20;
+    transform: translateX(-60px);
 }
 
 /* comp2---------- */
-
-.space-comp1{
-    height: 100vh;
-    width: 100vw;
-}
 
 .page1-comp2{
     width: 100vw;
@@ -96,6 +94,16 @@
     color: #07CE02;
 }
 
+.comp2-text-bg{
+    width: 40vw;
+    top: 0%;
+    left: 0%;
+}
+.comp2-text-bg svg{
+    width: 100%;
+    height: 100%;
+}
+
 .community-top{
     font-size: 50px;
     color: #07CE02;
@@ -114,18 +122,16 @@
 /* comp3----------------- */
 
 .page1-comp3{
-    height: 100vh;
+    top: 50vh;
+    height: 540px;
     width: 100vw;
     overflow: hidden;
-}
-
-.comp3-text{
     font-size: 90px;
     font-weight: 800;
     text-transform: uppercase;
     line-height: 110px;
     transition: .5s ease;
-    /* word-spacing: 20px; */
+    opacity: 0;
 }
 
 .webkit-1{
@@ -142,6 +148,14 @@
     color: transparent;
 }
 
+
+/* comp4--------------- */
+
+.page1-comp4{
+    height: 50vh;
+    /* background-color: #07CE02; */
+    width: 100vw;
+}
 
 /* -------------media queries----------- */
 
@@ -172,8 +186,11 @@
         flex-direction: column !important;
         width: 100%;
     }
-    .discord , .world-btn{
-        width: fit-content;
+    .discord, .world-btn{
+        padding: 24px !important;
+    }
+    .tedi-line{
+        display: none !important;
     }
     .world-btn{
         margin-top: 8px !important;
@@ -219,10 +236,6 @@
     /* page1 comp3--------- */
     
     .page1-comp3{
-        padding: 48px !important;
-    }
-
-    .comp3-text{
         font-size: 35px;
         padding: 48px !important;
         line-height: 50px;

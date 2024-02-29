@@ -39,8 +39,10 @@
 
 /* -------------------- comp-2--------------- */
 
-.hero{
+.hero-comp{
     z-index: 500;
+}
+.hero{
     height: 200px;
 }
 
@@ -57,7 +59,7 @@
     -webkit-text-stroke: 1px #70CE02;
     color: transparent;
     text-transform: uppercase;
-    z-index: 600;
+    z-index: 400;
 }
 
 .comp3-bg{
@@ -79,15 +81,22 @@
 .circle-2{
     height: 100%;
     width: 100%;
-    border: 5px solid #04930059;
+    border: 2px solid #07CE02;
     border-radius: 50%;
+}
+.circle-4{
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(#000000, #04930059);
+    border-radius: 50%;
+    padding: 20px;
 }
 .circle-3{
     height: 100%;
     width: 100%;
-    border: 25px solid blue;
     border-radius: 50%;
-    background-color: blueviolet;
+    background-color: #025000BF;
+    overflow: hidden;
 }
 
 .circle3-top , .circle3-bottom{
@@ -96,8 +105,15 @@
 }
 
 .circle-top1, .circle-top2 , .circle-bottom1, .circle-bottom2{
-    height: 50%;
+    height: 100%;
     width: 50%;
+    font-size: 100px;
+    color: #FFFFFF42;
+}
+
+.circle-top2{
+    background-color: #025000;
+    color: white;
 }
 
 .circle-space{
@@ -114,7 +130,7 @@
 }
 
 .roadmap-top{
-    font-size: 50px;
+    font-size: 57px;
     font-weight: 700;
     color: #70CE02;
 }

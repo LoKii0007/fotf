@@ -1,14 +1,10 @@
 .page-2{
     background-color: black;
-}
-
-.page2-comp1{
-    /* height: 55vh; */
     width: 100vw;
 }
 
 .box{
-    top: 15%;
+    top: 45%;
     height: 50px;
     width: 50px;
     background-color: #07CE02;
@@ -17,38 +13,23 @@
     transform: scale(1);
 }
 
+/* comp1--------------- */
 
-/* comp2--------------- */
-
-.page2-comp2{
-    height: 170vh;
+.page2-comp1{
+    height: 100vh;
     width: 100vw;
-    color: black;
     overflow: hidden;
-    /* background-image: url(/grid-bg.avif); */
-    /* mix-blend-mode:overlay; */
-    
 }
 
-.shuffle-top{
+.shuffle-top , .shuffle-bottom {
     z-index: 20;
-    margin-top: 150px;
-    margin-bottom: 300px;
-}
-
-.spacing{
-    height: 200px;
+    transform: translateY(250px);
 }
 
 .shuffle-left{
     font-size: 32px;
     font-weight: 600;
     text-transform: uppercase;
-}
-
-.shuffle-bottom{
-    z-index: 20;
-    transform: translateY(100px);
 }
 
 .layers{
@@ -182,4 +163,12 @@
         height: 84px;
     }
 
+}
+
+/* comp2--------------- */
+
+.page2-comp2{
+    height: 50vh;
+    background-color: #07CE02;
+    width:100vw;
 }
