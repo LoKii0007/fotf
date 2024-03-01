@@ -1,0 +1,14 @@
+.f-text{
+    color: #07CE02;
+    text-decoration: underline;
+}
+
+.f-sq{
+    height: 5px;
+    width: 5px;
+    transform: rotate(45deg);
+}
+
+.f-logo{
+    color: #07CE02;
+}

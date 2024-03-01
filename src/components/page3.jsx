@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../css/page3.css"
+import { Flip } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(Flip)
 
 export default function Page3() {
+
+  const [flag, setFlag] = useState(false)
+  const [rotation, setRotation] = useState(0)
 
   useEffect(() => {
 
@@ -17,8 +22,8 @@ export default function Page3() {
         scrub: true
       },
       position: "fixed",
-      right: "0%",
-      bottom: "0%"
+      right: 48,
+      bottom: 48
     })
 
     gsap.to(".hero", {
@@ -28,64 +33,94 @@ export default function Page3() {
         scrub: 1,
       },
       transformOrigin: "right bottom",
-      // width: "100vw",
-      height: "100vh"
+      height: 600
+    })
+    gsap.to(".hero", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top 95%",
+        end: "top 60%",
+        scrub: 1,
+      },
+      transformOrigin: "bottom center",
+      scale: 1.1
     })
 
     gsap.to(".hero-img1", {
       scrollTrigger: {
         trigger: ".page3-comp3",
-        start: "top 80%",
+        start: "top 60%",
         end: "top 30%",
         scrub: .5,
       },
-      x: "+=600px",
-      y: "+=200"
+      x: 600,
+      y: 200
     })
     gsap.to(".hero-img2", {
       scrollTrigger: {
         trigger: ".page3-comp3",
-        start: "top 80%",
+        start: "top 60%",
         end: "top 30%",
         scrub: .5,
       },
-      x: "-=600",
-      y: "+=200"
+      x: -600,
+      y: 200
     })
 
+  }, [])
 
-    gsap.to(".hero-img1", {
+
+  // ------------animation 2---------------
+
+  useEffect(() => {
+    gsap.to(".hero-11", {
       scrollTrigger: {
         trigger: ".page3-comp3",
-        start: "top 10%",
+        start: "top 30%",
         end: "top top",
-        scrub: 1,
+        scrub: .5,
       },
-      x: "-=70%",
-      y: "-=100px"
+      x: 600,
+      y: -100
     })
-    gsap.to(".hero-img2", {
+    gsap.to(".hero-21", {
       scrollTrigger: {
         trigger: ".page3-comp3",
-        start: "top 10%",
+        start: "top 30%",
         end: "top top",
-        scrub: 1,
+        scrub: .5,
       },
-      x: "+=70%",
-      y: "-=100px"
+      x: -600,
+      y: -100
     })
+  }, [])
 
+  // animation 3---------------------------
 
-    gsap.to(".page3-comp3", {
+  useEffect(() => {
+    gsap.to(".hero-1", {
       scrollTrigger: {
         trigger: ".page3-comp3",
         start: "top -5%",
         end: "+=25px",
         scrub: 1,
       },
-      y: -500,
-      duration:1,
+      x: 600,
     })
+    gsap.to(".hero-2", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top -5%",
+        end: "+=25px",
+        scrub: 1,
+      },
+      x: -600,
+    })
+  }, [])
+
+  // animation 4-----------------
+
+  useEffect(() => {
     gsap.to(".comp3-bg", {
       scrollTrigger: {
         trigger: ".page3-comp3",
@@ -95,6 +130,17 @@ export default function Page3() {
         // markers:true
       },
       opacity: 1
+    })
+
+    gsap.to(".page3-comp3", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top -5%",
+        end: "+=25px",
+        scrub: 1,
+      },
+      y: -500,
+      duration: 1,
     })
 
     gsap.to(".comp3-bg", {
@@ -107,23 +153,36 @@ export default function Page3() {
       },
       y: "-100vh"
     })
-
   }, [])
+
+
+
+  // ----------recurso rotation ----------------
+
+  useEffect(() => {
+    const rotate = setTimeout(() => {
+      setRotation(360)
+      setFlag(!flag)
+    }, 2000)
+
+    return () => clearTimeout(rotate)
+
+  }, [flag])
 
   return (
     <>
       <div className="page-3 ">
-        <div className="page3-comp1 ps-5 d-flex position-relative justify-content-between align-items-center">
+        <div className="page3-comp1 d-flex position-relative justify-content-between align-items-center">
 
           <div className="page3-left">
             <img className='chadi' src="/chadi.png" alt="" />
           </div>
 
-          <div className="page3-right d-flex flex-column justify-content-between ">
+          <div className="page3-right py-5 d-flex flex-column justify-content-between ">
 
             <div className="comp31-top pt-5 pe-5 d-flex flex-column">
               <div className="crystal-top d-flex justify-content-center align-items-center">
-                <div className="crstal-text px-5">SERUM</div>
+                <div className="crystal-text px-5">SERUM</div>
                 <div className="sound px-5">
                   <img className='sound-img' src="/world.png" alt="" />
                 </div>
@@ -138,7 +197,7 @@ export default function Page3() {
                 </div>
               </div>
 
-              <div className="crystal-text pt-5 justify-content-center align-items-start">
+              <div className="crstal-text pt-5 justify-content-center align-items-start">
                 There is a 4th role called the <br />
                 Legendaries: only for 20 people, who <br />
                 get a serum with it that get a mejastic <br />
@@ -146,13 +205,17 @@ export default function Page3() {
               </div>
             </div>
 
-            <div className="comp31-bottom d-flex justify-content-end align-items-end">
+            <div className="comp31-bottom pe-5 d-flex justify-content-end align-items-end">
               <div className="hero-comp d-flex">
                 <div className="hero-1">
-                  <img className='hero-img1 hero' src="/fire.png" alt="" />
+                  <div className="hero-11">
+                    <img className='hero-img1 hero' src="/fire.png" alt="" />
+                  </div>
                 </div>
                 <div className="hero-2">
-                  <img className='hero-img2 hero' src="/ice.png" alt="" />
+                  <div className="hero-21">
+                    <img className='hero-img2 hero' src="/ice.png" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -166,23 +229,37 @@ export default function Page3() {
           <div className="page3-comp3-text text-center">
             legendary <br />20 spots
           </div>
-        </div>
+        </div>  
 
-        <div className="comp3-bg position-fixed d-flex justify-content-center align-items-center">
-          <div className="circle-1 d-flex justify-content-center align-items-center">
-            <div className="circle-2 d-flex justify-content-center align-items-center">
+        <div className="comp3-bg position-fixed d-flex flex-column justify-content-evenly align-items-center">
+          <div className="circle-1 position-relative mt-5 d-flex justify-content-center align-items-center">
+            <div className="ghoomta-text position-absolute text-center d-flex align-items-start">
+            Coin launch (airdrop vs  presale)
+            </div>
+            <div className="circle-2 position-relative d-flex justify-content-center align-items-center">
+              <div className="ghoomta-sq position-absolute">
+              </div>
               <div className="circle-4 d-flex justify-content-center align-items-center">
-              <div className="circle-3 d-flex flex-column justify-content-center align-items-center">
-                <div className="circle3-top d-flex justify-content-center align-items-center">
-                  <div className="circle-top1 d-flex justify-content-center align-items-center">4</div>
-                  <div className="circle-top2 d-flex justify-content-center align-items-center">1</div>
-                </div>
-                <div className="circle3-bottom d-flex justify-content-center align-items-center">
-                  <div className="circle-bottom1 d-flex justify-content-center align-items-center text-center">3</div>
-                  <div className="circle-bottom2 d-flex justify-content-center align-items-center text-center">2</div>
+                <div className="circle-3 d-flex position-relative flex-column justify-content-center align-items-center">
+                  <div className="circle3-top d-flex justify-content-center align-items-center">
+                    <div className="circle-top1 d-flex justify-content-center align-items-center">4</div>
+                    <div className="circle-top2 d-flex justify-content-center align-items-center">1</div>
+                  </div>
+                  <div className="circle3-bottom d-flex justify-content-center align-items-center">
+                    <div className="circle-bottom1 d-flex justify-content-center align-items-center text-center">3</div>
+                    <div className="circle-bottom2 d-flex justify-content-center align-items-center text-center">2</div>
+                  </div>
+                  <div style={{ transform: `rotate(${rotation}deg)` }} className="recurso position-absolute">
+                    <img className='recurso-img' src="/recurso.png" alt="" />
+                  </div>
                 </div>
               </div>
-              </div>
+            </div>
+          </div>
+          <div className="circ-bottom d-flex flex-column justify-content-center align-items-center">
+            <div className="perks text-center">perks powered <br /> by spartacus</div>
+            <div className="perks-logo">
+              <img className='perks-img' src="/spartacus.png" alt="" />
             </div>
           </div>
         </div>
@@ -194,44 +271,41 @@ export default function Page3() {
             ROADMAP
           </div>
 
-          <div className="roadmap-bottom px-5 d-flex position-relative justify-content-evenly align-items-start">
+          <div className="roadmap-bottom px-5 d-flex position-relative justify-content-center align-items-start">
 
             <div className="road position-absolute d-flex justify-content-start align-items-center">
               <div className="progress col-2 "></div>
             </div>
 
-            <div className="pro-sq position-absolute d-flex justify-content-evenly align-items-center">
-              <div className="sq-1 sq col-2"></div>
-              <div className="sq-2 sq col-2"></div>
-              <div className="sq-3 sq col-2"></div>
-              <div className="sq-4 sq col-2"></div>
-              <div className="sq-5 sq col-2"></div>
-              <div className="sq-6 sq col-2"></div>
+            <div className="road-1 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">kick off</div>
+              <div className="road-bottom text-center">We launch the Friends of the Future website and social media</div>
+              <div className="sq-1 pro-sq sq position-absolute"></div>
             </div>
-
-            <div className="road-1 col-2 p-5 d-flex flex-column text-center">
-              <div className="road-top">kick off</div>
-              <div className="road-bottom">We launch the Friends of the Future website and social media</div>
+            <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">normies reveal</div>
+              <div className="road-bottom text-center">We reveal Normies perks</div>
+              <div className="sq-2 sq position-absolute"></div>
             </div>
-            <div className="road-2 col-2 p-5 d-flex flex-column text-center">
-              <div className="road-top">normies reveal</div>
-              <div className="road-bottom">We reveal Normies perks</div>
+            <div className="road-3 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">goldies reveal</div>
+              <div className="road-bottom text-center">We reveal Goldies perks</div>
+              <div className="sq-3 sq position-absolute"></div>
             </div>
-            <div className="road-3 col-2 p-5 d-flex flex-column text-center">
-              <div className="road-top">goldies reveal</div>
-              <div className="road-bottom">We reveal Goldies perks</div>
+            <div className="road-4 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">goldies reveal</div>
+              <div className="road-bottom text-center">We reveal Platinum perks</div>
+              <div className="sq-4 sq position-absolute"></div>
             </div>
-            <div className="road-4 col-2 p-5 d-flex flex-column text-center">
-              <div className="road-top">goldies reveal</div>
-              <div className="road-bottom">We reveal Platinum perks</div>
+            <div className="road-5 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">legendaries reveal</div>
+              <div className="road-bottom text-center">We reveal Legendaries perks</div>
+              <div className="sq-5 sq position-absolute"></div>
             </div>
-            <div className="road-5 col-2 p-5 d-flex flex-column text-center">
-              <div className="road-top">legendaries reveal</div>
-              <div className="road-bottom">We reveal Legendaries perks</div>
-            </div>
-            <div className="road-6 col-2 p-5 d-flex flex-column text-center">
-              <div className="road-top">Minting time</div>
-              <div className="road-bottom">in favouritism for avatars</div>
+            <div className="road-6 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">Minting time</div>
+              <div className="road-bottom text-center">in favouritism for avatars</div>
+              <div className="sq-6 sq position-absolute"></div>
             </div>
           </div>
         </div>

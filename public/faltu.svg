@@ -1,0 +1,41 @@
+<svg viewBox="0 0 988 549" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M591 111.585H407.933V431.463H591V327.024L574.253 299.274V229.143L591 200.384V111.585Z" fill="url(#pattern0)"/>
+<path d="M596 111.585H416.523V200.889L432.942 228.638V298.77L416.523 327.528V431.463H596V111.585Z" fill="url(#pattern1)"/>
+<path d="M619 74.3901H393.756V468.658H619V339.93L598.394 305.727V219.287L619 183.84V74.3901Z" fill="url(#pattern2)"/>
+<path d="M618 74.3901H396.346V184.462L416.623 218.665V305.106L396.346 340.552V468.658H618V74.3901Z" fill="url(#pattern3)"/>
+<path d="M618 74.3901H396.346V184.462L416.623 218.665V305.106L396.346 340.552V468.658H618V74.3901Z" fill="url(#pattern4)"/>
+<path d="M644 31.244H370.297V511.805H644V354.903L618.961 313.214V207.854L644 164.649V31.244Z" fill="url(#pattern5)"/>
+<path d="M641 31.244H371.784V165.407L396.413 207.096V312.456L371.784 355.661V511.805H641V31.244Z" fill="url(#pattern6)"/>
+<path d="M987.152 0H473.501V549H987.152V369.752L940.162 322.126V201.762L987.152 152.404V0Z" fill="url(#pattern7)"/>
+<path d="M987.152 0H473.501V549H987.152V369.752L940.162 322.126V201.762L987.152 152.404V0Z" fill="black"/>
+<path d="M506.258 0H0.0502625V153.27L46.3595 200.896V321.26L0.0502625 370.618V549H506.258V0Z" fill="url(#pattern8)"/>
+<path d="M506.258 0H0.0502625V153.27L46.3595 200.896V321.26L0.0502625 370.618V549H506.258V0Z" fill="black"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_189_912" transform="matrix(0.000873665 0 0 0.0005 -0.373665 0)"/>
+</pattern>
+<pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image1_189_912" transform="matrix(0.000891138 0 0 0.0005 -0.391138 0)"/>
+</pattern>
+<pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image2_189_912" transform="matrix(0.000875203 0 0 0.0005 -0.375203 0)"/>
+</pattern>
+<pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image3_189_912" transform="matrix(0.00111172 0 0 0.000625 -0.389376 0)"/>
+</pattern>
+<pattern id="pattern4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image4_189_912" transform="matrix(0.000889376 0 0 0.0005 -0.389376 0)"/>
+</pattern>
+<pattern id="pattern5" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image5_189_912" transform="matrix(0.000877888 0 0 0.0005 -0.377888 0)"/>
+</pattern>
+<pattern id="pattern6" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image6_189_912" transform="matrix(0.00089252 0 0 0.0005 -0.39252 0)"/>
+</pattern>
+<pattern id="pattern7" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image7_189_912" transform="matrix(0.000534409 0 0 0.0005 -0.0344089 0)"/>
+</pattern>
+<pattern id="pattern8" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image8_189_912" transform="matrix(0.000542268 0 0 0.0005 -0.0422677 0)"/>
+</pattern></defs>
+</svg>

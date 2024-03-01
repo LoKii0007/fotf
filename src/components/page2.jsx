@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/all'
+import Observer from 'gsap/Observer'
 import "../css/page2.css"
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(Observer)
 
 export default function Page2() {
+
+  const [count1 , setCount2] = useState(0)
 
 
   // animation1-----------------------
@@ -22,6 +26,7 @@ export default function Page2() {
     })
   }, [])
 
+
   // animation2-----------
 
   useEffect(() => {
@@ -33,16 +38,14 @@ export default function Page2() {
       rotate: "45deg",
       transformOrigin: "center center",
       transform: "scale(40)",
-      // height:"100vh",
-      // width:"100vw",
       duration: .5,
     })
-    tl1.to(".shuffle-bottom", {
+    tl1.to(".box2-content , .box-2, .shuffle-top", {
       y:0,
       duration: .5,
     }, 0)
-    tl1.to(".shuffle-top", {
-      y:0,
+    tl1.to(".layers", {
+      y:0, 
       duration: .5,
     }, 0)
     ScrollTrigger.create({
@@ -58,14 +61,18 @@ export default function Page2() {
       }
     })
 
-    // ---------black box svg animation ------------------
+  }, [])
 
-    gsap.to(".shuffle-top", {
+
+   // ---------animation 3 ------------------
+
+  useEffect(()=>{
+    gsap.to(".shuffle-left , .shuffle-right", {
       scrollTrigger: {
         trigger: ".shuffle-bottom",
         start: "center center",
         end: "center center",
-        markers:true,
+        // markers:true,
         scrub: .8
       },
       y: "-300px"
@@ -80,13 +87,13 @@ export default function Page2() {
       rotateY: "90deg"
     })
     tl2.to(".box-2", {
-      transform: "rotateY(0deg)"
+      transform: "rotateY(0deg)",
     })
     ScrollTrigger.create({
       trigger: ".shuffle-bottom",
       start: "center center",
       end: "center center",
-      markers:true,
+      // markers:true,
       scrub: .8,
       onEnter: () => {
         tl2.play()
@@ -95,51 +102,55 @@ export default function Page2() {
         tl2.reverse()
       }
     })
+  }, [])
 
-    // let observer
+  // --------------animation4------------------
 
-    // const tl3 = gsap.timeline({
-    //   paused: true
-    // })
-    // tl3.to(".box-2", {
-    //   scaleX: 4,
-    //   scaleY: 2,
-    //   transformOrigin: "center center",
-    // })
-    // tl3.to(".box2-content", {
-    //   transform: "scale(1)",
-    //   transformOrigin: "top center",
-    // }, 0)
-    // ScrollTrigger.create({
-    //   trigger: ".shuffle-bottom",
-    //   start: "top 65%",
-    //   end: "top 65%",
-    //   scrub: 5,
-    //   onEnter: () => {
-    //     tl3.play()
+  useEffect(()=>{
+
+    const tl1 = gsap.timeline({
+       paused:true,
+    })
+
+    tl1.to(".box-2",{
+      height:"100vh",
+      width:"100vw",
+      duration:.5,
+      transformOrigin:"top center"
+    })
+    // let observer = Observer.create({
+    //   target:window,
+    //   type:"scroll , wheel",
+    //   onDown:()=>{
+    //       tl1.play()
     //   },
-    //   onLeaveBack: () => {
-    //     tl3.reverse()
+    //   onUp:()=>{
+    //     tl1.reverse()
     //   }
     // })
-
-    // gsap.to(".box-2", {
-    //   scrollTrigger: {
-    //     trigger: ".box-2",
-    //     start: "top 35%",
-    //     end: "top 35%",
-    //     scrub: .5
-    //   },
-    //   height: "100vh",
-    //   width: "100vw",
-    //   duration: 1
-    // })
-
-  }, [])
+    ScrollTrigger.create({
+      trigger:".shuffle-bottom",
+      start:"bottom center",
+      end:"bottom center",
+      scrub:0.1,
+      // markers:true,
+      onEnter:()=>{
+        // observer.enable()
+        tl1.play()
+      },
+      // onLeave:()=>{
+      //   observer.disable()
+      // },
+      onLeaveBack:()=>{
+        // observer.enable()
+        tl1.reverse()
+      }
+    })
+  },[])
 
   return (
     <>
-      <div className="page-2 d-flex flex-column align-items-center justify-content-center">
+      <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
           <div className="box position-absolute">
           </div>
@@ -157,7 +168,7 @@ export default function Page2() {
             </div>
           </div>
           <div className="shuffle-bottom position-relative d-flex flex-column justify-content-center align-items-center">
-            <div className="layers position-relative d-flex justify-content-center align-items-center">
+            <div className="layers position-absolute d-flex justify-content-center align-items-center">
               <div className="layer-1 d-flex">
                 <img className='lr1-img1' src="/ALIENS01.png" alt="" />
                 <img className='lr1-img2' src="/ALIENS02.png" alt="" />
@@ -175,9 +186,9 @@ export default function Page2() {
                 <img className='lr4-img2' src="/ALIENS04.png" alt="" />
               </div>
             </div>
-            <div className="box-2 position-absolute">
+            <div style={{backgroundImage:"/faltu.svg"}} className="box-2">
             </div>
-            <div className="box2-content position-absolute d-flex flex-column justify-content-center align-items-center">
+            {/* <div className="box2-content d-flex flex-column justify-content-center align-items-center">
               <div className="box2-top d-flex flex-column align-items-center justify-content-center">
                 <div className="box2-line1">we are not here to take <br /> part, we are here to <br /> take over.</div>
                 <div className="box2-line2">there a four <br /> major groups</div>
@@ -201,7 +212,7 @@ export default function Page2() {
                   <img className='img4-img box2-img' src="/IMG-20240130-WA0123.png" alt="" />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
