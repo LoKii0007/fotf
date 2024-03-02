@@ -1,7 +1,6 @@
 .page-2{
     background-color: black;
     width: 100vw;
-    height: 150vh;
     overflow: hidden;
 }
 
@@ -20,12 +19,12 @@
 .page2-comp1{
     height: 100vh;
     width: 100vw;
-    overflow-x: hidden;
 }
 
 .shuffle-top {
     z-index: 20;
     transform: translateY(250px);
+    opacity: 0;
 }
 .shuffle-bottom {
     z-index: 20;
@@ -35,6 +34,14 @@
     font-size: 32px;
     font-weight: 600;
     text-transform: uppercase;
+}
+
+.shuffle-text1{
+    font-size: 12px;
+}
+.shuffle-text2{
+    font-size: 16px;
+    font-family: 'Space Mono';
 }
 
 .layers , .box-2 , .box2-content{
@@ -92,25 +99,33 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    scale: 1;
     overflow: hidden;
 }
 
-.box2-line1{
-    font-size: 16px;
-    -webkit-text-stroke: 1px #07CE02;
-}
-.box2-line1{
-    font-size: 24px;
-    color: #07CE02;
+.box2-content{
+    height: 100%;
+    max-height: 100vh;
+    scale: 0;
+    opacity: 0;
 }
 
-.box2-content{
-    transform: scale(0);
+.box2-line1{
+    font-size: 20px;
+    -webkit-text-stroke: 1px #07CE02;
+    line-height: 20px;
+    color: transparent;
+    text-transform: uppercase;
+}
+.box2-line2{
+    font-size: 32px;
+    color: #07CE02;
+    text-transform: uppercase;
+    line-height: 32px;
+    font-weight: 700;
 }
 
 .box2-img{
-    height: 100px;
+    height: 150px;
 }
 
 .img-text{

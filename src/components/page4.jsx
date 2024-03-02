@@ -104,8 +104,13 @@ export default function Page4() {
     return (
         <>
             <div className="page-4">
-              <div className="thanks">
+              <div className="thanks d-flex flex-column justify-content-evenly align-items-center">
+                 <div className="thanks-top text-center">
+                 Thank you Friends Of <br /> The Future!
+                 </div>
+                 <div className="thanks-bottom">
 
+                 </div>
               </div>
             <div className='fotf position-relative'>
                 <div className='char-1 char position-absolute'>F</div>

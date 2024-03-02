@@ -12,6 +12,8 @@ export default function Page3() {
   const [flag, setFlag] = useState(false)
   const [rotation, setRotation] = useState(0)
 
+  // -----------animation 1------------------------- 
+
   useEffect(() => {
 
     gsap.to(".hero-comp", {
@@ -23,7 +25,7 @@ export default function Page3() {
       },
       position: "fixed",
       right: 48,
-      bottom: 48
+      bottom: 0
     })
 
     gsap.to(".hero", {
@@ -33,7 +35,15 @@ export default function Page3() {
         scrub: 1,
       },
       transformOrigin: "right bottom",
-      height: 600
+      width:"36vw",
+    })
+    gsap.to(".hero-comp", {
+      scrollTrigger: {
+        trigger: ".page3-comp1",
+        start: "bottom bottom",
+        scrub: 1,
+      },
+      right:"14vw"
     })
     gsap.to(".hero", {
       scrollTrigger: {
@@ -43,28 +53,29 @@ export default function Page3() {
         scrub: 1,
       },
       transformOrigin: "bottom center",
-      scale: 1.1
+      scale: 1.3  
     })
 
     gsap.to(".hero-img1", {
       scrollTrigger: {
         trigger: ".page3-comp3",
         start: "top 60%",
-        end: "top 30%",
+        end: "top 10%",
         scrub: .5,
       },
-      x: 600,
-      y: 200
+      x: "33vw",
+      y: 110
     })
+
     gsap.to(".hero-img2", {
       scrollTrigger: {
         trigger: ".page3-comp3",
         start: "top 60%",
-        end: "top 30%",
+        end: "top 10%",
         scrub: .5,
       },
-      x: -600,
-      y: 200
+      x: "-33vw",
+      y: 110
     })
 
   }, [])
@@ -76,28 +87,52 @@ export default function Page3() {
     gsap.to(".hero-11", {
       scrollTrigger: {
         trigger: ".page3-comp3",
-        start: "top 30%",
+        start: "top 10%",
         end: "top top",
         scrub: .5,
       },
       x: 600,
-      y: -100
+      y: -50
     })
     gsap.to(".hero-21", {
       scrollTrigger: {
         trigger: ".page3-comp3",
-        start: "top 30%",
+        start: "top 10%",
         end: "top top",
         scrub: .5,
       },
       x: -600,
-      y: -100
+      y: -50
     })
+
+    gsap.to(".page3-comp3", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top 10%",
+        end: "top top",
+        scrub: 1,
+      },
+      y: -500,
+      duration: 1,
+    })
+
+    gsap.to(".comp3-bg", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top top",
+        end: "top top",
+        scrub: 1,
+        // markers:true
+      },
+      opacity: 1
+    })
+
   }, [])
 
   // animation 3---------------------------
 
   useEffect(() => {
+    
     gsap.to(".hero-1", {
       scrollTrigger: {
         trigger: ".page3-comp3",
@@ -105,7 +140,7 @@ export default function Page3() {
         end: "+=25px",
         scrub: 1,
       },
-      x: 600,
+      x: 450,
     })
     gsap.to(".hero-2", {
       scrollTrigger: {
@@ -114,34 +149,13 @@ export default function Page3() {
         end: "+=25px",
         scrub: 1,
       },
-      x: -600,
+      x: -500,
     })
   }, [])
 
   // animation 4-----------------
 
   useEffect(() => {
-    gsap.to(".comp3-bg", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top -5%",
-        end: "top -5%",
-        scrub: 1,
-        // markers:true
-      },
-      opacity: 1
-    })
-
-    gsap.to(".page3-comp3", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top -5%",
-        end: "+=25px",
-        scrub: 1,
-      },
-      y: -500,
-      duration: 1,
-    })
 
     gsap.to(".comp3-bg", {
       scrollTrigger: {
@@ -178,7 +192,7 @@ export default function Page3() {
             <img className='chadi' src="/chadi.png" alt="" />
           </div>
 
-          <div className="page3-right py-5 d-flex flex-column justify-content-between ">
+          <div className="page3-right pt-5 d-flex flex-column justify-content-between ">
 
             <div className="comp31-top pt-5 pe-5 d-flex flex-column">
               <div className="crystal-top d-flex justify-content-center align-items-center">

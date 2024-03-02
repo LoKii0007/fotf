@@ -172,8 +172,9 @@ export default function Page1() {
             scrollTrigger: {
                 trigger: ".page1-comp4",
                 start: "top top",
-                end: "top top",
-                scrub: 0.1,
+                end: "top -70%",
+                scrub: false,
+                toggleActions:"play pause resume reset"
             },
             y:"-100vh"
         })
@@ -187,12 +188,12 @@ export default function Page1() {
                     <div className="page1-bg position-fixed">
                         <img className='alien1-img' src="/alien1.png" alt="" />
                     </div>
-                    <div className="page1-front d-flex justify-content-center align-items-start flex-column">
+                    <div className="page1-front pt-5 d-flex justify-content-center align-items-start flex-column">
                         <div className="page1-line1 comp1-line ps-5">FRIENDS</div>
                         <div className="page1-line2 comp1-line"> OF <span className="webkit-the">THE</span> </div>
                         <div className="page1-line3 comp1-line ps-5">FUTURE</div>
                         <div className="join-btns ps-5 d-flex align-items-center justify-content-center">
-                            <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-5 d-flex'>
+                            <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-4 d-flex'>
                                 <div className="text">JOIN OUR DISCORD</div>
                                 <div className='discord-icon px-2'>
                                     <i class="fa-brands fa-discord"></i>
@@ -219,7 +220,7 @@ export default function Page1() {
                                     </defs>
                                 </svg>
                             </div>
-                            <button style={{ backgroundImage: "url(world.svg)" }} className='world-btn p-5 d-flex'>
+                            <button style={{ backgroundImage: "url(world.svg)" }} className='world-btn p-4 d-flex'>
                                 <div className="text">ENTER WL</div>
                                 <div className='discord-icon  px-2'>
                                     <i class="fa-brands fa-discord"></i>
@@ -236,7 +237,7 @@ export default function Page1() {
                         </div>
                         <div className="comp2-text">
                             This project tells the story of 4 friends that come together thanks to web 3.
-                            Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br />
+                            Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
 
                             Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
                         </div>
@@ -262,11 +263,11 @@ export default function Page1() {
                         </div>
                     </div>
 
-                    <div className="comp2-bottom pe-5 d-flex flex-column align-items-end">
-                        <div className="community-top pe-5">
+                    <div className="comp2-bottom d-flex flex-column align-items-end">
+                        <div className="community-top">
                             BY COMMUNITY
                         </div>
-                        <div className="community-bottom pe-4">
+                        <div className="community-bottom">
                             FOR COMMUNITY
                         </div>
                     </div>

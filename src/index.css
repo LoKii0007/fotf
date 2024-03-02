@@ -34,6 +34,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  font-family: 'Space Games';
   min-width: 320px;
   min-height: 100vh;
 }

@@ -9,10 +9,10 @@ gsap.registerPlugin(Observer)
 
 export default function Page2() {
 
-  const [count1 , setCount2] = useState(0)
+  const [count1, setCount2] = useState(0)
 
 
-  // animation1-----------------------
+  // animation1-------------(green box rotation)-----------------------
 
   useEffect(() => {
     gsap.to(".box", {
@@ -27,7 +27,7 @@ export default function Page2() {
   }, [])
 
 
-  // animation2-----------
+  // animation2-----------(green box scaling and aliginig shuffle)-------------------
 
   useEffect(() => {
 
@@ -41,11 +41,12 @@ export default function Page2() {
       duration: .5,
     })
     tl1.to(".box2-content , .box-2, .shuffle-top", {
-      y:0,
+      y: 0,
       duration: .5,
+      opacity:1
     }, 0)
     tl1.to(".layers", {
-      y:0, 
+      y: 0,
       duration: .5,
     }, 0)
     ScrollTrigger.create({
@@ -53,10 +54,10 @@ export default function Page2() {
       start: "center center",
       end: "center center",
       scrub: 1,
-      onEnter:()=>{
+      onEnter: () => {
         tl1.play()
       },
-      onLeaveBack:()=>{
+      onLeaveBack: () => {
         tl1.reverse()
       }
     })
@@ -64,14 +65,14 @@ export default function Page2() {
   }, [])
 
 
-   // ---------animation 3 ------------------
+  // ---------animation 3 ------------------(black box rotating)------------------
 
-  useEffect(()=>{
+  useEffect(() => {
     gsap.to(".shuffle-left , .shuffle-right", {
       scrollTrigger: {
         trigger: ".shuffle-bottom",
-        start: "center center",
-        end: "center center",
+        start: "20% center",
+        end: "20% center",
         // markers:true,
         scrub: .8
       },
@@ -91,8 +92,8 @@ export default function Page2() {
     })
     ScrollTrigger.create({
       trigger: ".shuffle-bottom",
-      start: "center center",
-      end: "center center",
+      start: "20% center",
+      end: "20% center",
       // markers:true,
       scrub: .8,
       onEnter: () => {
@@ -104,49 +105,85 @@ export default function Page2() {
     })
   }, [])
 
-  // --------------animation4------------------
+  // --------------animation4------------------(increasing size of black box)--------------------
 
-  useEffect(()=>{
+  useEffect(() => {
+
+    // const tl = gsap.timeline
+    gsap.to(".box-2", {
+      scrollTrigger:{
+        trigger:".box-2",
+        start:"top 30%",
+        end:"top 30%",
+        // markers:true ,
+        scrub:.5,
+      },
+      transformOrigin:"top center",
+      height:"60vh",
+      width:"70vw",
+      duration:.8
+    })
+    gsap.to(".box2-content", {
+      scrollTrigger:{
+        trigger:".box-2",
+        start:"top 30%",
+        end:"top 30%",
+        scrub:.5
+      },
+      scale:1,
+      duration:.8,
+      opacity:1,
+      transformOrigin:"center center"
+    }, 1)
 
     const tl1 = gsap.timeline({
-       paused:true,
+      paused: true,
     })
 
-    tl1.to(".box-2",{
-      height:"100vh",
+    tl1.to(".box-2", {
+      height:"150vh",
       width:"100vw",
-      duration:.5,
-      transformOrigin:"top center"
+      paddingTop:"15vh",
+      duration: .5,
+      transformOrigin: "top center"
     })
-    // let observer = Observer.create({
-    //   target:window,
-    //   type:"scroll , wheel",
-    //   onDown:()=>{
-    //       tl1.play()
-    //   },
-    //   onUp:()=>{
-    //     tl1.reverse()
-    //   }
-    // })
+    tl1.to(".page2-comp1", {
+      height: "150vh",
+      duration: .5,
+      transformOrigin: "top center"
+    }, 0)
+    tl1.to(".box2-line1", {
+      fontSize:"32px",
+      lineHeight:"32px",
+      duration: .5,
+    }, 0)
+    tl1.to(".box2-line2", {
+      fontSize:"48px",
+      lineHeight:"48px",
+      duration: .5,
+    }, 0)
+    tl1.to(".box2-img", {
+      height:"250px",
+      duration: .5,
+    }, 0)
+    tl1.to(".page2-comp2", {
+      height: 0,
+      duration: .5,
+    }, 0)
     ScrollTrigger.create({
-      trigger:".shuffle-bottom",
-      start:"bottom center",
-      end:"bottom center",
-      scrub:0.1,
+      trigger:".box-2",
+      start:"top 20%",
+      end:"top 20%",
+      scrub: 0.1,
       // markers:true,
-      onEnter:()=>{
-        // observer.enable()
+      onEnter: () => {
         tl1.play()
       },
-      // onLeave:()=>{
-      //   observer.disable()
-      // },
-      onLeaveBack:()=>{
-        // observer.enable()
+      onLeaveBack: () => {
         tl1.reverse()
       }
     })
-  },[])
+  }, [])
 
   return (
     <>
@@ -163,7 +200,7 @@ export default function Page2() {
                 NFT COLLECTION
               </div>
               <div className="shuffle-text2 pe-5">
-                <span style={{ textDecoration: "underline", fontWeight: "500" }}>Friends of the Future</span> <br /> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
+                <span style={{ textDecoration: "underline" }}>Friends of the Future</span> <br /> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
               </div>
             </div>
           </div>
@@ -186,12 +223,11 @@ export default function Page2() {
                 <img className='lr4-img2' src="/ALIENS04.png" alt="" />
               </div>
             </div>
-            <div style={{backgroundImage:"/faltu.svg"}} className="box-2">
-            </div>
-            {/* <div className="box2-content d-flex flex-column justify-content-center align-items-center">
-              <div className="box2-top d-flex flex-column align-items-center justify-content-center">
-                <div className="box2-line1">we are not here to take <br /> part, we are here to <br /> take over.</div>
-                <div className="box2-line2">there a four <br /> major groups</div>
+            <div style={{ backgroundImage: "/faltu.svg" }} className="box-2 d-flex justify-content-center align-items-start">
+              <div className="box2-content d-flex flex-column justify-content-evenly align-items-center">
+              <div className="box2-top d-flex flex-column align-items-evenly justify-content-center">
+                <div className="box2-line1 py-3 text-center">we are not here to take <br /> part, we are here to <br /> take over.</div>
+                <div className="box2-line2 text-center">there a four <br /> major groups</div>
               </div>
 
               <div className="box2-bottom d-flex align-items-center justify-content-center">
@@ -212,7 +248,8 @@ export default function Page2() {
                   <img className='img4-img box2-img' src="/IMG-20240130-WA0123.png" alt="" />
                 </div>
               </div>
-            </div> */}
+              </div>
+            </div>
           </div>
         </div>
 

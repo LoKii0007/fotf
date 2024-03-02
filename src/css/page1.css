@@ -24,22 +24,20 @@
 
 .page1-front{
     height: 100vh;
-    font-size: 150px;
+    font-size: 132px;
     overflow: hidden;
 }
 
 .comp1-line{
-    font-weight: 900;
-    line-height: 130px;
+    line-height: 120px;
     color: #07CE02;
-    letter-spacing: 20px;
     z-index: 20;
     backdrop-filter: blur(2px);
 }
 
 .webkit-the{
     -webkit-text-stroke:2px #07CE02;
-    color: transparent;
+    color: transparent; 
 }
 
 .page1-line3{
@@ -50,7 +48,7 @@
 /* buttons------------------ */
 
 .join-btns{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .discord, .world-btn{
@@ -85,13 +83,14 @@
 }
 
 .comp2-head{
-    font-size: 24px;
+    font-size: 20px;
     color: #07CE02;
 }
 
 .comp2-text{
-    font-size: 16px;
+    font-size: 12px;
     color: #07CE02;
+    opacity: .5;
 }
 
 .comp2-text-bg{
