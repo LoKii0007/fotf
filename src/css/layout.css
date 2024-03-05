@@ -1,21 +1,28 @@
-.layout svg{
-    height: 100%;
-    width: 100%;
-}
-
 .layout{
-    top: 17px;
+    /* top: 17px; */
     width: 100vw;
     height: 100vh;
-    z-index: 2000;
+    z-index: 20;
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top;
 }
 
 .layout-top{
-    font-size: 48px;
-    font-weight: 600;
-    color: #07CE02;
     width: 100vw;
+}
+
+.layout-text{
+    font-size: 40px;
+    margin-top: 17px;
+    width: fit-content;
+    color: #07CE02;
+    height: 55px;
+    backdrop-filter: blur(1px);
+}
+
+.main-bg img{
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
 }

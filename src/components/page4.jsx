@@ -1,11 +1,46 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import "../css/page4.css"
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Observer } from 'gsap/all';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(Observer)
 
 export default function Page4() {
+
+    // --------------naagin animation------------------ 
+
+    useEffect(() => {
+
+        gsap.to(".snake-1" ,{
+            scrollTrigger:{
+                trigger:".fotf",
+                start:"top 90%",
+                end:"+=25px",
+                scrub:1
+            },
+            x: 115,
+            rotateY: "360deg",
+            duration:1
+        })
+
+        gsap.to(".snake-2" ,{
+            scrollTrigger:{
+                trigger:".fotf",
+                start:"top 90%",
+                end:"+=25px",
+                scrub:1
+            },
+            x: -115,
+            rotateY: "360deg",
+            duration:1
+        })
+
+    }, [])
+
+    // -----------------------------fotf last Animation----------------- 
 
     useEffect(() => {
 
@@ -17,9 +52,9 @@ export default function Page4() {
                     trigger: ".fotf",
                     start: "top 1%",
                     end: "top 1%",
-                    scrub:1,
+                    scrub: 1,
                 },
-                marginLeft: "20%",
+                left: "20%",
             });
 
         tl1.to(".char-1",
@@ -28,75 +63,75 @@ export default function Page4() {
                     trigger: ".fotf",
                     start: "top 1%",
                     end: "top 1%",
-                    scrub:1,
+                    scrub: 1,
                 },
-                top: "50%",
+                top: "40%",
             }, 0);
 
         tl1.to(".char-2",
             {
-                scrollTrigger:{
-                    trigger:".fotf",
-                    start:"top 1%",
-                    end:"top 1%",
-                    scrub:1,
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub: 1,
                 },
-                marginLeft: "40%",
+                left: "40%",
             }, 0);
 
         tl1.to(".char-2",
             {
-                scrollTrigger:{
-                    trigger:".fotf",
-                    start:"top 1%",
-                    end:"top 1%",
-                    scrub:1,
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub: 1,
                 },
-                top: "50%",
+                top: "40%",
             }, 0);
 
         tl1.to(".char-3",
             {
-                scrollTrigger:{
-                    trigger:".fotf",
-                    start:"top 1%",
-                    end:"top 1%",
-                    scrub:1,
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub: 1,
                 },
-                marginLeft: "60%",
+                left: "60%",
             }, 0)
 
         tl1.to(".char-3",
             {
-                scrollTrigger:{
-                    trigger:".fotf",
-                    start:"top 1%",
-                    end:"top 1%",
-                    scrub:1,
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub: 1,
                 },
-                top: "50%",
+                top: "40%",
             }, 0)
 
         tl1.to(".char-4",
             {
-                scrollTrigger:{
-                    trigger:".fotf",
-                    start:"top 1%",
-                    end:"top 1%",
-                    scrub:1,
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub: 1,
                 },
-                marginLeft: "80%",
+                left: "80%",
             }, 0)
 
         tl1.to(".char-4",
             {
-                scrollTrigger:{
-                    trigger:".fotf",
-                    start:"top 1%",
-                    end:"top 1%",
-                    scrub:1,
+                scrollTrigger: {
+                    trigger: ".fotf",
+                    start: "top 1%",
+                    end: "top 1%",
+                    scrub: 1,
                 },
-                top: "50%",
+                top: "40%",
             }, 0)
 
     }, []);
@@ -104,47 +139,53 @@ export default function Page4() {
     return (
         <>
             <div className="page-4">
-              <div className="thanks d-flex flex-column justify-content-evenly align-items-center">
-                 <div className="thanks-top text-center">
-                 Thank you Friends Of <br /> The Future!
-                 </div>
-                 <div className="thanks-bottom">
-
-                 </div>
-              </div>
-            <div className='fotf position-relative'>
-                <div className='char-1 char position-absolute'>F</div>
-                <div className='char-2 char position-absolute'>O</div>
-                <div className='char-3 char position-absolute'>T</div>
-                <div className='char-4 char position-absolute'>F</div>
-                <div className="fotf-bg position-absolute d-flex flex-column">
-                    <div className="images"></div>
-                    <div className="footer d-flex">
-                      <div className="foot-left">
-                      <div className="privacy">
-                        <div className="f-sq"></div>
-                        <div className="privacy-text f-text">Privacy Policy</div>
-                      </div>
-                      <div className="terms">
-                      <div className="f-sq"></div>
-                        <div className="terms-text f-text">Terms of use</div>
-                      </div>
-                      <div className="legal">
-                      <div className="f-sq"></div>
-                        <div className="legal-text f-text">Legal liscence</div>
-                      </div>
-                      </div>
-                      <div className="foot-right">
-                        <div className="d-logo f-logo">
-                        <i class="fa-brands fa-discord"></i>
+                <div className="thanks d-flex flex-column justify-content-evenly align-items-center">
+                    <div className="thanks-top text-center">
+                        Thank you Friends Of <br /> The Future!
+                    </div>
+                    <div className="thanks-bottom d-flex justify-content-center align-items-center">
+                        <div className="snake-1">
+                            <img className='snake1-img' src="/IMG-20240130-WA0120.png" alt="" />
                         </div>
-                        <div className="t-logo f-logo">
-                        <i class="fa-brands fa-x-twitter"></i>
+                        <div className="snake-2">
+                            <img className='snake2-img' src="/IMG-20240130-WA0124.png" alt="" />
                         </div>
-                      </div>
                     </div>
                 </div>
-            </div>
+
+                <div className='fotf position-relative d-flex flex-column justify-content-center align-items-center'>
+                    <div className='char-1 char position-absolute'>F</div>
+                    <div className='char-2 char position-absolute'>O</div>
+                    <div className='char-3 char position-absolute'>T</div>
+                    <div className='char-4 char position-absolute'>F</div>
+                    <div className="fotf-bg position-absolute d-flex flex-column">
+                        <div className="images"></div>
+                        <div className="footer d-flex">
+                            <div className="foot-left">
+                                <div className="privacy">
+                                    <div className="f-sq"></div>
+                                    {/* <div className="privacy-text f-text"><Link to="/privacy">Privacy Policy</Link></div> */}
+                                </div>
+                                <div className="terms">
+                                    <div className="f-sq"></div>
+                                    {/* <div className="terms-text f-text"><Link to="/terms" >Terms of use</Link></div> */}
+                                </div>
+                                <div className="legal">
+                                    <div className="f-sq"></div>
+                                    {/* <div className="legal-text f-text"><Link to="/legal" >Legal liscence</Link></div> */}
+                                </div>
+                            </div>
+                            <div className="foot-right">
+                                <div className="d-logo f-logo">
+                                    <i class="fa-brands fa-discord"></i>
+                                </div>
+                                <div className="t-logo f-logo">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )

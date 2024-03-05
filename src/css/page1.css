@@ -28,11 +28,16 @@
     overflow: hidden;
 }
 
+.message{
+    transform: translateX(-400px);
+}
+
 .comp1-line{
     line-height: 120px;
     color: #07CE02;
     z-index: 20;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 .webkit-the{
@@ -45,7 +50,7 @@
     color: transparent;
 }
 
-/* buttons------------------ */
+/* -----------------buttons------------------ */
 
 .join-btns{
     font-size: 16px;
@@ -69,7 +74,7 @@
     transform: translateX(-60px);
 }
 
-/* comp2---------- */
+/* -----------------------------------comp2---------- */
 
 .page1-comp2{
     width: 100vw;
@@ -90,7 +95,7 @@
 .comp2-text{
     font-size: 12px;
     color: #07CE02;
-    opacity: .5;
+    opacity: .7;
 }
 
 .comp2-text-bg{
@@ -101,6 +106,15 @@
 .comp2-text-bg svg{
     width: 100%;
     height: 100%;
+}
+
+.mc-2{
+    animation: opacity-2 2s linear infinite;
+    /* transition: .5s ; */
+}
+.mc-3{
+    animation: opacity-3 2s linear infinite;
+    /* transition: .5s ; */
 }
 
 .community-top{
@@ -118,42 +132,69 @@
     line-height: 40px;
 }
 
-/* comp3----------------- */
+/* -----------------------comp3----------------- */
 
 .page1-comp3{
-    top: 50vh;
-    height: 540px;
-    width: 100vw;
-    overflow: hidden;
-    font-size: 90px;
-    font-weight: 800;
     text-transform: uppercase;
+    position: relative;
+    /* height: 540px; */
+    /* width: 100vw; */
+    /* overflow: hidden; */
+    color: transparent;
+    -webkit-text-stroke: 1px #07CE02;
+    font-size: 90px;
     line-height: 110px;
+    font-weight: 800;
     transition: .5s ease;
-    opacity: 0;
 }
 
-.webkit-1{
+.page1-comp3:hover{
+    cursor:default;
+}
+
+#web::before{
+    content: attr(data-text);
+    width: 0;
+    left: 0;
+    position: absolute;
     color: #07CE02;
+    overflow: hidden;
+    transition:all .3s ease-out;
+    /* z-index: 100; */
+    white-space: nowrap;
 }
 
-.webkit-2{
-    -webkit-text-stroke: 1px #07CE02;
-    color: transparent;
-}
-
-.webkit-4{
-    -webkit-text-stroke: 1px #07CE02;
-    color: transparent;
-}
-
-
-/* comp4--------------- */
+/* ----------------------comp4--------------- */
 
 .page1-comp4{
     height: 50vh;
     /* background-color: #07CE02; */
     width: 100vw;
+}
+
+/* ----------------keyframes----------------- */
+
+@keyframes opacity-2 {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes opacity-3 {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 1;
+    }
 }
 
 /* -------------media queries----------- */

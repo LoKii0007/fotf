@@ -4,6 +4,7 @@ import Page1 from "./components/page1"
 import Page2 from "./components/page2"
 import Page3 from "./components/page3"
 import Page4 from "./components/page4"
+import Terms from "./components/terms"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Layout/>
+      {/* <Terms/> */}
       <Page1/>
       <Page2/>
       <Page3/>

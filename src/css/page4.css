@@ -6,11 +6,21 @@
 }
 
 .thanks-top{
-    font-size: 70px;
+    font-size: 60px;
     color: #07CE02;
     text-transform: uppercase;
-    font-weight: 700;
     font-family: Space Games;
+}
+
+.snake1-img{
+    height: 250px;
+    border-radius: 125px;
+    transform: translateX(20px);
+}
+.snake2-img{
+    height: 300px;
+    border-radius: 150px;
+    transform: translateX(-20px);
 }
 
 .f-text{
@@ -26,4 +36,28 @@
 
 .f-logo{
     color: #07CE02;
+}
+
+/* ---------------fotf ----------------- */
+
+.fotf{
+    height: 100vh;
+    width: 100vw;
+}
+
+.char{
+    font-size: 100px;
+}
+
+.char-1{
+    top: 20%;
+}
+.char-2{
+    top: 40%;
+}
+.char-3{
+    top: 60%;
+}
+.char-4{
+    top: 80%;
 }

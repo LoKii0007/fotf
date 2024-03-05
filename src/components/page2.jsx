@@ -185,6 +185,12 @@ export default function Page2() {
     })
   }, [])
 
+  // ------------animation 5------------ (card suffle )---------------------
+
+  useEffect(()=>{
+      
+  }, [])
+
   return (
     <>
       <div className="page-2">
@@ -205,24 +211,55 @@ export default function Page2() {
             </div>
           </div>
           <div className="shuffle-bottom position-relative d-flex flex-column justify-content-center align-items-center">
+
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
-              <div className="layer-1 d-flex">
-                <img className='lr1-img1' src="/ALIENS01.png" alt="" />
-                <img className='lr1-img2' src="/ALIENS02.png" alt="" />
+
+              <div className="layer-1 position-absolute d-flex justify-content-between align-items-center ">
+                <img className='lr1-img1' src="/1.png" alt="" />
+                <img className='lr1-img2' src="/2.png" alt="" />
               </div>
-              <div className="layer-2 position-absolute d-flex">
-                <img className='lr2-img1' src="/ALIENS11.png" alt="" />
-                <img className='lr2-img2' src="/ALIENS12.png" alt="" />
+              <div className="layer-2 position-absolute d-flex justify-content-between align-items-center">
+                <img className='lr2-img1' src="/3.png" alt="" />
+                <img className='lr2-img2' src="/4.png" alt="" />
               </div>
-              <div className="layer-3 position-absolute d-flex">
-                <img className='lr3-img1' src="/ALIENS21.png" alt="" />
-                <img className='lr3-img2' src="/ALIENS22.png" alt="" />
+              <div className="layer-3 position-absolute d-flex justify-content-between align-items-center">
+                <img className='lr3-img1' src="/5.png" alt="" />
+                <img className='lr3-img2' src="/6.png" alt="" />
               </div>
-              <div className="layer-4 position-absolute d-flex">
-                <img className='lr4-img1' src="/ALIENS03.png" alt="" />
-                <img className='lr4-img2' src="/ALIENS04.png" alt="" />
+              <div className="layer-4 position-absolute d-flex justify-content-between align-items-center">
+                <img className='lr4-img1' src="/7.png" alt="" />
+                <img className='lr4-img2' src="/8.png" alt="" />
               </div>
+              <div className="layer-5 position-abolute d-flex justify-content-between align-items-center">
+                <img className='lr5-img1' src="/10-1.png" alt="" />
+                <img className='lr5-img2' src="/10.png" alt="" />
+              </div>
+              {/* <div className="layer-6 d-flex position-abolute justify-content-between align-items-center">
+                <img className='lr6-img1' src="/11-1.png" alt="" />
+                <img className='lr6-img2' src="/11.png" alt="" />
+              </div>
+              <div className="layer-7 d-flex position-abolute justify-content-between align-items-center">
+                <img className='lr7-img1' src="/12-1.png" alt="" />
+                <img className='lr7-img2' src="/12.png" alt="" />
+              </div>
+              <div className="layer-8 d-flex position-abolute justify-content-between align-items-center">
+                <img className='lr8-img1' src="/13-1.png" alt="" />
+                <img className='lr18img2' src="/13.png" alt="" />
+              </div>
+              <div className="layer-9 d-flex position-abolute justify-content-between align-items-center">
+                <img className='lr9-img1' src="/14-1.png" alt="" />
+                <img className='lr9-img2' src="/14.png" alt="" />
+              </div>
+              <div className="layer-10 d-flex position-abolute justify-content-between align-items-center">
+                <img className='lr10-img1' src="/15-1.png" alt="" />
+                <img className='lr10-img2' src="/15.png" alt="" />
+              </div>
+              <div className="layer-11 d-flex position-abolute justify-content-between align-items-center">
+                <img className='lr11-img1' src="/16-1.png" alt="" />
+                <img className='lr11-img2' src="/16(1).png" alt="" />
+              </div> */}
             </div>
+
             <div style={{ backgroundImage: "/faltu.svg" }} className="box-2 d-flex justify-content-center align-items-start">
               <div className="box2-content d-flex flex-column justify-content-evenly align-items-center">
               <div className="box2-top d-flex flex-column align-items-evenly justify-content-center">
@@ -233,7 +270,7 @@ export default function Page2() {
               <div className="box2-bottom d-flex align-items-center justify-content-center">
                 <div className="box2-img1 px-2 d-flex flex-column">
                   <div className="img1-text img-text">normies 1800 spots</div>
-                  <img className='img1-img box2-img' src="/IMG-20240130-WA0117.png" alt="" />
+                  <img className='img1-img box2-img' src="/55c2ee38400eef5224c3151b95d9d284.jpeg" alt="" />
                 </div>
                 <div className="box2-img2 px-2">
                   <div className="img2-text img-text">platinums 487 spots</div>
@@ -250,6 +287,7 @@ export default function Page2() {
               </div>
               </div>
             </div>
+
           </div>
         </div>
 

@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -37,6 +37,22 @@ body {
   font-family: 'Space Games';
   min-width: 320px;
   min-height: 100vh;
+}
+
+.terms{
+  color: #07CE02;
+  width: 100vw;
+}
+.page-head{
+  font-size: 57px;
+}
+.page-desc, .point-desc{
+  font-family: 'Space Mono';
+  font-size: 17px;
+  opacity: 0.5;
+}
+.point-head{
+  font-size: 35px;
 }
 
 h1 {

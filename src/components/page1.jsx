@@ -4,60 +4,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Observer from 'gsap/Observer';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import "../css/page1.css"
+import { CSSRulePlugin } from 'gsap/all';
 
 export default function Page1() {
 
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(Observer)
     gsap.registerPlugin(ScrollToPlugin)
+    gsap.registerPlugin(CSSRulePlugin)
 
 
     // ----------comp1 animations--------
 
-    //  observer-------------
-
-    // useEffect(() => {
-    //     const tl1 = gsap.timeline({
-    //         paused: true,
-    //         onComplete:()=>{
-    //             ScrollTrigger.update()
-    //         }
-    //     })
-    //     tl1.to(".page1-front", {
-
-    //     }, 0)
-    //     tl1.to(".page1-bg", {
-    //         duration:1
-    //     }, 0)
-    //     let observer = Observer.create({
-    //         target: window ,
-    //         type: "scroll, wheel",
-    //         onUp: () => {
-    //             tl1.reverse()
-    //         },
-    //         onDown: () => {
-    //             tl1.play()
-    //         },
-    //     })
-    //     ScrollTrigger.create({
-    //         trigger:".page1-comp4",
-    //         start:"top bottom",
-    //         end:"bottom top",
-    //         onEnter:()=>{
-    //             observer.enable()
-    //         },
-    //         onLeave:()=>{
-    //             observer.disable()
-    //         },
-    //         onEnterBack:()=>{
-    //             observer.enable()
-    //         }
-    //     })
-
-    // }, [])
-
-
-    // scrolltrigger------------------
     useEffect(() => {
         gsap.to(".page1-bg", {
             scrollTrigger: {
@@ -89,94 +47,129 @@ export default function Page1() {
 
     useEffect(() => {
 
-        gsap.to(".page1-bg", {
-            scrollTrigger: {
-                trigger: ".page1-comp2",
-                start: "top top",
-                end: "+=100px",
-                scrub: 1, 
-            },
+        const tl = gsap.timeline({
+            paused: true
+        })
+
+        tl.to(".page1-bg", {
             x: "-25vw",
             opacity: 0,
-            duration:1
+            duration: 1
         })
-        gsap.to(".page1-comp2", {
-            scrollTrigger: {
-                trigger: ".page1-comp2",
-                start: "top top",
-                end: "+=100px",
-                scrub: 1, 
+        // tl.to(".page1-comp2",{
+        //     y:"-100%",
+        //     duration:1
+        // },0)
+        // tl.to(".page1-comp3",{
+        //     top:"40vh",
+        //     opacity:1,
+        //     duration:.5
+        // },0)
+
+        ScrollTrigger.create({
+            trigger: ".page1-comp2",
+            start: "top top",
+            end: "top -100%",
+            scrub: .5,
+            onEnter: () => {
+                tl.play()
             },
-            y:"-100%",
-            duration:1
+            onLeaveBack: () => {
+                tl.reverse()
+            }
         })
-        gsap.to(".page1-comp3", {
-            scrollTrigger: {
-                trigger: ".page1-comp2",
-                start: "top top",
-                end: "+=100px",
-                scrub: .5, 
-            },
-            top:"40vh",
-            opacity:1,
-            duration:.8
-        }, 1)
-    },[])
+    }, [])
 
     // -------- comp3-animations-----------------
 
     useEffect(() => {
+        const rule1 = CSSRulePlugin.getRule(".webkit-1::before")
+        const rule2 = CSSRulePlugin.getRule(".webkit-2::before")
+        const rule3 = CSSRulePlugin.getRule(".webkit-3::before")
+        const rule4 = CSSRulePlugin.getRule(".webkit-4::before")
+
+        gsap.to(rule1, {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "top bottom",
+                end: "top 75%",
+                scrub: 1,
+            },
+            width: "100%",
+            transition: "all .5s linear"
+        })
+        gsap.to(".webkit-1", {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "top bottom",
+                end: "top 75%",
+                scrub: 1,
+            },
+            color:"green",
+            transition: "all .5s linear"
+        })
+
+        gsap.to(rule2, {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "top 75%",
+                end: "top 50%",
+                scrub: 1,
+            },
+            width: "100%",
+            transition: "all .5s linear"
+        })
         gsap.to(".webkit-2", {
             scrollTrigger: {
-                trigger: ".page1-comp4",
-                start: "top 50%",
+                trigger: ".page1-comp3",
+                start: "top 75%",
                 end: "top 50%",
-                scrub: 0,
+                scrub: 1,
             },
-            duration: .4,
-            color: "#07CE02",
-            stroke: "none",
+            color:"green",
+            transition: "all .5s linear"
         })
-        gsap.to(".page1-comp3", {
+
+        gsap.to(rule3, {
             scrollTrigger: {
-                trigger: ".page1-comp4",
+                trigger: ".page1-comp3",
                 start: "top 50%",
-                end: "top 50%",
-                scrub: 0,
+                end: "top 25%",
+                scrub: 1,
             },
-            duration: .4,
-            top:"30vh"
+            width: "100%",
+            transition: "all .5s linear"
+        })
+        gsap.to(".webkit-3", {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "top 50%",
+                end: "top 25%",
+                scrub: 1,
+            },
+            color:"green",
+            transition: "all .5s linear"
+        })
+
+        gsap.to(rule4, {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "top 25%",
+                end: "top top",
+                scrub: 1,
+            },
+            width: "100%",
+            transition: "all .5s linear"
         })
         gsap.to(".webkit-4", {
             scrollTrigger: {
-                trigger: ".page1-comp4",
-                start: "top 35%",
-                end: "top 35%",
-                scrub: 0,
+                trigger: ".page1-comp3",
+                start: "top 25%",
+                end: "top top",
+                scrub: 1,
             },
-            duration: .4,
-            color: "#07CE02",
-            stroke: "none",
-        })
-        gsap.to(".page1-comp3", {
-            scrollTrigger: {
-                trigger: ".page1-comp4",
-                start: "top 35%",
-                end: "top 35%",
-                scrub: 0,
-            },
-            duration: .4,
-            top:"20vh"
-        })
-        gsap.to(".page1-comp3", {
-            scrollTrigger: {
-                trigger: ".page1-comp4",
-                start: "top top",
-                end: "top -70%",
-                scrub: false,
-                toggleActions:"play pause resume reset"
-            },
-            y:"-100vh"
+           color:"green",
+            transition: "all .5s linear"
         })
 
     }, [])
@@ -232,14 +225,23 @@ export default function Page1() {
 
                 <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
                     <div className="comp2-top p-5 position-relative">
-                        <div className="comp2-head">
+                        <div className="comp2-head pb-3">
                             FRIENDS OF THE FUTURE 01
                         </div>
-                        <div className="comp2-text">
+                        <div className="comp2-text position-relative d-flex justify-content-center align-items-center">
                             This project tells the story of 4 friends that come together thanks to web 3.
                             Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
 
                             Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
+                            <div className="message position-absolute">
+                                <svg width="114" height="96" viewBox="0 0 114 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M55.7528 73.7158L32.4688 93.8157V74.4727V73.4727H31.4688H1V1H113V73.4727H56.4062H56.0343L55.7528 73.7158Z" stroke="#07CE02" stroke-width="2" />
+                                    <circle className='mc-1' cx="28" cy="33" r="12" fill="#07CE02" />
+                                    <circle className='mc-2' cx="56" cy="33" r="12" fill="#07CE02" />
+                                    <circle className='mc-3' cx="84" cy="33" r="12" fill="#07CE02" />
+                                </svg>
+
+                            </div>
                         </div>
                         <div className="comp2-text-bg position-absolute">
                             <svg viewBox="0 0 925 526" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -271,17 +273,18 @@ export default function Page1() {
                             FOR COMMUNITY
                         </div>
                     </div>
+
                 </div>
 
-                <div className="page1-comp3 position-fixed d-flex flex-column justify-content-center align-items-center">
-                    <div className='webkit-1 text-center'>we ar<span className='webkit-2'>e not here</span></div>
-                    <div className='webkit-2 text-center'>to take part, we</div>
-                    <div className='webkit-2 text-center'>are her<span className='webkit-4'>e to</span></div>
-                    <div className='webkit-4 text-center'>take over.</div>
+                <div className="page1-comp3 d-flex flex-column justify-content-center align-items-center">
+                    <div data-text="we are not here" id='web' className='webkit-1 text-center'>we are not here</div>
+                    <div data-text="to take part, we" id='web' className='webkit-2 text-center'>to take part, we</div>
+                    <div data-text="are here to" id='web' className='webkit-3 text-center'>are here to</div>
+                    <div data-text="take over." id='web' className='webkit-4 text-center'>take over.</div>
                 </div>
 
-                <div className="page1-comp4">
-                </div>
+                {/* <div className="page1-comp4">
+                </div> */}
             </div>
         </>
     )
