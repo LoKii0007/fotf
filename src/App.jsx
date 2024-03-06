@@ -13,6 +13,17 @@ function App() {
 
   },[])
 
+  // let stylesheet = document.styleSheets[2];
+
+  // fetch(stylesheet.href)
+  //   .then(response => response.text())
+  //   .then(response => {
+  //       const st = document.createElement('style');
+  //       st.textContent = response;
+  //       document.body.append(st);
+  //   });
+
+
   return (
     <>
       <Layout/>

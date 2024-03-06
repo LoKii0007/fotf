@@ -137,9 +137,8 @@
 .page1-comp3{
     text-transform: uppercase;
     position: relative;
-    /* height: 540px; */
-    /* width: 100vw; */
-    /* overflow: hidden; */
+    width: 100vw;
+    overflow: hidden;
     color: transparent;
     -webkit-text-stroke: 1px #07CE02;
     font-size: 90px;
@@ -152,16 +151,13 @@
     cursor:default;
 }
 
-#web::before{
-    content: attr(data-text);
-    width: 0;
-    left: 0;
-    position: absolute;
-    color: #07CE02;
+.web-1, .web-2, .web-3 , .web-4{
+    top: 0%;
+    left: 0%;
+    width: 0%;
     overflow: hidden;
-    transition:all .3s ease-out;
-    /* z-index: 100; */
     white-space: nowrap;
+    color: #07CE02;
 }
 
 /* ----------------------comp4--------------- */

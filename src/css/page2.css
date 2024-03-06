@@ -51,111 +51,70 @@
 .layer-1{
     z-index: 400;
     width: 450px;
-    animation: layer1-anime 8s linear infinite;
-}
-.lr1-img1, .lr1-img2{
-    height: 250px;
-    animation: layer1-img-anime 8s linear infinite;
 }
 
 .layer-2{
     z-index: 300;
     width: 700px;
-    animation: layer2-anime 8s linear infinite;
 }
 .lr2-img1, .lr2-img2{
     height: 210px;
-    animation: layer2-img-anime 8s linear infinite;
 }
 
 .layer-3{
     z-index: 200;
     width: 900px;
-    animation: layer3-anime 8s linear infinite;
 }
 .lr3-img1 , .lr3-img2{
     height: 170px;
-    animation: layer3-img-anime 8s linear infinite;
 }
 
 .layer-4{
     z-index: 100;
     width: 1050px;
-    animation: layer4-anime 8s linear infinite;
 }
 .lr4-img1, .lr4-img2{
     height: 130px;
-    animation: layer4-img-anime 8s linear infinite;
 }
 
 .layer-5{
     z-index: 500;
     width: 450px;
-    animation: layer5-anime 8s linear infinite;
-}
-.lr5-img1, .lr5-img2{
-    height: 250px;
-    animation: layer5-img-anime 8s linear infinite;
 }
 
 .layer-6{
     z-index: 600;
     width: 450px;
-    animation: layer6-anime 8s linear infinite;
-}
-.lr6-img1, .lr6-img2{
-    height: 250px;
-    animation: layer6-img-anime 8s linear infinite;
 }
 
 .layer-7{
     z-index: 700;
     width: 450px;
-    animation: layer7-anime 8s linear infinite;
-}
-.lr7-img1, .lr7-img2{
-    height: 250px;
-    animation: layer7-img-anime 8s linear infinite;
 }
 
 .layer-8{
     z-index: 800;
     width: 450px;
-    animation: layer8-anime 8s linear infinite;
-}
-.lr8-img1, .lr8-img2{
-    height: 250px;
-    animation: layer8-img-anime 8s linear infinite;
 }
 
 .layer-9{
     z-index: 900;
     width: 450px;
-    animation: layer9-anime 8s linear infinite;
-}
-.lr9-img1, .lr9-img2{
-    height: 250px;
-    animation: layer9-img-anime 8s linear infinite;
 }
 
 .layer-10{
     z-index: 1000;
     width: 450px;
-    animation: layer10-anime 8s linear infinite;
-}
-.lr10-img1, .lr10-img2{
-    height: 250px;
-    animation: layer10-img-anime 8s linear infinite;
 }
 
 .layer-11{
     z-index: 1100;
+    opacity:0;
     width: 450px;
-    animation: layer11-anime 8s linear infinite;
 }
-.lr11-img1, .lr11-img2{
+
+.lr1-img1, .lr1-img2, .lr5-img1, .lr5-img2, .lr6-img1, .lr6-img2, .lr7-img1, .lr7-img2 , .lr8-img1, .lr8-img2 , .lr9-img1, .lr9-img2, .lr10-img1, .lr10-img2, .lr11-img1, .lr11-img2{
     height: 250px;
-    animation: layer11-img-anime 8s linear infinite;
 }
 
 
@@ -327,6 +286,9 @@
         height: 90px;
         opacity: 0;
     }
+    87.5%{
+        opacity: 0;
+    }
 }
 
 
@@ -371,6 +333,272 @@
     }
 }
 
+
+@keyframes layer6-anime{
+    0% , 25%{
+        width: 450px;
+    }
+    31.25%, 37.5%{
+        width: 700px;
+    }
+    43.75%, 50%{
+        width: 900px;
+    }
+    56.25%, 62.5%{
+        width: 1050px;
+    }
+    68.75%{
+        width: 1150px;
+    }
+}
+@keyframes layer6-img-anime{
+    12.5%{
+        opacity: 0;
+    }
+    18.75%, 25%{
+        opacity: 1;
+        height: 250px;
+    }
+    31.25%, 37.5%{
+        height: 210px;
+    }
+    43.75%, 50%{
+        height: 170px;
+    }
+    56.25%, 100%{
+        height: 130px;
+        opacity: 1;
+    }
+    62.5%, 100%{
+        height: 90px;
+        opacity: 0;
+    }
+}
+
+
+/* @keyframes layer7-anime{
+    0% , 37.5%{
+        width: 450px;
+    }
+    43.75%, 50%{
+        width: 700px;
+    }
+    56.25%, 62.5%{
+        width: 900px;
+    }
+    68.75%, 75%{
+        width: 1050px;
+    }
+    81.25%{
+        width: 1150px;
+    }
+}
+@keyframes layer7-img-anime{
+    12.5%{
+        opacity: 0;
+    }
+    18.75%, 25%{
+        opacity: 1;
+        height: 250px;
+    }
+    31.25%, 37.5%{
+        height: 210px;
+    }
+    43.75%, 50%{
+        height: 170px;
+    }
+    56.25%, 100%{
+        height: 130px;
+        opacity: 1;
+    }
+    62.5%, 100%{
+        height: 90px;
+        opacity: 0;
+    }
+} */
+
+@keyframes layer7-anime{
+    0% , 37.5%{
+        width: 450px;
+    }
+    43.75%, 50%{
+        width: 700px;
+    }
+    56.25%, 62.5%{
+        width: 900px;
+    }
+    68.75%, 75%{
+        width: 1050px;
+    }
+    81.25%{
+        width: 1150px;
+    }
+}
+@keyframes layer7-img-anime{
+    18.75%{
+        opacity: 0;
+    }
+    25%, 31.25%{
+        opacity: 1;
+        height: 250px;
+    }
+    37.5%, 43.75%{
+        height: 210px;
+    }
+    50%, 56.25%{
+        height: 170px;
+    }
+    62.5%, 100%{
+        height: 130px;
+        opacity: 1;
+    }
+    75%, 100%{
+        height: 90px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes layer8-anime{
+    0% , 50%{
+        width: 450px;
+    }
+    56.25%, 62.5%{
+        width: 700px;
+    }
+    68.75%, 75%{
+        width: 900px;
+    }
+    81.25%, 87.5%{
+        width: 1050px;
+    }
+    93.75%{
+        width: 1150px;
+    }
+}
+@keyframes layer8-img-anime{
+    25%{
+        opacity: 0;
+    }
+    31.25%, 37.5%{
+        opacity: 1;
+        height: 250px;
+    }
+    43.75%, 50%{
+        height: 210px;
+    }
+    56.25%, 62.5%{
+        height: 170px;
+    }
+    68.75%, 100%{
+        height: 130px;
+        opacity: 1;
+    }
+    75%, 100%{
+        height: 90px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes layer9-anime{
+    0% , 62.5%{
+        width: 450px;
+    }
+    68.75%, 75%{
+        width: 700px;
+    }
+    81.25%, 87.5%{
+        width: 900px;
+    }
+    93.75%, 100%{
+        width: 1050px;
+    }
+}
+@keyframes layer9-img-anime{
+    31.25%{
+        opacity: 0;
+    }
+    37.5%, 43.75%{
+        opacity: 1;
+        height: 250px;
+    }
+    50%, 56.25%{
+        height: 210px;
+    }
+    62.5%, 68.75%{
+        height: 170px;
+    }
+    75%, 100%{
+        height: 130px;
+        opacity: 1;
+    }
+    87.5%, 100%{
+        height: 90px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes layer10-anime{
+    0%, 75%{
+        width: 450px;
+    }
+    81.25%, 87.5%{
+        width: 700px;
+    }
+    93.75%, 100%{
+        width: 900px;
+    }
+}
+@keyframes layer10-img-anime{
+    43.75%{
+        opacity: 0;
+    }
+    50%, 56.25%{
+        opacity: 1;
+        height: 250px;
+    }
+    62.5%, 68.75%{
+        height: 210px;
+    }
+    75%, 81.25%{
+        height: 170px;
+    }
+    87.5%, 100%{
+        height: 130px;
+        opacity: 1;
+    }
+}
+
+
+@keyframes layer11-anime{
+    0%, 87.5%{
+        width: 450px;
+    }
+    93.75%, 100%{
+        width: 700px;
+    }
+}
+@keyframes layer11-img-anime{
+    56.25%{
+        opacity: 0;
+    }
+    62.5%, 68.75%{
+        opacity: 1;
+        height: 250px;
+    }
+    75%, 81.25%{
+        height: 210px;
+    }
+    87.5%, 93.75%{
+        height: 170px;
+    }
+    100%{
+        height: 130px;
+        opacity: 1;
+    }
+}
 
 /* ---------------------media qyueries------------- */
 

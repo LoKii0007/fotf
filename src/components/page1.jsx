@@ -4,14 +4,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Observer from 'gsap/Observer';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import "../css/page1.css"
-import { CSSRulePlugin } from 'gsap/all';
 
 export default function Page1() {
 
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(Observer)
     gsap.registerPlugin(ScrollToPlugin)
-    gsap.registerPlugin(CSSRulePlugin)
 
 
     // ----------comp1 animations--------
@@ -83,92 +81,45 @@ export default function Page1() {
     // -------- comp3-animations-----------------
 
     useEffect(() => {
-        const rule1 = CSSRulePlugin.getRule(".webkit-1::before")
-        const rule2 = CSSRulePlugin.getRule(".webkit-2::before")
-        const rule3 = CSSRulePlugin.getRule(".webkit-3::before")
-        const rule4 = CSSRulePlugin.getRule(".webkit-4::before")
 
-        gsap.to(rule1, {
+        gsap.to(".web-1", {
             scrollTrigger: {
                 trigger: ".page1-comp3",
                 start: "top bottom",
                 end: "top 75%",
                 scrub: 1,
             },
-            width: "100%",
+            width:"100%",
             transition: "all .5s linear"
         })
-        gsap.to(".webkit-1", {
-            scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top bottom",
-                end: "top 75%",
-                scrub: 1,
-            },
-            color:"green",
-            transition: "all .5s linear"
-        })
-
-        gsap.to(rule2, {
+        gsap.to(".web-2", {
             scrollTrigger: {
                 trigger: ".page1-comp3",
                 start: "top 75%",
                 end: "top 50%",
                 scrub: 1,
             },
-            width: "100%",
+            width:"100%",
             transition: "all .5s linear"
         })
-        gsap.to(".webkit-2", {
-            scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top 75%",
-                end: "top 50%",
-                scrub: 1,
-            },
-            color:"green",
-            transition: "all .5s linear"
-        })
-
-        gsap.to(rule3, {
+        gsap.to(".web-3", {
             scrollTrigger: {
                 trigger: ".page1-comp3",
                 start: "top 50%",
                 end: "top 25%",
                 scrub: 1,
             },
-            width: "100%",
+            width:"100%",
             transition: "all .5s linear"
         })
-        gsap.to(".webkit-3", {
-            scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top 50%",
-                end: "top 25%",
-                scrub: 1,
-            },
-            color:"green",
-            transition: "all .5s linear"
-        })
-
-        gsap.to(rule4, {
+        gsap.to(".web-4", {
             scrollTrigger: {
                 trigger: ".page1-comp3",
                 start: "top 25%",
                 end: "top top",
                 scrub: 1,
             },
-            width: "100%",
-            transition: "all .5s linear"
-        })
-        gsap.to(".webkit-4", {
-            scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top 25%",
-                end: "top top",
-                scrub: 1,
-            },
-           color:"green",
+            width:"100%",
             transition: "all .5s linear"
         })
 
@@ -277,10 +228,22 @@ export default function Page1() {
                 </div>
 
                 <div className="page1-comp3 d-flex flex-column justify-content-center align-items-center">
-                    <div data-text="we are not here" id='web' className='webkit-1 text-center'>we are not here</div>
-                    <div data-text="to take part, we" id='web' className='webkit-2 text-center'>to take part, we</div>
-                    <div data-text="are here to" id='web' className='webkit-3 text-center'>are here to</div>
-                    <div data-text="take over." id='web' className='webkit-4 text-center'>take over.</div>
+                    <div className="sudo-1 position-relative">
+                        <div className='webkit-1 text-center'>we are not here</div>
+                        <div className='web-1 text-center position-absolute'>we are not here</div>
+                    </div>
+                    <div className="sudo-2 position-relative">
+                        <div className='webkit-2 text-center'>to take part, we</div>
+                        <div className='web-2 text-center position-absolute'>to take part, we</div>
+                    </div>
+                    <div className="sudo-3 position-relative">
+                        <div className='webkit-3 text-center'>are here to</div>
+                        <div className='web-3 text-center position-absolute'>are here to</div>
+                    </div>
+                    <div className="sudo-4 position-relative">
+                        <div className='webkit-4 text-center'>take over.</div>
+                        <div className='web-4 text-center position-absolute'>take over.</div>
+                    </div>
                 </div>
 
                 {/* <div className="page1-comp4">
