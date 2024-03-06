@@ -84,9 +84,9 @@ export default function Page1() {
 
         gsap.to(".web-1", {
             scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top bottom",
-                end: "top 75%",
+                trigger: ".webkit-1",
+                start: "top 80%",
+                end: "top 60%",
                 scrub: 1,
             },
             width:"100%",
@@ -94,9 +94,9 @@ export default function Page1() {
         })
         gsap.to(".web-2", {
             scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top 75%",
-                end: "top 50%",
+                trigger: ".webkit-2",
+                start: "top 60%%",
+                end: "top 40%",
                 scrub: 1,
             },
             width:"100%",
@@ -104,9 +104,9 @@ export default function Page1() {
         })
         gsap.to(".web-3", {
             scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top 50%",
-                end: "top 25%",
+                trigger: ".webkit-3",
+                start: "top 40%",
+                end: "top 20%",
                 scrub: 1,
             },
             width:"100%",
@@ -114,8 +114,8 @@ export default function Page1() {
         })
         gsap.to(".web-4", {
             scrollTrigger: {
-                trigger: ".page1-comp3",
-                start: "top 25%",
+                trigger: ".webkit-3",
+                start: "top 20%",
                 end: "top top",
                 scrub: 1,
             },

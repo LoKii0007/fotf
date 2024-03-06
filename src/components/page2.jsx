@@ -9,7 +9,7 @@ gsap.registerPlugin(Observer)
 
 export default function Page2() {
 
-  const [flag, setFlag] = useState(false)
+  const [flag, setFlag] = useState(true)
 
 
   // animation1-------------(green box rotation)-----------------------
@@ -47,7 +47,7 @@ export default function Page2() {
     }, 0)
     .to(".layers", {
       y: 0,
-      duration: .5,
+      duration: .5, 
     }, 0)
     .progress(1).progress(0)
 
@@ -58,7 +58,7 @@ export default function Page2() {
       scrub: 1,
       onEnter: () => {
         tl1.play()
-        // setFlag(true)
+        // setFlag(true)  
       },
       onLeaveBack: () => {
         tl1.reverse()
@@ -104,7 +104,7 @@ export default function Page2() {
       // markers:true,
       scrub: .8,
       onEnter: () => {
-        setFlag(false)
+        // setFlag(false)
         tl2.play()
       },
       onLeaveBack: () => {
@@ -243,24 +243,24 @@ export default function Page2() {
                 <img style={{animation: flag? "layer6-img-anime 8s linear infinite" : ""}} className='lr6-img2' src="/11-1.png" alt="" />
               </div>
               <div style={{animation: flag? "layer7-anime 8s linear infinite" : ""}} className="layer-7 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{animation: flag? "layer7-img-anime 8s linear infinite" : ""}} className='lr7-img1' src="/12-1.png" alt="" />
-                <img style={{animation: flag? "layer7-img-anime 8s linear infinite" : ""}} className='lr7-img2' src="/12.png" alt="" />
+                <img style={{animation: flag? "layer7-img-anime 8s linear infinite" : ""}} className='lr7-img1' src="/12.png" alt="" />
+                <img style={{animation: flag? "layer7-img-anime 8s linear infinite" : ""}} className='lr7-img2' src="/12-1.png" alt="" />
               </div>
               <div style={{animation: flag? "layer8-anime 8s linear infinite" : ""}} className="layer-8 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{animation: flag? "layer8-img-anime 8s linear infinite" : ""}} className='lr8-img1' src="/13-1.png" alt="" />
-                <img style={{animation: flag? "layer8-img-anime 8s linear infinite" : ""}} className='lr8-img2' src="/13.png" alt="" />
+                <img style={{animation: flag? "layer8-img-anime 8s linear infinite" : ""}} className='lr8-img1' src="/13.png" alt="" />
+                <img style={{animation: flag? "layer8-img-anime 8s linear infinite" : ""}} className='lr8-img2' src="/13-1.png" alt="" />
               </div>
               <div style={{animation: flag? "layer9-anime 8s linear infinite" : ""}} className="layer-9 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{animation: flag? "layer5-img-anime 8s linear infinite" : ""}} className='lr9-img1' src="/14-1.png" alt="" />
-                <img style={{animation: flag? "layer5-img-anime 8s linear infinite" : ""}} className='lr9-img2' src="/14.png" alt="" />
+                <img style={{animation: flag? "layer9-img-anime 8s linear infinite" : ""}} className='lr9-img1' src="/14.png" alt="" />
+                <img style={{animation: flag? "layer9-img-anime 8s linear infinite" : ""}} className='lr9-img2' src="/14-1.png" alt="" />
               </div>
               <div style={{animation: flag? "layer10-anime 8s linear infinite" : ""}} className="layer-10 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{animation: flag? "layer10-img-anime 8s linear infinite" : ""}} className='lr10-img1' src="/15-1.png" alt="" />
-                <img style={{animation: flag? "layer10-img-anime 8s linear infinite" : ""}} className='lr10-img2' src="/15.png" alt="" />
+                <img style={{animation: flag? "layer10-img-anime 8s linear infinite" : ""}} className='lr10-img1' src="/15.png" alt="" />
+                <img style={{animation: flag? "layer10-img-anime 8s linear infinite" : ""}} className='lr10-img2' src="/15-1.png" alt="" />
               </div>
               <div style={{animation: flag? "layer11-anime 8s linear infinite" : ""}} className="layer-11 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{animation: flag? "layer11-img-anime 8s linear infinite" : ""}} className='lr11-img1' src="/16-1.png" alt="" />
-                <img style={{animation: flag? "layer11-img-anime 8s linear infinite" : ""}} className='lr11-img2' src="/16(1).png" alt="" />
+                <img style={{animation: flag? "layer11-img-anime 8s linear infinite" : ""}} className='lr11-img1' src="/16.png" alt="" />
+                <img style={{animation: flag? "layer11-img-anime 8s linear infinite" : ""}} className='lr11-img2' src="/16-1.png" alt="" />
               </div>
             </div>
 
