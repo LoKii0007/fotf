@@ -177,16 +177,16 @@ export default function Page3() {
 
   // ----------roadmap progress ----------------
 
-  useEffect(()=>{
-      gsap.to(".progress", {
-        scrollTrigger:{
-          trigger:".road",
-          start:"top bottom",
-          end:"top top",
-          scrub:0.4,
-        },
-        width:"100vw"
-      })
+  useEffect(() => {
+    gsap.to(".progress", {
+      scrollTrigger: {
+        trigger: ".road",
+        start: "top bottom",
+        end: "top 80%",
+        scrub: 0.4,
+      },
+      width: "12vw"
+    })
   }, [])
 
 
@@ -195,8 +195,13 @@ export default function Page3() {
       <div className="page-3 ">
         <div className="page3-comp1 d-flex position-relative justify-content-between align-items-center">
 
-          <div className="page3-left">
-            <img className='chadi' src="/chadi.png" alt="" />
+          <div className="page3-left position-relative">
+            <div className="chadi ">
+              <img className='chadi-img' src="/chadi.png" alt="" />
+            </div>
+            <div className="stick position-absolute">
+              <img className='stick-img' src="/staff.png" alt="" />
+            </div>
           </div>
 
           <div className="page3-right pt-5 d-flex flex-column justify-content-between ">
@@ -316,7 +321,8 @@ export default function Page3() {
             <div className="road-1 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div className="road-top text-center">kick off</div>
               <div className="road-bottom text-center">We launch the Friends of the Future website and social media</div>
-              <div style={{}} className="sq-1 sq position-absolute"></div>
+              <div className="sq-1 sq position-absolute"></div>
+              {/* <div className="stop-pro position-absolute"></div> */}
             </div>
             <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div className="road-top text-center">normies reveal</div>

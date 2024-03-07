@@ -14,28 +14,41 @@ export default function Page4() {
 
     useEffect(() => {
 
-        gsap.to(".snake-1" ,{
-            scrollTrigger:{
-                trigger:".fotf",
-                start:"top 90%",
-                end:"+=25px",
-                scrub:1
+        gsap.to(".snake-1", {
+            scrollTrigger: {
+                trigger: ".fotf",
+                start: "top 90%",
+                end: "+=25px",
+                scrub: 1
             },
-            x: 115,
+            x: 110,
             rotateY: "360deg",
-            duration:1
+            opacity: 0,
+            duration: 1
         })
 
-        gsap.to(".snake-2" ,{
-            scrollTrigger:{
-                trigger:".fotf",
-                start:"top 90%",
-                end:"+=25px",
-                scrub:1
+        gsap.to(".snake-2", {
+            scrollTrigger: {
+                trigger: ".fotf",
+                start: "top 90%",
+                end: "+=25px",
+                scrub: 1
             },
-            x: -115,
+            x: -110,
             rotateY: "360deg",
-            duration:1
+            opacity: 0,
+            duration: 1
+        })
+
+        gsap.to(".kaali-naagin", {
+            scrollTrigger: {
+                trigger: ".fotf",
+                start: "top 90%",
+                end: "+=25px",
+                scrub: 1
+            },
+            backgroundColor: "black",
+            duration: 1
         })
 
     }, [])
@@ -143,36 +156,39 @@ export default function Page4() {
                     <div className="thanks-top text-center">
                         Thank you Friends Of <br /> The Future!
                     </div>
-                    <div className="thanks-bottom d-flex justify-content-center align-items-center">
+                    <div className="thanks-bottom d-flex justify-content-center align-items-center position-relative">
                         <div className="snake-1">
                             <img className='snake1-img' src="/IMG-20240130-WA0120.png" alt="" />
                         </div>
                         <div className="snake-2">
                             <img className='snake2-img' src="/IMG-20240130-WA0124.png" alt="" />
                         </div>
+                        <div className="kaali-naagin position-absolute d-flex justify-content-center align-items-center">
+                            fotf
+                        </div>
                     </div>
                 </div>
 
                 <div className='fotf position-relative d-flex flex-column justify-content-center align-items-center'>
-                    <div className='char-1 char position-absolute'>F</div>
-                    <div className='char-2 char position-absolute'>O</div>
-                    <div className='char-3 char position-absolute'>T</div>
-                    <div className='char-4 char position-absolute'>F</div>
-                    <div className="fotf-bg position-absolute d-flex flex-column">
+                    <div className='char-1 char position-absolute '>F</div>
+                    <div className='char-2 char position-absolute '>O</div>
+                    <div className='char-3 char position-absolute '>T</div>
+                    <div className='char-4 char position-absolute '>F</div>
+                    {/* <div className="fotf-bg position-absolute d-flex flex-column">
                         <div className="images"></div>
                         <div className="footer d-flex">
                             <div className="foot-left">
                                 <div className="privacy">
                                     <div className="f-sq"></div>
-                                    {/* <div className="privacy-text f-text"><Link to="/privacy">Privacy Policy</Link></div> */}
+                                    <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link>
                                 </div>
                                 <div className="terms">
                                     <div className="f-sq"></div>
-                                    {/* <div className="terms-text f-text"><Link to="/terms" >Terms of use</Link></div> */}
+                                    <Link className="terms-text f-text" to="/terms" >Terms of use</Link>
                                 </div>
                                 <div className="legal">
                                     <div className="f-sq"></div>
-                                    {/* <div className="legal-text f-text"><Link to="/legal" >Legal liscence</Link></div> */}
+                                    <Link className="legal-text f-text" to="/legal" >Legal liscence</Link>
                                 </div>
                             </div>
                             <div className="foot-right">
@@ -184,7 +200,7 @@ export default function Page4() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

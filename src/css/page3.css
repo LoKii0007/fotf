@@ -10,17 +10,28 @@
 }
 
 .chadi{
+    z-index: 100;
+}
+.staff{
+    z-index: 20000;
+}
+
+.chadi-img{
     height: 800px;
+}
+
+.stick-img{
+    height: 800px;
+    top: 0%;
+    left: 0%;
 }
 
 .sound-img{
     height: 50px;
 }
-
 .crystal-img{
     height: 200px;
 }
-
 .world-img{
     height: 80px;
 }
@@ -230,11 +241,12 @@
 .roadmap-top{
     font-size: 57px;
     font-weight: 700;
-    color: #70CE02;
+    color: #07CE02;
+    z-index: 100;
 }
 
 .road{
-    border:1px solid #70CE02;
+    border:1px solid #07CE02;
     height: 5px;
     top: 150px;
     width: 100vw;
@@ -242,9 +254,10 @@
 }
 
 .progress{
-    background-color: #70CE02;
+    background-color: #07CE02;
     height: 100%;
     border-radius: 0%;
+    z-index: 500;
 }
 
 .pro-sq{
@@ -255,21 +268,40 @@
     width: 10px;
     height: 10px;
     rotate: 45deg;
-    border: 1px solid #70CE02;
+    border: 1px solid #07CE02;
     background-color: black;
     z-index: 30;
 } 
 
+.sq-1{
+    background-color: #07CE02;
+    animation: rotate 1.5s linear infinite; 
+    transition: .5s ease-in;
+}
+
+.stop-pro{
+    height: 5px;
+    width: 50px;
+    border-top:1px solid #07CE02;
+    border-bottom:1px solid #07CE02;
+    z-index: 2000;
+    background-color: yellow;
+    z-index: 1000;
+    top: 0%;
+}
+
 .sq-1 , .sq-3, .sq-5{
     top: -2.5px;
+    z-index: 1000;
 }
 .sq-2 , .sq-4, .sq-6{
     top: 147.5px;
+    z-index: 1000;
 }
 
 .roadmap-bottom{
     height: 300px;
-    color: #70CE02;
+    color: #07CE02;
 }
 
 .rd {
