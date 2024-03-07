@@ -226,7 +226,7 @@ export default function Page3() {
               </div>
             </div>
 
-            <div className="comp31-bottom pe-5 d-flex justify-content-end align-items-end">
+            <div className="comp31-bottom d-flex justify-content-end align-items-end">
               <div className="hero-comp d-flex">
                 <div className="hero-1">
                   <div className="hero-11">
