@@ -151,7 +151,7 @@ export default function Page4() {
 
     return (
         <>
-            <div className="page-4">
+            <div className="page-4 d-flex flex-column">
                 <div className="thanks d-flex flex-column justify-content-evenly align-items-center">
                     <div className="thanks-top text-center">
                         Thank you Friends Of <br /> The Future!
@@ -175,33 +175,39 @@ export default function Page4() {
                     <div className='char-3 char position-absolute '>T</div>
                     <div className='char-4 char position-absolute '>F</div>
                     {/* <div className="fotf-bg position-absolute d-flex flex-column">
-                        <div className="images"></div>
-                        <div className="footer d-flex">
-                            <div className="foot-left">
-                                <div className="privacy">
-                                    <div className="f-sq"></div>
-                                    <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link>
-                                </div>
-                                <div className="terms">
-                                    <div className="f-sq"></div>
-                                    <Link className="terms-text f-text" to="/terms" >Terms of use</Link>
-                                </div>
-                                <div className="legal">
-                                    <div className="f-sq"></div>
-                                    <Link className="legal-text f-text" to="/legal" >Legal liscence</Link>
-                                </div>
-                            </div>
-                            <div className="foot-right">
-                                <div className="d-logo f-logo">
-                                    <i class="fa-brands fa-discord"></i>
-                                </div>
-                                <div className="t-logo f-logo">
-                                    <i class="fa-brands fa-x-twitter"></i>
-                                </div>
-                            </div>
+                        <div className="images">
                         </div>
                     </div> */}
                 </div>
+
+                {/* <div className="footer p-4 d-flex justify-content-between align-items-center">
+                    <div className="ft-left d-flex">
+                        <div className="privacy">
+                            <div className="f-sq"></div>
+                            <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link>
+                            <div className='f-text'>Privacy Policy</div>
+                        </div>
+                        <div className="terms px-3">
+                            <div className="f-sq"></div>
+                            <Link className="terms-text f-text" to="/terms" >Terms of use</Link>
+                            <div className='f-text'>Terms of use</div>
+                        </div>
+                        <div className="legal">
+                            <div className="f-sq"></div>
+                            <Link className="legal-text f-text" to="/legal" >Legal liscence</Link>
+                            <div className='f-text'>Legal liscence</div>
+                        </div>
+                    </div>
+
+                    <div className="ft-right d-flex justify-content-center align-items-center">
+                        <div className="d-logo f-logo">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <div className="t-logo f-logo">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </div>
+                    </div>
+                </div> */}
             </div>
         </>
     )

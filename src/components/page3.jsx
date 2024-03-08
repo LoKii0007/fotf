@@ -9,80 +9,129 @@ gsap.registerPlugin(Flip)
 
 export default function Page3() {
 
-  const [flag, setFlag] = useState(false)
-  const [rotation, setRotation] = useState(0)
+  const [flag, setFlag] = useState(true)
   const [isHovered1, setIsHovered1] = useState(false)
   const [isHovered2, setIsHovered2] = useState(false)
   const [isHovered3, setIsHovered3] = useState(false)
   const [isHovered4, setIsHovered4] = useState(false)
 
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 600) {
+        setFlag(false)
+      } else {
+        setFlag(true)
+      }
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+  }, [])
+
   // -----------animation 1------------------------- 
 
   useEffect(() => {
 
-    gsap.to(".hero-comp", {
-      scrollTrigger: {
-        trigger: ".page3-comp1",
-        start: "bottom bottom",
-        end: "bottom bottom",
-        scrub: true
-      },
-      position: "fixed",
-      right: 48,
-      bottom: 0
-    })
-
-    gsap.to(".hero", {
-      scrollTrigger: {
-        trigger: ".page3-comp1",
-        start: "bottom bottom",
-        scrub: 1,
-      },
-      transformOrigin: "right bottom",
-      width: "36vw",
-    })
-    gsap.to(".hero-comp", {
-      scrollTrigger: {
-        trigger: ".page3-comp1",
-        start: "bottom bottom",
-        scrub: 1,
-      },
-      right: "14vw"
-    })
-    gsap.to(".hero", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top 95%",
-        end: "top 60%",
-        scrub: 1,
-      },
-      transformOrigin: "bottom center",
-      scale: 1.3
-    })
-
-    gsap.to(".hero-img1", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top 60%",
-        end: "top 10%",
-        scrub: .5,
-      },
-      x: "33vw",
-      y: 110
-    })
-
-    gsap.to(".hero-img2", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top 60%",
-        end: "top 10%",
-        scrub: .5,
-      },
-      x: "-33vw",
-      y: 110
-    })
+    if(flag){
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          end: "bottom bottom",
+          scrub: true
+        },
+        position: "fixed",
+        right: 48,
+        bottom: 0
+      })
+  
+      gsap.to(".hero", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        transformOrigin: "right bottom",
+        width: "36vw",
+      })
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        right: "14vw"
+      })
+      gsap.to(".hero", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top 95%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        transformOrigin: "bottom center",
+        scale: 1.3
+      })
+  
+      gsap.to(".hero-img1", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top 60%",
+          end: "top 10%",
+          scrub: .5,
+        },
+        x: "33vw",
+        y: 110
+      })
+  
+      gsap.to(".hero-img2", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top 60%",
+          end: "top 10%",
+          scrub: .5,
+        },
+        x: "-33vw",
+        y: 110
+      })
+    }
 
   }, [])
+
+  useEffect(()=>{
+    if(!flag){
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          end: "bottom bottom",
+          scrub: true
+        },
+        position: "fixed",
+        x:"100px",
+        bottom: 0
+      })
+      gsap.to(".hero", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        transformOrigin: "right bottom",
+        // height:300,
+        width:300,
+        x:0
+      })
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        right: "14vw"
+      })
+    }
+  }, [flag])
 
 
   // ------------animation 2---------------
@@ -129,6 +178,16 @@ export default function Page3() {
         // markers:true
       },
       opacity: 1
+    })
+
+    gsap.to(".recurso", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top top",
+        end: "top top",
+        scrub: 1,
+      },
+      animation:"rotate 3s ease-in-out infinite"
     })
 
   }, [])
@@ -192,7 +251,7 @@ export default function Page3() {
 
   return (
     <>
-      <div className="page-3 ">
+      <div className="page-3 overflow-hidden">
         <div className="page3-comp1 d-flex position-relative justify-content-between align-items-center">
 
           <div className="page3-left position-relative">
@@ -204,10 +263,9 @@ export default function Page3() {
             </div>
           </div>
 
-          <div className="page3-right pt-5 d-flex flex-column justify-content-between ">
+          <div className="page3-right pt-5 d-flex flex-column justify-content-start ">
 
-            <div className="comp31-top pt-5 pe-5 d-flex flex-column">
-              <div className="crystal-top d-flex justify-content-center align-items-center">
+              <div className="crystal-top pt-5 d-flex justify-content-center align-items-center">
                 <div className="crystal-text px-5">SERUM</div>
                 <div className="sound px-5">
                   <img className='sound-img' src="/world.png" alt="" />
@@ -223,15 +281,16 @@ export default function Page3() {
                 </div>
               </div>
 
-              <div className="crstal-text pt-5 justify-content-center align-items-start">
-                There is a 4th role called the <br />
-                Legendaries: only for 20 people, who <br />
-                get a serum with it that get a mejastic <br />
+              <div className="crstal-text px-5 m-5 justify-content-center align-items-start">
+                There is a 4th role called the 
+                Legendaries: only for 20 people, who 
+                get a serum with it that get a mejastic
                 clothing onboard from the origins of FoF:
               </div>
-            </div>
 
-            <div className="comp31-bottom d-flex justify-content-end align-items-end">
+          </div>
+
+          <div className="comp31-bottom position-absolute d-flex justify-content-end align-items-end">
               <div className="hero-comp d-flex">
                 <div className="hero-1">
                   <div className="hero-11">
@@ -245,8 +304,6 @@ export default function Page3() {
                 </div>
               </div>
             </div>
-
-          </div>
         </div>
 
         <div style={{ height: "100vh" }} className="page3-comp2"> </div>
@@ -308,7 +365,7 @@ export default function Page3() {
         <div className="circle-space"></div>
 
         <div className="roadmap d-flex flex-column justify-content-center align-items-center">
-          <div className="roadmap-top p-5 text-center">
+          <div className="roadmap-top py-5 text-center">
             ROADMAP
           </div>
 

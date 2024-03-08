@@ -35,21 +35,6 @@
     font-size: 24px;
 }
 
-.f-text{
-    color: #07CE02;
-    text-decoration: underline;
-}
-
-.f-sq{
-    height: 5px;
-    width: 5px;
-    transform: rotate(45deg);
-}
-
-.f-logo{
-    color: #07CE02;
-}
-
 /* ---------------fotf ----------------- */
 
 .fotf{
@@ -73,4 +58,41 @@
 }
 .char-4{
     top: 80%;
+}
+
+/* -----------footer------------  */
+
+.footer{
+    width: 100vw;
+    background-color: bisque;
+}
+
+.f-text{
+    color: #07CE02;
+    text-decoration: underline;
+}
+
+.f-sq{
+    height: 5px;
+    width: 5px;
+    transform: rotate(45deg);
+}
+
+.f-logo{
+    color: #07CE02;
+}
+
+
+/* ---------------------media queries ----------- */
+
+@media screen and (max-width:600px){
+    .thanks-top{
+        font-size: 40px;
+    }
+    .snake1-img{
+        height: 150px;
+    }
+    .snake2-img{
+        height: 200px;
+    }
 }

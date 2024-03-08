@@ -19,11 +19,12 @@
 .chadi-img{
     height: 800px;
 }
-
-.stick-img{
-    height: 800px;
+.stick{
     top: 0%;
     left: 0%;
+}
+.stick-img{
+    height: 800px;
 }
 
 .sound-img{
@@ -42,19 +43,21 @@
 
 .crystal-text{
     font-size: 16px;
-    color: #70CE02;
+    color: #07CE02;
     line-height: 16px;
     width: 100%;
 }
 .crstal-text{
     font-size: 16px;
-    color: #70CE02;
+    color: #07CE02;
     line-height: 24px;
-    width: 100%;
     text-transform: uppercase;
 }
 
-
+.comp31-bottom{
+    bottom: 0%;
+    right: 0px;
+}
 
 
 /* -------------------- comp-2--------------- */
@@ -81,7 +84,7 @@
 .page3-comp3-text{
     width: 100vw;
     font-size: 100px;
-    -webkit-text-stroke: 1px #70CE02;
+    -webkit-text-stroke: 1px #07CE02;
     color: transparent;
     text-transform: uppercase;
     z-index: 400;
@@ -91,8 +94,9 @@
     top: 0%;
     left: 0%;
     width: 100vw;
-    z-index: 6000;
+    z-index: 500;
     opacity: 0;
+    overflow: hidden;
 }
 
 .circle-1{
@@ -202,7 +206,6 @@
 
 .recurso{
     transition: .5s ease;
-    animation: rotate 3s ease-in-out infinite; 
     z-index: 50;
 }
 
@@ -325,14 +328,17 @@
     font-family: 'Space Mono';
 }
 
-/* media queries---------------- */
+/* ---------------------media queries---------------- */
 
 @media screen and (max-width:600px) {
     .page3-comp1{
-        flex-direction: column !important;
+        flex-direction: column-reverse !important;
         padding: 0% !important;
     }
-    .chadi{
+    .page3-left{
+        transform: translateX(-100px);
+    }
+    .chadi-img, .stick-img{
         height: 350px;
     }
     .page3-comp3-text{
@@ -340,20 +346,83 @@
     }
     .crystal-text{
         font-size: 16px;
+        width: fit-content;
+        text-align: center;
     }
-    .hero{
-        height: 50px;
+    .crystal-bottom{
+        padding: 48px !important;
+    }
+    .crystal-img{
+        height: 150px;
+    }
+    .crstal-text{
+        font-size: 16px;
+        width: fit-content;
+        padding: 0% 16px !important;
+        align-items: center !important;
+    }
+    .page3-right{
+        padding: 48px !important;
+    }
+    .comp31-bottom{
+        right: -100px;
+    }
+
+    /* -----------------------comp3 bg------------------  */
+
+    .circle-1{
+        height: 350px;
+        width: 350px;
+        border-radius: 175px;
+    }
+    .circle-top2, .circle-top1, .circle-bottom2, .circle-bottom1{
+        font-size: 50px;
+    }
+    .ghoomta-text1 , .ghoomta-text2 , .ghoomta-text3 , .ghoomta-text4{
+        font-size: 16px;
+    }
+    .recurso-img{
+        height: 100px;
+    }
+    .ghoomta-sq1{
+        top: 32px;
+        right: 32px;
+    }
+    .ghoomta-sq4{
+        top: 32px;
+        left: 32px;
+    }
+    .ghoomta-sq2{
+        bottom: 32px;
+        right: 32px;
+    }
+    .ghoomta-sq3{
+        bottom: 32px;
+        left: 32px;
     }
 
     /* ------------------------roadmap---------------------- */
     .roadmap{
         height: 150vh;
     }
+    .roadmap-top{
+        font-size: 40px;
+    }
     .road{
         height: 100%;
         width: 5px;
         left: 50%;
         top: 0%;
+        background-color: transparent;
+        border-left:1px solid #07CE02;
+        border-right:1px solid #07CE02;
+        border-top: 0px;
+        border-bottom: 0px;
+        align-items: start !important;
+    }
+    .progress{
+        /* background-color: transparent; */
+        height: 100px;
     }
     .roadmap-bottom{
         flex-direction: column !important;
