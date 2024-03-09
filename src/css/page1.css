@@ -4,7 +4,7 @@
 }
 .page1-comp1{
     width: 100vw;
-    height: 100svh;
+    height: 100vh;
     overflow: hidden;
     z-index: 10;
 }
@@ -88,13 +88,6 @@
     height: 100svh;
     overflow: hidden;
 }
-
-/* .comp2-top{
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position:center;
-    background-color: transparent !important;
-} */
 
 .comp2-top , .comp2-bottom{
     width: 50vw;
