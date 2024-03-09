@@ -3,7 +3,6 @@
     width: 100vw;
     overflow: hidden;
 }
-
 .box{
     top: 45%;
     height: 50px;
@@ -20,7 +19,6 @@
     height: 100vh;
     width: 100vw;
 }
-
 .shuffle-top {
     z-index: 20;
     transform: translateY(250px);
@@ -49,16 +47,13 @@
     font-size: 16px;
     font-family: 'Space Mono';
 }
-
 .layers , .box-2 , .box2-content{
     transform: translateY(250px);
 }
-
 .layer-1{
     z-index: 400;
     width: 450px;
 }
-
 .layer-2{
     z-index: 300;
     width: 700px;
@@ -66,7 +61,6 @@
 .lr2-img1, .lr2-img2{
     height: 210px;
 }
-
 .layer-3{
     z-index: 200;
     width: 900px;
@@ -74,7 +68,6 @@
 .lr3-img1 , .lr3-img2{
     height: 170px;
 }
-
 .layer-4{
     z-index: 100;
     width: 1050px;
@@ -82,27 +75,22 @@
 .lr4-img1, .lr4-img2{
     height: 130px;
 }
-
 .layer-5{
     z-index: 500;
     width: 450px;
 }
-
 .layer-6{
     z-index: 600;
     width: 450px;
 }
-
 .layer-7{
     z-index: 700;
     width: 450px;
 }
-
 .layer-8{
     z-index: 800;
     width: 450px;
 }
-
 .layer-9{
     z-index: 900;
     width: 450px;
@@ -260,7 +248,7 @@
 
 /*----------------------- keyframes----------------------------- */
 
-/* @keyframes layer1-anime{
+@keyframes layer1-anime{
     0%, 93.75%{
         width: 450px;
     }
@@ -625,4 +613,4 @@
     93.75%, 100%{
         opacity: 0;
     }
-} */
+}

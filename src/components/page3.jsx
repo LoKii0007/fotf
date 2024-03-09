@@ -2,37 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../css/page3.css"
-import { Flip } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(Flip)
 
-export default function Page3() {
+export default function Page3({scale}) {
 
-  const [flag, setFlag] = useState(true)
   const [isHovered1, setIsHovered1] = useState(false)
   const [isHovered2, setIsHovered2] = useState(false)
   const [isHovered3, setIsHovered3] = useState(false)
   const [isHovered4, setIsHovered4] = useState(false)
 
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth <= 600) {
-        setFlag(false)
-      } else {
-        setFlag(true)
-      }
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-  }, [])
-
   // -----------animation 1------------------------- 
 
   useEffect(() => {
 
-    if(flag){
+    if(scale){
       gsap.to(".hero-comp", {
         scrollTrigger: {
           trigger: ".page3-comp1",
@@ -99,7 +83,7 @@ export default function Page3() {
   }, [])
 
   useEffect(()=>{
-    if(!flag){
+    if(!scale){
       gsap.to(".hero-comp", {
         scrollTrigger: {
           trigger: ".page3-comp1",
@@ -131,7 +115,7 @@ export default function Page3() {
         right: "14vw"
       })
     }
-  }, [flag])
+  }, [scale])
 
 
   // ------------animation 2---------------

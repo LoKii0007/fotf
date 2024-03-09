@@ -1,33 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Observer from 'gsap/Observer';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import "../css/page1.css"
 
-export default function Page1() {
+export default function Page1({scale}) {
 
     gsap.registerPlugin(ScrollTrigger)
-    gsap.registerPlugin(Observer)
-    gsap.registerPlugin(ScrollToPlugin)
-
-    const [scale, setScale] = useState(true)
 
     // ----------comp1 animations--------
 
     useEffect(() => {
-
-        function handleResize() {
-            if (window.innerWidth <= 600) {
-                setScale(false)
-            } else {
-                setScale(true)
-            }
-        }
-
-        handleResize()
-        window.addEventListener("resize", handleResize)
-
         gsap.to(".page1-bg", {
             scrollTrigger: {
                 trigger: ".page1-comp2",
@@ -63,22 +45,11 @@ export default function Page1() {
         const tl = gsap.timeline({
             paused: true
         })
-
         tl.to(".page1-bg", {
             x: "-25vw",
             opacity: 0,
             duration: 1
         })
-        // tl.to(".page1-comp2",{
-        //     y:"-100%",
-        //     duration:1
-        // },0)
-        // tl.to(".page1-comp3",{
-        //     top:"40vh",
-        //     opacity:1,
-        //     duration:.5
-        // },0)
-
         ScrollTrigger.create({
             trigger: ".page1-comp2",
             start: "top top",
@@ -294,15 +265,17 @@ export default function Page1() {
                 </div>
 
                 <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
-                    <div className="comp2-top p-5 position-relative">
+                    <div className="comp2-top p-5 position-relative d-flex flex-column justify-content-center align-items-center">
                         <div className="comp2-head pb-3">
                             FRIENDS OF THE FUTURE 01
                         </div>
-                        <div className="comp2-text position-relative d-flex justify-content-center align-items-center">
+                        <div className="comp2-text px-5 position-relative d-flex justify-content-center align-items-center">
+                            <div className='d-flex justify-content-center align-items-start'>
                             This project tells the story of 4 friends that come together thanks to web 3.
                             Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
 
                             Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
+                            </div>
                             <div className="message position-absolute">
                                 <svg width="114" height="96" viewBox="0 0 114 96" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M55.7528 73.7158L32.4688 93.8157V74.4727V73.4727H31.4688H1V1H113V73.4727H56.4062H56.0343L55.7528 73.7158Z" stroke="#07CE02" strokeWidth="2" />

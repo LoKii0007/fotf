@@ -2,20 +2,17 @@
     overflow: hidden;
     background-color: black;
 }
-
 .page1-comp1{
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
     z-index: 10;
 }
-
 .page1-bg{
     right: 0%;
     bottom: -10%;
     overflow: hidden;
 }
-
 .alien1-img{
     width: 1200px;
 }
@@ -23,22 +20,18 @@
 /* -----------comp1-front------------- */
 
 .page1-front{
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
 }
-
 .message{
     transform: translateX(-400px);
 }
-
 .page1-lines{
     width: 100%;
 }
-
 .page1-lines{
     align-items: flex-start !important;
 }
-
 .comp1-line{
     font-size: 132px;
     line-height: 120px;
@@ -47,12 +40,10 @@
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(2px);
 }
-
 .webkit-the{
     -webkit-text-stroke:2px #07CE02;
     color: transparent; 
 }
-
 .page1-line3{
     -webkit-text-stroke: 2px #07CE02;
     color: transparent;
@@ -94,13 +85,22 @@
 
 .page1-comp2{
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
 }
 
 .comp2-top , .comp2-bottom{
-    width: 40vw;
+    width: 50vw;
     z-index: 20;
+}
+.comp2-text{
+    overflow-y: scroll;
+}
+.comp2-text::-webkit-scrollbar-thumb {
+    background-color: #FF5733; 
+}
+.comp2-text::-webkit-scrollbar-track {
+    background-color: #07CE02;
 }
 
 .comp2-head{
@@ -108,24 +108,21 @@
     color: #07CE02;
 }
 
-.comp2-text{
-    font-size: 12px;
+.comp2-text div{
+    font-size: 16px;
     color: #07CE02;
     opacity: .7;
+    font-family: 'Space Mono';
 }
-
-.comp2-text-bg{
-    top: 0%;
-    left: 0%;
+.comp2-text-bg svg{
+    width: 700px;
 }
 
 .mc-2{
     animation: opacity-2 2s linear infinite;
-    /* transition: .5s ; */
 }
 .mc-3{
     animation: opacity-3 2s linear infinite;
-    /* transition: .5s ; */
 }
 
 .community-top{
@@ -177,7 +174,7 @@
 /* ----------------------comp4--------------- */
 
 .page1-comp4{
-    height: 50vh;
+    height: 50svh;
     /* background-color: #07CE02; */
     width: 100vw;
 }
@@ -264,7 +261,7 @@
         margin-left: 100px;
     }
 
-    /* page1-comp2---------- */
+    /* ------------------page1-comp2---------- */
 
     .page1-comp2{
         align-items: center !important;
@@ -282,12 +279,13 @@
         padding-bottom: 24px !important;
     }
     .comp2-text{
-        font-size: 16px;
         line-height: 150%;
-        font-weight: 400;
         text-align: start;
         max-height: 200px;
-        overflow: scroll;
+        padding: 0% !important;
+    }
+    .comp2-text-bg svg{
+        width: 330px;
     }
     .comp2-bottom {
         padding: 0px 48px !important;

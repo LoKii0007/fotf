@@ -1,14 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import "../css/page4.css"
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from 'gsap/all';
 import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(Observer)
 
-export default function Page4() {
+export default function Page4({scale}) {
 
     // --------------naagin animation------------------ 
 

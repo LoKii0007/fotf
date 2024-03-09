@@ -1,29 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/all'
-import Observer from 'gsap/Observer'
 import "../css/page2.css"
 
 gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(Observer)
 
-export default function Page2() {
+export default function Page2({scale}) {
 
-  const [flag, setFlag] = useState(true)
-
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth <= 600) {
-        setFlag(false)
-      } else {
-        setFlag(true)
-      }
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-  }, [])
-
+  const [flag, setFlag] = useState(false)
 
   // animation1-------------(green box rotation)-----------------------
 
@@ -144,7 +128,7 @@ export default function Page2() {
       transformOrigin: "center center"
     }, 1)
 
-    if (flag) {
+    if (scale) {
       gsap.to(".box-2", {
         scrollTrigger: {
           trigger: ".box-2",
@@ -254,7 +238,7 @@ export default function Page2() {
       })
     }
 
-  }, [flag])
+  }, [scale])
 
 
   return (
