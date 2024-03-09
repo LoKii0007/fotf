@@ -81,13 +81,20 @@
     backdrop-filter: none;
 }
 
-/* -----------------------------------comp2---------- */
+/* -----------------------------------comp2-------------------------------- */
 
 .page1-comp2{
     width: 100vw;
     height: 100svh;
     overflow: hidden;
 }
+
+/* .comp2-top{
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position:center;
+    background-color: transparent !important;
+} */
 
 .comp2-top , .comp2-bottom{
     width: 50vw;
@@ -96,11 +103,15 @@
 .comp2-text{
     overflow-y: scroll;
 }
-.comp2-text::-webkit-scrollbar-thumb {
+.scrollable::-webkit-scrollbar-thumb {
     background-color: #FF5733; 
+    width: 10px;
+    border-radius: 5px;
 }
-.comp2-text::-webkit-scrollbar-track {
+.scrollable::-webkit-scrollbar-track {
     background-color: #07CE02;
+    width: 10px;
+    border-radius: 5px;
 }
 
 .comp2-head{
@@ -269,12 +280,10 @@
         justify-content: space-evenly !important;
     }
     .comp2-top{
-        width: 100%;
-        padding: 48px !important;
+        width:85vw ;
     }
     .comp2-head{
         font-size: 22px;
-        font-weight: 400;
         text-align: start;
         padding-bottom: 24px !important;
     }
@@ -285,7 +294,7 @@
         padding: 0% !important;
     }
     .comp2-text-bg svg{
-        width: 330px;
+        width: 85vw;
     }
     .comp2-bottom {
         padding: 0px 48px !important;

@@ -1,8 +1,8 @@
 .layout{
     /* top: 17px; */
-    width: 100svw;
+    width: 100vw;
     height: 100svh;
-    z-index: 20;
+    z-index: 10000;
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top;
@@ -23,6 +23,6 @@
 
 .main-bg img{
     height: 100svh;
-    width: 100svw;
+    width: 100vw;
     z-index: 10;
 }

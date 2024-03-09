@@ -46,7 +46,9 @@ export default function Page2({scale}) {
         y: 0,
         duration: .5,
       }, 0)
-      .progress(1).progress(0)
+    
+      tl1.play()
+      tl1.reverse()
 
     ScrollTrigger.create({
       trigger: ".box",
@@ -54,15 +56,10 @@ export default function Page2({scale}) {
       end: "center center",
       scrub: 1,
       onEnter: () => {
-        tl1.play()
-        // setFlag(true)  
+        tl1.play() 
       },
       onLeaveBack: () => {
         tl1.reverse()
-        // setFlag(true)
-      },
-      onEnterBack: () => {
-        // setFlag(false)
       }
     })
 
@@ -77,7 +74,6 @@ export default function Page2({scale}) {
         trigger: ".shuffle-bottom",
         start: "20% center",
         end: "20% center",
-        // markers:true,
         scrub: .8
       },
       y: "-300px"
@@ -98,10 +94,8 @@ export default function Page2({scale}) {
       trigger: ".shuffle-bottom",
       start: "20% center",
       end: "20% center",
-      // markers:true,
       scrub: .8,
       onEnter: () => {
-        // setFlag(false)
         tl2.play()
       },
       onLeaveBack: () => {
@@ -134,12 +128,11 @@ export default function Page2({scale}) {
           trigger: ".box-2",
           start: "top 30%",
           end: "top 30%",
-          // markers:true ,
           scrub: .5,
         },
         transformOrigin: "top center",
-        height: "60vh",
-        width: "70vw",
+        height: "80vh",
+        width: "80vw",
         duration: .8,
       })
 
@@ -149,7 +142,7 @@ export default function Page2({scale}) {
 
       tl1.to(".box-2", {
         height: "150vh",
-        width: "100vw",
+        width: "150vw",
         paddingTop: "15vh",
         duration: .5,
         transformOrigin: "top center"
@@ -177,19 +170,18 @@ export default function Page2({scale}) {
         height: 0,
         duration: .5,
       }, 0)
-      // ScrollTrigger.create({
-      //   trigger: ".box-2",
-      //   start: "top 20%",
-      //   end: "top 20%",
-      //   scrub: 0.1,
-      //   // markers:true,
-      //   onEnter: () => {
-      //     tl1.play()
-      //   },
-      //   onLeaveBack: () => {
-      //     tl1.reverse()
-      //   }
-      // })
+      ScrollTrigger.create({
+        trigger: ".box-2",
+        start: "top 20%",
+        end: "top 20%",
+        scrub: 0.1,
+        onEnter: () => {
+          tl1.play()
+        },
+        onLeaveBack: () => {
+          tl1.reverse()
+        }
+      })
     }
     else {
 
@@ -253,8 +245,8 @@ export default function Page2({scale}) {
             </div>
             <div className="shuffle-right p-5 d-flex justify-content-start align-items-start">
               <div className="shuffle-text1 px-5 d-flex justify-content-center align-items-center">
-                <div className="shuffle-sq mx-3"></div>
-                NFT COLLECTION
+                <div className="shuffle-sq"></div>
+                <div className='ps-3'>NFT COLLECTION</div>
               </div>
               <div className="shuffle-text2 pe-5">
                 <span style={{ textDecoration: "underline" }}>Friends of the Future</span> <br /> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
@@ -311,7 +303,7 @@ export default function Page2({scale}) {
               </div>
             </div>
 
-            <div style={{ backgroundImage: "/faltu.svg" }} className="box-2 d-flex justify-content-center align-items-start">
+            <div style={{ backgroundImage: "url(faltu.svg)" }} className="box-2 d-flex justify-content-center align-items-start">
               <div className="box2-content d-flex flex-column justify-content-evenly align-items-center">
                 <div className="box2-top d-flex flex-column align-items-evenly justify-content-center">
                   <div className="box2-line1 py-3 text-center">we are not here to take <br /> part, we are here to <br /> take over.</div>

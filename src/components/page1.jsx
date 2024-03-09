@@ -15,26 +15,22 @@ export default function Page1({scale}) {
                 trigger: ".page1-comp2",
                 start: "top bottom",
                 end: "top top",
-                scrub: 1
+                scrub: 0.5
             },
             transformOrigin: "left bottom",
             transform: `${scale ? "scale(0.7)" : "scale(1)"}`,
-            left: "0%",
-            duration: 1
+            left: "0%"
         })
         gsap.to(".page1-front", {
             scrollTrigger: {
                 trigger: ".page1-comp2",
-                start: "top bottom",
+                start: "top 99%",
                 end: "top top",
                 scrub: 1
             },
             x: "-100vw",
-            position: "fixed",
-            duration: 1
+            position: "fixed"
         })
-
-        // return ()=> window.removeEventListener("resize")
     }, [])
 
 
@@ -212,7 +208,7 @@ export default function Page1({scale}) {
                     <div className="page1-bg position-fixed">
                         <img className='alien1-img' src="/alien1.png" alt="" />
                     </div>
-                    <div className="page1-front pt-5 d-flex justify-content-center align-items-start flex-column">
+                    <div className="page1-front pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className='whitelist-btn py-3 d-flex justify-content-center align-items-center'>
                             <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn p-4 d-flex'>
                                 <div className="b-text">ACCESS WHITELIST</div>
@@ -264,13 +260,15 @@ export default function Page1({scale}) {
                     </div>
                 </div>
 
+                {/* style={{ backgroundImage: `url(${scale?"comp2-top-pc":"comp2-top-mob"}.svg)` }} */}
+
                 <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
                     <div className="comp2-top p-5 position-relative d-flex flex-column justify-content-center align-items-center">
                         <div className="comp2-head pb-3">
                             FRIENDS OF THE FUTURE 01
                         </div>
                         <div className="comp2-text px-5 position-relative d-flex justify-content-center align-items-center">
-                            <div className='d-flex justify-content-center align-items-start'>
+                            <div className='scrollable'>
                             This project tells the story of 4 friends that come together thanks to web 3.
                             Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
 
