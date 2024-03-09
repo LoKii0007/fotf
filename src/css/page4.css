@@ -42,39 +42,53 @@
     width: 100vw;
     color: #07CE02;
 }
-
 .char{
     font-size: 100px;
+    z-index: 200;
+}
+.fotf-bg{
+    z-index: 100;
+    width: 100vw;
+    overflow: hidden;
+}
+.fotf-img{
+    width: 300px;
 }
 
 .char-1{
-    top: 20%;
+    top: 0%;
 }
 .char-2{
-    top: 40%;
+    top: 25%;
 }
 .char-3{
-    top: 60%;
+    top: 50%;
 }
 .char-4{
-    top: 80%;
+    top: 75%;
 }
 
 /* -----------footer------------  */
 
 .footer{
     width: 100vw;
-    background-color: bisque;
 }
 
 .f-text{
     color: #07CE02;
     text-decoration: underline;
+    padding-left: 10px;
+    transform: translateY(-5px);
+}
+
+.ft-right{
+    transform: translateY(-5px);
 }
 
 .f-sq{
-    height: 5px;
-    width: 5px;
+    height: 10px;
+    width: 10px;
+    background-color: #07CE02;
     transform: rotate(45deg);
 }
 
@@ -94,5 +108,30 @@
     }
     .snake2-img{
         height: 200px;
+    }
+}
+
+/* --------------------keyframes-------------------------  */
+
+@keyframes slide-top {
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-600px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+@keyframes slide-bottom {
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(600px);
+    }
+    100%{
+        transform: translateX(0px);
     }
 }
