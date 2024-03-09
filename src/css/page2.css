@@ -109,7 +109,6 @@
 /* ----------------------black svg(box 2)------------------------------ */
 
 .box-2{
-    /* width: 600px; */
     transform: rotateY(90deg);
     background-position: center;
     background-repeat: no-repeat;
@@ -231,6 +230,7 @@
         width: "100vw";
         background-image: none !important;
         background-color: black;
+        height: 400px;
     }
     .box2-bottom{
         flex-direction: column !important;
