@@ -24,7 +24,7 @@ export default function Page1({scale}) {
         gsap.to(".page1-front", {
             scrollTrigger: {
                 trigger: ".page1-comp2",
-                start: "top 99%",
+                start: "top bottom",
                 end: "top top",
                 scrub: 1
             },
@@ -213,7 +213,7 @@ export default function Page1({scale}) {
                             <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn p-4 d-flex'>
                                 <div className="b-text">ACCESS WHITELIST</div>
                                 <div className='discord-icon  px-2'>
-                                    <i class="fa-brands fa-discord"></i>
+                                    <i className="fa-brands fa-discord"></i>
                                 </div>
                             </button>
                         </div>
@@ -226,7 +226,7 @@ export default function Page1({scale}) {
                             <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-4 d-flex'>
                                 <div className="b-text">JOIN OUR DISCORD</div>
                                 <div className='discord-icon px-2'>
-                                    <i class="fa-brands fa-discord"></i>
+                                    <i className="fa-brands fa-discord"></i>
                                 </div>
                             </button>
                             <div className="tedi-line">
@@ -253,7 +253,7 @@ export default function Page1({scale}) {
                             <button style={{ backgroundImage: "url(world.svg)" }} className='world-btn p-4 d-flex'>
                                 <div className="b-text">ENTER WL</div>
                                 <div className='discord-icon  px-2'>
-                                    <i class="fa-brands fa-discord"></i>
+                                    <i className="fa-brands fa-discord"></i>
                                 </div>
                             </button>
                         </div>

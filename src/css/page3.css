@@ -2,20 +2,14 @@
     width: 100vw;
     background-color: black;
 }
-
 .page3-comp1{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
-
 .chadi{
     z-index: 100;
 }
-.staff{
-    z-index: 20000;
-}
-
 .chadi-img{
     height: 800px;
 }
@@ -53,7 +47,6 @@
     line-height: 24px;
     text-transform: uppercase;
 }
-
 .comp31-bottom{
     bottom: 0%;
     right: 0px;
@@ -341,9 +334,6 @@
     .chadi-img, .stick-img{
         height: 350px;
     }
-    .page3-comp3-text{
-        font-size: 24px ;
-    }
     .crystal-text{
         font-size: 16px;
         width: fit-content;
@@ -357,8 +347,8 @@
     }
     .crstal-text{
         font-size: 16px;
-        width: fit-content;
-        padding: 0% 16px !important;
+        margin: 0% !important;
+        padding:48px !important;
         align-items: center !important;
     }
     .page3-right{
@@ -366,6 +356,12 @@
     }
     .comp31-bottom{
         right: -100px;
+    }
+
+    /* -----------------------comp3-----------------  */
+
+    .page3-comp3-text{
+        font-size: 32px ;
     }
 
     /* -----------------------comp3 bg------------------  */
@@ -404,6 +400,7 @@
     /* ------------------------roadmap---------------------- */
     .roadmap{
         height: 150vh;
+        transform: translateY(100px);
     }
     .roadmap-top{
         font-size: 40px;
