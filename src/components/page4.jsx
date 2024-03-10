@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Page4({scale}) {
+export default function Page4({ scale }) {
 
-    const [flag , setFlag] = useState(false)
+    const [flag, setFlag] = useState(false)
 
     gsap.config({
         force3D: true
-      })
+    })
 
     // --------------naagin animation------------------ 
 
@@ -66,7 +66,7 @@ export default function Page4({scale}) {
         tl1.to(".char-1",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -77,7 +77,7 @@ export default function Page4({scale}) {
         tl1.to(".char-1",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -88,7 +88,7 @@ export default function Page4({scale}) {
         tl1.to(".char-2",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -99,7 +99,7 @@ export default function Page4({scale}) {
         tl1.to(".char-2",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -110,7 +110,7 @@ export default function Page4({scale}) {
         tl1.to(".char-3",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -121,7 +121,7 @@ export default function Page4({scale}) {
         tl1.to(".char-3",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -132,7 +132,7 @@ export default function Page4({scale}) {
         tl1.to(".char-4",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -143,7 +143,7 @@ export default function Page4({scale}) {
         tl1.to(".char-4",
             {
                 scrollTrigger: {
-                    trigger: ".fotf",
+                    trigger: ".fotf-front",
                     start: "top 1%",
                     end: "top 1%",
                     scrub: 1,
@@ -153,21 +153,21 @@ export default function Page4({scale}) {
 
     }, []);
 
-        // --------------------setting state of flag--------------------- 
+    // --------------------setting state of flag--------------------- 
 
-        useEffect(()=>{
-           ScrollTrigger.create({
-            trigger:".thanks",
-            start:"top top",
-            end:"bottom top",
-            onLeave:()=>{
+    useEffect(() => {
+        ScrollTrigger.create({
+            trigger: ".thanks",
+            start: "top top",
+            end: "bottom top",
+            onLeave: () => {
                 setFlag(true)
             },
-            onEnterBack:()=>{
+            onEnterBack: () => {
                 setFlag(false)
             }
-           })
-        },[])
+        })
+    }, [])
 
 
     return (
@@ -191,13 +191,15 @@ export default function Page4({scale}) {
                 </div>
 
                 <div className='fotf position-relative d-flex flex-column justify-content-center align-items-center'>
-                    <div className='char-1 char position-absolute d-flex justify-content-center align-items-center'>F</div>
-                    <div className='char-2 char position-absolute d-flex justify-content-center align-items-center'>O</div>
-                    <div className='char-3 char position-absolute d-flex justify-content-center align-items-center'>T</div>
-                    <div className='char-4 char position-absolute d-flex justify-content-center align-items-center'>F</div>
+                    <div className="fotf-front d-flex flex-column justify-content-center align-items-center">
+                        <div className='char-1 char position-absolute d-flex justify-content-center align-items-center'>F</div>
+                        <div className='char-2 char position-absolute d-flex justify-content-center align-items-center'>O</div>
+                        <div className='char-3 char position-absolute d-flex justify-content-center align-items-center'>T</div>
+                        <div className='char-4 char position-absolute d-flex justify-content-center align-items-center'>F</div>
+                    </div>
                     <div className="fotf-bg position-absolute d-flex flex-column">
                         <div className="fotf-images d-flex flex-column justify-content-evenly align-items-center">
-                            <div style={{animation:flag?"slide-top 8s linear infinite":"" }} className="fotf-top-img d-flex align-items-start">
+                            <div style={{ animation: flag ? "slide-top 8s linear infinite" : "" }} className="fotf-top-img d-flex align-items-start">
                                 <img loading="lazy" className='fotf-img' src="/ALIENS0152.jpg" alt="" />
                                 <img loading="lazy" className='fotf-img' src="/ELFOS1753.jpg" alt="" />
                                 <img loading="lazy" className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
@@ -211,7 +213,7 @@ export default function Page4({scale}) {
                                 <img loading="lazy" className='fotf-img' src="/ELFOS1756.jpg" alt="" />
                                 <img loading="lazy" className='fotf-img' src="/HUMANOS0083.jpg" alt="" />
                             </div>
-                            <div style={{animation:flag?"slide-bottom 8s linear infinite":"" }} className="fotf-bottom-img d-flex align-items-end">
+                            <div style={{ animation: flag ? "slide-bottom 8s linear infinite" : "" }} className="fotf-bottom-img d-flex align-items-end">
                                 <img loading="lazy" className='fotf-img' src="/ALIENS0156.jpg" alt="" />
                                 <img loading="lazy" className='fotf-img' src="/ELFOS1757.jpg" alt="" />
                                 <img loading="lazy" className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
@@ -233,18 +235,15 @@ export default function Page4({scale}) {
                     <div className="ft-left d-flex">
                         <div className="privacy d-flex d-flex justify-content-center align-items-center">
                             <div className="f-sq"></div>
-                            {/* <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link> */}
-                            <div className='f-text'>Privacy Policy</div>
+                            <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link>
                         </div>
                         <div className="term d-flex px-5 d-flex justify-content-center align-items-center">
                             <div className="f-sq"></div>
-                            {/* <Link className="terms-text f-text" to="/terms" >Terms of use</Link> */}
-                            <div className='f-text'>Terms of use</div>
+                            <Link className="terms-text f-text" to="/terms" >Terms of use</Link>
                         </div>
                         <div className="legal d-flex d-flex justify-content-center align-items-center">
                             <div className="f-sq"></div>
-                            {/* <Link className="legal-text f-text" to="/legal" >Legal liscence</Link> */}
-                            <div className='f-text'>Legal liscence</div>
+                            <Link className="legal-text f-text" to="/legal" >Legal liscence</Link>
                         </div>
                     </div>
 

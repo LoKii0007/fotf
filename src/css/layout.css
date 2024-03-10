@@ -1,28 +1,74 @@
-.layout{
-    /* top: 17px; */
+.layout {
+  /* top: 17px; */
+  width: 100vw;
+  height: 100svh;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.layout-top {
+  width: 100svw;
+}
+
+.layout-text {
+  font-size: 40px;
+  margin-top: 17px;
+  width: fit-content;
+  color: #07ce02;
+  height: 55px;
+  backdrop-filter: blur(1px);
+}
+
+.main-bg img {
+  height: 100svh;
+  width: 100vw;
+  z-index: 10;
+}
+
+.documents{
     width: 100vw;
-    height: 100svh;
-    z-index: 10000;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:top;
 }
 
-.layout-top{
-    width: 100svw;
+.page-head {
+  font-size: 57px;
+  color: #07ce02;
+}
+.page-desc,
+.point-desc {
+  font-family: "Space Mono";
+  font-size: 17px;
+  opacity: 0.5;
+  color: #07ce02;
+}
+.point-head {
+  font-size: 35px;
+  color: #07ce02;
 }
 
-.layout-text{
-    font-size: 40px;
-    margin-top: 17px;
-    width: fit-content;
-    color: #07CE02;
-    height: 55px;
-    backdrop-filter: blur(1px);
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  .page-head {
+    font-size: 48px;
+  }
+  .page-desc,
+  .point-desc {
+    font-size: 15px;
+  }
+  .point-head {
+    font-size: 30px;
+  }
 }
 
-.main-bg img{
-    height: 100svh;
-    width: 100vw;
-    z-index: 10;
+@media screen and (max-width: 600px) {
+  .page-head {
+    font-size: 32px;
+  }
+  .page-desc,
+  .point-desc {
+    font-size: 12px;
+  }
+  .point-head {
+    font-size: 24px;
+  }
 }

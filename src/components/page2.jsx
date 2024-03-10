@@ -5,13 +5,14 @@ import "../css/page2.css"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Page2({scale}) {
+export default function Page2({ scale }) {
 
   gsap.config({
     force3D: true
   })
 
   const [flag, setFlag] = useState(false)
+  const [shuffle, setShuffle] = useState(false)
 
   // animation1-------------(green box rotation)-----------------------
 
@@ -21,7 +22,7 @@ export default function Page2({scale}) {
         trigger: ".box",
         start: "top bottom",
         end: "top center",
-        scrub: 1
+        scrub: 1,
       },
       rotate: "-45deg",
     })
@@ -50,9 +51,9 @@ export default function Page2({scale}) {
         y: 0,
         duration: .5,
       }, 0)
-    
-      tl1.play()
-      tl1.reverse()
+
+    tl1.play()
+    tl1.reverse()
 
     ScrollTrigger.create({
       trigger: ".box",
@@ -60,7 +61,7 @@ export default function Page2({scale}) {
       end: "center center",
       scrub: 1,
       onEnter: () => {
-        tl1.play() 
+        tl1.play()
       },
       onLeaveBack: () => {
         tl1.reverse()
@@ -68,7 +69,6 @@ export default function Page2({scale}) {
     })
 
   }, [])
-
 
   // ---------animation 3 ------------------(black box rotating)------------------
 
@@ -105,7 +105,6 @@ export default function Page2({scale}) {
       onLeaveBack: () => {
         tl2.reverse()
       }
-
     })
   }, [])
 
@@ -236,6 +235,27 @@ export default function Page2({scale}) {
 
   }, [scale])
 
+  // ------------------- setting state of shuffle animtions --------------------
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: ".box",
+      start: "center center",
+      end: "center top",
+      onEnter: () => {
+        setShuffle(true)
+      },
+      onEnterBack: () => {
+        setShuffle(false)
+      },
+      onLeave:()=>{
+        setShuffle(false)
+      },
+      onLeaveBack:()=>{
+        setShuffle(true)
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -261,49 +281,49 @@ export default function Page2({scale}) {
 
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
 
-              <div style={{ animation: flag ? "layer1-anime 8s linear infinite" : "" }} className="layer-1 position-absolute d-flex justify-content-between align-items-center ">
-                <img loading="lazy" style={{ animation: flag ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img1' src="/1.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img2' src="/2.png" alt="" />
+              <div style={{ animation: shuffle ? "layer1-anime 8s linear infinite" : "" }} className="layer-1 position-absolute d-flex justify-content-between align-items-center ">
+                <img loading="lazy" style={{ animation: shuffle ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img1' src="/1.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img2' src="/2.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer2-anime 8s linear infinite" : "" }} className="layer-2 position-absolute d-flex justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img1' src="/3.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img2' src="/4.png" alt="" />
+              <div style={{ animation: shuffle ? "layer2-anime 8s linear infinite" : "" }} className="layer-2 position-absolute d-flex justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img1' src="/3.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img2' src="/4.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer3-anime 8s linear infinite" : "" }} className="layer-3 position-absolute d-flex justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img1' src="/5.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img2' src="/6.png" alt="" />
+              <div style={{ animation: shuffle ? "layer3-anime 8s linear infinite" : "" }} className="layer-3 position-absolute d-flex justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img1' src="/5.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img2' src="/6.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer4-anime 8s linear infinite" : "" }} className="layer-4 position-absolute d-flex justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img1' src="/7.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img2' src="/8.png" alt="" />
+              <div style={{ animation: shuffle ? "layer4-anime 8s linear infinite" : "" }} className="layer-4 position-absolute d-flex justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img1' src="/7.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img2' src="/8.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer5-anime 8s linear infinite" : "" }} className="layer-5 position-absolute d-flex justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img1' src="/10-1.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img2' src="/10.png" alt="" />
+              <div style={{ animation: shuffle ? "layer5-anime 8s linear infinite" : "" }} className="layer-5 position-absolute d-flex justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img1' src="/10-1.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img2' src="/10.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer6-anime 8s linear infinite" : "" }} className="layer-6 position-absolute d-flex justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img1' src="/11.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img2' src="/11-1.png" alt="" />
+              <div style={{ animation: shuffle ? "layer6-anime 8s linear infinite" : "" }} className="layer-6 position-absolute d-flex justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img1' src="/11.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img2' src="/11-1.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer7-anime 8s linear infinite" : "" }} className="layer-7 d-flex position-absolute justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img1' src="/12.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img2' src="/12-1.png" alt="" />
+              <div style={{ animation: shuffle ? "layer7-anime 8s linear infinite" : "" }} className="layer-7 d-flex position-absolute justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img1' src="/12.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img2' src="/12-1.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer8-anime 8s linear infinite" : "" }} className="layer-8 d-flex position-absolute justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img1' src="/13.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img2' src="/13-1.png" alt="" />
+              <div style={{ animation: shuffle ? "layer8-anime 8s linear infinite" : "" }} className="layer-8 d-flex position-absolute justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img1' src="/13.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img2' src="/13-1.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer9-anime 8s linear infinite" : "" }} className="layer-9 d-flex position-absolute justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img1' src="/14.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img2' src="/14-1.png" alt="" />
+              <div style={{ animation: shuffle ? "layer9-anime 8s linear infinite" : "" }} className="layer-9 d-flex position-absolute justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img1' src="/14.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img2' src="/14-1.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer10-anime 8s linear infinite" : "" }} className="layer-10 d-flex position-absolute justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img1' src="/15.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img2' src="/15-1.png" alt="" />
+              <div style={{ animation: shuffle ? "layer10-anime 8s linear infinite" : "" }} className="layer-10 d-flex position-absolute justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img1' src="/15.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img2' src="/15-1.png" alt="" />
               </div>
-              <div style={{ animation: flag ? "layer11-anime 8s linear infinite" : "" }} className="layer-11 d-flex position-absolute justify-content-between align-items-center">
-                <img loading="lazy" style={{ animation: flag ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img1' src="/16.png" alt="" />
-                <img loading="lazy" style={{ animation: flag ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img2' src="/16-1.png" alt="" />
+              <div style={{ animation: shuffle ? "layer11-anime 8s linear infinite" : "" }} className="layer-11 d-flex position-absolute justify-content-between align-items-center">
+                <img loading="lazy" style={{ animation: shuffle ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img1' src="/16.png" alt="" />
+                <img loading="lazy" style={{ animation: shuffle ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img2' src="/16-1.png" alt="" />
               </div>
             </div>
 

@@ -2,6 +2,10 @@ import React from 'react'
 
 export default function Legal() {
   return (
-    <div>legal</div>
+    <>
+    <div className="legal documents">
+
+    </div>
+    </>
   )
 }

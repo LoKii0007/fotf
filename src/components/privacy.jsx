@@ -3,7 +3,7 @@ import React from 'react'
 export default function Privacy() {
   return (
     <>
-      <div className="privacy p-5 container d-flex flex-column justify-content-center align-items-center">
+      <div className="privacy documents p-5 container d-flex flex-column justify-content-center align-items-center">
         <div className="page p-5 pt-5">
           <div className="page-head">privacy policy</div>
           <div className="page-desc">

@@ -27,23 +27,6 @@ body {
   display: none;
 }
 
-.terms{
-  color: #07CE02;
-  width: 100vw;
-}
-.page-head{
-  font-size: 57px;
-}
-.page-desc, .point-desc{
-  font-family: 'Space Mono';
-  font-size: 17px;
-  opacity: 0.5;
-}
-.point-head{
-  font-size: 35px;
-}
-
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;

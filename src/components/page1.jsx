@@ -260,8 +260,6 @@ export default function Page1({scale}) {
                     </div>
                 </div>
 
-                {/* style={{ backgroundImage: `url(${scale?"comp2-top-pc":"comp2-top-mob"}.svg)` }} */}
-
                 <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
                     <div className="comp2-top p-5 position-relative d-flex flex-column justify-content-center align-items-center">
                         <div className="comp2-head pb-3">

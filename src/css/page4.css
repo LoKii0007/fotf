@@ -46,6 +46,10 @@
 .fotf{
     height: 100vh;
     width: 100vw;
+}
+.fotf-front{
+    height: 100vh;
+    width: 100vw;
     color: #07CE02;
 }
 .char{
@@ -89,7 +93,9 @@
     color: #07CE02;
     text-decoration: underline;
     padding-left: 10px;
+    z-index: 1000;
 }
+
 
 .f-sq{
     height: 10px;
