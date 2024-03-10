@@ -1,3 +1,7 @@
+.page-4{
+    overflow: hidden;
+}
+
 /*----------------------------------- thanks----------------------------------  */
 
 .thanks{
@@ -18,11 +22,13 @@
 }
 .snake1-img{
     height: 250px;
+    width: 250px;
     border-radius: 125px;
     transform: translateX(20px);
 }
 .snake2-img{
     height: 300px;
+    width: 300px;
     border-radius: 150px;
     transform: translateX(-20px);
 }
@@ -35,7 +41,7 @@
     font-size: 24px;
 }
 
-/* ---------------fotf ----------------- */
+/* --------------------------------fotf ------------------------- */
 
 .fotf{
     height: 100vh;
@@ -45,6 +51,9 @@
 .char{
     font-size: 100px;
     z-index: 200;
+    width: 0px;
+    height: 0px;
+    overflow: visible;
 }
 .fotf-bg{
     z-index: 100;
@@ -53,36 +62,33 @@
 }
 .fotf-img{
     width: 300px;
+    height: 300px;
 }
 
 .char-1{
-    top: 0%;
+    top: 20%;
 }
 .char-2{
-    top: 25%;
+    top: 40%;
 }
 .char-3{
-    top: 50%;
+    top: 60%;
 }
 .char-4{
-    top: 75%;
+    top: 80%;
 }
 
 /* -----------footer------------  */
 
 .footer{
     width: 100vw;
+    overflow: hidden;
 }
 
 .f-text{
     color: #07CE02;
     text-decoration: underline;
     padding-left: 10px;
-    transform: translateY(-5px);
-}
-
-.ft-right{
-    transform: translateY(-5px);
 }
 
 .f-sq{
@@ -105,9 +111,38 @@
     }
     .snake1-img{
         height: 150px;
+        width: 150px;
     }
     .snake2-img{
         height: 200px;
+        width: 200px;
+    }
+
+    /* ----------------------------fotf bg----------------------------  */
+
+    .char{
+        font-size: 50px;
+    }
+    .fotf-img{
+        width: 150px;
+        height: 150px;
+    }
+
+    /* -----------------------footer----------------------  */
+
+    .footer{
+        padding: 8px !important;
+    }
+    .f-text{
+        font-size: 8px;
+
+    }
+    .term{
+        padding:0px 8px !important;
+    }
+    .f-sq{
+        height: 8px;
+        width: 8px;
     }
 }
 

@@ -53,6 +53,10 @@
 .layer-1, .layer-5, .layer-6, .layer-7, .layer-8 , .layer-9 , .layer-10 , .layer-11{
     width: 450px;
 }
+.lr1-img1, .lr1-img2, .lr5-img1, .lr5-img2, .lr6-img1, .lr6-img2, .lr7-img1, .lr7-img2 , .lr8-img1, .lr8-img2 , .lr9-img1, .lr9-img2, .lr10-img1, .lr10-img2, .lr11-img1, .lr11-img2{
+    height: 250px;
+    /* width: 233.762px; */
+}
 .layer-1{
     z-index: 400;
 }
@@ -62,6 +66,7 @@
 }
 .lr2-img1, .lr2-img2{
     height: 210px;
+    /* width: 198.375px; */
 }
 .layer-3{
     z-index: 200;
@@ -69,6 +74,7 @@
 }
 .lr3-img1 , .lr3-img2{
     height: 170px;
+    /* width: 161px; */
 }
 .layer-4{
     z-index: 100;
@@ -76,6 +82,7 @@
 }
 .lr4-img1, .lr4-img2{
     height: 130px;
+    /* width: 123px; */
 }
 .layer-5{
     z-index: 500;
@@ -92,17 +99,11 @@
 .layer-9{
     z-index: 900;
 }
-
 .layer-10{
     z-index: 1000;
 }
-
 .layer-11{
     z-index: 1100;
-}
-
-.lr1-img1, .lr1-img2, .lr5-img1, .lr5-img2, .lr6-img1, .lr6-img2, .lr7-img1, .lr7-img2 , .lr8-img1, .lr8-img2 , .lr9-img1, .lr9-img2, .lr10-img1, .lr10-img2, .lr11-img1, .lr11-img2{
-    height: 250px;
 }
 
 

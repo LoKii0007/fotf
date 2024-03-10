@@ -271,7 +271,6 @@ export default function Page1({scale}) {
                             <div className='scrollable'>
                             This project tells the story of 4 friends that come together thanks to web 3.
                             Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
-
                             Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
                             </div>
                             <div className="message position-absolute">

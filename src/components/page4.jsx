@@ -78,7 +78,7 @@ export default function Page4({scale}) {
                     end: "top 1%",
                     scrub: 1,
                 },
-                top: "40%",
+                top: "50%",
             }, 0);
 
         tl1.to(".char-2",
@@ -100,7 +100,7 @@ export default function Page4({scale}) {
                     end: "top 1%",
                     scrub: 1,
                 },
-                top: "40%",
+                top: "50%",
             }, 0);
 
         tl1.to(".char-3",
@@ -122,7 +122,7 @@ export default function Page4({scale}) {
                     end: "top 1%",
                     scrub: 1,
                 },
-                top: "40%",
+                top: "50%",
             }, 0)
 
         tl1.to(".char-4",
@@ -144,7 +144,7 @@ export default function Page4({scale}) {
                     end: "top 1%",
                     scrub: 1,
                 },
-                top: "40%",
+                top: "50%",
             }, 0)
 
     }, []);
@@ -152,29 +152,14 @@ export default function Page4({scale}) {
         // --------------------setting state of flag--------------------- 
 
         useEffect(()=>{
-
-            // const resetAnimations = () => {
-            //     const topImg = document.querySelector(".fotf-top-img");
-            //     const bottomImg = document.querySelector(".fotf-bottom-img");
-                
-            //     topImg.style.animation = "none";
-            //     bottomImg.style.animation = "none";
-
-            //     void topImg.offsetWidth;
-            //     void bottomImg.offsetWidth;
-            //     topImg.style.animation = "slide-top 8s linear infinite";
-            //     bottomImg.style.animation = "slide-bottom 8s linear infinite";
-            // }
-
            ScrollTrigger.create({
-            trigger:".fotf",
-            start:"bottom bottom",
-            end:"bottom 200%",
-            onEnter:()=>{
+            trigger:".thanks",
+            start:"top top",
+            end:"bottom top",
+            onLeave:()=>{
                 setFlag(true)
             },
             onEnterBack:()=>{
-                // resetAnimations()
                 setFlag(false)
             }
            })
@@ -202,10 +187,10 @@ export default function Page4({scale}) {
                 </div>
 
                 <div className='fotf position-relative d-flex flex-column justify-content-center align-items-center'>
-                    <div className='char-1 char position-absolute '>F</div>
-                    <div className='char-2 char position-absolute '>O</div>
-                    <div className='char-3 char position-absolute '>T</div>
-                    <div className='char-4 char position-absolute '>F</div>
+                    <div className='char-1 char position-absolute d-flex justify-content-center align-items-center'>F</div>
+                    <div className='char-2 char position-absolute d-flex justify-content-center align-items-center'>O</div>
+                    <div className='char-3 char position-absolute d-flex justify-content-center align-items-center'>T</div>
+                    <div className='char-4 char position-absolute d-flex justify-content-center align-items-center'>F</div>
                     <div className="fotf-bg position-absolute d-flex flex-column">
                         <div className="fotf-images d-flex flex-column justify-content-evenly align-items-center">
                             <div style={{animation:flag?"slide-top 8s linear infinite":"" }} className="fotf-top-img d-flex align-items-start">
@@ -242,17 +227,17 @@ export default function Page4({scale}) {
 
                 <div className="footer px-5 d-flex justify-content-between align-items-center">
                     <div className="ft-left d-flex">
-                        <div className="privacy d-flex">
+                        <div className="privacy d-flex d-flex justify-content-center align-items-center">
                             <div className="f-sq"></div>
                             {/* <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link> */}
                             <div className='f-text'>Privacy Policy</div>
                         </div>
-                        <div className="term d-flex px-5">
+                        <div className="term d-flex px-5 d-flex justify-content-center align-items-center">
                             <div className="f-sq"></div>
                             {/* <Link className="terms-text f-text" to="/terms" >Terms of use</Link> */}
                             <div className='f-text'>Terms of use</div>
                         </div>
-                        <div className="legal d-flex">
+                        <div className="legal d-flex d-flex justify-content-center align-items-center">
                             <div className="f-sq"></div>
                             {/* <Link className="legal-text f-text" to="/legal" >Legal liscence</Link> */}
                             <div className='f-text'>Legal liscence</div>

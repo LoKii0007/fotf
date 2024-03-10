@@ -360,34 +360,34 @@ export default function Page3({scale}) {
             </div>
 
             <div className="road-1 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center">kick off</div>
+              <div className="road-top text-center mt-5">kick off</div>
               <div className="road-bottom text-center">We launch the Friends of the Future website and social media</div>
               <div className="sq-1 sq position-absolute"></div>
               {/* <div className="stop-pro position-absolute"></div> */}
             </div>
             <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div className="road-top text-center">normies reveal</div>
-              <div className="road-bottom text-center">We reveal Normies perks</div>
+              <div className="road-bottom text-center mb-5">We reveal Normies perks</div>
               <div className="sq-2 sq position-absolute"></div>
             </div>
             <div className="road-3 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center">goldies reveal</div>
+              <div className="road-top text-center mt-5">goldies reveal</div>
               <div className="road-bottom text-center">We reveal Goldies perks</div>
               <div className="sq-3 sq position-absolute"></div>
             </div>
             <div className="road-4 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div className="road-top text-center">goldies reveal</div>
-              <div className="road-bottom text-center">We reveal Platinum perks</div>
+              <div className="road-bottom text-center mb-5">We reveal Platinum perks</div>
               <div className="sq-4 sq position-absolute"></div>
             </div>
             <div className="road-5 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center">legendaries reveal</div>
+              <div className="road-top text-center mt-5">legendaries reveal</div>
               <div className="road-bottom text-center">We reveal Legendaries perks</div>
               <div className="sq-5 sq position-absolute"></div>
             </div>
             <div className="road-6 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div className="road-top text-center">Minting time</div>
-              <div className="road-bottom text-center">in favouritism for avatars</div>
+              <div className="road-bottom text-center mb-5">in favouritism for avatars</div>
               <div className="sq-6 sq position-absolute"></div>
             </div>
           </div>

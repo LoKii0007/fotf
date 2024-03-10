@@ -15,12 +15,13 @@
 }
 .alien1-img{
     width: 1200px;
+    /* height: 1200px; */
 }
 
 /* -----------comp1-front------------- */
 
 .page1-front{
-    height: 100svh;
+    height: 100vh;
     overflow: hidden;
 }
 .message{
@@ -85,7 +86,7 @@
 
 .page1-comp2{
     width: 100vw;
-    height: 100svh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -93,18 +94,9 @@
     width: 50vw;
     z-index: 20;
 }
-.comp2-text{
+.comp2-top{
     overflow-y: scroll;
-}
-.scrollable::-webkit-scrollbar-thumb {
-    background-color: #FF5733; 
-    width: 10px;
-    border-radius: 5px;
-}
-.scrollable::-webkit-scrollbar-track {
-    background-color: #07CE02;
-    width: 10px;
-    border-radius: 5px;
+    height: 500px;
 }
 
 .comp2-head{
@@ -112,6 +104,9 @@
     color: #07CE02;
 }
 
+.comp2-text{
+    overflow-y: scroll;
+}
 .comp2-text div{
     font-size: 16px;
     color: #07CE02;
@@ -119,7 +114,8 @@
     font-family: 'Space Mono';
 }
 .comp2-text-bg svg{
-    width: 700px;
+    /* width: 700px; */
+    height: 400px !important;
 }
 
 .mc-2{
@@ -210,6 +206,58 @@
 
 /* -----------------------------media queries--------------------------- */
 
+@media screen and (max-width:1400px) and (min-width:1201px){
+    .alien1-img{
+        width: 1000px;
+    }
+    .comp1-line{
+        font-size: 120px;
+        line-height: 120px;
+    }
+    .page1-comp3{
+        font-size: 80px;
+    }
+    /* .comp2-top{
+        height: 350px;
+        transition: 0.5s ease;
+    } */
+    .comp2-text-bg svg{
+        height: 350px !important;
+        transition: 0.5s ease;
+    }
+}
+
+@media screen and (max-width:1200px) and (min-width:601px){
+    .alien1-img{
+        width: 1000px;
+        transition: 0.5s ease;
+    }
+    .comp1-line{
+        font-size: 100px;
+        line-height: 100px;
+        transition: 0.5s ease;
+    }
+    .page1-comp3{
+        font-size: 60px;
+        transition: 0.5s ease;
+    }
+    .comp2-top{
+        height: 400px;
+        transition: 0.5s ease;
+    }
+    .comp2-text-bg svg{
+        height: 300px !important;
+        transition: 0.5s ease;
+    }
+    .community-top{
+        font-size: 42px;
+        transition: 0.5s ease;
+    }
+    .community-bottom{
+        font-size: 36px;
+        transition: 0.5s ease;
+    }
+}
 
 @media screen and (max-width:600px) {
 
@@ -286,7 +334,7 @@
         padding: 0% !important;
     }
     .comp2-text-bg svg{
-        width: 85vw;
+        width: 85vw !important;
     }
     .comp2-bottom {
         padding: 0px 48px !important;

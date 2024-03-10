@@ -244,8 +244,8 @@ export default function Page2({scale}) {
               3,314 unique digital <br /> collectibles.
             </div>
             <div className="shuffle-right p-5 d-flex justify-content-start align-items-start">
-              <div className="shuffle-text1 px-5 d-flex justify-content-center align-items-center">
-                <div className="shuffle-sq"></div>
+              <div className="shuffle-text1 pe-5 d-flex justify-content-center align-items-center">
+                <div className="shuffle-sq p-1"></div>
                 <div className='ps-3'>NFT COLLECTION</div>
               </div>
               <div className="shuffle-text2 pe-5">

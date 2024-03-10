@@ -23,6 +23,10 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 .terms{
   color: #07CE02;
   width: 100vw;

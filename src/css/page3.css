@@ -323,6 +323,21 @@
 
 /* ---------------------media queries---------------- */
 
+@media screen and (max-width:1400px) and (min-width:1201px){
+
+}
+
+@media screen and (max-width:1200px) and (min-width:601px){
+    .chadi-img{
+        height: 600px;
+        transition: 0.5s ease;
+    }
+    .stick-img{
+        height: 600px;
+        transition: 0.5s ease;
+    }
+}
+
 @media screen and (max-width:600px) {
     .page3-comp1{
         flex-direction: column-reverse !important;
