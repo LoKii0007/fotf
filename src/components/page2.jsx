@@ -7,6 +7,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Page2({scale}) {
 
+  gsap.config({
+    force3D: true
+  })
+
   const [flag, setFlag] = useState(false)
 
   // animation1-------------(green box rotation)-----------------------
@@ -258,48 +262,48 @@ export default function Page2({scale}) {
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
 
               <div style={{ animation: flag ? "layer1-anime 8s linear infinite" : "" }} className="layer-1 position-absolute d-flex justify-content-between align-items-center ">
-                <img style={{ animation: flag ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img1' src="/1.png" alt="" />
-                <img style={{ animation: flag ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img2' src="/2.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img1' src="/1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img2' src="/2.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer2-anime 8s linear infinite" : "" }} className="layer-2 position-absolute d-flex justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img1' src="/3.png" alt="" />
-                <img style={{ animation: flag ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img2' src="/4.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img1' src="/3.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img2' src="/4.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer3-anime 8s linear infinite" : "" }} className="layer-3 position-absolute d-flex justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img1' src="/5.png" alt="" />
-                <img style={{ animation: flag ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img2' src="/6.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img1' src="/5.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img2' src="/6.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer4-anime 8s linear infinite" : "" }} className="layer-4 position-absolute d-flex justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img1' src="/7.png" alt="" />
-                <img style={{ animation: flag ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img2' src="/8.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img1' src="/7.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img2' src="/8.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer5-anime 8s linear infinite" : "" }} className="layer-5 position-absolute d-flex justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img1' src="/10-1.png" alt="" />
-                <img style={{ animation: flag ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img2' src="/10.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img1' src="/10-1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img2' src="/10.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer6-anime 8s linear infinite" : "" }} className="layer-6 position-absolute d-flex justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img1' src="/11.png" alt="" />
-                <img style={{ animation: flag ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img2' src="/11-1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img1' src="/11.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img2' src="/11-1.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer7-anime 8s linear infinite" : "" }} className="layer-7 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img1' src="/12.png" alt="" />
-                <img style={{ animation: flag ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img2' src="/12-1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img1' src="/12.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img2' src="/12-1.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer8-anime 8s linear infinite" : "" }} className="layer-8 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img1' src="/13.png" alt="" />
-                <img style={{ animation: flag ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img2' src="/13-1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img1' src="/13.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img2' src="/13-1.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer9-anime 8s linear infinite" : "" }} className="layer-9 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img1' src="/14.png" alt="" />
-                <img style={{ animation: flag ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img2' src="/14-1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img1' src="/14.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img2' src="/14-1.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer10-anime 8s linear infinite" : "" }} className="layer-10 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img1' src="/15.png" alt="" />
-                <img style={{ animation: flag ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img2' src="/15-1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img1' src="/15.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img2' src="/15-1.png" alt="" />
               </div>
               <div style={{ animation: flag ? "layer11-anime 8s linear infinite" : "" }} className="layer-11 d-flex position-absolute justify-content-between align-items-center">
-                <img style={{ animation: flag ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img1' src="/16.png" alt="" />
-                <img style={{ animation: flag ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img2' src="/16-1.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img1' src="/16.png" alt="" />
+                <img loading="lazy" style={{ animation: flag ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img2' src="/16-1.png" alt="" />
               </div>
             </div>
 
@@ -317,14 +321,14 @@ export default function Page2({scale}) {
                         <div className='img-sq'></div>
                         <div className="img-text ps-2">normies 1800 spots</div>
                       </div>
-                      <img className='box2-img' src="/55c2ee38400eef5224c3151b95d9d284.jpeg" alt="" />
+                      <img loading="lazy" className='box2-img' src="/55c2ee38400eef5224c3151b95d9d284.jpeg" alt="" />
                     </div>
                     <div className="box2-img2 px-2">
                       <div className='d-flex'>
                         <div className='img-sq'></div>
                         <div className="img-text ps-2">platinums 487 spots</div>
                       </div>
-                      <img className='box2-img' src="/alien1.png" alt="" />
+                      <img loading="lazy" className='box2-img' src="/alien1.png" alt="" />
                     </div>
                   </div>
                   <div className="box2-bt-bottom d-flex align-items-center justify-content-center">
@@ -333,14 +337,14 @@ export default function Page2({scale}) {
                         <div className='img-sq'></div>
                         <div className="img-text ps-2">goldies 1007 spots</div>
                       </div>
-                      <img className='img3-img box2-img' src="/IMG-20240130-WA0119.png" alt="" />
+                      <img loading="lazy" className='img3-img box2-img' src="/IMG-20240130-WA0119.png" alt="" />
                     </div>
                     <div className="box2-img4 px-2">
                       <div className='d-flex'>
                         <div className='img-sq'></div>
                         <div className="img-text ps-2">legendary 20 spots</div>
                       </div>
-                      <img className='box2-img' src="/IMG-20240130-WA0123.png" alt="" />
+                      <img loading="lazy" className='box2-img' src="/IMG-20240130-WA0123.png" alt="" />
                     </div>
                   </div>
                 </div>

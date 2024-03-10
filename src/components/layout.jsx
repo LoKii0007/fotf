@@ -25,7 +25,7 @@ export default function Layout() {
     return (
         <>
             <div className="main-bg position-fixed">
-              <img src="/main-bg.png" alt="" />
+              <img loading="async" src="/main-bg.png" alt="" />
             </div>
             <div style={{ backgroundImage: `url(${bgUrl}.svg)` }} className="layout position-fixed">
                 <div className="layout-top d-flex justify-content-center align-items-center">

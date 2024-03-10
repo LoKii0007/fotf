@@ -206,7 +206,7 @@ export default function Page1({scale}) {
             <div className="page1 container d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 container position-relative">
                     <div className="page1-bg position-fixed">
-                        <img className='alien1-img' src="/alien1.png" alt="" />
+                        <img loading="lazy" className='alien1-img' src="/alien1.png" alt="" />
                     </div>
                     <div className="page1-front pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className='whitelist-btn py-3 d-flex justify-content-center align-items-center'>
