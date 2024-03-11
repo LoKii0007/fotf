@@ -12,7 +12,7 @@ function App() {
     <>
       <BrowserRouter>
       <Layout/>
-      {/* <Loading/> */}
+      <Loading/>
         <Routes>
           <Route exact path="/" element={<Home/>}></Route>
           <Route exact path="/terms" element={<Terms/>}></Route>

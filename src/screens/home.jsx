@@ -1,4 +1,4 @@
-import React,  { useLayoutEffect, useState } from "react"
+import React,  { useEffect, useLayoutEffect, useState } from "react"
 import Page1 from "../components/page1";
 import Page2 from "../components/page2"
 import Page3 from "../components/page3"
@@ -18,8 +18,10 @@ export default function Home() {
         window.removeEventListener("resize", handleResize);
       }
     }, []);
+
   return (
     <>
+       <div id="preloader"></div>
        <Page1 scale={scale} />
        <Page2 scale={scale} />
        <Page3 scale={scale} />

@@ -240,10 +240,10 @@ export default function Page3({scale}) {
 
           <div className="page3-left position-relative">
             <div className="chadi ">
-              <img loading="lazy" className='chadi-img' src="/chadi.png" alt="" />
+              <img  className='chadi-img' src="/chadi.png" alt="" />
             </div>
             <div className="stick position-absolute">
-              <img loading="lazy" className='stick-img' src="/staff.png" alt="" />
+              <img  className='stick-img' src="/staff.png" alt="" />
             </div>
           </div>
 
@@ -252,16 +252,16 @@ export default function Page3({scale}) {
               <div className="crystal-top pt-5 d-flex justify-content-center align-items-center">
                 <div className="crystal-text px-5">SERUM</div>
                 <div className="sound px-5">
-                  <img loading="lazy" className='sound-img' src="/world.png" alt="" />
+                  <img  className='sound-img' src="/world.png" alt="" />
                 </div>
               </div>
 
               <div className="crystal-bottom pb-5 d-flex justify-content-center align-items-center">
                 <div className="crystal">
-                  <img loading="lazy" className='crystal-img' src="/crystal.png" alt="" />
+                  <img  className='crystal-img' src="/crystal.png" alt="" />
                 </div>
                 <div className="world d-flex align-items-start">
-                  <img loading="lazy" className='world-img' src="/wave.png" alt="" />
+                  <img  className='world-img' src="/wave.png" alt="" />
                 </div>
               </div>
 
@@ -278,12 +278,12 @@ export default function Page3({scale}) {
               <div className="hero-comp d-flex">
                 <div className="hero-1">
                   <div className="hero-11">
-                    <img loading="lazy" className='hero-img1 hero' src="/fire.png" alt="" />
+                    <img  className='hero-img1 hero' src="/fire.png" alt="" />
                   </div>
                 </div>
                 <div className="hero-2">
                   <div className="hero-21">
-                    <img loading="lazy" className='hero-img2 hero' src="/ice.png" alt="" />
+                    <img  className='hero-img2 hero' src="/ice.png" alt="" />
                   </div>
                 </div>
               </div>
@@ -313,7 +313,7 @@ export default function Page3({scale}) {
               Multiplier from the deposit
             </div>
             <div className="recurso position-absolute">
-              <img loading="lazy" className='recurso-img' src="/recurso.png" alt="" />
+              <img  className='recurso-img' src="/recurso.png" alt="" />
             </div>
             <div className="circle-2 position-relative d-flex justify-content-center align-items-center">
               <div style={{ opacity: isHovered1 ? 1 : 0 }} className="ghoomta-sq ghoomta-sq1 position-absolute">
@@ -341,7 +341,7 @@ export default function Page3({scale}) {
           <div className="circ-bottom py-4 d-flex flex-column justify-content-center align-items-center">
             <div className="perks text-center">perks powered <br /> by spartacus</div>
             <div className="perks-logo">
-              <img loading="lazy" className='perks-img' src="/spartacus.png" alt="" />
+              <img  className='perks-img' src="/spartacus.png" alt="" />
             </div>
           </div>
         </div>

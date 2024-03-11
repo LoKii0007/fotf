@@ -219,23 +219,23 @@ export default function Page1({ scale }) {
             duration: 0.8,
             ease: "circ.in",
             zIndex: "0"
-        }, 0)
+        }, 5.5)
         gsap.to(".load-right", {
             x: "50vw",
             duration: 0.8,
             ease: "circ.in",
             zIndex: "0"
-        }, 0)
+        }, 5.5)
 
         gsap.to(".webkit-the, .page1-line3", {
             x: 0,
             duration: 1
-        }, 0 )
+        }, 5.5 )
 
         gsap.to(".alien1-img", {
             duration: 1,
             right: "0%"
-        }, 0)
+        }, 5.5)
     }, [])
 
     return (
@@ -243,15 +243,15 @@ export default function Page1({ scale }) {
             <div className="load-left position-fixed"></div>
             <div className="load-right position-fixed"></div>
             <div className="page1-bg2 position-fixed">
-                <img loading="lazy" className='moving-bg' src="/moving-bg.png" alt="" />
+                <img  className='moving-bg' src="/moving-bg.png" alt="" />
             </div>
             <div className="page1 container d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 container position-relative">
                     <div className="page1-bg position-fixed">
-                        <img loading="lazy" className='alien1-img' src="/alien1.png" alt="" />
+                        <img  className='alien1-img' src="/alien1.png" alt="" />
                     </div>
                     <div className="page1-bg3 position-fixed">
-                        {/* <img loading="lazy" className='moving-bg' src="/moving-bg2.svg" alt="" /> */}
+                        {/* <img  className='moving-bg' src="/moving-bg2.svg" alt="" /> */}
                     </div>
                     <div className="page1-front pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className='whitelist-btn py-3 d-flex justify-content-center align-items-center'>

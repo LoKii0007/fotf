@@ -6,9 +6,13 @@ export default function Loading() {
 
 useEffect(()=>{
 
+  const tl = gsap.timeline({
+    paused: true
+  })
+
   // -------------------loading 1-----------------
 
-  gsap.to(".loading-1",{
+  tl.to(".loading-1",{
     opacity:0,
     duration:0.5,
     transition:"1s ease-in"
@@ -16,8 +20,6 @@ useEffect(()=>{
 
 
   // -----------------------loading 2------------------
-
-  const tl = gsap.timeline()
 
   tl.to(".outer-89",{
     duration:0.5,
@@ -62,26 +64,28 @@ useEffect(()=>{
 
   // -----------------------loading 4------------------
 
-  gsap.to(".loading",{
+  tl.to(".loading",{
       scale:"5",
       duration:1.5,
       opacity:0
   }, 5.5)
-  // gsap.to(".loading-video",{
-  //     scale:"5",
-  //     duration:1.5,
-  //     opacity:0,
-  //     zIndex:0
-  // }, 5.5)
+
+  const video = document.querySelector('.loading-vid');
+
+  window.addEventListener("load", function(){
+    video.play()
+    tl.play()
+  })
+
 }, [])
 
 
 
   return (
     <>
-      <div className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
+      <div id='preloader' className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
         <div className='loading-video position-fixed d-flex justify-content-center align-items-center'>
-          <video className='loading-vid' muted autoPlay src="/loading-vid.mp4"></video>
+          <video className='loading-vid' muted src="/loading-vid.mp4"></video>
         </div>
         <div className="loading-1 d-flex justify-content-center align-items-center">
           <div className="time-15-left d-flex justify-content-center align-items-center">

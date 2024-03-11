@@ -179,10 +179,10 @@ export default function Page4({ scale }) {
                     </div>
                     <div className="thanks-bottom d-flex justify-content-center align-items-center position-relative">
                         <div className="snake-1">
-                            <img loading="lazy" className='snake1-img' src="/IMG-20240130-WA0120.png" alt="" />
+                            <img  className='snake1-img' src="/IMG-20240130-WA0120.png" alt="" />
                         </div>
                         <div className="snake-2">
-                            <img loading="lazy" className='snake2-img' src="/IMG-20240130-WA0124.png" alt="" />
+                            <img  className='snake2-img' src="/IMG-20240130-WA0124.png" alt="" />
                         </div>
                         <div className="kaali-naagin position-absolute d-flex justify-content-center align-items-center">
                             fotf
@@ -200,32 +200,32 @@ export default function Page4({ scale }) {
                     <div className="fotf-bg position-absolute d-flex flex-column">
                         <div className="fotf-images d-flex flex-column justify-content-evenly align-items-center">
                             <div style={{ animation: flag ? "slide-top 8s linear infinite" : "" }} className="fotf-top-img d-flex align-items-start">
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0152.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1753.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0153.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1754.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0154.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1755.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0155.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1756.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0083.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0152.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1753.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0153.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1754.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0154.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0155.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1756.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0083.jpg" alt="" />
                             </div>
                             <div style={{ animation: flag ? "slide-bottom 8s linear infinite" : "" }} className="fotf-bottom-img d-flex align-items-end">
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0156.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1757.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0157.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1758.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0094.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0158.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1759.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0095.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ALIENS0159.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/ELFOS1766.jpg" alt="" />
-                                <img loading="lazy" className='fotf-img' src="/HUMANOS0096.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0156.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1757.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0157.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1758.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0094.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0158.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1759.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0095.jpg" alt="" />
+                                <img  className='fotf-img' src="/ALIENS0159.jpg" alt="" />
+                                <img  className='fotf-img' src="/ELFOS1766.jpg" alt="" />
+                                <img  className='fotf-img' src="/HUMANOS0096.jpg" alt="" />
                             </div>
                         </div>
                     </div>
