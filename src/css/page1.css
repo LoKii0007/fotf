@@ -1,3 +1,21 @@
+/* --------------on load-------------  */
+
+.load-left, .load-right{
+    top: 0%;
+    height: 100vh;
+    width: 50vw;
+    background-color: black;
+    z-index: 200;
+}
+.load-left{
+    left: 0%;
+}
+.load-right{
+    right: 0%;
+}
+
+/* -----------------------page 1-------------------------- */
+
 .page1{
     overflow: hidden;
     background-color: black;
@@ -15,10 +33,29 @@
 }
 .alien1-img{
     width: 1200px;
-    /* height: 1200px; */
+    right: -10%;
+}
+.page1-bg2{
+    z-index: 9;
+    mix-blend-mode: lighten;
+}
+.moving-bg{
+    width: 1000px;
+    opacity: 0.1;
 }
 
-/* -----------comp1-front------------- */
+/* .page1-bg3{
+    z-index: 9;
+    bottom: 0% ;
+    right: 0% ;
+} */
+/* .moving-bg2{
+    background-image: url(/public/movin-bg2.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+/* ----------------------comp1-front------------------------- */
 
 .page1-front{
     height: 100vh;
@@ -34,16 +71,19 @@
     align-items: flex-start !important;
 }
 .comp1-line{
+    z-index: 20;
     font-size: 132px;
     line-height: 120px;
     color: #07CE02;
-    z-index: 20;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(2px);
 }
 .webkit-the{
     -webkit-text-stroke:2px #07CE02;
     color: transparent; 
+}
+.webkit-the, .page1-line3{
+    transform: translateX(300px);
 }
 .page1-line3{
     -webkit-text-stroke: 2px #07CE02;
@@ -75,7 +115,7 @@
 }
 
 .whitelist-btn{
-    display: none;
+    display: none !important;
     width: 100%;
 }
 .access-btn{
@@ -269,7 +309,7 @@
 
     .page1-front{
         justify-content: center !important;
-        height: 600px;
+        height: 400px;
     }
     .comp1-line{
         font-size: 50px;

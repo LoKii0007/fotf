@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../css/page1.css"
 
-export default function Page1({scale}) {
+export default function Page1({ scale }) {
 
     gsap.registerPlugin(ScrollTrigger)
 
@@ -20,6 +20,18 @@ export default function Page1({scale}) {
             transformOrigin: "left bottom",
             transform: `${scale ? "scale(0.7)" : "scale(1)"}`,
             left: "0%"
+        })
+
+        gsap.to(".page1-bg2", {
+            scrollTrigger: {
+                trigger: ".page1-comp2",
+                start: "top bottom",
+                end: "top top",
+                scrub: 0.5
+            },
+            left: "-1000px",
+            top: "-500px",
+            opacity:0
         })
         gsap.to(".page1-front", {
             scrollTrigger: {
@@ -63,7 +75,7 @@ export default function Page1({scale}) {
     // -------- comp3-animations-----------------
 
     useEffect(() => {
-        if(scale){
+        if (scale) {
             gsap.to(".web-1", {
                 scrollTrigger: {
                     trigger: ".webkit-1",
@@ -104,7 +116,7 @@ export default function Page1({scale}) {
                 width: "100%",
                 transition: "all .5s linear"
             })
-        }else{
+        } else {
             gsap.to(".web-mob-1", {
                 scrollTrigger: {
                     trigger: ".webkit-mob-1",
@@ -199,14 +211,47 @@ export default function Page1({scale}) {
 
     }, [scale])
 
-    // ---------------comp4 animation----------------
+    // ---------------on load animation----------------
+
+    useEffect(() => {
+        gsap.to(".load-left", {
+            x: "-50vw",
+            duration: 0.8,
+            ease: "circ.in",
+            zIndex: "0"
+        }, 0)
+        gsap.to(".load-right", {
+            x: "50vw",
+            duration: 0.8,
+            ease: "circ.in",
+            zIndex: "0"
+        }, 0)
+
+        gsap.to(".webkit-the, .page1-line3", {
+            x: 0,
+            duration: 1
+        }, 0 )
+
+        gsap.to(".alien1-img", {
+            duration: 1,
+            right: "0%"
+        }, 0)
+    }, [])
 
     return (
         <>
+            <div className="load-left position-fixed"></div>
+            <div className="load-right position-fixed"></div>
+            <div className="page1-bg2 position-fixed">
+                <img loading="lazy" className='moving-bg' src="/moving-bg.png" alt="" />
+            </div>
             <div className="page1 container d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 container position-relative">
                     <div className="page1-bg position-fixed">
                         <img loading="lazy" className='alien1-img' src="/alien1.png" alt="" />
+                    </div>
+                    <div className="page1-bg3 position-fixed">
+                        {/* <img loading="lazy" className='moving-bg' src="/moving-bg2.svg" alt="" /> */}
                     </div>
                     <div className="page1-front pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className='whitelist-btn py-3 d-flex justify-content-center align-items-center'>
@@ -219,7 +264,10 @@ export default function Page1({scale}) {
                         </div>
                         <div className="page1-lines d-flex flex-column justify-content-center align-items-center">
                             <div className="page1-line1 comp1-line ps-5">FRIENDS</div>
-                            <div className="page1-line2 comp1-line"> OF <span className="webkit-the">THE</span> </div>
+                            <div className="page1-line2 comp1-line d-flex">
+                                <div className='webkit-of'>OF</div>
+                                <div className='webkit-the'>THE</div>
+                            </div>
                             <div className="page1-line3 comp1-line ps-5">FUTURE</div>
                         </div>
                         <div className="join-btns ps-5 d-flex align-items-center justify-content-center">
@@ -267,9 +315,9 @@ export default function Page1({scale}) {
                         </div>
                         <div className="comp2-text px-5 position-relative d-flex justify-content-center align-items-center">
                             <div className='scrollable'>
-                            This project tells the story of 4 friends that come together thanks to web 3.
-                            Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
-                            Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
+                                This project tells the story of 4 friends that come together thanks to web 3.
+                                Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
+                                Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
                             </div>
                             <div className="message position-absolute">
                                 <svg width="114" height="96" viewBox="0 0 114 96" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,7 +381,7 @@ export default function Page1({scale}) {
 
                 </div>
 
-                {scale ?<div className="page1-comp3 d-flex flex-column justify-content-center align-items-center">
+                {scale ? <div className="page1-comp3 d-flex flex-column justify-content-center align-items-center">
                     <div className="sudo-1 position-relative">
                         <div className='webkit-1 text-center'>we are not here</div>
                         <div className='web-1 text-center position-absolute'>we are not here</div>
@@ -352,44 +400,44 @@ export default function Page1({scale}) {
                     </div>
                 </div> :
 
-                <div className="page1-comp4 d-flex flex-column justify-content-center align-items-center">
-                    <div className="sudo-mob-1 position-relative">
-                        <div className='webkit-mob-1 text-center'>we are</div>
-                        <div className='web-mob-1 mob text-center position-absolute'>we are</div>
-                    </div>
-                    <div className="sudo-mob-2 position-relative">
-                        <div className='webkit-mob-2 text-center'>not</div>
-                        <div className='web-mob-2 mob text-center position-absolute'>not</div>
-                    </div>
-                    <div className="sudo-mob-3 position-relative">
-                        <div className='webkit-mob-3 text-center'>here to</div>
-                        <div className='web-mob-3 mob text-center position-absolute'>here to</div>
-                    </div>
-                    <div className="sudo-mob-4 position-relative">
-                        <div className='webkit-mob-4 text-center'>take</div>
-                        <div className='web-mob-4 mob text-center position-absolute'>take</div>
-                    </div>
-                    <div className="sudo-mob-5 position-relative">
-                        <div className='webkit-mob-5 text-center'>part, we</div>
-                        <div className='web-mob-5 mob text-center position-absolute'>part, we</div>
-                    </div>
-                    <div className="sudo-mob-6 position-relative">
-                        <div className='webkit-mob-6 text-center'>are</div>
-                        <div className='web-mob-6 mob text-center position-absolute'>are</div>
-                    </div>
-                    <div className="sudo-mob-7 position-relative">
-                        <div className='webkit-mob-7 text-center'>here to</div>
-                        <div className='web-mob-7 mob text-center position-absolute'>here to</div>
-                    </div>
-                    <div className="sudo-mob-8 position-relative">
-                        <div className='webkit-mob-8 text-center'>take</div>
-                        <div className='web-mob-8 mob text-center position-absolute'>take over.</div>
-                    </div>
-                    <div className="sudo-mob-9 position-relative">
-                        <div className='webkit-mob-9 text-center'>over.</div>
-                        <div className='web-mob-9 mob text-center position-absolute'>over.</div>
-                    </div>
-                </div>}
+                    <div className="page1-comp4 d-flex flex-column justify-content-center align-items-center">
+                        <div className="sudo-mob-1 position-relative">
+                            <div className='webkit-mob-1 text-center'>we are</div>
+                            <div className='web-mob-1 mob text-center position-absolute'>we are</div>
+                        </div>
+                        <div className="sudo-mob-2 position-relative">
+                            <div className='webkit-mob-2 text-center'>not</div>
+                            <div className='web-mob-2 mob text-center position-absolute'>not</div>
+                        </div>
+                        <div className="sudo-mob-3 position-relative">
+                            <div className='webkit-mob-3 text-center'>here to</div>
+                            <div className='web-mob-3 mob text-center position-absolute'>here to</div>
+                        </div>
+                        <div className="sudo-mob-4 position-relative">
+                            <div className='webkit-mob-4 text-center'>take</div>
+                            <div className='web-mob-4 mob text-center position-absolute'>take</div>
+                        </div>
+                        <div className="sudo-mob-5 position-relative">
+                            <div className='webkit-mob-5 text-center'>part, we</div>
+                            <div className='web-mob-5 mob text-center position-absolute'>part, we</div>
+                        </div>
+                        <div className="sudo-mob-6 position-relative">
+                            <div className='webkit-mob-6 text-center'>are</div>
+                            <div className='web-mob-6 mob text-center position-absolute'>are</div>
+                        </div>
+                        <div className="sudo-mob-7 position-relative">
+                            <div className='webkit-mob-7 text-center'>here to</div>
+                            <div className='web-mob-7 mob text-center position-absolute'>here to</div>
+                        </div>
+                        <div className="sudo-mob-8 position-relative">
+                            <div className='webkit-mob-8 text-center'>take</div>
+                            <div className='web-mob-8 mob text-center position-absolute'>take over.</div>
+                        </div>
+                        <div className="sudo-mob-9 position-relative">
+                            <div className='webkit-mob-9 text-center'>over.</div>
+                            <div className='web-mob-9 mob text-center position-absolute'>over.</div>
+                        </div>
+                    </div>}
             </div>
         </>
     )

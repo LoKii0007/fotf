@@ -247,7 +247,7 @@
 
 /*----------------------- keyframes----------------------------- */
 
-@keyframes layer1-anime{
+/* @keyframes layer1-anime{
     0%, 93.75%{
         width: 450px;
     }
@@ -612,4 +612,4 @@
     93.75%, 100%{
         opacity: 0;
     }
-}
+} */

@@ -1,0 +1,78 @@
+.loading{
+    z-index: 300;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+.loading-1{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    opacity: 1;
+    transition: 1s ease-in;
+}
+
+.line-15{
+    z-index: 400;
+}
+
+.loading-video{
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    top: 10px;
+    left: 10px;
+}
+.loading-vid{
+    width: 1200px;
+}
+
+.circle-15{
+    border: 2px solid #07CE02;
+    height: 400px;
+    width: 400px;
+    border-radius: 250px;
+    z-index: 400;
+    font-size: 60px;
+    color: #07CE02;
+    box-shadow: 0px 0px 40px #07CE02;
+}
+
+/* -----------------loading 2-----------------------  */
+
+.loading-2{
+    height: 100vh;
+    width: 100vw;
+    top: 0%;
+    left: 0%;
+    font-size: 60px;
+    z-index: 400;
+}
+
+.outer-89{
+    height: 400px;
+    width: 400px;
+    border: 2px solid #07CE02;
+    border-radius: 200px;
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+.gradient-svg{
+    height: 350px;
+    width: 350px;
+    transition: 0.5s ease;
+}
+
+.tedi-line-89{
+   right: 8%;
+   top: 0%;
+}
+
+.text-100, .text-89{
+    color: #07CE02;
+}
+.text-100{
+    opacity: 0;
+}
+

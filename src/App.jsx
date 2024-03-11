@@ -4,6 +4,7 @@ import Terms from "./components/terms"
 import Legal from "./components/legal"
 import Privacy from "./components/privacy"
 import Home from './screens/home'
+import Loading from './components/loading'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <>
       <BrowserRouter>
       <Layout/>
+      {/* <Loading/> */}
         <Routes>
           <Route exact path="/" element={<Home/>}></Route>
           <Route exact path="/terms" element={<Terms/>}></Route>
