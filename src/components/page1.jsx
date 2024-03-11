@@ -219,23 +219,23 @@ export default function Page1({ scale }) {
             duration: 0.8,
             ease: "circ.in",
             zIndex: "0"
-        }, 5.5)
+        }, 0)
         gsap.to(".load-right", {
             x: "50vw",
             duration: 0.8,
             ease: "circ.in",
             zIndex: "0"
-        }, 5.5)
+        }, 0)
 
         gsap.to(".webkit-the, .page1-line3", {
             x: 0,
             duration: 1
-        }, 5.5 )
+        }, 0 )
 
         gsap.to(".alien1-img", {
             duration: 1,
             right: "0%"
-        }, 5.5)
+        }, 0)
     }, [])
 
     return (

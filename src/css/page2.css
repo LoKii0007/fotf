@@ -109,6 +109,9 @@
 
 /* ----------------------black svg(box 2)------------------------------ */
 
+.shuffle-bottom{
+    z-index: 100000;
+}
 .box-2{
     transform: rotateY(90deg);
     background-position: center;
@@ -247,7 +250,7 @@
 
 /*----------------------- keyframes----------------------------- */
 
-/* @keyframes layer1-anime{
+@keyframes layer1-anime{
     0%, 93.75%{
         width: 450px;
     }
@@ -612,4 +615,4 @@
     93.75%, 100%{
         opacity: 0;
     }
-} */
+}

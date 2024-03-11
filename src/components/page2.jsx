@@ -15,11 +15,11 @@ export default function Page2({ scale }) {
   const [shuffle, setShuffle] = useState(false)
 
   
-  useEffect(()=>{
-    window.addEventListener("load", function(){
-      console.log("loaded")
-    })
-  }, [])
+  // useEffect(()=>{
+  //   window.addEventListener("load", function(){
+  //     console.log("loaded")
+  //   })
+  // }, [])
 
   // animation1-------------(green box rotation)-----------------------
 
@@ -287,48 +287,48 @@ export default function Page2({ scale }) {
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
 
               <div style={{ animation: shuffle ? "layer1-anime 8s linear infinite" : "" }} className="layer-1 position-absolute d-flex justify-content-between align-items-center ">
-                <img  style={{ animation: shuffle ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img1' src="/1.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img2' src="/2.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer1-img-anime 8s linear infinite" : "" }} className='lr1-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer2-anime 8s linear infinite" : "" }} className="layer-2 position-absolute d-flex justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img1' src="/3.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img2' src="/4.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer2-img-anime 8s linear infinite" : "" }} className='lr2-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer3-anime 8s linear infinite" : "" }} className="layer-3 position-absolute d-flex justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img1' src="/5.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img2' src="/6.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer3-img-anime 8s linear infinite" : "" }} className='lr3-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer4-anime 8s linear infinite" : "" }} className="layer-4 position-absolute d-flex justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img1' src="/7.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img2' src="/8.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer4-img-anime 8s linear infinite" : "" }} className='lr4-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer5-anime 8s linear infinite" : "" }} className="layer-5 position-absolute d-flex justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img1' src="/10-1.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img2' src="/10.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer5-img-anime 8s linear infinite" : "" }} className='lr5-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer6-anime 8s linear infinite" : "" }} className="layer-6 position-absolute d-flex justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img1' src="/11.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img2' src="/11-1.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer6-img-anime 8s linear infinite" : "" }} className='lr6-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer7-anime 8s linear infinite" : "" }} className="layer-7 d-flex position-absolute justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img1' src="/12.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img2' src="/12-1.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer7-img-anime 8s linear infinite" : "" }} className='lr7-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer8-anime 8s linear infinite" : "" }} className="layer-8 d-flex position-absolute justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img1' src="/13.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img2' src="/13-1.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer8-img-anime 8s linear infinite" : "" }} className='lr8-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer9-anime 8s linear infinite" : "" }} className="layer-9 d-flex position-absolute justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img1' src="/14.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img2' src="/14-1.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer9-img-anime 8s linear infinite" : "" }} className='lr9-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer10-anime 8s linear infinite" : "" }} className="layer-10 d-flex position-absolute justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img1' src="/15.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img2' src="/15-1.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img1' src="/HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer10-img-anime 8s linear infinite" : "" }} className='lr10-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
               <div style={{ animation: shuffle ? "layer11-anime 8s linear infinite" : "" }} className="layer-11 d-flex position-absolute justify-content-between align-items-center">
-                <img  style={{ animation: shuffle ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img1' src="/16.png" alt="" />
-                <img  style={{ animation: shuffle ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img2' src="/16-1.png" alt="" />
+                <img  style={{ animation: shuffle ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img1' src="HUMANOS0094.jpg" alt="" />
+                <img  style={{ animation: shuffle ? "layer11-img-anime 8s linear infinite" : "" }} className='lr11-img2' src="/HUMANOS0094.jpg" alt="" />
               </div>
             </div>
 

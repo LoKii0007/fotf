@@ -4,80 +4,80 @@ import gsap from 'gsap'
 
 export default function Loading() {
 
-useEffect(()=>{
+  useEffect(() => {
 
-  const tl = gsap.timeline({
-    paused: true
-  })
+    const tl = gsap.timeline({
+      paused: true
+    })
 
-  // -------------------loading 1-----------------
+    // -------------------loading 1-----------------
 
-  tl.to(".loading-1",{
-    opacity:0,
-    duration:0.5,
-    transition:"1s ease-in"
-  }, 3)
-
-
-  // -----------------------loading 2------------------
-
-  tl.to(".outer-89",{
-    duration:0.5,
-    opacity:1
-  }, 2)
-  tl.to(".outer-89", {
-    height:300,
-    width:300,
-    borderRadius:150,
-    duration:0.7
-  }, 2.5)
-  tl.to(".gradient-svg", {
-    height:270,
-    width:270,
-    borderRadius:135,
-    duration:0.7
-  }, 2.5)
+    tl.to(".loading-1", {
+      opacity: 0,
+      duration: 0.5,
+      transition: "1s ease-in"
+    }, 3)
 
 
-  // -----------------------loading 3------------------
+    // -----------------------loading 2------------------
 
-  tl.to(".text-89",{
-    duration:0.5,
-    opacity:0
-  }, 4)
-  tl.to(".text-100",{
-    duration:0.5,
-    opacity:1
-  }, 4)
-  tl.to(".outer-89", {
-    height:400,
-    width:400,
-    borderRadius:200,
-    duration:0.7
-  }, 4)
-  tl.to(".gradient-svg", {
-    height:350,
-    width:350,
-    duration:0.7
-  }, 4)
+    tl.to(".outer-89", {
+      duration: 0.5,
+      opacity: 1
+    }, 2)
+    tl.to(".outer-89", {
+      height: 300,
+      width: 300,
+      borderRadius: 150,
+      duration: 0.7
+    }, 2.5)
+    tl.to(".gradient-svg", {
+      height: 270,
+      width: 270,
+      borderRadius: 135,
+      duration: 0.7
+    }, 2.5)
 
 
-  // -----------------------loading 4------------------
+    // -----------------------loading 3------------------
 
-  tl.to(".loading",{
-      scale:"5",
-      duration:1.5,
-      opacity:0
-  }, 5.5)
+    tl.to(".text-89", {
+      duration: 0.5,
+      opacity: 0
+    }, 4)
+    tl.to(".text-100", {
+      duration: 0.5,
+      opacity: 1
+    }, 4)
+    tl.to(".outer-89", {
+      height: 400,
+      width: 400,
+      borderRadius: 200,
+      duration: 0.7
+    }, 4)
+    tl.to(".gradient-svg", {
+      height: 350,
+      width: 350,
+      duration: 0.7
+    }, 4)
 
-  const video = document.querySelector('.loading-vid');
 
-  window.addEventListener("load", function(){
-    video.play()
-    tl.play()
-  })
+    // -----------------------loading 4------------------
 
-}, [])
+    tl.to(".loading", {
+      scale: "5",
+      duration: 1.5,
+      opacity: 0
+    }, 5.5)
+
+    const video = document.querySelector('.loading-vid');
+
+    window.addEventListener("load", function(){
+      video.play()
+      tl.play()
+    })
+
+  }, [])
 
 
 
