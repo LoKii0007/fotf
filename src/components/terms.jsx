@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Terms() {
     return (
         <>
-            <div className="terms documents p-5 container d-flex flex-column justify-content-center align-items-center">
+            <div className="terms p-5 container d-flex flex-column justify-content-center align-items-center">
                 <div className="page p-5">
                     <div className="page-head pt-5">terms of services</div>
                     <div className="page-desc">These Terms of Service (the "Terms”) govern your access to and use, whether personally or on behalf of an entity (“you” or “User”), of the [your project's website URL] website and another media form, media channel, mobile website, or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). By accessing or using the Site, you accept these Terms on behalf of yourself and any entity that you represent, and you represent and warrant that you have the right and authority to do so. You further represent and warrant that you are fully able and competent to enter into, abide by, and comply with the applicable User License related to any NFTs (as defined herein) you acquire via the Site. If you do not agree with all of the provisions of these Terms, do not access or use the Site. The Site and NFTs are copyrighted works of [Your Company Name],doing business as "Friends of the Future" ("Friends of the Future", “we”, “us”, or “our”). <br /> <br />

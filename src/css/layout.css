@@ -27,13 +27,16 @@
   z-index: 10;
 }
 
-.documents{
-    width: 100vw;
+.privacy , .legal , .terms{
+  overflow: hidden;
 }
 
+.page-head, .point-head {
+  color: #07ce02;
+  word-break: normal;
+}
 .page-head {
   font-size: 57px;
-  color: #07ce02;
 }
 .page-desc,
 .point-desc {
@@ -41,10 +44,10 @@
   font-size: 17px;
   opacity: 0.5;
   color: #07ce02;
+  word-break:normal;
 }
 .point-head {
   font-size: 35px;
-  color: #07ce02;
 }
 
 @media screen and (min-width: 600px) and (max-width: 1200px) {

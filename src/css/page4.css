@@ -7,6 +7,7 @@
 .thanks{
     height: 100vh;
     width: 100vw;
+    background-color: transparent !important;
 }
 
 .thanks-top{
@@ -24,65 +25,78 @@
     height: 250px;
     width: 250px;
     border-radius: 125px;
-    transform: translateX(20px);
+    transform: rotateZ(-90deg) rotateX(90deg) translateX(20px);
+    overflow: hidden;
+
 }
 .snake2-img{
     height: 300px;
     width: 300px;
+    overflow: hidden;
     border-radius: 150px;
-    transform: translateX(-20px);
+    transform: rotateZ(90deg) rotateX(-90deg) translateX(-20px);
 }
-.kaali-naagin{
+
+.fotf{
+    height: 50vh;
+    width: 100vw;
+    background-color: transparent !important;
+}
+/* --------------------------------initial fotf ---------------------------------- */
+
+.kala-fotf{
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100vw;
+}
+.kala-gola{
     height: 300px;
     width: 300px;
     border-radius: 150px;
-    z-index: 100;
-    color: #07CE02;
-    font-size: 24px;
-}
-
-/* --------------------------------fotf ------------------------- */
-
-.fotf{
-    height: 100vh;
-    width: 100vw;
-}
-.fotf-front{
-    height: 100vh;
-    width: 100vw;
-    color: #07CE02;
+    z-index: 90;
+    background-color: black;
+    opacity: 0;
 }
 .char{
-    font-size: 100px;
-    z-index: 200;
+    font-size: 24px;
     width: 0px;
     height: 0px;
+    transform: rotateY(180deg);
     overflow: visible;
+    color: #07CE02;
+    top: 50%;
+    opacity: 0;
+    z-index: 100;
 }
+.char-1{
+    left: 44%;
+}
+.char-2{
+    left: 48%;
+}
+.char-3{
+    left: 52%;
+}
+.char-4{
+    left: 56%;
+}
+
+
 .fotf-bg{
     z-index: 100;
     width: 100vw;
+    /* top: 100%; */
+    transform: translateY(100vh);
     overflow: hidden;
 }
 .fotf-img{
     width: 300px;
     height: 300px;
+    filter: grayscale(100%);
 }
 
-.char-1{
-    top: 20%;
-}
-.char-2{
-    top: 40%;
-}
-.char-3{
-    top: 60%;
-}
-.char-4{
-    top: 80%;
-}
-
-/* -----------footer------------  */
+/* ---------------------------footer----------------------------------  */
 
 .footer{
     width: 100vw;
@@ -109,7 +123,7 @@
 }
 
 
-/* ---------------------media queries ----------- */
+/* ----------------------------------media queries ------------------------ */
 
 @media screen and (max-width:600px){
     .thanks-top{

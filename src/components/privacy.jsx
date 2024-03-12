@@ -3,9 +3,9 @@ import React from 'react'
 export default function Privacy() {
   return (
     <>
-      <div className="privacy documents p-5 container d-flex flex-column justify-content-center align-items-center">
-        <div className="page p-5 pt-5">
-          <div className="page-head">privacy policy</div>
+      <div className="privacy p-5 d-flex flex-column justify-content-center align-items-center">
+        <div className="page p-5">
+          <div className="page-head pt-5">privacy policy</div>
           <div className="page-desc">
             This Privacy Policy (the "Privacy Policy") is designed to inform you about the policies and procedures that "Friends of the Future" employs regarding the collection, use, and disclosure of the information we receive when you access and use our website (the "Site"), services, software, mobile applications, content, and all other products and services (collectively, the "Services") provided, owned, controlled, or offered, directly or indirectly, by Friends Of The Future, including its subsidiaries and affiliates ("Friends of the Future," "we," "our," or "us"). We prioritize the privacy of our users and are committed to using Personal Information (as defined below) solely as outlined in this Privacy Policy. This Privacy Policy is integrated by reference into our Terms of Service, available at [Link to your Terms of Service], (the "Terms of Service"). By utilizing the Services, you confirm that you have read, understood, and agreed to this Privacy Policy and the Terms of Service and that you are over 18 years of age. IF YOU DO NOT CONSENT TO THIS PRIVACY POLICY, PLEASE REFRAIN FROM USING, INSTALLING, OR ACCESSING THE SERVICES.
           </div>

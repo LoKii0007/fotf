@@ -7,7 +7,13 @@ export default function Loading() {
   useEffect(() => {
 
     const tl = gsap.timeline({
-      paused: true
+      paused: true,
+      onComplete:()=>{
+        document.body.style.overflow = "auto"
+      },
+      onStart:()=>{
+        document.body.style.overflow = "hidden"
+      }
     })
 
     // -------------------loading 1-----------------
