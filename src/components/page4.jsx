@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "../css/page4.css"
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -13,6 +13,29 @@ export default function Page4({ scale }) {
     gsap.config({
         force3D: true
     })
+
+    const [bgUrl , setBgUrl] = useState("bg1")
+
+    // -------------------------layout animation ---------------------------
+
+    useEffect(() => {
+        const handleResize = () => {
+          if (window.innerWidth <= 600) {
+            setBgUrl("bg3")
+          } else {
+            setBgUrl("bg1")
+          }
+        }
+    
+        handleResize()
+        window.addEventListener("resize", handleResize)
+    
+        return () => {
+          window.removeEventListener("resize", handleResize)
+        }
+      }, [])
+
+      
 
     // --------------naagin animation------------------ 
 
@@ -96,8 +119,11 @@ export default function Page4({ scale }) {
             height: "100vh",
             borderRadius: 0
         })
+        tl.to(".layout",{
+            y:"-100vh"
+        }, 0)
         tl.to(".char", {
-            fontSize: 100,
+            fontSize: `${scale?"100px":"50px"}`,
             rotateY: "0deg"
         }, 0)
         tl.to(".char-1", {
@@ -129,7 +155,7 @@ export default function Page4({ scale }) {
             }
         })
 
-    })
+    },[scale])
 
     // -----------------------------fotf last Animation----------------- 
 
@@ -268,6 +294,14 @@ export default function Page4({ scale }) {
                         <div className="t-logo f-logo">
                             <i className="fa-brands fa-x-twitter"></i>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style={{ backgroundImage: `url(${bgUrl}.svg)` }} className="layout position-fixed">
+                <div className="layout-top d-flex justify-content-center align-items-center">
+                    <div className="layout-text d-flex justify-content-center align-items-center">
+                      FOTF
                     </div>
                 </div>
             </div>
