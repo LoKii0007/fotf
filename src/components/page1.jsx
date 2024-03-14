@@ -321,7 +321,7 @@ export default function Page1({ scale }) {
 
     return (
         <>
-            {/* <div id='preloader' className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
+            <div id='preloader' className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
                 <div className='loading-video position-fixed d-flex justify-content-center align-items-center'>
                     <video className='loading-vid' muted src="/loading-vid.mp4"></video>
                 </div>
@@ -394,7 +394,7 @@ export default function Page1({ scale }) {
                 </div>
             </div>
             <div className="load-left position-fixed"></div>
-            <div className="load-right position-fixed"></div> */}
+            <div className="load-right position-fixed"></div>
             <div className="page1-bg2 position-fixed">
                 <img className='moving-bg' src="/moving-bg.png" alt="" />
             </div>
