@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-export default function Terms() {
+export default function Terms({bgUrl}) {
     return (
         <>
             <div className="terms p-5 container d-flex flex-column justify-content-center align-items-center">
@@ -207,6 +206,10 @@ export default function Terms() {
                         admin@umaya.io
                     </div>
                 </div>
+            </div>
+
+            <div className="layout position-fixed d-flex justify-content-center align-items-center">
+                {bgUrl}
             </div>
         </>
     )

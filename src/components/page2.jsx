@@ -17,12 +17,6 @@ export default function Page2({ scale }) {
   const animation = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
 
 
-  // useEffect(()=>{
-  //   window.addEventListener("load", function(){
-  //     console.log("loaded")
-  //   })
-  // }, [])
-
   // animation1-------------(green box rotation)-----------------------
 
   useEffect(() => {
@@ -74,7 +68,7 @@ export default function Page2({ scale }) {
       onLeaveBack: () => {
         setShuffle(false)
       },
-      onEnterBack:()=>{
+      onEnterBack: () => {
         tl1.reverse()
         setShuffle(true)
       }
@@ -118,7 +112,7 @@ export default function Page2({ scale }) {
       onLeaveBack: () => {
         setShuffle(true)
       },
-      onEnterBack:()=>{
+      onEnterBack: () => {
         tl2.reverse()
       }
     })
@@ -276,63 +270,63 @@ export default function Page2({ scale }) {
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
               {
                 animation.map((item, index) => (
-                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer"+item+"-anime 8s linear infinite" : "" }` : `${shuffle ? "layer"+item+"-anime-mob 8s linear infinite" : "" }` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
-                    <img style={{ animation: scale ? `${shuffle ? "layer"+item+"-img-anime 8s linear infinite" : "" }` : `${shuffle ? "layer"+item+"-img-anime-mob 8s linear infinite" : "" }` }} className={`lr${item}-img1`} src={`/HUMANOS0094.jpg`} alt="" />
-                    <img style={{ animation: scale ? `${shuffle ? "layer"+item+"-img-anime 8s linear infinite" : "" }` : `${shuffle ? "layer"+item+"-img-anime-mob 8s linear infinite" : "" }` }} className={`lr${item}-img2`} src={`/HUMANOS0094.jpg`} alt="" />
+                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 8s linear infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 8s linear infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear infinite" : ""}` }} className={`lr${item}-img1`} src={`/${item}.png`} alt="" />
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear infinite" : ""}` }} className={`lr${item}-img2`} src={`/${item}-1.png`} alt="" />
                   </div>
                 ))
               }
             </div >
 
-    <div style={{ backgroundImage: "url(faltu.svg)" }} className="box-2 d-flex justify-content-center align-items-start">
-      <div className="box2-content d-flex flex-column justify-content-evenly align-items-center">
-        <div className="box2-top d-flex flex-column align-items-evenly justify-content-center">
-          <div className="box2-line1 py-3 text-center">we are not here to take <br /> part, we are here to <br /> take over.</div>
-          <div className="box2-line2 text-center">there a four <br /> major groups</div>
-        </div>
+            <div style={{ backgroundImage: "url(faltu.svg)" }} className="box-2 d-flex justify-content-center align-items-start">
+              <div className="box2-content d-flex flex-column justify-content-evenly align-items-center">
+                <div className="box2-top d-flex flex-column align-items-evenly justify-content-center">
+                  <div className="box2-line1 py-3 text-center">we are not here to take <br /> part, we are here to <br /> take over.</div>
+                  <div className="box2-line2 text-center">there a four <br /> major groups</div>
+                </div>
 
-        <div className="box2-bottom d-flex align-items-center justify-content-center">
-          <div className="box2-bt-top d-flex align-items-center justify-content-center">
-            <div className="box2-img1 px-2">
-              <div className='d-flex'>
-                <div className='img-sq'></div>
-                <div className="img-text ps-2">normies 1800 spots</div>
+                <div className="box2-bottom d-flex align-items-center justify-content-center">
+                  <div className="box2-bt-top d-flex align-items-center justify-content-center">
+                    <div className="box2-img1 px-2">
+                      <div className='d-flex'>
+                        <div className='img-sq'></div>
+                        <div className="img-text ps-2">normies 1800 spots</div>
+                      </div>
+                      <img className='box2-img' src="/55c2ee38400eef5224c3151b95d9d284.jpeg" alt="" />
+                    </div>
+                    <div className="box2-img2 px-2">
+                      <div className='d-flex'>
+                        <div className='img-sq'></div>
+                        <div className="img-text ps-2">platinums 487 spots</div>
+                      </div>
+                      <img className='box2-img' src="/alien1.png" alt="" />
+                    </div>
+                  </div>
+                  <div className="box2-bt-bottom d-flex align-items-center justify-content-center">
+                    <div className="box2-img3 px-2">
+                      <div className='d-flex'>
+                        <div className='img-sq'></div>
+                        <div className="img-text ps-2">goldies 1007 spots</div>
+                      </div>
+                      <img className='img3-img box2-img' src="/IMG-20240130-WA0119.png" alt="" />
+                    </div>
+                    <div className="box2-img4 px-2">
+                      <div className='d-flex'>
+                        <div className='img-sq'></div>
+                        <div className="img-text ps-2">legendary 20 spots</div>
+                      </div>
+                      <img className='box2-img' src="/IMG-20240130-WA0123.png" alt="" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <img className='box2-img' src="/55c2ee38400eef5224c3151b95d9d284.jpeg" alt="" />
             </div>
-            <div className="box2-img2 px-2">
-              <div className='d-flex'>
-                <div className='img-sq'></div>
-                <div className="img-text ps-2">platinums 487 spots</div>
-              </div>
-              <img className='box2-img' src="/alien1.png" alt="" />
-            </div>
-          </div>
-          <div className="box2-bt-bottom d-flex align-items-center justify-content-center">
-            <div className="box2-img3 px-2">
-              <div className='d-flex'>
-                <div className='img-sq'></div>
-                <div className="img-text ps-2">goldies 1007 spots</div>
-              </div>
-              <img className='img3-img box2-img' src="/IMG-20240130-WA0119.png" alt="" />
-            </div>
-            <div className="box2-img4 px-2">
-              <div className='d-flex'>
-                <div className='img-sq'></div>
-                <div className="img-text ps-2">legendary 20 spots</div>
-              </div>
-              <img className='box2-img' src="/IMG-20240130-WA0123.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
           </div >
         </div >
 
-    <div className="page2-comp2">
-    </div>
+        <div className="page2-comp2">
+        </div>
 
       </div >
     </>

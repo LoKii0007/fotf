@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Privacy() {
+export default function Privacy({ bgUrl }) {
   return (
     <>
       <div className="privacy p-5 d-flex flex-column justify-content-center align-items-center">
@@ -35,13 +35,13 @@ export default function Privacy() {
 
             AUTOMATICALLY COLLECTED INFORMATION
 
-            We also gather data automatically through technological means, which may include: 
+            We also gather data automatically through technological means, which may include:
 
             <ul>
               <li>Device and usage data, such as advertising IDs, device identifiers, and how you interact with our Site.</li>
               <li>Network and internet usage details, including IP addresses, browsing patterns, and connection information.</li>
             </ul>
-      
+
             INFORMATION YOU SHARE ON THIRD PARTY WEBSITES OR THROUGH SOCIAL MEDIA SERVICES
 
             Using third-party websites or social media services linked through our Services may result in those entities collecting data about you. We encourage you to review their privacy policies to understand their data handling practices.
@@ -105,6 +105,10 @@ export default function Privacy() {
           </div>
 
         </div>
+      </div>
+
+      <div className="layout position-fixed d-flex justify-content-center align-items-center">
+        {bgUrl}
       </div>
     </>
   )

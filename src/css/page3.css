@@ -40,6 +40,8 @@
     color: #07CE02;
     line-height: 16px;
     width: 100%;
+    z-index: 500;
+
 }
 .crstal-text{
     font-size: 16px;
@@ -90,7 +92,7 @@
     height: 100vh;
     z-index: 500;
     opacity: 0;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .circle-1{
@@ -201,6 +203,7 @@
 .recurso{
     transition: .5s ease;
     z-index: 50;
+    mix-blend-mode: color-dodge;
 }
 
 @keyframes rotate {
@@ -325,10 +328,17 @@
 /* ---------------------media queries---------------- */
 
 @media screen and (max-width:1400px) and (min-width:1201px){
-
+    .chadi-img{
+        height: 800px;
+        transition: 0.5s ease;
+    }
+    .stick-img{
+        height: 600px;
+        transition: 0.5s ease;
+    }
 }
 
-@media screen and (max-width:1200px) and (min-width:601px){
+@media screen and (max-width:1201px) and (min-width:1000px){
     .chadi-img{
         height: 600px;
         transition: 0.5s ease;
@@ -336,6 +346,29 @@
     .stick-img{
         height: 600px;
         transition: 0.5s ease;
+    }
+}
+
+@media screen and (max-width:999px) and (min-width:601px){
+    .page3-comp1{
+        flex-direction: column-reverse !important;
+        padding: 0% !important;
+    }
+    .chadi-img{
+        height: 400px;
+        transition: 0.5s ease;
+    }
+    .stick-img{
+        height: 400px;
+        transition: 0.5s ease;
+    }
+    .crystal-text{
+        font-size: 16px;
+        width: fit-content;
+        text-align: center;
+    }
+    .page3-comp3-text{
+        font-size: 50px ;
     }
 }
 
@@ -360,6 +393,7 @@
     }
     .crystal-img{
         height: 150px;
+        border-radius: 150px;
     }
     .crstal-text{
         font-size: 16px;

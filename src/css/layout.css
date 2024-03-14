@@ -22,6 +22,9 @@
   overflow: hidden;
 }
 
+.page, .points{
+  z-index: 500;
+}
 .page-head, .point-head {
   color: #07ce02;
   word-break: normal;

@@ -44,17 +44,6 @@
     opacity: 0.1;
 }
 
-/* .page1-bg3{
-    z-index: 9;
-    bottom: 0% ;
-    right: 0% ;
-} */
-/* .moving-bg2{
-    background-image: url(/public/movin-bg2.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-} */
-
 /* ----------------------comp1-front------------------------- */
 
 .page1-front{
@@ -135,7 +124,6 @@
     z-index: 20;
 }
 .comp2-top{
-    overflow-y: scroll;
     height: 500px;
 }
 
@@ -267,7 +255,7 @@
     }
 }
 
-@media screen and (max-width:1200px) and (min-width:601px){
+@media screen and (max-width:1201px) and (min-width:801px){
     .alien1-img{
         width: 1000px;
         transition: 0.5s ease;
@@ -299,7 +287,7 @@
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
 
     .page1{
         padding: 0% !important;

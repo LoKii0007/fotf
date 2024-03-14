@@ -165,7 +165,7 @@
 
 /* ---------------------media queries------------- */
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:768px) {
     .shuffle-top{
         flex-direction: column !important;
         padding-top: 48px !important;
@@ -193,10 +193,29 @@
         font-size: 16px;
     }
 
-    /* --------------------layers----------- */
+    /* ------------------black box(box -2) -------------------- */
 
+    .box-2{
+        width: "100vw";
+        background-image: none !important;
+        background-color: black;
+        height: 400px;
+    }
+    .box2-bottom{
+        flex-direction: column !important;
+    }
+    .box2-bt-top{
+        padding-bottom: 24px;
+    }
+    .img-text{
+        font-size: 8px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
     .layer-1, .layer-5, .layer-6, .layer-7, .layer-8 , .layer-9 , .layer-10 , .layer-11{
-        width: 224px;
+        width: 200px;
     }
     .layer-2{
         width: 350px;
@@ -227,25 +246,6 @@
     .box-2{
         width: 100%;
     }
-
-    /* ------------------black box(box -2) -------------------- */
-
-    .box-2{
-        width: "100vw";
-        background-image: none !important;
-        background-color: black;
-        height: 400px;
-    }
-    .box2-bottom{
-        flex-direction: column !important;
-    }
-    .box2-bt-top{
-        padding-bottom: 24px;
-    }
-    .img-text{
-        font-size: 8px;
-    }
-
 }
 
 /*----------------------- keyframes----------------------------- */
@@ -617,7 +617,7 @@
     }
 }
 
-/* mobile ------------------------------ */
+/* -----------------mobile ------------------------------ */
 
 @keyframes layer1-anime-mob{
     0%, 93.75%{
@@ -638,21 +638,21 @@
 }
 @keyframes layer1-img-anime-mob{
     0% , 93.75%{
-        height: 100px;
+        height: 110px;
         opacity: 1;
     }
     6.25%, 12.5%{
-        height: 80px;
+        height: 90px;
     }
     18.75%, 25%{
-        height: 60px;
+        height: 70px;
     }
     31.25%, 37.5%{
-        height: 40px;
+        height: 50px;
         opacity: 1;
     }
     43.75%, 87.25%{
-        height: 20px;
+        height: 30px;
         opacity: 0;
     }
 }
@@ -663,7 +663,7 @@
         width: 350px;
     }
     6.25%, 12.5%{
-        width: 350px;
+        width: 450px;
     }
     18.75%, 25%{
         width: 525px;
@@ -674,18 +674,18 @@
 }
 @keyframes layer2-img-anime-mob{
     0%, 93.75%{
-        height: 80px;
+        height: 90px;
         opacity: 1;
     }
     6.25%, 12.5%{
-        height: 60px;
+        height: 70px;
     }
     18.75%, 25%{
-        height: 40px;
+        height: 50px;
         opacity: 1;
     }
     31.25%, 87.25%{
-        height: 20px;
+        height:30px;
         opacity: 0;
     }
 }
@@ -704,14 +704,14 @@
 }
 @keyframes layer3-img-anime-mob{
     0%, 93.75%{
-        height: 60px;
+        height: 70px;
         opacity: 1;
     }
     6.25%, 12.5%{
-        height: 40px;
+        height: 50px;
     }
     18.75%, 87.25%{
-        height: 20px;
+        height: 30px;
         opacity: 0;
     }
 }
@@ -727,11 +727,11 @@
 }
 @keyframes layer4-img-anime-mob{
     0%, 93.75%{
-        height: 40px;
+        height: 50px;
         opacity: 1;
     }
     6.25%, 12.5%{
-        height: 20px;
+        height: 30px;
         opacity: 0;
     }
     87.5%{
@@ -742,7 +742,7 @@
 
 @keyframes layer5-anime-mob{
     0%, 12.5%{
-        width: 220px;
+        width: 200px;
     }
     18.75%, 25%{
         width: 350px;
@@ -763,20 +763,20 @@
     }
     6.25%, 12.5%{
         opacity: 1;
-        height: 100px;
+        height: 110px;
     }
     18.75%, 25%{
-        height: 80px;
+        height: 90px;
     }
     31.25%, 37.5%{
-        height: 60px;
+        height: 70px;
     }
     43.75%, 50%{
-        height: 40px;
+        height: 50px;
         opacity: 1;
     }
     56.25%, 100%{
-        height: 20px;
+        height: 30px;
         opacity: 0;
     }
 }
@@ -784,7 +784,7 @@
 
 @keyframes layer6-anime-mob{
     0% , 25%{
-        width: 220px;
+        width: 200px;
     }
     31.25%, 37.5%{
         width: 350px;
@@ -805,20 +805,20 @@
     }
     18.75%, 25%{
         opacity: 1;
-        height: 100px;
+        height: 110px;
     }
     31.25%, 37.5%{
-        height: 80px;
+        height: 90px;
     }
     43.75%, 50%{
-        height: 60px;
+        height: 70px;
     }
     56.25%, 62.5%{
-        height: 40px;
+        height: 50px;
         opacity: 1;
     }
     68.75%, 100%{
-        height: 20px;
+        height: 30px;
         opacity: 0;
     }
 }
@@ -826,7 +826,7 @@
 
 @keyframes layer7-anime-mob{
     0% , 37.5%{
-        width: 220px;
+        width: 200px;
     }
     43.75%, 50%{
         width: 350px;
@@ -847,20 +847,20 @@
     }
     31.25%, 37.5% {
         opacity: 1;
-        height: 100px;
+        height: 110px;
     }
     43.75%, 50%{
-        height: 80px;
+        height: 90px;
     }
     56.25%, 62.5%{
-        height: 60px;
+        height: 70px;
     }
     68.75%, 75%{
-        height: 40px;
+        height: 50px;
         opacity: 1;
     }
     81.25%, 100%{
-        height: 20px;
+        height: 30px;
         opacity: 0;
     }
 }
@@ -868,7 +868,7 @@
 
 @keyframes layer8-anime-mob{
     0% , 50%{
-        width: 220px;
+        width: 200px;
     }
     56.25%, 62.5%{
         width: 350px;
@@ -889,20 +889,20 @@
     }
     43.75%, 50%{
         opacity: 1;
-        height: 100px;
+        height: 110px;
     }
     56.25%, 62.5%{
-        height: 80px;
+        height: 90px;
     }
     68.75%, 75%{
-        height: 60px;
+        height: 70px;
     }
     81.25%, 87.5%{
-        height: 40px;
+        height: 50px;
         opacity: 1;
     }
     93.75%, 100%{
-        height: 20px;
+        height: 30px;
         opacity: 0;
     }
 }
@@ -910,7 +910,7 @@
 
 @keyframes layer9-anime-mob{
     0% , 62.5%{
-        width: 220px;
+        width: 200px;
     }
     68.75%, 75%{
         width: 350px;
@@ -928,17 +928,17 @@
     }
     56.25%, 62.5%{
         opacity: 1;
-        height: 100px;
+        height: 110px;
     }
     68.75%, 75%{
-        height: 80px;
+        height: 90px;
     }
     81.25%, 87.5%{
-        height: 60px;
+        height: 70px;
         opacity: 1;
     }
     93.75%, 100%{
-        height: 40px;
+        height: 50px;
         opacity: 0;
     }
 }
@@ -946,7 +946,7 @@
 
 @keyframes layer10-anime-mob{
     0%, 75%{
-        width: 220px;
+        width: 200px;
     }
     81.25%, 87.5%{
         width: 350px;
@@ -961,15 +961,15 @@
     }
     68.75%, 75%{
         opacity: 1;
-        height: 100px;
+        height: 110px;
     }
     81.25%, 87.5%{
-        height: 80px;
+        height: 90px;
         opacity: 1;
     }
     93.75%, 100%{
         opacity: 0;
-        height: 60px;
+        height: 70px;
     }
 }
 

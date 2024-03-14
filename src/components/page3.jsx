@@ -245,10 +245,13 @@ export default function Page3({scale}) {
             </div>
           </div>
 
-          <div className="page3-right pt-5 d-flex flex-column justify-content-start ">
+          <div className="page3-right d-flex flex-column justify-content-start ">
 
               <div className="crystal-top pt-5 d-flex justify-content-center align-items-center">
-                <div className="crystal-text px-5">SERUM</div>
+                <div className="crystal-text d-flex px-5">
+                  <div className='img-sq mx-2'></div>
+                  <div className=''>SERUM</div>
+                  </div>
                 <div className="sound px-5">
                   <img  className='sound-img' src="/world.png" alt="" />
                 </div>
@@ -263,7 +266,7 @@ export default function Page3({scale}) {
                 </div>
               </div>
 
-              <div className="crstal-text px-5 m-5 justify-content-center align-items-start">
+              <div className="crstal-text px-5 m-5 d-flex justify-content-center align-items-start">
                 There is a 4th role called the 
                 Legendaries: only for 20 people, who 
                 get a serum with it that get a mejastic
@@ -296,7 +299,7 @@ export default function Page3({scale}) {
           </div>
         </div>
 
-        <div className="comp3-bg pt-5 position-fixed d-flex flex-column justify-content-evenly align-items-center">
+        <div className="comp3-bg position-fixed d-flex flex-column justify-content-evenly align-items-center">
           <div className="circle-1 position-relative mt-5 d-flex justify-content-center align-items-center">
             <div style={{ opacity: isHovered1 ? 1 : 0 }} className="ghoomta-text1 position-absolute text-center d-flex justify-content-center align-items-center">
               Coin launch (airdrop vs  presale)
@@ -336,7 +339,7 @@ export default function Page3({scale}) {
               </div>
             </div>
           </div>
-          <div className="circ-bottom py-4 d-flex flex-column justify-content-center align-items-center">
+          <div className="circ-bottom pt-4 d-flex flex-column justify-content-center align-items-center">
             <div className="perks text-center">perks powered <br /> by spartacus</div>
             <div className="perks-logo">
               <img  className='perks-img' src="/spartacus.png" alt="" />
