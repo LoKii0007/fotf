@@ -216,8 +216,6 @@ export default function Page3({scale}) {
     })
   }, [])
 
-
-
   // ----------roadmap progress ----------------
 
   useEffect(() => {
