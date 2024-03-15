@@ -107,7 +107,7 @@
     color: #07CE02;
     text-decoration: underline;
     padding-left: 10px;
-    z-index: 200;
+    z-index: 5000;
 }
 
 .f-sq{

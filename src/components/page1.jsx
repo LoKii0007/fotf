@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from 'locomotive-scroll';
 import "../css/page1.css"
 import "../css/loading.css"
+import locomotive from './locomotive';
 
 
 export default function Page1({ scale }) {
@@ -226,8 +227,10 @@ export default function Page1({ scale }) {
           });
         }, 65);
 
+        // locomotive()
+
         // const scroll = new LocomotiveScroll({
-        //     el: document.querySelector('.all-pages'),
+        //     el: document.querySelector('[data-scroll-container]'),
         //     smooth: true
         //   });
 
@@ -399,7 +402,7 @@ export default function Page1({ scale }) {
             <div className="page1-bg2 position-fixed">
                 <img className='moving-bg' src="/moving-bg.png" alt="" />
             </div>
-            <div className="page1 container d-flex flex-column align-items-center justify-content-center">
+            <div data-scroll-container className="page1 container d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 container position-relative">
                     <div className="page1-bg position-fixed">
                         <img className='alien1-img' src="/alien1.png" alt="" />
