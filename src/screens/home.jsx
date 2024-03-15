@@ -4,12 +4,12 @@ import Page2 from "../components/page2"
 import Page3 from "../components/page3"
 import Page4 from "../components/page4"
 
-export default function Home({bgUrl}) {
+export default function Home() {
     const [scale , setScale] = useState(window.innerWidth > 600);
 
     useLayoutEffect(() => {
       function handleResize() {
-        setScale(window.innerWidth > 768);
+        setScale(window.innerWidth > 600);
       }
     
       window.addEventListener("resize", handleResize);
@@ -25,7 +25,7 @@ export default function Home({bgUrl}) {
        <Page1 scale={scale} />
        <Page2 scale={scale} />
        <Page3 scale={scale} />
-       <Page4 scale={scale} bgUrl={bgUrl} />
+       <Page4 scale={scale} />
     </>
   )
 }

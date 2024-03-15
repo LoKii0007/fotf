@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../css/page1.css"
@@ -8,6 +8,8 @@ import "../css/loading.css"
 export default function Page1({ scale }) {
 
     gsap.registerPlugin(ScrollTrigger)
+
+    const [loadingText, setLoadingText] = useState(0)
 
     // ----------comp1 animations--------
 
@@ -216,6 +218,16 @@ export default function Page1({ scale }) {
     // ------------------------on load animation--------------------------------
 
     useEffect(() => {
+        const interval = setInterval(() => {
+          setLoadingText(prevLoadingText => {
+            const newValue = prevLoadingText + 1;
+            return newValue <= 100 ? newValue : 100;
+          });
+        }, 65);
+        return () => clearInterval(interval);
+      }, []);
+
+    useEffect(() => {
 
         const tl = gsap.timeline({
           paused: true,
@@ -321,7 +333,7 @@ export default function Page1({ scale }) {
 
     return (
         <>
-            <div id='preloader' className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
+            <div className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
                 <div className='loading-video position-fixed d-flex justify-content-center align-items-center'>
                     <video className='loading-vid' muted src="/loading-vid.mp4"></video>
                 </div>
@@ -340,9 +352,6 @@ export default function Page1({ scale }) {
                             </svg>
                         </div>
                     </div>
-                    <div className="time-15-middle mx-5 d-flex justify-content-center align-items-center">
-                        <div className="circle-15 d-flex justify-content-center align-items-center">15 </div>
-                    </div>
                     <div className="time-15-right d-flex justify-content-center align-items-center">
                         <div className="line-15">
                             <svg width="422" height="1" viewBox="0 0 422 1" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -360,18 +369,6 @@ export default function Page1({ scale }) {
                 </div>
                 <div className="loading-2 position-absolute d-flex justify-content-center align-items-center">
                     <div className="outer-89 position-relative d-flex justify-content-center align-items-center">
-                        <div className="position-absolute tedi-line-89">
-                            <svg width="132" height="206" viewBox="0 0 132 206" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M128.301 0.810001C129.283 1.42438 130.261 2.04581 131.235 2.67424L0 206L128.301 0.810001Z" fill="url(#paint0_radial_255_3680)" />
-                                <defs>
-                                    <radialGradient id="paint0_radial_255_3680" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 206) rotate(90) scale(242)">
-                                        <stop stop-color="#07CE02" stop-opacity="0" />
-                                        <stop offset="0.64" stop-color="#07CE02" />
-                                        <stop offset="1" stop-color="#07CE02" stop-opacity="0" />
-                                    </radialGradient>
-                                </defs>
-                            </svg>
-                        </div>
                         <div className="inner-89 d-flex justify-content-center align-items-center">
                             <div className='position-absolute'>
                                 <svg className='gradient-svg' viewBox="0 0 272 272" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -385,13 +382,12 @@ export default function Page1({ scale }) {
                                     </defs>
                                 </svg>
                             </div>
-                            <div className='loading-text position-relative d-flex justify-content-center align-items-center'>
-                                <div className='text-89'>89</div>
-                                <div className='position-absolute text-100'>100</div>
-                            </div>
                         </div>
                     </div>
                 </div>
+                <div className="loading-text position-fixed d-flex justify-content-center align-items-center">
+                {loadingText}
+            </div>
             </div>
             <div className="load-left position-fixed"></div>
             <div className="load-right position-fixed"></div>
