@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/all'
+import { Link } from 'react-router-dom'
 import "../css/page2.css"
+import "../css/page3.css"
+import "../css/page4.css"
+
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Page2({ scale }) {
+export default function Page2({ scale, bgUrl }) {
 
   gsap.config({
     force3D: true
@@ -46,15 +50,21 @@ export default function Page2({ scale }) {
       transform: "scale(40)",
       duration: .5,
     })
-      .to(".box2-content , .box-2, .shuffle-top", {
-        y: 0,
-        duration: .5,
-        opacity: 1
-      }, 0)
-      .to(".layers", {
-        y: 0,
-        duration: .5,
-      }, 0)
+    .to(".box2-content , .box-2, .shuffle-top", {
+      y: 0,
+      duration: .5,
+      opacity: 1
+    }, 0)
+    .to(".layers", {
+      y: 0,
+      duration: .5,
+    }, 0)
+    .to("#layout-svg", {
+      stroke: "black"
+    }, 0)
+    .to("#layout-text", {
+      fill: "black"
+    }, 0)
 
     ScrollTrigger.create({
       trigger: ".box",
@@ -146,7 +156,15 @@ export default function Page2({ scale }) {
         transformOrigin: "top center",
         height: "80vh",
         width: "80vw",
-        duration: .8,
+      })
+      gsap.to("#layout-text", {
+        scrollTrigger: {
+          trigger: ".box-2",
+          start: "top 30%",
+          end: "top 30%",
+          scrub: .5,
+        },
+        fill: "#07CE02"
       })
 
       const tl1 = gsap.timeline({
@@ -160,6 +178,9 @@ export default function Page2({ scale }) {
         duration: .5,
         transformOrigin: "top center"
       })
+        .to("#layout-svg", {
+          stroke: "#07CE02"
+        }, 0)
       tl1.to(".page2-comp1", {
         height: "150vh",
         duration: .5,
@@ -220,13 +241,19 @@ export default function Page2({ scale }) {
         paddingTop: "15vh",
         transformOrigin: "center center"
       })
-        .to(".page2-comp1", {
-          height: "150vh",
-          transformOrigin: "top center"
-        }, 0)
-        .to(".page2-comp2", {
-          height: 0,
-        }, 0)
+      .to("#layout-svg", {
+        stroke: "#07CE02"
+      }, 0)
+      .to("#layout-text", {
+        fill: "black"
+      }, 0)
+      .to(".page2-comp1", {
+        height: "150vh",
+        transformOrigin: "top center"
+      }, 0)
+      .to(".page2-comp2", {
+        height: 0,
+      }, 0)
 
       ScrollTrigger.create({
         trigger: ".box-2",
@@ -244,6 +271,405 @@ export default function Page2({ scale }) {
     }
 
   }, [scale])
+
+
+  //----------------------------- page3------------------------------ 
+
+  const [isHovered1, setIsHovered1] = useState(false)
+  const [isHovered2, setIsHovered2] = useState(false)
+  const [isHovered3, setIsHovered3] = useState(false)
+  const [isHovered4, setIsHovered4] = useState(false)
+
+  // -----------animation 1------------------------- 
+
+  useEffect(() => {
+
+    if (scale) {
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          end: "bottom bottom",
+          scrub: true
+        },
+        position: "fixed",
+        right: 48,
+        bottom: 0
+      })
+
+      gsap.to(".hero", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        transformOrigin: "right bottom",
+        width: "36vw",
+      })
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        right: "14vw"
+      })
+      gsap.to(".hero", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top 95%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        transformOrigin: "bottom center",
+        scale: 1.3
+      })
+
+      gsap.to(".hero-img1", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top 60%",
+          end: "top 10%",
+          scrub: .5,
+        },
+        x: "33vw",
+        y: 110
+      })
+
+      gsap.to(".hero-img2", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top 60%",
+          end: "top 10%",
+          scrub: .5,
+        },
+        x: "-33vw",
+        y: 110
+      })
+    }
+
+  }, [])
+
+  useEffect(() => {
+    if (!scale) {
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          end: "bottom bottom",
+          scrub: true
+        },
+        position: "fixed",
+        x: "100px",
+        bottom: 0
+      })
+      gsap.to(".hero", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        transformOrigin: "right bottom",
+        // height:300,
+        width: 300,
+        x: 0
+      })
+      gsap.to(".hero-comp", {
+        scrollTrigger: {
+          trigger: ".page3-comp1",
+          start: "bottom bottom",
+          scrub: 1,
+        },
+        right: "14vw"
+      })
+    }
+  }, [scale])
+
+
+  // ------------animation 2---------------
+
+  useEffect(() => {
+    gsap.to(".hero-11", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top 10%",
+        end: "top top",
+        scrub: .5,
+      },
+      x: 600,
+      y: -50
+    })
+    gsap.to(".hero-21", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top 10%",
+        end: "top top",
+        scrub: .5,
+      },
+      x: -600,
+      y: -50
+    })
+
+    gsap.to(".page3-comp3", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top 10%",
+        end: "top top",
+        scrub: 1,
+      },
+      y: -500,
+      duration: 1,
+    })
+
+    gsap.to(".comp3-bg", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top top",
+        end: "top top",
+        scrub: 1,
+        // markers:true
+      },
+      opacity: 1
+    })
+
+    gsap.to(".recurso", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top top",
+        end: "top top",
+        scrub: 1,
+      },
+      animation: "rotate 3s ease-in-out infinite"
+    })
+
+  }, [])
+
+  // animation 3---------------------------
+
+  useEffect(() => {
+
+    gsap.to(".hero-1", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top -5%",
+        end: "+=25px",
+        scrub: 1,
+      },
+      x: 450,
+    })
+    gsap.to(".hero-2", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top -5%",
+        end: "+=25px",
+        scrub: 1,
+      },
+      x: -500,
+    })
+  }, [])
+
+  // animation 4-----------------
+
+  useEffect(() => {
+
+    gsap.to(".comp3-bg", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top -10%",
+        end: "top -80%",
+        scrub: .5,
+        // markers: true
+      },
+      y: "-100vh"
+    })
+  }, [])
+
+  // ----------roadmap progress ----------------
+
+  useEffect(() => {
+    gsap.to(".progress", {
+      scrollTrigger: {
+        trigger: ".road",
+        start: "top bottom",
+        end: "top 80%",
+        scrub: 0.4,
+      },
+      width: "12vw"
+    })
+  }, [])
+
+
+  // ---------------------------page 4-----------------------------------
+
+  const [flag4, setFlag4] = useState(false)
+
+  useEffect(() => {
+
+    gsap.to(".snake1-img", {
+      scrollTrigger: {
+        trigger: ".thanks-bottom",
+        start: "center bottom",
+        end: "+=25px",
+        scrub: 0.5
+      },
+      rotateZ: "0deg",
+      rotateX: "0deg"
+    })
+    gsap.to(".snake2-img", {
+      scrollTrigger: {
+        trigger: ".thanks-bottom",
+        start: "center 100%",
+        end: "+=25px",
+        scrub: 0.5
+      },
+      rotateZ: "0deg",
+      rotateX: "0deg"
+    })
+
+
+    gsap.to(".snake-1", {
+      scrollTrigger: {
+        trigger: ".thanks-bottom",
+        start: "center 55%",
+        end: "center center",
+        scrub: 1
+      },
+      x: 110,
+      rotateY: "360deg",
+      opacity: 0,
+    })
+
+    gsap.to(".snake-2", {
+      scrollTrigger: {
+        trigger: ".thanks-bottom",
+        start: "center 55%",
+        end: "center center",
+        scrub: 1
+      },
+      x: -110,
+      rotateY: "360deg",
+      opacity: 0,
+    })
+    gsap.to(".thanks-top", {
+      scrollTrigger: {
+        trigger: ".thanks-bottom",
+        start: "center 55%",
+        end: "center center",
+        scrub: 1
+      },
+      y: -200
+    })
+
+    gsap.to(".char, .kala-gola", {
+      scrollTrigger: {
+        trigger: ".thanks-bottom",
+        start: "center 55%",
+        end: "center 55%",
+        scrub: 1
+      },
+      opacity: 1
+    })
+
+  }, [])
+
+  // --------------------initial fotf animation--------------------- 
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      paused: true
+    })
+    tl.to(".kala-gola", {
+      width: "100vw",
+      height: "100vh",
+      borderRadius: 0
+    })
+    tl.to(".layout", {
+      y: "-100vh"
+    }, 0)
+    tl.to(".char", {
+      fontSize: `${scale ? "100px" : "50px"}`,
+      rotateY: "0deg"
+    }, 0)
+    tl.to(".char-1", {
+      top: "20%",
+      left: "50%"
+    }, 0)
+    tl.to(".char-2", {
+      top: "40%",
+      left: "50%"
+    }, 0)
+    tl.to(".char-3", {
+      top: "60%",
+      left: "50%"
+    }, 0)
+    tl.to(".char-4", {
+      top: "80%",
+      left: "50%"
+    }, 0)
+
+    ScrollTrigger.create({
+      trigger: ".fotf",
+      start: "top 50%",
+      end: "top 50%",
+      onEnter: () => {
+        tl.play()
+      },
+      onLeaveBack: () => {
+        tl.reverse()
+      }
+    })
+
+  }, [scale])
+
+  // -----------------------------fotf last Animation----------------- 
+
+  useEffect(() => {
+
+    const tl1 = gsap.timeline({
+      paused: true
+    })
+
+    ScrollTrigger.create({
+      trigger: ".fotf",
+      start: "top top",
+      end: "top top",
+      scrub: 1,
+      onEnter: () => {
+        tl1.play()
+        setFlag4(true)
+      },
+      onLeaveBack: () => {
+        tl1.reverse()
+        setFlag4(false)
+      }
+    })
+
+    tl1.to(".char-1", {
+      y: "30vh",
+      x: "-30vw"
+    });
+
+    tl1.to(".char-2", {
+      y: "10vh",
+      x: "-10vw"
+    }, 0);
+
+
+    tl1.to(".char-3", {
+      y: "-10vh",
+      x: "10vw"
+    }, 0)
+
+    tl1.to(".char-4", {
+      y: "-30vh",
+      x: "30vw"
+    }, 0)
+
+    tl1.to(".fotf-images", {
+      y: 0
+    }, 0)
+
+  }, []);
 
   return (
     <>
@@ -329,6 +755,261 @@ export default function Page2({ scale }) {
         </div>
 
       </div >
+
+      <div className="page-3 overflow-hidden">
+        <div className="page3-comp1 d-flex position-relative justify-content-between align-items-center">
+
+          <div className="page3-left position-relative">
+            <div className="chadi ">
+              <img className='chadi-img' src="/chadi.png" alt="" />
+            </div>
+            <div className="stick position-absolute">
+              <img className='stick-img' src="/staff.png" alt="" />
+            </div>
+          </div>
+
+          <div className="page3-right pt-5 d-flex flex-column justify-content-start ">
+
+            <div className="crystal-top pt-5 pe-5 d-flex justify-content-evenly align-items-center">
+              <div className="crystal-text d-flex ps-5">
+                <div className='img-sq mx-2'></div>
+                <div className='serum'>SERUM</div>
+              </div>
+              <div className="sound pe-5">
+                <img className='sound-img' src="/world.png" alt="" />
+              </div>
+            </div>
+
+            <div className="crystal-bottom pb-5 d-flex justify-content-evenly align-items-center">
+              <div className="crystal d-flex justify-content-center">
+                <video autoPlay muted className='crystal-img pe-2' src="/stone.mp4"></video>
+              </div>
+              <div className="world d-flex align-items-start">
+                <img className='world-img ps-2' src="/wave.png" alt="" />
+              </div>
+            </div>
+
+            <div className="crstal-text px-5 m-5 d-flex justify-content-center align-items-start">
+              There is a 4th role called the
+              Legendaries: only for 20 people, who
+              get a serum with it that get a mejastic
+              clothing onboard from the origins of FoF:
+            </div>
+
+          </div>
+
+          <div className="comp31-bottom position-absolute d-flex justify-content-end align-items-end">
+            <div className="hero-comp d-flex">
+              <div className="hero-1">
+                <div className="hero-11">
+                  <img className='hero-img1 hero' src="/fire.png" alt="" />
+                </div>
+              </div>
+              <div className="hero-2">
+                <div className="hero-21">
+                  <img className='hero-img2 hero' src="/ice.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ height: "100vh" }} className="page3-comp2"> </div>
+
+        <div className="page3-comp3 d-flex flex-column position-relative">
+          <div className="page3-comp3-text text-center">
+            legendary <br />20 spots
+          </div>
+        </div>
+
+        <div className="comp3-bg position-fixed d-flex flex-column justify-content-evenly align-items-center">
+          <div className="circle-1 position-relative mt-5 d-flex justify-content-center align-items-center">
+            <div style={{ opacity: isHovered1 ? 1 : 0 }} className="ghoomta-text1 position-absolute text-center d-flex justify-content-center align-items-center">
+              Coin launch (airdrop vs  presale)
+            </div>
+            <div style={{ opacity: isHovered2 ? 1 : 0 }} className="ghoomta-text2 position-absolute text-center d-flex justify-content-center align-items-center">
+              Access to the Spartacus private room
+            </div>
+            <div style={{ opacity: isHovered3 ? 1 : 0 }} className="ghoomta-text3 position-absolute text-center d-flex justify-content-center align-items-center">
+              Welcome Bonus
+            </div>
+            <div style={{ opacity: isHovered4 ? 1 : 0 }} className="ghoomta-text4 position-absolute text-center d-flex justify-content-center align-items-center">
+              Multiplier from the deposit
+            </div>
+            <div className="recurso position-absolute">
+              <img className='recurso-img' src="/recurso.png" alt="" />
+            </div>
+            <div className="circle-2 position-relative d-flex justify-content-center align-items-center">
+              <div style={{ opacity: isHovered1 ? 1 : 0 }} className="ghoomta-sq ghoomta-sq1 position-absolute">
+              </div>
+              <div style={{ opacity: isHovered2 ? 2 : 0 }} className="ghoomta-sq ghoomta-sq2 position-absolute">
+              </div>
+              <div style={{ opacity: isHovered3 ? 3 : 0 }} className="ghoomta-sq ghoomta-sq3 position-absolute">
+              </div>
+              <div style={{ opacity: isHovered4 ? 4 : 0 }} className="ghoomta-sq ghoomta-sq4 position-absolute">
+              </div>
+              <div className="circle-4 d-flex justify-content-center align-items-center">
+                <div className="circle-3 d-flex flex-column justify-content-center align-items-center">
+                  <div className="circle3-top d-flex justify-content-center align-items-center">
+                    <div onMouseEnter={() => setIsHovered4(true)} onMouseLeave={() => setIsHovered4(false)} className="circle-top1 d-flex justify-content-center align-items-center">4</div>
+                    <div onMouseEnter={() => setIsHovered1(true)} onMouseLeave={() => setIsHovered1(false)} className="circle-top2 d-flex justify-content-center align-items-center">1</div>
+                  </div>
+                  <div className="circle3-bottom d-flex justify-content-center align-items-center">
+                    <div onMouseEnter={() => setIsHovered3(true)} onMouseLeave={() => setIsHovered3(false)} className="circle-bottom1 d-flex justify-content-center align-items-center text-center">3</div>
+                    <div onMouseEnter={() => setIsHovered2(true)} onMouseLeave={() => setIsHovered2(false)} className="circle-bottom2 d-flex justify-content-center align-items-center text-center">2</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="circ-bottom pt-4 d-flex flex-column justify-content-center align-items-center">
+            <div className="perks text-center">perks powered <br /> by spartacus</div>
+            <div className="perks-logo">
+              <img className='perks-img' src="/spartacus.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div className="circle-space"></div>
+
+        <div className="roadmap d-flex flex-column justify-content-center align-items-center">
+          <div className="roadmap-top py-5 text-center">
+            ROADMAP
+          </div>
+
+          <div className="roadmap-bottom px-5 d-flex position-relative justify-content-center align-items-start">
+
+            <div className="road position-absolute d-flex justify-content-start align-items-center">
+              <div className="progress"></div>
+            </div>
+
+            <div className="road-1 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center mt-5">kick off</div>
+              <div className="road-bottom text-center">We launch the Friends of the Future website and social media</div>
+              <div className="sq-1 sq position-absolute"></div>
+              {/* <div className="stop-pro position-absolute"></div> */}
+            </div>
+            <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">normies reveal</div>
+              <div className="road-bottom text-center mb-5">We reveal Normies perks</div>
+              <div className="sq-2 sq position-absolute"></div>
+            </div>
+            <div className="road-3 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center mt-5">goldies reveal</div>
+              <div className="road-bottom text-center">We reveal Goldies perks</div>
+              <div className="sq-3 sq position-absolute"></div>
+            </div>
+            <div className="road-4 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">goldies reveal</div>
+              <div className="road-bottom text-center mb-5">We reveal Platinum perks</div>
+              <div className="sq-4 sq position-absolute"></div>
+            </div>
+            <div className="road-5 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center mt-5">legendaries reveal</div>
+              <div className="road-bottom text-center">We reveal Legendaries perks</div>
+              <div className="sq-5 sq position-absolute"></div>
+            </div>
+            <div className="road-6 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
+              <div className="road-top text-center">Minting time</div>
+              <div className="road-bottom text-center mb-5">in favouritism for avatars</div>
+              <div className="sq-6 sq position-absolute"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="page-4 d-flex flex-column">
+        <div className="thanks d-flex flex-column justify-content-evenly align-items-center">
+          <div className="thanks-top text-center">
+            Thank you Friends Of <br /> The Future!
+          </div>
+          <div className="thanks-bottom d-flex justify-content-center align-items-center">
+            <div className="snake-1">
+              <img className='snake1-img' src="/IMG-20240130-WA0120.png" alt="" />
+            </div>
+            <div className="snake-2">
+              <img className='snake2-img' src="/snake-2.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div className='char-1 char position-fixed d-flex justify-content-center align-items-center'>F</div>
+        <div className='char-2 char position-fixed d-flex justify-content-center align-items-center'>O</div>
+        <div className='char-3 char position-fixed d-flex justify-content-center align-items-center'>T</div>
+        <div className='char-4 char position-fixed d-flex justify-content-center align-items-center'>F</div>
+
+        <div className="kala-fotf position-fixed d-flex justify-content-center align-items-center">
+          <div className="kala-gola"></div>
+          <div className="fotf-images position-absolute d-flex flex-column justify-content-center align-items-center">
+            <div style={{ animation: flag4 ? "slide-top 8s linear infinite" : "" }} className="fotf-top-img d-flex align-items-start">
+              <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1756.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0083.jpg" alt="" />
+            </div>
+            <div style={{ animation: flag4 ? "slide-bottom 8s linear infinite" : "" }} className="fotf-bottom-img d-flex align-items-end">
+              <img className='fotf-img' src="/ALIENS0156.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1757.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0157.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1758.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0094.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0158.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1759.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0095.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0159.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1766.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0096.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div className='fotf'>
+        </div>
+
+        <div className="footer px-5 d-flex justify-content-between align-items-center">
+          <div className="ft-left d-flex">
+            <div className="privacy d-flex d-flex justify-content-center align-items-center">
+              <div className="f-sq"></div>
+              <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link>
+            </div>
+            <div className="term d-flex px-5 d-flex justify-content-center align-items-center">
+              <div className="f-sq"></div>
+              <Link className="terms-text f-text" to="/terms" >Terms of use</Link>
+            </div>
+            <div className="legal d-flex d-flex justify-content-center align-items-center">
+              <div className="f-sq"></div>
+              <Link className="legal-text f-text" to="/legal" >Legal liscence</Link>
+            </div>
+          </div>
+
+          <div className="ft-right d-flex justify-content-center align-items-center">
+            <div className="d-logo pe-2 f-logo">
+              <i className="fa-brands fa-discord"></i>
+            </div>
+            <div className="d-logo f-logo">
+              <i className="fa-brands fa-discord"></i>
+            </div>
+            <div className="t-logo f-logo">
+              <i className="fa-brands fa-x-twitter"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id='#layout' className="layout position-fixed d-flex justify-content-center align-items-center">
+        {bgUrl}
+      </div>
+
     </>
   )
 }

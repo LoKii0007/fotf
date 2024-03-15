@@ -38,7 +38,7 @@
 }
 
 .fotf{
-    height: 50vh;
+    height: 100vh;
     width: 100vw;
     background-color: transparent !important;
 }
@@ -107,9 +107,8 @@
     color: #07CE02;
     text-decoration: underline;
     padding-left: 10px;
-    z-index: 1000;
+    z-index: 200;
 }
-
 
 .f-sq{
     height: 10px;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LocomotiveScroll from 'locomotive-scroll';
 import "../css/page1.css"
 import "../css/loading.css"
 
@@ -224,7 +225,16 @@ export default function Page1({ scale }) {
             return newValue <= 100 ? newValue : 100;
           });
         }, 65);
-        return () => clearInterval(interval);
+
+        // const scroll = new LocomotiveScroll({
+        //     el: document.querySelector('.all-pages'),
+        //     smooth: true
+        //   });
+
+        return () => {
+            clearInterval(interval);
+            // scroll.destroy()
+        }
       }, []);
 
     useEffect(() => {
@@ -254,39 +264,32 @@ export default function Page1({ scale }) {
           duration: 0.5,
           opacity: 1
         }, 2)
+        
         tl.to(".outer-89", {
-          height: 300,
-          width: 300,
-          borderRadius: 150,
+          height: `${scale?"300px":"150px"}`,
+          width: `${scale?"300px":"150px"}`,
+          borderRadius: `${scale?"150px":"75px"}`,
           duration: 0.7
         }, 2.5)
         tl.to(".gradient-svg", {
-          height: 270,
-          width: 270,
-          borderRadius: 135,
+          height: `${scale?"270px":"130px"}`,
+          width: `${scale?"270px":"130px"}`,
+          borderRadius: `${scale?"135px":"65px"}`,
           duration: 0.7
         }, 2.5)
     
     
         // -----------------------loading 3------------------
     
-        tl.to(".text-89", {
-          duration: 0.5,
-          opacity: 0
-        }, 4)
-        tl.to(".text-100", {
-          duration: 0.5,
-          opacity: 1
-        }, 4)
         tl.to(".outer-89", {
-          height: 400,
-          width: 400,
-          borderRadius: 200,
+          height: `${scale?"400px":"200px"}`,
+          width: `${scale?"400px":"200px"}`,
+          borderRadius: `${scale?"200px":"100px"}`,
           duration: 0.7
         }, 4)
         tl.to(".gradient-svg", {
-          height: 350,
-          width: 350,
+          height: `${scale?"350px":"175px"}`,
+          width: `${scale?"350px":"175px"}`,
           duration: 0.7
         }, 4)
     
@@ -298,6 +301,8 @@ export default function Page1({ scale }) {
           duration: 1.5,
           opacity: 0
         }, 5.5)
+
+        // ---------------------loading remove --------------------
 
         tl.to(".load-left", {
             x: "-50vw",
@@ -399,9 +404,6 @@ export default function Page1({ scale }) {
                     <div className="page1-bg position-fixed">
                         <img className='alien1-img' src="/alien1.png" alt="" />
                     </div>
-                    <div className="page1-bg3 position-fixed">
-                        {/* <img  className='moving-bg' src="/moving-bg2.svg" alt="" /> */}
-                    </div>
                     <div className="page1-front pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className='whitelist-btn py-3 d-flex justify-content-center align-items-center'>
                             <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn p-4 d-flex'>
@@ -459,10 +461,10 @@ export default function Page1({ scale }) {
 
                 <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
                     <div className="comp2-top p-5 position-relative d-flex flex-column justify-content-center align-items-center">
-                        <div className="comp2-head pb-3">
+                        <div className="comp2-head py-3">
                             FRIENDS OF THE FUTURE 01
                         </div>
-                        <div className="comp2-text px-5 position-relative d-flex justify-content-center align-items-center">
+                        <div className="comp2-text px-5 pb-3 position-relative d-flex justify-content-center">
                             <div className='scrollable'>
                                 This project tells the story of 4 friends that come together thanks to web 3.
                                 Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />

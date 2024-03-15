@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import "../css/page4.css"
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -122,8 +122,8 @@ export default function Page4({ scale, bgUrl }) {
 
         ScrollTrigger.create({
             trigger: ".fotf",
-            start: "top 70%",
-            end: "top 70%",
+            start: "top 50%",
+            end: "top 50%",
             onEnter: () => {
                 tl.play()
             },
@@ -144,8 +144,8 @@ export default function Page4({ scale, bgUrl }) {
 
         ScrollTrigger.create({
             trigger: ".fotf",
-            start: "top center",
-            end: "top center",
+            start: "top top",
+            end: "top top",
             scrub: 1,
             onEnter: () => {
                 tl1.play()
@@ -273,7 +273,7 @@ export default function Page4({ scale, bgUrl }) {
                 </div>
             </div>
 
-            <div className="layout position-fixed d-flex justify-content-center align-items-center">
+            <div id='#layout' className="layout position-fixed d-flex justify-content-center align-items-center">
                 {bgUrl}
             </div>
         </>

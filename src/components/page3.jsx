@@ -247,22 +247,22 @@ export default function Page3({scale}) {
 
           <div className="page3-right d-flex flex-column justify-content-start ">
 
-              <div className="crystal-top pt-5 d-flex justify-content-center align-items-center">
-                <div className="crystal-text d-flex px-5">
+              <div className="crystal-top pt-5 d-flex justify-content-evenly align-items-center">
+                <div className="crystal-text d-flex ps-5">
                   <div className='img-sq mx-2'></div>
-                  <div className=''>SERUM</div>
+                  <div className='serum'>SERUM</div>
                   </div>
-                <div className="sound px-5">
+                <div className="sound pe-5">
                   <img  className='sound-img' src="/world.png" alt="" />
                 </div>
               </div>
 
-              <div className="crystal-bottom pb-5 d-flex justify-content-center align-items-center">
-                <div className="crystal">
-                  <img  className='crystal-img' src="/crystal.png" alt="" />
+              <div className="crystal-bottom pb-5 d-flex justify-content-evenly align-items-center">
+                <div className="crystal d-flex justify-content-center">
+                  <video autoPlay muted className='crystal-img pe-2' src="/stone.mp4"></video>
                 </div>
                 <div className="world d-flex align-items-start">
-                  <img  className='world-img' src="/wave.png" alt="" />
+                  <img  className='world-img ps-2' src="/wave.png" alt="" />
                 </div>
               </div>
 

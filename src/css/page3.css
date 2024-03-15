@@ -6,12 +6,11 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-}
-.chadi{
     z-index: 100;
 }
 .chadi-img{
     height: 800px;
+    z-index: 100;
 }
 .stick{
     top: 0%;
@@ -20,9 +19,13 @@
 .stick-img{
     height: 800px;
 }
-
 .sound-img{
     height: 50px;
+}
+.crystal{
+    border-radius: 100px;
+    overflow: hidden;
+    height: 200px;
 }
 .crystal-img{
     height: 200px;
@@ -30,7 +33,6 @@
 .world-img{
     height: 80px;
 }
-
 .page3-right{
     height: 100vh;
 }
@@ -57,12 +59,9 @@
 
 /* -------------------- comp-2--------------- */
 
-.hero-comp{
-    z-index: 500;
-}
 .hero{
-    /* height: 200px; */
     width: 200px;
+    z-index: 100;
 }
 
 .hero-1{
@@ -82,7 +81,7 @@
     -webkit-text-stroke: 1px #07CE02;
     color: transparent;
     text-transform: uppercase;
-    z-index: 400;
+    z-index: 50;
 }
 
 .comp3-bg{
@@ -92,7 +91,7 @@
     height: 100vh;
     z-index: 500;
     opacity: 0;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .circle-1{
@@ -250,14 +249,13 @@
     height: 5px;
     top: 150px;
     width: 100vw;
-    z-index: 20;
 }
 
 .progress{
     background-color: #07CE02;
     height: 100%;
     border-radius: 0%;
-    z-index: 500;
+    z-index: 150;
 }
 
 .pro-sq{
@@ -270,7 +268,7 @@
     rotate: 45deg;
     border: 1px solid #07CE02;
     background-color: black;
-    z-index: 30;
+    z-index: 200;
 } 
 
 .sq-1{
@@ -292,11 +290,9 @@
 
 .sq-1 , .sq-3, .sq-5{
     top: -2.5px;
-    z-index: 1000;
 }
 .sq-2 , .sq-4, .sq-6{
     top: 147.5px;
-    z-index: 1000;
 }
 
 .roadmap-bottom{
@@ -316,7 +312,6 @@
     font-size: 17px;
     line-height:20px;
     padding-bottom: 8px;
-    /* white-space: nowrap; */
 }
 .road-bottom{
     font-size: 16px;
@@ -389,11 +384,16 @@
         text-align: center;
     }
     .crystal-bottom{
-        padding: 48px !important;
+        padding: 36px !important;
+    }
+    .crystal{
+        height: 150px;
+        width: 150px;
+        border-radius: 75px;
     }
     .crystal-img{
         height: 150px;
-        border-radius: 150px;
+        border-radius: 75px;
     }
     .crstal-text{
         font-size: 16px;

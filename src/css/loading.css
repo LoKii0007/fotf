@@ -1,8 +1,8 @@
 .loading{
-    z-index: 300;
     background-color: black;
     height: 100vh;
     width: 100vw;
+    z-index: 2000;
 }
 .loading-1{
     height: 100vh;
@@ -10,18 +10,19 @@
     overflow: hidden;
     opacity: 1;
     transition: 1s ease-in;
+    z-index: 2000;
 }
 
 .line-15{
-    z-index: 400;
+    z-index: 2200;
 }
 
 .loading-video{
-    z-index: 10;
     height: 100vh;
     width: 100vw;
     top: 10px;
     left: 10px;
+    z-index: 2100;
 }
 .loading-vid{
     width: 1200px;
@@ -32,8 +33,7 @@
     height: 400px;
     width: 400px;
     border-radius: 250px;
-    z-index: 400;
-    font-size: 60px;
+    z-index: 2200;
     color: #07CE02;
     box-shadow: 0px 0px 40px #07CE02;
 }
@@ -46,7 +46,7 @@
     top: 0%;
     left: 0%;
     font-size: 60px;
-    z-index: 400;
+    z-index: 2200;
 }
 
 .outer-89{
@@ -64,24 +64,35 @@
     transition: 0.5s ease;
 }
 
-.tedi-line-89{
-   right: 8%;
-   top: 0%;
-}
-
 .loading-text{
     top: 0%;
     color: #07CE02;
     height: 100vh;
     width: 100vw;
     font-size: 100px;
-    z-index: 500;
+    z-index: 2500;
 }
 
-.text-100, .text-89{
-    color: #07CE02;
-}
-.text-100{
-    opacity: 0;
-}
+@media screen and (max-width:600px) {
+    .loading-video{
+        top: 4px;
+        left: 4px;
+        z-index: 2100;
+    }
+    .loading-vid{
+        width: 600px;
+    }
 
+    .circle-15, .outer-89{
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+    }
+    .gradient-svg{
+        height: 180px;
+        width: 180px;
+    }
+    .loading-text{
+        font-size: 50px;
+    }
+}

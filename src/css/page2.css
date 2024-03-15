@@ -18,14 +18,13 @@
 .page2-comp1{
     height: 100vh;
     width: 100vw;
+    z-index: 100;
 }
 .shuffle-top {
-    z-index: 20;
     transform: translateY(250px);
     opacity: 0;
 }
 .shuffle-bottom {
-    z-index: 20;
     width: 100%;
 }
 
@@ -55,69 +54,63 @@
 }
 .lr1-img1, .lr1-img2, .lr5-img1, .lr5-img2, .lr6-img1, .lr6-img2, .lr7-img1, .lr7-img2 , .lr8-img1, .lr8-img2 , .lr9-img1, .lr9-img2, .lr10-img1, .lr10-img2, .lr11-img1, .lr11-img2{
     height: 250px;
-    /* width: 233.762px; */
 }
 .layer-1{
-    z-index: 400;
+    z-index: 150;
 }
 .layer-2{
-    z-index: 300;
+    z-index: 140;
     width: 700px;
 }
 .lr2-img1, .lr2-img2{
     height: 210px;
-    /* width: 198.375px; */
 }
 .layer-3{
-    z-index: 200;
+    z-index: 130;
     width: 900px;
 }
 .lr3-img1 , .lr3-img2{
     height: 170px;
-    /* width: 161px; */
 }
 .layer-4{
-    z-index: 100;
+    z-index: 120;
     width: 1050px;
 }
 .lr4-img1, .lr4-img2{
     height: 130px;
-    /* width: 123px; */
 }
 .layer-5{
-    z-index: 500;
+    z-index: 160;
 }
 .layer-6{
-    z-index: 600;
+    z-index: 170;
 }
 .layer-7{
-    z-index: 700;
+    z-index: 180;
 }
 .layer-8{
-    z-index: 800;
+    z-index: 190;
 }
 .layer-9{
-    z-index: 900;
+    z-index: 200;
 }
 .layer-10{
-    z-index: 1000;
+    z-index: 210;
 }
 .layer-11{
-    z-index: 1100;
+    z-index: 220;
 }
 
 
 /* ----------------------black svg(box 2)------------------------------ */
 
-.shuffle-bottom{
-    z-index: 100000;
-}
 .box-2{
     transform: rotateY(90deg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     overflow: hidden;
+    z-index: 100;
 }
 .box2-content{
     height: 100%;
