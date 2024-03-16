@@ -9,9 +9,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
+/* body{
   background-color: black;
-}
+} */
 
 body {
   margin: 0;
@@ -21,6 +21,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: #0D0D0D;
 }
 
 ::-webkit-scrollbar{

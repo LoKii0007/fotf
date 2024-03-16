@@ -1,6 +1,6 @@
 .page-3{
     width: 100vw;
-    background-color: black;
+    /* background-color: black; */
 }
 .page3-comp1{
     width: 100vw;
@@ -26,6 +26,7 @@
     border-radius: 100px;
     overflow: hidden;
     height: 200px;
+    width: 200px;
 }
 .crystal-img{
     height: 200px;

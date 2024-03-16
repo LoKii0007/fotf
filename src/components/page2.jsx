@@ -725,7 +725,7 @@ export default function Page2({ scale, bgUrl }) {
                         <div className='img-sq'></div>
                         <div className="img-text ps-2">platinums 487 spots</div>
                       </div>
-                      <img className='box2-img' src="/alien1.png" alt="" />
+                      <img className='box2-img' src="/e4a9ff7d2fdaba15e53568f502a93fb3.jpeg" alt="" />
                     </div>
                   </div>
                   <div className="box2-bt-bottom d-flex align-items-center justify-content-center">
