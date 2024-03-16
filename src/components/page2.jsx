@@ -696,9 +696,9 @@ export default function Page2({ scale, bgUrl }) {
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
               {
                 animation.map((item, index) => (
-                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 8s linear infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 8s linear infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear infinite" : ""}` }} className={`lr${item}-img1`} src={`/${item}.png`} alt="" />
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear infinite" : ""}` }} className={`lr${item}-img2`} src={`/${item}-1.png`} alt="" />
+                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 8s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 8s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${item}.png`} alt="" />
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${item}-1.png`} alt="" />
                   </div>
                 ))
               }
@@ -782,7 +782,7 @@ export default function Page2({ scale, bgUrl }) {
 
             <div className="crystal-bottom pb-5 d-flex justify-content-evenly align-items-center">
               <div className="crystal d-flex justify-content-center">
-                <video autoPlay muted className='crystal-img pe-2' src="/stone.mp4"></video>
+                <video loop autoPlay muted className='crystal-img pe-2' src="/stone.mp4"></video>
               </div>
               <div className="world d-flex align-items-start">
                 <img className='world-img ps-2' src="/wave.png" alt="" />
@@ -942,7 +942,7 @@ export default function Page2({ scale, bgUrl }) {
         <div className="kala-fotf position-fixed d-flex justify-content-center align-items-center">
           <div className="kala-gola"></div>
           <div className="fotf-images position-absolute d-flex flex-column justify-content-center align-items-center">
-            <div style={{ animation: flag4 ? "slide-top 8s linear infinite" : "" }} className="fotf-top-img d-flex align-items-start">
+            <div style={{ animation: flag4 ? "slide-top 8s linear 0.7s infinite" : "" }} className="fotf-top-img d-flex align-items-start">
               <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
               <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
@@ -956,7 +956,7 @@ export default function Page2({ scale, bgUrl }) {
               <img className='fotf-img' src="/ELFOS1756.jpg" alt="" />
               <img className='fotf-img' src="/HUMANOS0083.jpg" alt="" />
             </div>
-            <div style={{ animation: flag4 ? "slide-bottom 8s linear infinite" : "" }} className="fotf-bottom-img d-flex align-items-end">
+            <div style={{ animation: flag4 ? "slide-bottom 8s linear 0.7s infinite" : "" }} className="fotf-bottom-img d-flex align-items-end">
               <img className='fotf-img' src="/ALIENS0156.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1757.jpg" alt="" />
               <img className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
@@ -980,15 +980,15 @@ export default function Page2({ scale, bgUrl }) {
           <div className="ft-left d-flex">
             <div className="privacy d-flex d-flex justify-content-center align-items-center">
               <div className="f-sq"></div>
-              <Link className="privacy-text f-text" to="/privacy">Privacy Policy</Link>
+              <Link target='blank' className="privacy-text f-text" to="/privacy">Privacy Policy</Link>
             </div>
             <div className="term d-flex px-5 d-flex justify-content-center align-items-center">
               <div className="f-sq"></div>
-              <Link className="terms-text f-text" to="/terms" >Terms of use</Link>
+              <Link target='blank' className="terms-text f-text" to="/terms" >Terms of use</Link>
             </div>
             <div className="legal d-flex d-flex justify-content-center align-items-center">
               <div className="f-sq"></div>
-              <Link className="legal-text f-text" to="/legal" >Legal liscence</Link>
+              <Link target='blank' className="legal-text f-text" to="/legal" >Legal liscence</Link>
             </div>
           </div>
 

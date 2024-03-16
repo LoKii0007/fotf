@@ -3,7 +3,7 @@ import React from 'react'
 export default function Privacy({ bgUrl }) {
   return (
     <>
-      <div className="privacy p-5 d-flex flex-column justify-content-center align-items-center">
+      <div className="privacy p-5 ">
         <div className="page p-5">
           <div className="page-head pt-5">privacy policy</div>
           <div className="page-desc">

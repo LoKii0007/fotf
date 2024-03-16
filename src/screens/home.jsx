@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Page1 from "../components/page1";
 import Page2 from "../components/page2"
-import Page3 from "../components/page3"
-import Page4 from "../components/page4"
 import LocomotiveScroll from 'locomotive-scroll';
 
 export default function Home({ bgUrl }) {
@@ -32,8 +30,6 @@ export default function Home({ bgUrl }) {
       <div id="preloader" data-scroll-container>
           <Page1 scale={scale} bgUrl={bgUrl} />
           <Page2 scale={scale} bgUrl={bgUrl} />
-          {/* <Page3 scale={scale} bgUrl={bgUrl} /> */}
-          {/* <Page4 scale={scale} bgUrl={bgUrl} /> */}
       </div>
     </>
   )

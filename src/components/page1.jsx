@@ -333,7 +333,7 @@ export default function Page1({ scale }) {
         <>
             <div className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
                 <div className='loading-video position-fixed d-flex justify-content-center align-items-center'>
-                    <video className='loading-vid' muted src="/loading-vid.mp4"></video>
+                    <video loop className='loading-vid' muted src="/loading-vid.mp4"></video>
                 </div>
                 <div className="loading-1 d-flex justify-content-center align-items-center">
                     <div className="time-15-left d-flex justify-content-center align-items-center">
@@ -342,9 +342,9 @@ export default function Page1({ scale }) {
                                 <line x1="422" y1="0.5" y2="0.5" stroke="url(#paint0_linear_255_3622)" />
                                 <defs>
                                     <linearGradient id="paint0_linear_255_3622" x1="0" y1="0" x2="422" y2="0" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#07CE02" stop-opacity="0" />
-                                        <stop offset="0.525" stop-color="#07CE02" />
-                                        <stop offset="1" stop-color="#07CE02" stop-opacity="0" />
+                                        <stop stopColor="#07CE02" stopOpacity="0" />
+                                        <stop offset="0.525" stopColor="#07CE02" />
+                                        <stop offset="1" stopColor="#07CE02" stopOpacity="0" />
                                     </linearGradient>
                                 </defs>
                             </svg>
@@ -356,9 +356,9 @@ export default function Page1({ scale }) {
                                 <line x1="422" y1="0.5" y2="0.5" stroke="url(#paint0_linear_255_3622)" />
                                 <defs>
                                     <linearGradient id="paint0_linear_255_3622" x1="0" y1="0" x2="422" y2="0" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#07CE02" stop-opacity="0" />
-                                        <stop offset="0.525" stop-color="#07CE02" />
-                                        <stop offset="1" stop-color="#07CE02" stop-opacity="0" />
+                                        <stop stopColor="#07CE02" stopOpacity="0" />
+                                        <stop offset="0.525" stopColor="#07CE02" />
+                                        <stop offset="1" stopColor="#07CE02" stopOpacity="0" />
                                     </linearGradient>
                                 </defs>
                             </svg>
@@ -373,9 +373,9 @@ export default function Page1({ scale }) {
                                     <path d="M268.21 105.965C275.389 137.567 271.012 170.695 255.87 199.346C240.729 227.998 215.825 250.279 185.672 262.152C155.518 274.025 122.109 274.704 91.498 264.067C60.8867 253.429 35.0982 232.179 18.8047 204.166C2.51121 176.153 -3.20939 143.231 2.67937 111.364C8.56812 79.4965 25.6767 50.7926 50.9053 30.4527C76.1339 10.1127 107.814 -0.517856 140.205 0.487103C172.596 1.49206 203.556 14.066 227.475 35.9309L136 136L268.21 105.965Z" fill="url(#paint0_radial_255_3681)" />
                                     <defs>
                                         <radialGradient id="paint0_radial_255_3681" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(136 136) rotate(77.2009) scale(135.578)">
-                                            <stop offset="0.765" stop-color="#07CE02" stop-opacity="0" />
-                                            <stop offset="0.885" stop-color="#07CE02" />
-                                            <stop offset="1" stop-color="#07CE02" stop-opacity="0" />
+                                            <stop offset="0.765" stopColor="#07CE02" stopOpacity="0" />
+                                            <stop offset="0.885" stopColor="#07CE02" />
+                                            <stop offset="1" stopColor="#07CE02" stopOpacity="0" />
                                         </radialGradient>
                                     </defs>
                                 </svg>
