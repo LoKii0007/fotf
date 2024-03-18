@@ -90,7 +90,7 @@
     left: 0%;
     width: 100vw;
     height: 100vh;
-    z-index: 500;
+    z-index: 1100;
     opacity: 0;
     overflow: hidden;
 }
@@ -446,6 +446,17 @@
     .ghoomta-sq3{
         bottom: 32px;
         left: 32px;
+    }
+    .ghoomta-text1, .ghoomta-text2{
+        left: 300px;
+    }
+    .ghoomta-text3, .ghoomta-text4{
+        right: 300px;
+    }
+    .ghoomta-text1, .ghoomta-text2, .ghoomta-text3, .ghoomta-text4{
+        font-size: 8px !important;
+        height: 150px;
+        width: fit-content;
     }
 
     /* ------------------------roadmap---------------------- */

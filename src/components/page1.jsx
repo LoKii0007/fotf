@@ -319,6 +319,10 @@ export default function Page1({ scale }) {
             duration: 1,
             right: "0%"
         }, 5.5)
+        tl.to(".loading, .load-left, .load-right",{
+            display:"none",
+            zIndex:"0"
+        })
     
         const video = document.querySelector('.loading-vid');
     
