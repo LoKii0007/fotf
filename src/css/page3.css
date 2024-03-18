@@ -399,11 +399,11 @@
     .crstal-text{
         font-size: 16px;
         margin: 0% !important;
-        padding:48px !important;
+        padding:0px 48px !important;
         align-items: center !important;
     }
     .page3-right{
-        padding: 48px !important;
+        padding:0px 48px !important;
     }
     .comp31-bottom{
         right: -100px;
