@@ -502,11 +502,11 @@
         padding: 0% 48px !important;
     }
     .sq-1 , .sq-3, .sq-5{
-        left: 197.5px;
+        left: 198px;
         top: 50%;
     }
     .sq-2 , .sq-4, .sq-6{
-        left: -2.5px;
+        left: -2px;
         top: 50%;
     }
 }
