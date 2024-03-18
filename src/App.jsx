@@ -10,7 +10,7 @@ import useLocoScroll from './components/locomotive'
 
 function App() {
 
-  // useLocoScroll()
+  // useLocoScroll(true)
 
   const border1 = <svg width="1867" height="1079" viewBox="0 0 1867 1079" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#filter0_b_306_1167)">

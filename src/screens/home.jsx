@@ -27,7 +27,7 @@ export default function Home({ bgUrl }) {
 
   return (
     <>
-      <div id="preloader" data-scroll-container>
+      <div id="preloader">
           <Page1 scale={scale} bgUrl={bgUrl} />
           <Page2 scale={scale} bgUrl={bgUrl} />
       </div>

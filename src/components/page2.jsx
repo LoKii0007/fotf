@@ -673,7 +673,7 @@ export default function Page2({ scale, bgUrl }) {
 
   return (
     <>
-      <div className="page-2">
+      <div data-scroll-container className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
           <div className="box position-absolute">
           </div>
@@ -756,7 +756,7 @@ export default function Page2({ scale, bgUrl }) {
 
       </div >
 
-      <div className="page-3 overflow-hidden">
+      <div data-scroll-container className="page-3 overflow-hidden">
         <div className="page3-comp1 d-flex position-relative justify-content-between align-items-center">
 
           <div className="page3-left position-relative">

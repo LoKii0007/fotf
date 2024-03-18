@@ -1,5 +1,5 @@
 import LocomotiveScroll from "locomotive-scroll";
- 
+import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -9,7 +9,7 @@ const useLocoScroll = (start) => {
     useLayoutEffect(() => {
       if (!start) return;
   
-      const scrollEl = document.querySelector("#root");
+      const scrollEl = document.querySelector("[data-scroll-container]");
   
       let locoScroll = new LocomotiveScroll({
         el: scrollEl,
@@ -36,7 +36,7 @@ const useLocoScroll = (start) => {
             height: window.innerHeight
           };
         },
-        pinType: document.querySelector("#root").style.transform
+        pinType: document.querySelector("[data-scroll-container]").style.transform
           ? "transform"
           : "fixed"
       });
