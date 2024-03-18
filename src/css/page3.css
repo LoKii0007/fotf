@@ -345,7 +345,7 @@
     }
 }
 
-@media screen and (max-width:999px) and (min-width:601px){
+@media screen and (max-width:999px) and (min-width:801px){
     .page3-comp1{
         flex-direction: column-reverse !important;
         padding: 0% !important;
@@ -368,7 +368,7 @@
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
     .page3-comp1{
         flex-direction: column-reverse !important;
         padding: 0% !important;
@@ -502,11 +502,11 @@
         padding: 0% 48px !important;
     }
     .sq-1 , .sq-3, .sq-5{
-        left: 198px;
+        left: 197.5px;
         top: 50%;
     }
     .sq-2 , .sq-4, .sq-6{
-        left: -2px;
+        left: -2.5px;
         top: 50%;
     }
 }
