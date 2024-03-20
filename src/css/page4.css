@@ -118,7 +118,22 @@
 }
 
 .f-logo{
-    color: #07CE02;
+    background-color: #07CE02;
+    z-index: 100;
+    font-size: 20px;
+    color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}   
+
+.twitter{
+    background-color: #07CE02 !important;
+    font-size: 20px;
+    stroke: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
 }
 
 
@@ -165,6 +180,17 @@
     .f-sq{
         height: 8px;
         width: 8px;
+    }
+    .f-logo{
+        width: 16px;
+        height: 16px;
+        font-size: 12PX;
+        border-radius: 8px;
+    }   
+    .twitter{
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
     }
 }
 

@@ -50,21 +50,21 @@ export default function Page2({ scale, bgUrl }) {
       transform: "scale(40)",
       duration: .5,
     })
-    .to(".box2-content , .box-2, .shuffle-top", {
-      y: 0,
-      duration: .5,
-      opacity: 1
-    }, 0)
-    .to(".layers", {
-      y: 0,
-      duration: .5,
-    }, 0)
-    .to("#layout-svg", {
-      stroke: "black"
-    }, 0)
-    .to("#layout-text", {
-      fill: "black"
-    }, 0)
+      .to(".box2-content , .box-2, .shuffle-top", {
+        y: 0,
+        duration: .5,
+        opacity: 1
+      }, 0)
+      .to(".layers", {
+        y: 0,
+        duration: .5,
+      }, 0)
+      .to("#layout-svg", {
+        stroke: "black"
+      }, 0)
+      .to("#layout-text", {
+        fill: "black"
+      }, 0)
 
     ScrollTrigger.create({
       trigger: ".box",
@@ -241,19 +241,19 @@ export default function Page2({ scale, bgUrl }) {
         paddingTop: "15vh",
         transformOrigin: "center center"
       })
-      .to("#layout-svg", {
-        stroke: "#07CE02"
-      }, 0)
-      .to("#layout-text", {
-        fill: "black"
-      }, 0)
-      .to(".page2-comp1", {
-        height: "150vh",
-        transformOrigin: "top center"
-      }, 0)
-      .to(".page2-comp2", {
-        height: 0,
-      }, 0)
+        .to("#layout-svg", {
+          stroke: "#07CE02"
+        }, 0)
+        .to("#layout-text", {
+          fill: "black"
+        }, 0)
+        .to(".page2-comp1", {
+          height: "150vh",
+          transformOrigin: "top center"
+        }, 0)
+        .to(".page2-comp2", {
+          height: 0,
+        }, 0)
 
       ScrollTrigger.create({
         trigger: ".box-2",
@@ -992,15 +992,15 @@ export default function Page2({ scale, bgUrl }) {
             </div>
           </div>
 
-          <div className="ft-right d-flex justify-content-center align-items-center">
-            <div className="d-logo pe-2 f-logo">
+          <div className="ft-right px-2 d-flex justify-content-center align-items-center">
+            <div className="d-logo f-logo mx-2 d-flex justify-content-center align-items-center">
               <i className="fa-brands fa-discord"></i>
             </div>
-            <div className="d-logo f-logo">
-              <i className="fa-brands fa-discord"></i>
-            </div>
-            <div className="t-logo f-logo">
-              <i className="fa-brands fa-x-twitter"></i>
+            <div className="d-logo f-logo mx-2 d-flex justify-content-center align-items-center">
+              <svg className='twitter' width="30" height="30" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.18935 4.88256H5.63116L12.8035 15.1419H14.3617L7.18935 4.88256Z" fill="#07CE02" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10C0 4.47734 4.47734 0 10 0C15.5227 0 20 4.47734 20 10C20 15.5227 15.5227 20 10 20C4.47734 20 0 15.5227 0 10ZM15.3757 4.11886L11.0948 9.09503L15.7505 15.8709H12.3263L9.19098 11.308L5.26563 15.8709H4.25114L8.74058 10.6526L4.25114 4.11886H7.67533L10.6441 8.43961L14.3612 4.11886H15.3757Z" fill="#07CE02" />
+              </svg>
             </div>
           </div>
         </div>

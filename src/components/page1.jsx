@@ -42,7 +42,7 @@ export default function Page1({ scale }) {
                 trigger: ".page1-comp2",
                 start: "top bottom",
                 end: "top top",
-                scrub: 1
+                scrub: 1,
             },
             x: "-100vw",
             position: "fixed"
