@@ -736,16 +736,16 @@ export default function Page2({ scale, bgUrl }) {
           <div className="box position-absolute">
           </div>
           <div className="shuffle-top container d-flex justify-content-center align-items-center">
-            <div className="shuffle-left px-5 col-6 d-flex justify-content-start align-items-center">
+            <div aria-label='3,314 unique digital collectibles.' className="shuffle-left animated-title px-5 col-6 d-flex justify-content-start align-items-center">
               3,314 unique digital <br /> collectibles.
             </div>
             <div className="shuffle-right p-5 d-flex justify-content-start align-items-start">
               <div className="shuffle-text1 pe-5 d-flex justify-content-center align-items-center">
                 <div className="shuffle-sq p-1"></div>
-                <div className='ps-3'>NFT COLLECTION</div>
+                <div className='ps-3 animated-title'>NFT COLLECTION</div>
               </div>
-              <div className="shuffle-text2 pe-5">
-                <span style={{ textDecoration: "underline" }}>Friends of the Future</span> <br /> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
+              <div aria-label='Friends of the Future avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.' className="shuffle-text2 pe-5 animated-title">
+                <span style={{ textDecoration: "underline" }}>Friends of the Future</span> <br /> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
               </div>
             </div>
           </div>
@@ -855,7 +855,10 @@ export default function Page2({ scale, bgUrl }) {
               </div>
             </div>
 
-            <div className="crstal-text px-5 m-5 d-flex justify-content-center align-items-start">
+            <div aria-label='There is a 4th role called the
+              Legendaries: only for 20 people, who
+              get a serum with it that get a mejastic
+              clothing onboard from the origins of FoF:' className="crstal-text animated-title px-5 m-5 d-flex justify-content-center align-items-start">
               There is a 4th role called the
               Legendaries: only for 20 people, who
               get a serum with it that get a mejastic
@@ -950,34 +953,34 @@ export default function Page2({ scale, bgUrl }) {
             </div>
 
             <div className="road-1 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center mt-5">kick off</div>
-              <div className="road-bottom text-center">We launch the Friends of the Future website and social media</div>
+              <div aria-label='kick off' className="road-top text-center animated-title mt-5">kick off</div>
+              <div aria-label='We launch the Friends of the Future website and social media' className="road-bottom text-center animated-title">We launch the Friends of the Future website and social media</div>
               <div className="sq-1 sq position-absolute"></div>
               {/* <div className="stop-pro position-absolute"></div> */}
             </div>
             <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center">normies reveal</div>
-              <div className="road-bottom text-center mb-5">We reveal Normies perks</div>
+              <div aria-label='normies reveal' className="road-top text-center animated-title">normies reveal</div>
+              <div aria-label='We reveal Normies perks' className="road-bottom text-center animated-title mb-5">We reveal Normies perks</div>
               <div className="sq-2 sq position-absolute"></div>
             </div>
             <div className="road-3 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center mt-5">goldies reveal</div>
-              <div className="road-bottom text-center">We reveal Goldies perks</div>
+              <div aria-label='goldies reveal' className="road-top text-center mt-5 animated-title">goldies reveal</div>
+              <div aria-label='We reveal Goldies perks' className="road-bottom text-center animated-title">We reveal Goldies perks</div>
               <div className="sq-3 sq position-absolute"></div>
             </div>
             <div className="road-4 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center">goldies reveal</div>
-              <div className="road-bottom text-center mb-5">We reveal Platinum perks</div>
+              <div aria-label='goldies reveal' className="road-top text-center animated-title">goldies reveal</div>
+              <div aria-label='We reveal Platinum perks' className="road-bottom text-center animated-title mb-5">We reveal Platinum perks</div>
               <div className="sq-4 sq position-absolute"></div>
             </div>
             <div className="road-5 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center mt-5">legendaries reveal</div>
-              <div className="road-bottom text-center">We reveal Legendaries perks</div>
+              <div aria-label='legendaries reveal' className="road-top text-center mt-5 animated-title">legendaries reveal</div>
+              <div aria-label='We reveal Legendaries perks' className="road-bottom text-center animated-title">We reveal Legendaries perks</div>
               <div className="sq-5 sq position-absolute"></div>
             </div>
             <div className="road-6 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
-              <div className="road-top text-center">Minting time</div>
-              <div className="road-bottom text-center mb-5">in favouritism for avatars</div>
+              <div aria-label='Minting time' className="road-top text-center animated-title">Minting time</div>
+              <div aria-label='in favouritism for avatars' className="road-bottom text-center mb-5 animated-title">in favouritism for avatars</div>
               <div className="sq-6 sq position-absolute"></div>
             </div>
           </div>

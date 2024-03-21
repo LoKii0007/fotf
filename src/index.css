@@ -59,6 +59,82 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* --------------------animated title----------- */
+
+.animated-title {
+  animation: textGlitch 3s ease-in-out infinite alternate;
+}
+
+.animated-title .animate span {
+  opacity: 0;
+  transform: translateY(2px);
+  animation: displayLetter .5s ease-in-out .5s forwards alternate;
+  letter-spacing: 1px;
+}
+
+.animated-title .animate span:nth-child(3n+1) {
+  animation-delay: calc((random(10) / 10) * 1s);
+}
+
+.animated-word {
+  opacity: 0;
+}
+
+@keyframes displayLetter {
+	0% {
+    transform: translateY(2px);
+    color: #07CE02;
+    opacity: 0;
+	}
+  10% {
+    opacity: 1;
+    color: limegreen;
+  }
+  20% {
+    opacity: 0;
+    color: white;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    color: darkgreen;
+    transform: translateY(1px);
+  }
+  60% {
+    opacity: 1;
+    color: white;
+    transform: translateY(1px);
+  }
+	100% {
+    transform: translateY(0);
+    color: white;
+    opacity: 1;
+	}
+}
+
+@keyframes textGlitch {
+  0% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+	95% {
+    opacity: 0.1;
+  }
+  96% {
+    opacity: 1;
+    transform: translateX(1px);
+  }
+  97% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 
 /* ---------------------lenis----------------------------  */
 

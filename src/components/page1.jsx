@@ -12,20 +12,20 @@ export default function Page1({ scale }) {
     const [loadingText, setLoadingText] = useState(0)
 
     const [flag, setFlag] = useState(false)
-  
+
     useEffect(() => {
-  
-      function handleResize() {
-        setFlag(window.innerWidth > 600);
-      }
-  
-      handleResize()
-  
-      window.addEventListener("resize", handleResize);
-  
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      }
+
+        function handleResize() {
+            setFlag(window.innerWidth > 600);
+        }
+
+        handleResize()
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
     }, [])
 
     // ----------comp1 animations--------
@@ -429,12 +429,12 @@ export default function Page1({ scale }) {
                             </button>
                         </div>
                         <div className="page1-lines d-flex flex-column justify-content-center align-items-center">
-                            <div className="page1-line1 comp1-line ps-5">FRIENDS</div>
+                            <div aria-label='' className="page1-line1 comp1-line ps-5 animated-title">FRIENDS</div>
                             <div className="page1-line2 comp1-line d-flex">
-                                <div className='webkit-of'>OF</div>
-                                <div className='webkit-the'>THE</div>
+                                <div aria-label='OF' className='webkit-of animated-title'>OF</div>
+                                <div aria-label='THE' className='webkit-the animated-title'>THE</div>
                             </div>
-                            <div className="page1-line3 comp1-line ps-5">FUTURE</div>
+                            <div className="page1-line3 comp1-line ps-5 animated-title" aria-label='FUTURE'>FUTURE</div>
                         </div>
                         <div className="join-btns ps-5 d-flex align-items-center justify-content-center">
                             <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-3 d-flex'>
@@ -476,11 +476,13 @@ export default function Page1({ scale }) {
 
                 <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
                     <div className="comp2-top p-5 position-relative d-flex flex-column align-items-center">
-                        <div className="comp2-head py-3 px-3">
+                        <div aria-label='FRIENDS OF THE FUTURE 01' className="comp2-head py-3 px-3 animated-title">
                             FRIENDS OF THE FUTURE 01
                         </div>
                         <div className="comp2-text px-5 pb-3 position-relative d-flex justify-content-center">
-                            <div className='scrollable px-3'>
+                            <div aria-label='This project tells the story of 4 friends that come together thanks to web 3.
+                                Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community.
+                                Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.' className='scrollable px-3 animated-title'>
                                 This project tells the story of 4 friends that come together thanks to web 3.
                                 Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
                                 Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
@@ -537,10 +539,10 @@ export default function Page1({ scale }) {
                     </div>
 
                     <div className="comp2-bottom d-flex flex-column align-items-end">
-                        <div className="community-top">
+                        <div aria-label='BY COMMUNITY' className="community-top animated-title">
                             BY COMMUNITY
                         </div>
-                        <div className="community-bottom">
+                        <div aria-label='FOR COMMUNITY' className="community-bottom animated-title">
                             FOR COMMUNITY
                         </div>
                     </div>
