@@ -219,80 +219,80 @@ export default function Page1({ scale }) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-          setLoadingText(prevLoadingText => {
-            const newValue = prevLoadingText + 1;
-            return newValue <= 100 ? newValue : 100;
-          });
+            setLoadingText(prevLoadingText => {
+                const newValue = prevLoadingText + 1;
+                return newValue <= 100 ? newValue : 100;
+            });
         }, 65);
 
         return () => {
             clearInterval(interval);
         }
-      }, []);
+    }, []);
 
     useEffect(() => {
 
         const tl = gsap.timeline({
-          paused: true,
-          onComplete:()=>{
-            document.body.style.overflow = "auto"
-          },
-          onStart:()=>{
-            document.body.style.overflow = "hidden"
-          }
+            paused: true,
+            onComplete: () => {
+                document.body.style.overflow = "auto"
+            },
+            onStart: () => {
+                document.body.style.overflow = "hidden"
+            }
         })
-    
+
         // -------------------loading 1-----------------
-    
+
         tl.to(".loading-1", {
-          opacity: 0,
-          duration: 0.5,
-          transition: "1s ease-in"
+            opacity: 0,
+            duration: 0.5,
+            transition: "1s ease-in"
         }, 3)
-    
-    
+
+
         // -----------------------loading 2------------------
-    
+
         tl.to(".outer-89", {
-          duration: 0.5,
-          opacity: 1
+            duration: 0.5,
+            opacity: 1
         }, 2)
-        
+
         tl.to(".outer-89", {
-          height: `${scale?"300px":"150px"}`,
-          width: `${scale?"300px":"150px"}`,
-          borderRadius: `${scale?"150px":"75px"}`,
-          duration: 0.7
+            height: `${scale ? "300px" : "150px"}`,
+            width: `${scale ? "300px" : "150px"}`,
+            borderRadius: `${scale ? "150px" : "75px"}`,
+            duration: 0.7
         }, 2.5)
         tl.to(".gradient-svg", {
-          height: `${scale?"270px":"130px"}`,
-          width: `${scale?"270px":"130px"}`,
-          borderRadius: `${scale?"135px":"65px"}`,
-          duration: 0.7
+            height: `${scale ? "270px" : "130px"}`,
+            width: `${scale ? "270px" : "130px"}`,
+            borderRadius: `${scale ? "135px" : "65px"}`,
+            duration: 0.7
         }, 2.5)
-    
-    
+
+
         // -----------------------loading 3------------------
-    
+
         tl.to(".outer-89", {
-          height: `${scale?"400px":"200px"}`,
-          width: `${scale?"400px":"200px"}`,
-          borderRadius: `${scale?"200px":"100px"}`,
-          duration: 0.7
+            height: `${scale ? "400px" : "200px"}`,
+            width: `${scale ? "400px" : "200px"}`,
+            borderRadius: `${scale ? "200px" : "100px"}`,
+            duration: 0.7
         }, 4)
         tl.to(".gradient-svg", {
-          height: `${scale?"350px":"175px"}`,
-          width: `${scale?"350px":"175px"}`,
-          duration: 0.7
+            height: `${scale ? "350px" : "175px"}`,
+            width: `${scale ? "350px" : "175px"}`,
+            duration: 0.7
         }, 4)
-    
-    
+
+
         // -----------------------loading 4------------------
-    
+
         tl.to(".loading", {
-          scale: "5",
-          duration: 1.5,
-          opacity: 0
+            scale: "5",
+            duration: 1.5,
+            opacity: 0
         }, 5.5)
 
         // ---------------------loading remove --------------------
@@ -319,19 +319,19 @@ export default function Page1({ scale }) {
             duration: 1,
             right: "0%"
         }, 5.5)
-        tl.to(".loading, .load-left, .load-right",{
-            display:"none",
-            zIndex:"0"
+        tl.to(".loading, .load-left, .load-right", {
+            display: "none",
+            zIndex: "0"
         })
-    
+
         const video = document.querySelector('.loading-vid');
-    
-        window.addEventListener("load", function(){
-          video.play()
-          tl.play()
+
+        window.addEventListener("load", function () {
+            video.play()
+            tl.play()
         })
-    
-      }, [])
+
+    }, [])
 
     return (
         <>
@@ -388,15 +388,16 @@ export default function Page1({ scale }) {
                     </div>
                 </div>
                 <div className="loading-text position-fixed d-flex justify-content-center align-items-center">
-                {loadingText}
-            </div>
+                    {loadingText}
+                </div>
             </div>
             <div className="load-left position-fixed"></div>
             <div className="load-right position-fixed"></div>
             <div className="page1-bg2 position-fixed">
                 <img className='moving-bg' src="/moving-bg.png" alt="" />
             </div>
-            <div data-scroll-container className="page1 container d-flex flex-column align-items-center justify-content-center">
+
+            <div className="page1 container d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 container position-relative">
                     <div className="page1-bg position-fixed">
                         <img className='alien1-img' src="/alien1.png" alt="" />
@@ -418,7 +419,7 @@ export default function Page1({ scale }) {
                             </div>
                             <div className="page1-line3 comp1-line ps-5">FUTURE</div>
                         </div>
-                        <div className="join-btns ps-5 d-flex align-items-center justify-content-center">
+                        <div className="join-btns position-relative ps-5 d-flex align-items-center justify-content-center">
                             <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-4 d-flex'>
                                 <div className="b-text">JOIN OUR DISCORD</div>
                                 <div className='discord-icon px-2'>

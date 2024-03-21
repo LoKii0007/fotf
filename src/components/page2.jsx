@@ -18,7 +18,7 @@ export default function Page2({ scale, bgUrl }) {
   const [flag, setFlag] = useState(false)
   const [shuffle, setShuffle] = useState(false)
 
-  const animation = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
+  const animation = ['1', '2', '3', '4', '5', '6', '7', '8', '9','10','11']
 
 
   // animation1-------------(green box rotation)-----------------------
@@ -410,37 +410,32 @@ export default function Page2({ scale, bgUrl }) {
       y: -50
     })
 
-    gsap.to(".page3-comp3", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top 10%",
-        end: "top top",
-        scrub: 1,
+    ScrollTrigger.create({
+      trigger: ".page3-comp3",
+      start: "top 10%",
+      end: "top top",
+      scrub: 1,
+      onEnter: () => {
+        tl2.play()
       },
+      onLeaveBack: () => {
+        tl2.reverse()
+      }
+
+    })
+
+    const tl2 = gsap.timeline({
+      paused: true
+    })
+
+    tl2.to(".page3-comp3-text", {
       y: -500,
       duration: 1,
     })
 
-    gsap.to(".comp3-bg", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top top",
-        end: "top top",
-        scrub: 1,
-        // markers:true
-      },
+    tl2.to(".comp3-bg", {
       opacity: 1
-    })
-
-    gsap.to(".recurso", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top top",
-        end: "top top",
-        scrub: 1,
-      },
-      animation: "rotate 3s ease-in-out infinite"
-    })
+    }, 0)
 
   }, [])
 
@@ -673,7 +668,15 @@ export default function Page2({ scale, bgUrl }) {
 
   return (
     <>
-      <div data-scroll-container className="page-2">
+
+      <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn position-fixed access-btn-pc p-4 d-flex'>
+        <div className="b-text">ACCESS WHITELIST</div>
+        <div className='discord-icon px-2'>
+          <i className="fa-brands fa-discord"></i>
+        </div>
+      </button>
+      
+      <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
           <div className="box position-absolute">
           </div>
@@ -695,10 +698,18 @@ export default function Page2({ scale, bgUrl }) {
 
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
               {
-                animation.map((item, index) => (
-                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 8s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 8s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${item}.png`} alt="" />
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 8s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 8s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${item}-1.png`} alt="" />
+                animation.slice(0,5).map((item, index) => (
+                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${item}.png`} alt="" />
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${item}-1.png`} alt="" />
+                  </div>
+                ))
+              }
+              {
+                animation.slice(5,9).map((item, index) => (
+                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${4-index}.png`} alt="" />
+                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${4-index}-1.png`} alt="" />
                   </div>
                 ))
               }
@@ -756,7 +767,7 @@ export default function Page2({ scale, bgUrl }) {
 
       </div >
 
-      <div data-scroll-container className="page-3 overflow-hidden">
+      <div className="page-3 overflow-hidden">
         <div className="page3-comp1 d-flex position-relative justify-content-between align-items-center">
 
           <div className="page3-left position-relative">
@@ -816,7 +827,7 @@ export default function Page2({ scale, bgUrl }) {
 
         <div style={{ height: "100vh" }} className="page3-comp2"> </div>
 
-        <div className="page3-comp3 d-flex flex-column position-relative">
+        <div className="page3-comp3 position-relative d-flex flex-column position-relative">
           <div className="page3-comp3-text text-center">
             legendary <br />20 spots
           </div>
@@ -1006,7 +1017,7 @@ export default function Page2({ scale, bgUrl }) {
         </div>
       </div>
 
-      <div id='#layout' className="layout position-fixed d-flex justify-content-center align-items-center">
+      <div id='#layout' className="layout d-flex justify-content-center align-items-center">
         {bgUrl}
       </div>
 

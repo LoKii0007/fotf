@@ -47,7 +47,7 @@
 .page1-front{
     height: 100vh;
     overflow: hidden;
-    z-index: 100;
+    z-index: 1200;
 }
 .message{
     transform: translateX(-400px);
@@ -81,6 +81,13 @@
 
 .join-btns{
     font-size: 16px;
+    z-index: 1200;
+}
+
+.access-btn-pc{
+    right: 5vh;
+    top: 8vh;
+    z-index: 1200;
 }
 
 .discord, .world-btn, .access-btn{
@@ -91,6 +98,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    transition: 0.5s ease-in;
+    border: none !important;
 }
 
 .tedi-line{
@@ -107,6 +116,13 @@
 }
 .access-btn{
     backdrop-filter: none;
+}
+
+.discord:hover, .world-btn:hover, .access-btn:hover{
+   scale: 1.1;
+   /* color: white; */
+   transition: 0.5s ease-in;
+   border: none !important;
 }
 
 /* -----------------------------------comp2-------------------------------- */

@@ -5,12 +5,9 @@ import Terms from "./components/terms"
 import Legal from "./components/legal"
 import Privacy from "./components/privacy"
 import Home from './screens/home'
-import useLocoScroll from './components/locomotive'
  
 
 function App() {
-
-  // useLocoScroll(true)
 
   const border1 = <svg width="1867" height="1079" viewBox="0 0 1867 1079" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#filter0_b_306_1167)">
@@ -248,24 +245,24 @@ function App() {
       if (window.innerWidth <= 700) {
         setBgUrl(border6)
       }
-      if (window.innerWidth > 1400 && window.innerWidth <= 1920 && window.innerHeight > 1050 && window.innerHeight <= 1080) {
+      else if (window.innerWidth > 1400 && window.innerWidth <= 1920 && window.innerHeight > 1050 && window.innerHeight <= 1080) {
         setBgUrl(border1)
       }
-      if (window.innerWidth > 1400 && window.innerWidth <= 1920 && window.innerHeight > 900 && window.innerHeight <= 1050) {
+      else if (window.innerWidth > 1400 && window.innerWidth <= 1920 && window.innerHeight > 900 && window.innerHeight <= 1050) {
         setBgUrl(border2)
       }
-      if (window.innerWidth >= 900 && window.innerWidth <= 1050 && window.innerHeight >= 1250 && window.innerHeight <= 1350) {
+      else if (window.innerWidth >= 900 && window.innerWidth <= 1050 && window.innerHeight >= 1250 && window.innerHeight <= 1350) {
         setBgUrl(border3)
       }
-      if (window.innerWidth >= 1250 && window.innerWidth <= 1350 && window.innerHeight >= 900 && window.innerHeight <= 1050) {
+      else if (window.innerWidth >= 1250 && window.innerWidth <= 1350 && window.innerHeight >= 900 && window.innerHeight <= 1050) {
         setBgUrl(border4)
       }
-      if (window.innerWidth >= 1300 && window.innerWidth <= 1400 && window.innerHeight >= 600 && window.innerHeight <= 700) {
+      else if (window.innerWidth >= 1300 && window.innerWidth <= 1400 && window.innerHeight >= 600 && window.innerHeight <= 700) {
         setBgUrl(border5)
       }
-      // else{
-      //     setBgUrl(border1)
-      // }
+      else if(window.innerWidth > 1920){
+        setBgUrl(border1)
+      }
     }
 
     handleResize()
