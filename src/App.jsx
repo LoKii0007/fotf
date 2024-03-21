@@ -242,7 +242,7 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 700) {
+      if (window.innerWidth <= 600) {
         setBgUrl(border6)
       }
       else if (window.innerWidth > 1400 && window.innerWidth <= 1920 && window.innerHeight > 1050 && window.innerHeight <= 1080) {
@@ -251,7 +251,7 @@ function App() {
       else if (window.innerWidth > 1400 && window.innerWidth <= 1920 && window.innerHeight > 900 && window.innerHeight <= 1050) {
         setBgUrl(border2)
       }
-      else if (window.innerWidth >= 900 && window.innerWidth <= 1050 && window.innerHeight >= 1250 && window.innerHeight <= 1350) {
+      else if (window.innerWidth >= 601 && window.innerWidth <= 1050 && window.innerHeight >= 850 && window.innerHeight <= 1350) {
         setBgUrl(border3)
       }
       else if (window.innerWidth >= 1250 && window.innerWidth <= 1350 && window.innerHeight >= 900 && window.innerHeight <= 1050) {

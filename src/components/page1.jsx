@@ -11,6 +11,23 @@ export default function Page1({ scale }) {
 
     const [loadingText, setLoadingText] = useState(0)
 
+    const [flag, setFlag] = useState(false)
+  
+    useEffect(() => {
+  
+      function handleResize() {
+        setFlag(window.innerWidth > 600);
+      }
+  
+      handleResize()
+  
+      window.addEventListener("resize", handleResize);
+  
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      }
+    }, [])
+
     // ----------comp1 animations--------
 
     useEffect(() => {
@@ -45,7 +62,7 @@ export default function Page1({ scale }) {
                 scrub: 1,
             },
             x: "-100vw",
-            position: "fixed"
+            // position: "fixed"
         })
     }, [])
 
@@ -402,7 +419,7 @@ export default function Page1({ scale }) {
                     <div className="page1-bg position-fixed">
                         <img className='alien1-img' src="/alien1.png" alt="" />
                     </div>
-                    <div className="page1-front pt-5 d-flex flex-column justify-content-center align-items-start">
+                    <div className="page1-front position-fixed pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className='whitelist-btn py-3 d-flex justify-content-center align-items-center'>
                             <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn p-4 d-flex'>
                                 <div className="b-text">ACCESS WHITELIST</div>
@@ -419,8 +436,8 @@ export default function Page1({ scale }) {
                             </div>
                             <div className="page1-line3 comp1-line ps-5">FUTURE</div>
                         </div>
-                        <div className="join-btns position-relative ps-5 d-flex align-items-center justify-content-center">
-                            <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-4 d-flex'>
+                        <div className="join-btns ps-5 d-flex align-items-center justify-content-center">
+                            <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-3 d-flex'>
                                 <div className="b-text">JOIN OUR DISCORD</div>
                                 <div className='discord-icon px-2'>
                                     <i className="fa-brands fa-discord"></i>
@@ -447,7 +464,7 @@ export default function Page1({ scale }) {
                                     </defs>
                                 </svg>
                             </div>
-                            <button style={{ backgroundImage: "url(world.svg)" }} className='world-btn p-4 d-flex'>
+                            <button style={{ backgroundImage: "url(world.svg)" }} className='world-btn p-3 d-flex'>
                                 <div className="b-text">ENTER WL</div>
                                 <div className='discord-icon  px-2'>
                                     <i className="fa-brands fa-discord"></i>
@@ -458,12 +475,12 @@ export default function Page1({ scale }) {
                 </div>
 
                 <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
-                    <div className="comp2-top p-5 position-relative d-flex flex-column justify-content-center align-items-center">
-                        <div className="comp2-head py-3">
+                    <div className="comp2-top p-5 position-relative d-flex flex-column align-items-center">
+                        <div className="comp2-head py-3 px-3">
                             FRIENDS OF THE FUTURE 01
                         </div>
                         <div className="comp2-text px-5 pb-3 position-relative d-flex justify-content-center">
-                            <div className='scrollable'>
+                            <div className='scrollable px-3'>
                                 This project tells the story of 4 friends that come together thanks to web 3.
                                 Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community. <br /> <br />
                                 Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.
@@ -479,7 +496,7 @@ export default function Page1({ scale }) {
 
                         </div>
                         <div className="comp2-text-bg position-absolute">
-                            {scale ?
+                            {flag ?
                                 <svg viewBox="0 0 925 526" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d_255_1308)">
                                         <path d="M912.854 180.456V36.7161L887.064 11H550M183.28 11H37.9292L12.1461 36.7161V374.816M890.857 40.4994L872.66 22.3426M872.66 22.3426H774.271M872.66 22.3426H592M880.239 469.07L859.387 489.868H604.203M879.738 488.739L911.585 456.968L912.287 201.072M907.545 474.865L882.77 499.575H741.713M34.1359 40.4994L52.34 22.3426M52.34 22.3426H215.38M52.34 22.3426H286M44.7538 484.495L65.6052 505.292H320.797M45.2614 504.164L13.4078 472.393L12.6462 394.991M17.455 490.289L42.2227 515H183.28M914 183.523H911.237V186.28H914V183.523ZM914 188.884H911.237V191.64H914V188.884ZM914 194.244H911.237V197H914V194.244ZM893.388 308.476H890.356V311.5H893.388V308.476ZM893.388 314.357H890.356V317.381H893.388V314.357ZM893.388 320.246H890.356V323.269H893.388V320.246ZM11 380.64H13.7633V377.883H11V380.64ZM11 386H13.7633V383.244H11V386ZM11 391.36H13.7633V388.604H11V391.36ZM31.6047 449.262H34.6364V446.238H31.6047V449.262ZM31.6047 455.143H34.6364V452.119H31.6047V455.143ZM31.6047 461.024H34.6364V458H31.6047V461.024Z" stroke="#07CE02" strokeOpacity="0.22" strokeWidth="2" strokeMiterlimit="10" shapeRendering="crispEdges" />

@@ -11,14 +11,25 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Page2({ scale, bgUrl }) {
 
-  gsap.config({
-    force3D: true
-  })
-
   const [flag, setFlag] = useState(false)
   const [shuffle, setShuffle] = useState(false)
 
-  const animation = ['1', '2', '3', '4', '5', '6', '7', '8', '9','10','11']
+  const animation = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+  useEffect(() => {
+
+    function handleResize() {
+      setFlag(window.innerWidth > 800);
+    }
+
+    handleResize()
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    }
+  }, [])
 
 
   // animation1-------------(green box rotation)-----------------------
@@ -64,6 +75,12 @@ export default function Page2({ scale, bgUrl }) {
       }, 0)
       .to("#layout-text", {
         fill: "black"
+      }, 0)
+      .to(".world-svg", {
+        fill: "black"
+      }, 0)
+      .to(".access-btn-pc", {
+        color: "black"
       }, 0)
 
     ScrollTrigger.create({
@@ -145,7 +162,7 @@ export default function Page2({ scale, bgUrl }) {
       transformOrigin: "center center"
     }, 1)
 
-    if (scale) {
+    if (flag) {
       gsap.to(".box-2", {
         scrollTrigger: {
           trigger: ".box-2",
@@ -165,6 +182,24 @@ export default function Page2({ scale, bgUrl }) {
           scrub: .5,
         },
         fill: "#07CE02"
+      })
+      gsap.to(".world-svg", {
+        scrollTrigger: {
+          trigger: ".box-2",
+          start: "top 30%",
+          end: "top 30%",
+          scrub: .5,
+        },
+        fill: "#07CE02",
+      })
+      gsap.to(".access-btn-pc", {
+        scrollTrigger: {
+          trigger: ".box-2",
+          start: "top 30%",
+          end: "top 30%",
+          scrub: .5,
+        },
+        color:"07CE02"
       })
 
       const tl1 = gsap.timeline({
@@ -204,6 +239,9 @@ export default function Page2({ scale, bgUrl }) {
         height: 0,
         duration: .5,
       }, 0)
+      tl1.to(".box", {
+        backgroundColor: "transparent"
+      })
       ScrollTrigger.create({
         trigger: ".box-2",
         start: "top 20%",
@@ -245,7 +283,13 @@ export default function Page2({ scale, bgUrl }) {
           stroke: "#07CE02"
         }, 0)
         .to("#layout-text", {
-          fill: "black"
+          fill: "#07CE02"
+        }, 0)
+        .to(".world-svg", {
+          fill: "#07CE02"
+        }, 0)
+        .to(".access-btn-pc", {
+          color: "#07CE02"
         }, 0)
         .to(".page2-comp1", {
           height: "150vh",
@@ -260,7 +304,6 @@ export default function Page2({ scale, bgUrl }) {
         start: "top 20%",
         end: "top 20%",
         scrub: 0.1,
-        // markers: true,
         onEnter: () => {
           tl2.play()
         },
@@ -270,7 +313,7 @@ export default function Page2({ scale, bgUrl }) {
       })
     }
 
-  }, [scale])
+  }, [flag])
 
 
   //----------------------------- page3------------------------------ 
@@ -389,27 +432,6 @@ export default function Page2({ scale, bgUrl }) {
   // ------------animation 2---------------
 
   useEffect(() => {
-    gsap.to(".hero-11", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top 10%",
-        end: "top top",
-        scrub: .5,
-      },
-      x: 600,
-      y: -50
-    })
-    gsap.to(".hero-21", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top 10%",
-        end: "top top",
-        scrub: .5,
-      },
-      x: -600,
-      y: -50
-    })
-
     ScrollTrigger.create({
       trigger: ".page3-comp3",
       start: "top 10%",
@@ -432,10 +454,24 @@ export default function Page2({ scale, bgUrl }) {
       y: -500,
       duration: 1,
     })
-
-    tl2.to(".comp3-bg", {
-      opacity: 1
+    tl2.to(".hero-11", {
+      x: 600,
+      y: -50
     }, 0)
+    tl2.to(".hero-21", {
+      x: -600,
+      y: -50
+    }, 0)
+
+    gsap.to(".comp3-bg", {
+      scrollTrigger: {
+        trigger: ".page3-comp3",
+        start: "top top",
+        end: "top top",
+        scrub: 1,
+      },
+      opacity: 1
+    })
 
   }, [])
 
@@ -581,6 +617,9 @@ export default function Page2({ scale, bgUrl }) {
     tl.to(".layout", {
       y: "-100vh"
     }, 0)
+    tl.to(".access-btn-pc", {
+      y: "-50vh"
+    }, 0)
     tl.to(".char", {
       fontSize: `${scale ? "100px" : "50px"}`,
       rotateY: "0deg"
@@ -669,13 +708,29 @@ export default function Page2({ scale, bgUrl }) {
   return (
     <>
 
-      <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn position-fixed access-btn-pc p-4 d-flex'>
-        <div className="b-text">ACCESS WHITELIST</div>
-        <div className='discord-icon px-2'>
-          <i className="fa-brands fa-discord"></i>
+      <button className='access-btn position-fixed access-btn-pc d-flex justify-content-center align-items-center'>
+        <div className='position-absolute at-btn d-flex justify-content-center align-items-center'>
+          <div className="b-text b-text-access">ACCESS WHITELIST</div>
+          <div className='discord-icon px-2'>
+            <i className="fa-brands fa-discord"></i>
+          </div>
         </div>
+        <svg className='position-absolute' width="281" height="73" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_b_255_1210)">
+            <path className="world-svg" d="M0 0H244L280.5 36.3214V72.6427L36.3214 72.6427L0 36.3213V0Z" fill="#07CE02" fill-opacity="0.26" />
+          </g>
+          <defs>
+            <filter id="filter0_b_255_1210" x="-20" y="-20" width="320.5" height="112.643" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feGaussianBlur in="BackgroundImageFix" stdDeviation="10" />
+              <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_255_1210" />
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_255_1210" result="shape" />
+            </filter>
+          </defs>
+        </svg>
+    
       </button>
-      
+
       <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
           <div className="box position-absolute">
@@ -698,18 +753,18 @@ export default function Page2({ scale, bgUrl }) {
 
             <div className="layers position-absolute d-flex justify-content-center align-items-center">
               {
-                animation.slice(0,5).map((item, index) => (
-                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${item}.png`} alt="" />
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${item}-1.png`} alt="" />
+                animation.slice(0, 5).map((item, index) => (
+                  <div key={index} style={{ animation: flag ? `${shuffle ? "layer" + item + "-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
+                    <img style={{ animation: flag ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${item}.png`} alt="" />
+                    <img style={{ animation: flag ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${item}-1.png`} alt="" />
                   </div>
                 ))
               }
               {
-                animation.slice(5,9).map((item, index) => (
-                  <div key={index} style={{ animation: scale ? `${shuffle ? "layer" + item + "-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${4-index}.png`} alt="" />
-                    <img style={{ animation: scale ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${4-index}-1.png`} alt="" />
+                animation.slice(5, 9).map((item, index) => (
+                  <div key={index} style={{ animation: flag ? `${shuffle ? "layer" + item + "-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`layer-${item} position-absolute d-flex justify-content-between align-items-center`}>
+                    <img style={{ animation: flag ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img1`} src={`/${4 - index}.png`} alt="" />
+                    <img style={{ animation: flag ? `${shuffle ? "layer" + item + "-img-anime 5s linear 0.7s infinite" : ""}` : `${shuffle ? "layer" + item + "-img-anime-mob 5s linear 0.7s infinite" : ""}` }} className={`lr${item}-img2`} src={`/${4 - index}-1.png`} alt="" />
                   </div>
                 ))
               }

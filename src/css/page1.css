@@ -50,7 +50,7 @@
     z-index: 1200;
 }
 .message{
-    transform: translateX(-400px);
+    transform: translateX(-450px);
 }
 .page1-lines{
     width: 100%;
@@ -85,9 +85,13 @@
 }
 
 .access-btn-pc{
-    right: 5vh;
-    top: 8vh;
+    right: 200px;
+    top: 100px;
     z-index: 1200;
+}
+
+.b-text{
+    white-space: nowrap;
 }
 
 .discord, .world-btn, .access-btn{
@@ -100,29 +104,104 @@
     background-size: 100% 100%;
     transition: 0.5s ease-in;
     border: none !important;
+    z-index: 1200;
 }
 
 .tedi-line{
-    transform:translate(-25px, -8px);
+    transform:translate(-10px, -8px);
 }
 
 .world-btn{
-    transform: translateX(-60px);
+    transform: translateX(-30px);
 }
 
 .whitelist-btn{
     display: none !important;
     width: 100%;
 }
-.access-btn{
-    backdrop-filter: none;
+
+.discord, .discord::after, .world-btn, .world-btn::after, .at-btn, .at-btn::after {
+  position: relative;
+  border: 0;
+  outline: transparent;
 }
 
-.discord:hover, .world-btn:hover, .access-btn:hover{
-   scale: 1.1;
-   /* color: white; */
-   transition: 0.5s ease-in;
-   border: none !important;
+.discord::after{
+    content: 'JOIN OUR DISCORD faf';
+}
+.world-btn::after{
+    content: 'ACCESS WL faf';
+}
+.at-btn::after{
+    content: 'ACCESS WHITELIST';
+}
+
+.discord::after , .world-btn::after, .at-btn::after, .whitelist-btn::after{
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, black 3%, black 5%, #07CE02 5%);
+  text-shadow: -3px -3px 0 white, 3px 3px 0 black;
+  clip-path: var(--slice-0);
+}
+
+.discord:hover::after, .world-btn:hover::after, .at-btn:hover::after, .whitelist-btn:hover::after {
+  animation: glitch 1s steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
 }
 
 /* -----------------------------------comp2-------------------------------- */
@@ -130,7 +209,6 @@
 .page1-comp2{
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     z-index: 100;
 }
 
@@ -146,7 +224,7 @@
     color: #07CE02;
 }
 
-.comp2-text{
+.scrollable{
     overflow-y: scroll;
 }
 .comp2-text div{
@@ -258,13 +336,13 @@
     .page1-comp3{
         font-size: 80px;
     }
-    /* .comp2-top{
-        height: 350px;
-        transition: 0.5s ease;
-    } */
     .comp2-text-bg svg{
         height: 350px !important;
         transition: 0.5s ease;
+    }
+    .scrollable{
+        height: 250px;
+        overflow: scroll;
     }
 }
 
@@ -286,8 +364,15 @@
         height: 400px;
         transition: 0.5s ease;
     }
+    .scrollable{
+        height: 200px;
+        overflow: scroll;
+    }
+    .message{
+        transform: translateX(-45vw);
+    }
     .comp2-text-bg svg{
-        height: 300px !important;
+        height: 310px !important;
         transition: 0.5s ease;
     }
     .community-top{
@@ -392,5 +477,11 @@
         font-size: 35px;
         padding: 48px !important;
         line-height: auto;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:800px){
+    .comp2-head{
+        padding-top: 48px !important;
     }
 }

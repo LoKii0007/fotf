@@ -13,8 +13,10 @@ export default function Home({ bgUrl }) {
   useEffect(() => {
 
     function handleResize() {
-      setScale(window.innerWidth > 600);
+      setScale(window.innerWidth > 800);
     }
+
+    handleResize()
 
     window.addEventListener("resize", handleResize);
 
