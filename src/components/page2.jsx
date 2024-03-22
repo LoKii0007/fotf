@@ -77,7 +77,7 @@ export default function Page2({ scale, bgUrl }) {
       .to(".world-svg", {
         fill: "black"
       }, 0)
-      .to(".access-btn-pc, accessBtn",{
+      .to(".at-btn",{
         color: "black"
       }, 0)
 
