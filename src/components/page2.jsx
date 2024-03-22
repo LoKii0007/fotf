@@ -153,7 +153,7 @@ export default function Page2({ scale, bgUrl }) {
       scrollTrigger: {
         trigger: ".box-2",
         start: "top 30%",
-        end: "+=10px",
+        end: "top 30%",
         scrub: .5
       },
       scale: 1,
@@ -237,7 +237,7 @@ export default function Page2({ scale, bgUrl }) {
       ScrollTrigger.create({
         trigger: ".box-2",
         start: "top 20%",
-        end: "+=10px",
+        end: "top 30%",
         // markers: true,
         scrub: 1,
         onEnter: () => {
