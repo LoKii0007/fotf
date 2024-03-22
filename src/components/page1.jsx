@@ -429,7 +429,7 @@ export default function Page1({ scale }) {
                                 <i className="fa-brands fa-discord"></i>
                             </div>
                         </button>
-                        <svg className='position-absolute' width="281" height="70" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className='position-absolute' width="200" height="60" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_b_255_1210)">
                                 <path className="world-svg" d="M0 0H244L280.5 36.3214V72.6427L36.3214 72.6427L0 36.3213V0Z" fill="#07CE02" fill-opacity="0.26" />
                             </g>
