@@ -355,10 +355,10 @@ export default function Page1({ scale }) {
 
         const video = document.querySelector('.loading-vid');
 
-        window.addEventListener("load", function () {
+        // window.addEventListener("load", function () {
             video.play()
             tl.play()
-        })
+        // })
 
     }, [])
 
