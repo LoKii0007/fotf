@@ -327,6 +327,14 @@
 
 /* -----------------------------media queries--------------------------- */
 
+
+@media screen and (min-width:1921px){
+    .moving-bg{
+        width: 1400px;
+    }
+}
+
+
 @media screen and (max-width:1400px) and (min-width:1201px){
     .alien1-img{
         width: 1000px;
