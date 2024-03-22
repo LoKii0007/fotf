@@ -65,7 +65,7 @@ export default function Page1({ scale }) {
             },
             x: "-100vw",
         })
-        if(!flag2){
+        if (!flag2) {
             gsap.to(".access-btn-mob", {
                 scrollTrigger: {
                     trigger: ".page1-comp2",
@@ -352,13 +352,7 @@ export default function Page1({ scale }) {
             display: "none",
             zIndex: "0"
         })
-
-        const video = document.querySelector('.loading-vid');
-
-        // window.addEventListener("load", function () {
-            video.play()
-            tl.play()
-        // })
+        tl.play()
 
     }, [])
 
@@ -366,7 +360,7 @@ export default function Page1({ scale }) {
         <>
             <div className="loading position-fixed d-flex flex-column justify-content-center align-items-center">
                 <div className='loading-video position-fixed d-flex justify-content-center align-items-center'>
-                    <video loop className='loading-vid' muted src="/loading-vid.mp4"></video>
+                    <video autoPlay loop className='loading-vid' muted src="/loading-vid.mp4"></video>
                 </div>
                 <div className="loading-1 d-flex justify-content-center align-items-center">
                     <div className="time-15-left d-flex justify-content-center align-items-center">
