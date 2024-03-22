@@ -61,14 +61,12 @@ export default function Page2({ scale, bgUrl }) {
       transform: "scale(40)",
       duration: .5,
     })
-      .to(".box2-content , .box-2, .shuffle-top", {
+      .to(".box-2, .shuffle-top", {
         y: 0,
-        duration: .5,
         opacity: 1
       }, 0)
       .to(".layers", {
         y: 0,
-        duration: .5,
       }, 0)
       .to("#layout-svg", {
         stroke: "black"
@@ -111,7 +109,7 @@ export default function Page2({ scale, bgUrl }) {
         trigger: ".shuffle-bottom",
         start: "20% center",
         end: "20% center",
-        scrub: .8
+        scrub: 1
       },
       y: "-300px"
     })
@@ -131,7 +129,7 @@ export default function Page2({ scale, bgUrl }) {
       trigger: ".shuffle-bottom",
       start: "20% center",
       end: "20% 49%",
-      scrub: .8,
+      scrub:1,
       onEnter: () => {
         tl2.play()
         setShuffle(false)
@@ -159,7 +157,7 @@ export default function Page2({ scale, bgUrl }) {
       scale: 1,
       opacity: 1,
       transformOrigin: "center center"
-    }, 1)
+    })
 
     if (flag) {
       gsap.to(".box-2", {
@@ -167,7 +165,7 @@ export default function Page2({ scale, bgUrl }) {
           trigger: ".box-2",
           start: "top 30%",
           end: "top 30%",
-          scrub: .5,
+          scrub: 1,
         },
         transformOrigin: "top center",
         height: "80vh",
@@ -178,7 +176,7 @@ export default function Page2({ scale, bgUrl }) {
           trigger: ".box-2",
           start: "top 30%",
           end: "top 30%",
-          scrub: .5,
+          scrub: 1,
         },
         fill: "#07CE02"
       })
@@ -187,7 +185,7 @@ export default function Page2({ scale, bgUrl }) {
           trigger: ".box-2",
           start: "top 30%",
           end: "top 30%",
-          scrub: .5,
+          scrub: 1,
         },
         fill: "#07CE02",
       })
@@ -196,7 +194,7 @@ export default function Page2({ scale, bgUrl }) {
           trigger: ".box-2",
           start: "top 30%",
           end: "top 30%",
-          scrub: .5,
+          scrub: 1,
         },
         color: "07CE02"
       })
@@ -238,7 +236,6 @@ export default function Page2({ scale, bgUrl }) {
         trigger: ".box-2",
         start: "top 20%",
         end: "top 30%",
-        // markers: true,
         scrub: 1,
         onEnter: () => {
           tl1.play()
@@ -255,12 +252,12 @@ export default function Page2({ scale, bgUrl }) {
           trigger: ".box-2",
           start: "top 30%",
           end: "top 30%",
-          scrub: .5,
+          scrub: 1,
         },
         transformOrigin: "top center",
         height: "70vh",
         width: "100vw",
-        duration: .8,
+        duration: 1,
       })
 
       const tl2 = gsap.timeline({
@@ -295,7 +292,7 @@ export default function Page2({ scale, bgUrl }) {
         trigger: ".box-2",
         start: "top 20%",
         end: "top 20%",
-        scrub: 0.1,
+        scrub: 1,
         onEnter: () => {
           tl2.play()
         },
