@@ -189,7 +189,7 @@ export default function Page2({ scale, bgUrl }) {
         },
         fill: "#07CE02",
       })
-      gsap.to(".access-btn-pc", {
+      gsap.to(".at-btn", {
         scrollTrigger: {
           trigger: ".box-2",
           start: "top 30%",
@@ -277,7 +277,7 @@ export default function Page2({ scale, bgUrl }) {
         .to(".world-svg", {
           fill: "#07CE02"
         }, 0)
-        .to(".access-btn-pc", {
+        .to(".at-btn", {
           color: "#07CE02"
         }, 0)
         .to(".page2-comp1", {
