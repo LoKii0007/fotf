@@ -269,7 +269,6 @@ export default function Page2({ scale, bgUrl }) {
 
       tl2.to(".box-2", {
         height: "150vh",
-        paddingTop: "15vh",
         transformOrigin: "center center"
       })
         .to("#layout-svg", {
