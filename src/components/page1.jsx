@@ -11,12 +11,14 @@ export default function Page1({ scale }) {
 
     const [loadingText, setLoadingText] = useState(0)
 
-    const [flag, setFlag] = useState(false)
+    const [flag1, setflag1] = useState(false)
+    const [flag2, setflag2] = useState(false)
 
     useEffect(() => {
 
         function handleResize() {
-            setFlag(window.innerWidth > 600);
+            setflag1(window.innerWidth > 600);
+            setflag2(window.innerWidth > 800);
         }
 
         handleResize()
@@ -62,8 +64,18 @@ export default function Page1({ scale }) {
                 scrub: 1,
             },
             x: "-100vw",
-            // position: "fixed"
         })
+        if(!flag2){
+            gsap.to(".access-btn-mob", {
+                scrollTrigger: {
+                    trigger: ".page1-comp2",
+                    start: "top bottom",
+                    end: "top top",
+                    scrub: 1,
+                },
+                x: "-100vw",
+            })
+        }
     }, [])
 
 
@@ -256,7 +268,7 @@ export default function Page1({ scale }) {
             },
             onStart: () => {
                 document.body.style.overflow = "hidden"
-            }
+            },
         })
 
         // -------------------loading 1-----------------
@@ -416,18 +428,31 @@ export default function Page1({ scale }) {
 
             <div className="page1 container d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 container position-relative">
+                    <div className='position-fixed access-btn-mob d-flex align-items-center justify-content-center'>
+                        <button className='position-absolute access-btn d-flex p-4'>
+                            <div className="b-text b-text-access">ACCESS WHITELIST</div>
+                            <div className='discord-icon px-2'>
+                                <i className="fa-brands fa-discord"></i>
+                            </div>
+                        </button>
+                        <svg className='position-absolute' width="281" height="70" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_b_255_1210)">
+                                <path className="world-svg" d="M0 0H244L280.5 36.3214V72.6427L36.3214 72.6427L0 36.3213V0Z" fill="#07CE02" fill-opacity="0.26" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_b_255_1210" x="-20" y="-20" width="320.5" height="112.643" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="10" />
+                                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_255_1210" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_255_1210" result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
                     <div className="page1-bg position-fixed">
-                        <img className='alien1-img' src="/alien1.png" alt="" />
+                        <img className='alien1-img' src="/render.png" alt="" />
                     </div>
                     <div className="page1-front position-fixed pt-5 d-flex flex-column justify-content-center align-items-start">
-                        <div className='whitelist-btn py-3 d-flex justify-content-center align-items-center'>
-                            <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn p-4 d-flex'>
-                                <div className="b-text">ACCESS WHITELIST</div>
-                                <div className='discord-icon  px-2'>
-                                    <i className="fa-brands fa-discord"></i>
-                                </div>
-                            </button>
-                        </div>
                         <div className="page1-lines d-flex flex-column justify-content-center align-items-center">
                             <div aria-label='' className="page1-line1 comp1-line ps-5 animated-title">FRIENDS</div>
                             <div className="page1-line2 comp1-line d-flex">
@@ -498,7 +523,7 @@ export default function Page1({ scale }) {
 
                         </div>
                         <div className="comp2-text-bg position-absolute">
-                            {flag ?
+                            {flag1 ?
                                 <svg viewBox="0 0 925 526" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d_255_1308)">
                                         <path d="M912.854 180.456V36.7161L887.064 11H550M183.28 11H37.9292L12.1461 36.7161V374.816M890.857 40.4994L872.66 22.3426M872.66 22.3426H774.271M872.66 22.3426H592M880.239 469.07L859.387 489.868H604.203M879.738 488.739L911.585 456.968L912.287 201.072M907.545 474.865L882.77 499.575H741.713M34.1359 40.4994L52.34 22.3426M52.34 22.3426H215.38M52.34 22.3426H286M44.7538 484.495L65.6052 505.292H320.797M45.2614 504.164L13.4078 472.393L12.6462 394.991M17.455 490.289L42.2227 515H183.28M914 183.523H911.237V186.28H914V183.523ZM914 188.884H911.237V191.64H914V188.884ZM914 194.244H911.237V197H914V194.244ZM893.388 308.476H890.356V311.5H893.388V308.476ZM893.388 314.357H890.356V317.381H893.388V314.357ZM893.388 320.246H890.356V323.269H893.388V320.246ZM11 380.64H13.7633V377.883H11V380.64ZM11 386H13.7633V383.244H11V386ZM11 391.36H13.7633V388.604H11V391.36ZM31.6047 449.262H34.6364V446.238H31.6047V449.262ZM31.6047 455.143H34.6364V452.119H31.6047V455.143ZM31.6047 461.024H34.6364V458H31.6047V461.024Z" stroke="#07CE02" strokeOpacity="0.22" strokeWidth="2" strokeMiterlimit="10" shapeRendering="crispEdges" />

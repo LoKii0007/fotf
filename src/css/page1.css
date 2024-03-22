@@ -89,12 +89,28 @@
     top: 100px;
     z-index: 1200;
 }
+.access-btn-mob{
+    top: 140px;
+    display: none !important;
+    width: 60%;
+    z-index: 1200;
+}
 
 .b-text{
     white-space: nowrap;
 }
 
-.discord, .world-btn, .access-btn{
+.tedi-line{
+    transform:translate(-10px, -8px);
+}
+
+.world-btn{
+    transform: translateX(-30px);
+}
+.access-btn{
+    width: 100%;
+}
+.discord, .world-btn, .access-btn, .at-btn{
     border-radius: 0%;
     color: #07CE02;
     background-color: transparent;
@@ -107,22 +123,8 @@
     z-index: 1200;
 }
 
-.tedi-line{
-    transform:translate(-10px, -8px);
-}
-
-.world-btn{
-    transform: translateX(-30px);
-}
-
-.whitelist-btn{
-    display: none !important;
-    width: 100%;
-}
-
-.discord, .discord::after, .world-btn, .world-btn::after, .at-btn, .at-btn::after {
+.discord, .discord::after, .world-btn, .world-btn::after, .at-btn, .at-btn::after, .access-btn, .access-btn::after {
   position: relative;
-  border: 0;
   outline: transparent;
 }
 
@@ -132,11 +134,11 @@
 .world-btn::after{
     content: 'ACCESS WL faf';
 }
-.at-btn::after{
-    content: 'ACCESS WHITELIST';
+.at-btn::after, .access-btn::after{
+    content: 'ACCESS WHITELIST faf';
 }
 
-.discord::after , .world-btn::after, .at-btn::after, .whitelist-btn::after{
+.discord::after , .world-btn::after, .at-btn::after, .access-btn::after{
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
   --slice-2: inset(50% -6px 30% 0);
@@ -153,7 +155,7 @@
   clip-path: var(--slice-0);
 }
 
-.discord:hover::after, .world-btn:hover::after, .at-btn:hover::after, .whitelist-btn:hover::after {
+.discord:hover::after, .world-btn:hover::after, .at-btn:hover::after, .access-btn:hover::after {
   animation: glitch 1s steps(2, end);
 }
 
@@ -393,9 +395,15 @@
 
     /* -------------comp 1-------------- */
 
+    .page1-comp1{
+        display: flex;
+        justify-content: center;
+    }
+
     .page1-front{
         justify-content: center !important;
         height: 400px;
+        top: 140px;
     }
     .comp1-line{
         font-size: 50px;
@@ -407,6 +415,11 @@
     .page1-bg{
         bottom: 0% !important;
         left: 0% !important;
+    }
+    .moving-bg{
+        height: 1500px;
+        width: 1500px;
+        transform: translateY(-1200px);
     }
     .alien1-img{
         width: 100vw;
@@ -420,9 +433,9 @@
         flex-direction: column !important;
         width: 100%;
     }
-    .whitelist-btn{
-        display: block;
-        font-size: 11px;
+    .access-btn-mob{
+        display: block !important;
+        font-size: 13px;
     }
     .discord, .world-btn{
         padding:16px 24px !important;

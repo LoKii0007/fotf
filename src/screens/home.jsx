@@ -61,7 +61,6 @@ export default function Home({ bgUrl }) {
     const lenis = new Lenis()
 
     lenis.on('scroll', (e) => {
-      console.log(e)
     })
 
     lenis.on('scroll', ScrollTrigger.update)

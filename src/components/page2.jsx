@@ -79,7 +79,7 @@ export default function Page2({ scale, bgUrl }) {
       .to(".world-svg", {
         fill: "black"
       }, 0)
-      .to(".access-btn-pc", {
+      .to(".access-btn-pc, accessBtn",{
         color: "black"
       }, 0)
 
@@ -153,11 +153,10 @@ export default function Page2({ scale, bgUrl }) {
       scrollTrigger: {
         trigger: ".box-2",
         start: "top 30%",
-        end: "top 30%",
+        end: "+=10px",
         scrub: .5
       },
       scale: 1,
-      duration: .8,
       opacity: 1,
       transformOrigin: "center center"
     }, 1)
@@ -199,7 +198,7 @@ export default function Page2({ scale, bgUrl }) {
           end: "top 30%",
           scrub: .5,
         },
-        color:"07CE02"
+        color: "07CE02"
       })
 
       const tl1 = gsap.timeline({
@@ -210,34 +209,27 @@ export default function Page2({ scale, bgUrl }) {
         height: "150vh",
         width: "150vw",
         paddingTop: "15vh",
-        duration: .5,
-        transformOrigin: "top center"
       })
         .to("#layout-svg", {
           stroke: "#07CE02"
         }, 0)
       tl1.to(".page2-comp1", {
         height: "150vh",
-        duration: .5,
         transformOrigin: "top center"
       }, 0)
       tl1.to(".box2-line1", {
         fontSize: "32px",
         lineHeight: "32px",
-        duration: .5,
       }, 0)
       tl1.to(".box2-line2", {
         fontSize: "48px",
         lineHeight: "48px",
-        duration: .5,
       }, 0)
       tl1.to(".box2-img", {
         height: "250px",
-        duration: .5,
       }, 0)
       tl1.to(".page2-comp2", {
         height: 0,
-        duration: .5,
       }, 0)
       tl1.to(".box", {
         backgroundColor: "transparent"
@@ -245,12 +237,13 @@ export default function Page2({ scale, bgUrl }) {
       ScrollTrigger.create({
         trigger: ".box-2",
         start: "top 20%",
-        end: "top 20%",
-        scrub: 0.1,
+        end: "+=10px",
+        // markers: true,
+        scrub: 1,
         onEnter: () => {
           tl1.play()
         },
-        onEnterBack: () => {
+        onLeaveBack: () => {
           tl1.reverse()
         }
       })
@@ -708,13 +701,13 @@ export default function Page2({ scale, bgUrl }) {
   return (
     <>
 
-      <button className='access-btn position-fixed access-btn-pc d-flex justify-content-center align-items-center'>
-        <div className='position-absolute at-btn d-flex justify-content-center align-items-center'>
+      <div className='position-fixed access-btn-pc d-flex justify-content-center align-items-center'>
+        <button className='position-absolute at-btn d-flex justify-content-center align-items-center'>
           <div className="b-text b-text-access">ACCESS WHITELIST</div>
           <div className='discord-icon px-2'>
             <i className="fa-brands fa-discord"></i>
           </div>
-        </div>
+        </button>
         <svg className='position-absolute' width="281" height="73" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_b_255_1210)">
             <path className="world-svg" d="M0 0H244L280.5 36.3214V72.6427L36.3214 72.6427L0 36.3213V0Z" fill="#07CE02" fill-opacity="0.26" />
@@ -728,15 +721,14 @@ export default function Page2({ scale, bgUrl }) {
             </filter>
           </defs>
         </svg>
-    
-      </button>
+      </div>
 
       <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
           <div className="box position-absolute">
           </div>
           <div className="shuffle-top container d-flex justify-content-center align-items-center">
-            <div aria-label='3,314 unique digital collectibles.' className="shuffle-left animated-title px-5 col-6 d-flex justify-content-start align-items-center">
+            <div className="shuffle-left px-5 col-6 d-flex justify-content-start align-items-center">
               3,314 unique digital <br /> collectibles.
             </div>
             <div className="shuffle-right p-5 d-flex justify-content-start align-items-start">
@@ -1009,34 +1001,30 @@ export default function Page2({ scale, bgUrl }) {
 
         <div className="kala-fotf position-fixed d-flex justify-content-center align-items-center">
           <div className="kala-gola"></div>
-          <div className="fotf-images position-absolute d-flex flex-column justify-content-center align-items-center">
-            <div style={{ animation: flag4 ? "slide-top 8s linear 0.7s infinite" : "" }} className="fotf-top-img d-flex align-items-start">
-              <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
-              <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
-              <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
-              <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
-              <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
-              <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
-              <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
-              <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
-              <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
-              <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
-              <img className='fotf-img' src="/ELFOS1756.jpg" alt="" />
-              <img className='fotf-img' src="/HUMANOS0083.jpg" alt="" />
+          <div className="fotf-images position-absolute d-flex flex-column justify-content-center">
+            <div style={{ animation: flag4 ? `${flag?"slide-top 6s linear 0.7s infinite":"slide-top-mob 6s linear 0.7s infinite"}` : "" }} className="fotf-top-img d-flex ">
+                <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
+                <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
+                <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
+                <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
             </div>
-            <div style={{ animation: flag4 ? "slide-bottom 8s linear 0.7s infinite" : "" }} className="fotf-bottom-img d-flex align-items-end">
+            <div style={{ animation: flag4 ? `${flag?"slide-bottom 6s linear 0.7s infinite":"slide-bottom-mob 6s linear 0.7s infinite"}` : "" }} className="fotf-bottom-img d-flex justify-content-end">
               <img className='fotf-img' src="/ALIENS0156.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1757.jpg" alt="" />
               <img className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
               <img className='fotf-img' src="/ALIENS0157.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1758.jpg" alt="" />
-              <img className='fotf-img' src="/HUMANOS0094.jpg" alt="" />
-              <img className='fotf-img' src="/ALIENS0158.jpg" alt="" />
-              <img className='fotf-img' src="/ELFOS1759.jpg" alt="" />
-              <img className='fotf-img' src="/HUMANOS0095.jpg" alt="" />
-              <img className='fotf-img' src="/ALIENS0159.jpg" alt="" />
-              <img className='fotf-img' src="/ELFOS1766.jpg" alt="" />
-              <img className='fotf-img' src="/HUMANOS0096.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0156.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1757.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0157.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1758.jpg" alt="" />
             </div>
           </div>
         </div>
