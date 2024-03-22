@@ -956,7 +956,6 @@ export default function Page2({ scale, bgUrl }) {
               <div aria-label='kick off' className="road-top text-center animated-title mt-5">kick off</div>
               <div aria-label='We launch the Friends of the Future website and social media' className="road-bottom text-center animated-title">We launch the Friends of the Future website and social media</div>
               <div className="sq-1 sq position-absolute"></div>
-              {/* <div className="stop-pro position-absolute"></div> */}
             </div>
             <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div aria-label='normies reveal' className="road-top text-center animated-title">normies reveal</div>
