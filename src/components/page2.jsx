@@ -56,11 +56,13 @@ export default function Page2({ scale, bgUrl }) {
     })
 
     tl1.to(".box", {
-      rotate: "45deg",
       transformOrigin: "center center",
-      transform: "scale(40)",
+      transform: "scale(50)",
       duration: .5,
     })
+    // .to(".green-box",{
+    //   rotate: "45deg",
+    // })
       .to(".box-2, .shuffle-top", {
         y: 0,
         opacity: 1
@@ -71,10 +73,7 @@ export default function Page2({ scale, bgUrl }) {
       .to("#layout-svg", {
         stroke: "black"
       }, 0)
-      .to("#layout-text", {
-        fill: "black"
-      }, 0)
-      .to(".world-svg", {
+      .to("#layout-text, .world-svg", {
         fill: "black"
       }, 0)
       .to(".at-btn",{
@@ -104,15 +103,7 @@ export default function Page2({ scale, bgUrl }) {
   // ---------animation 3 ------------------(black box rotating)------------------
 
   useEffect(() => {
-    gsap.to(".shuffle-left , .shuffle-right", {
-      scrollTrigger: {
-        trigger: ".shuffle-bottom",
-        start: "20% center",
-        end: "20% center",
-        scrub: 1
-      },
-      y: "-300px"
-    })
+
     const tl2 = gsap.timeline({
       paused: true,
       onComplete: () => {
@@ -122,13 +113,16 @@ export default function Page2({ scale, bgUrl }) {
     tl2.to(".layers", {
       rotateY: "90deg"
     })
-      .to(".box-2", {
-        transform: "rotateY(0deg)",
-      })
+    .to(".box-2", {
+      transform: "rotateY(0deg)",
+    })
+    .to(".shuffle-left , .shuffle-right",{
+      y: "-300px"
+    },0)
     ScrollTrigger.create({
       trigger: ".shuffle-bottom",
-      start: "20% center",
-      end: "20% 49%",
+      start: "50% center",
+      end: "50% 49%",
       scrub:1,
       onEnter: () => {
         tl2.play()
@@ -147,11 +141,24 @@ export default function Page2({ scale, bgUrl }) {
 
   useEffect(() => {
 
+    gsap.to(".box-2",{
+      scrollTrigger:{
+        trigger: ".shuffle-bottom",
+        start: "50% center",
+        end: "+=100px",
+        pin:true,
+        scrub: true,
+        // markers: true
+      },
+      top:"0%"
+    })
+
     gsap.to(".box2-content", {
       scrollTrigger: {
         trigger: ".box-2",
-        start: "top 30%",
-        end: "top 30%",
+        start: "top 20%",
+        end: "top 20%",
+        //  markers: true,
         scrub: .5
       },
       scale: 1,
@@ -159,148 +166,139 @@ export default function Page2({ scale, bgUrl }) {
       transformOrigin: "center center"
     })
 
-    if (flag) {
-      gsap.to(".box-2", {
-        scrollTrigger: {
-          trigger: ".box-2",
-          start: "top 30%",
-          end: "top 30%",
-          scrub: 1,
-        },
-        transformOrigin: "top center",
-        height: "80vh",
-        width: "80vw",
-      })
-      gsap.to("#layout-text", {
-        scrollTrigger: {
-          trigger: ".box-2",
-          start: "top 30%",
-          end: "top 30%",
-          scrub: 1,
-        },
-        fill: "#07CE02"
-      })
-      gsap.to(".world-svg", {
-        scrollTrigger: {
-          trigger: ".box-2",
-          start: "top 30%",
-          end: "top 30%",
-          scrub: 1,
-        },
-        fill: "#07CE02",
-      })
-      gsap.to(".at-btn", {
-        scrollTrigger: {
-          trigger: ".box-2",
-          start: "top 30%",
-          end: "top 30%",
-          scrub: 1,
-        },
-        color: "07CE02"
-      })
+    // if (flag) {
+    //   gsap.to(".box-2", {
+    //     scrollTrigger: {
+    //       trigger: ".box-2",
+    //       start: "top 20%",
+    //       end: "top 20%",
+    //       markers: true,
+    //       scrub: 1,
+    //     },
+    //     height: "80vh",
+    //     width: "80vw",
+    //   })
+    //   gsap.to("#layout-text, .world-svg", {
+    //     scrollTrigger: {
+    //       trigger: ".box-2",
+    //       start: "top 20%",
+    //       end: "top 20%",
+    //       scrub: 1,
+    //     },
+    //     fill: "#07CE02"
+    //   })
+    //   gsap.to(".at-btn", {
+    //     scrollTrigger: {
+    //       trigger: ".box-2",
+    //       start: "top 20%",
+    //       end: "top 20%",
+    //       scrub: 1,
+    //     },
+    //     color: "07CE02"
+    //   })
 
-      const tl1 = gsap.timeline({
-        paused: true,
-      })
+    //   const tl1 = gsap.timeline({
+    //     paused: true,
+    //   })
 
-      tl1.to(".box-2", {
-        height: "150vh",
-        width: "150vw",
-        paddingTop: "15vh",
-      })
-        .to("#layout-svg", {
-          stroke: "#07CE02"
-        }, 0)
-      tl1.to(".page2-comp1", {
-        height: "150vh",
-        transformOrigin: "top center"
-      }, 0)
-      tl1.to(".box2-line1", {
-        fontSize: "32px",
-        lineHeight: "32px",
-      }, 0)
-      tl1.to(".box2-line2", {
-        fontSize: "48px",
-        lineHeight: "48px",
-      }, 0)
-      tl1.to(".box2-img", {
-        height: "250px",
-      }, 0)
-      tl1.to(".page2-comp2", {
-        height: 0,
-      }, 0)
-      tl1.to(".box", {
-        backgroundColor: "transparent"
-      })
-      ScrollTrigger.create({
-        trigger: ".box-2",
-        start: "top 20%",
-        end: "top 30%",
-        scrub: 1,
-        onEnter: () => {
-          tl1.play()
-        },
-        onLeaveBack: () => {
-          tl1.reverse()
-        }
-      })
-    }
-    else {
+    //   tl1.to(".box-2", {
+    //     height: "150vh",
+    //     width: "150vw",
+    //     paddingTop: "15vh",
+    //   })
+    //     .to("#layout-svg", {
+    //       stroke: "#07CE02"
+    //     }, 0)
+    //   tl1.to(".page2-comp1", {
+    //     height: "150vh",
+    //     transformOrigin: "top center"
+    //   }, 0)
+    //   tl1.to(".box2-line1", {
+    //     fontSize: "32px",
+    //     lineHeight: "32px",
+    //   }, 0)
+    //   tl1.to(".box2-line2", {
+    //     fontSize: "48px",
+    //     lineHeight: "48px",
+    //   }, 0)
+    //   tl1.to(".box2-img", {
+    //     height: "250px",
+    //   }, 0)
+    //   tl1.to(".page2-comp2", {
+    //     height: 0,
+    //   }, 0)
+    //   // tl1.to(".box", {
+    //   //   backgroundColor: "transparent"
+    //   // })
+    //   ScrollTrigger.create({
+    //     trigger: ".box-2",
+    //     start: "top 10%",
+    //     end: "top 10%",
+    //     scrub: 1,
+    //     onEnter: () => {
+    //       tl1.play()
+    //     },
+    //     onLeaveBack: () => {
+    //       tl1.reverse()
+    //     }
+    //   })
+    // }
+    // else {
 
-      gsap.to(".box-2", {
-        scrollTrigger: {
-          trigger: ".box-2",
-          start: "top 30%",
-          end: "top 30%",
-          scrub: 1,
-        },
-        transformOrigin: "top center",
-        height: "70vh",
-        width: "100vw",
-        duration: 1,
-      })
+    //   gsap.to(".box-2", {
+    //     scrollTrigger: {
+    //       trigger: ".box-2",
+    //       start: "top 30%",
+    //       end: "top 30%",
+    //       scrub: 1,
+    //     },
+    //     transformOrigin: "top center",
+    //     height: "70vh",
+    //     width: "100vw",
+    //     duration: 1,
+    //   })
 
-      const tl2 = gsap.timeline({
-        paused: true,
-      })
+    //   const tl2 = gsap.timeline({
+    //     paused: true,
+    //   })
 
-      tl2.to(".box-2", {
-        height: "150vh",
-        transformOrigin: "center center"
-      })
-        .to("#layout-svg", {
-          stroke: "#07CE02"
-        }, 0)
-        .to("#layout-text", {
-          fill: "#07CE02"
-        }, 0)
-        .to(".world-svg", {
-          fill: "#07CE02"
-        }, 0)
-        .to(".at-btn", {
-          color: "#07CE02"
-        }, 0)
-        .to(".page2-comp1", {
-          height: "150vh",
-          transformOrigin: "top center"
-        }, 0)
-        .to(".page2-comp2", {
-          height: 0,
-        }, 0)
+    //   tl2.to(".box-2", {
+    //     height: "150vh",
+    //     transformOrigin: "center center"
+    //   })
+    //     .to("#layout-svg", {
+    //       stroke: "#07CE02"
+    //     }, 0)
+    //     .to("#layout-text", {
+    //       fill: "#07CE02"
+    //     }, 0)
+    //     .to(".world-svg", {
+    //       fill: "#07CE02"
+    //     }, 0)
+    //     .to(".at-btn", {
+    //       color: "#07CE02"
+    //     }, 0)
+    //     .to(".page2-comp1", {
+    //       height: "150vh",
+    //       transformOrigin: "top center"
+    //     }, 0)
+    //     .to(".page2-comp2", {
+    //       height: 0,
+    //     }, 0)
 
-      ScrollTrigger.create({
-        trigger: ".box-2",
-        start: "top 20%",
-        end: "top 20%",
-        scrub: 1,
-        onEnter: () => {
-          tl2.play()
-        },
-        onEnterBack: () => {
-          tl2.reverse()
-        }
-      })
-    }
+    //   ScrollTrigger.create({
+    //     trigger: ".box-2",
+    //     start: "top 20%",
+    //     end: "top 20%",
+    //     scrub: 1,
+    //     onEnter: () => {
+    //       tl2.play()
+    //     },
+    //     onEnterBack: () => {
+    //       tl2.reverse()
+    //     }
+    //   })
+    // }
 
   }, [flag])
 
@@ -704,7 +702,7 @@ export default function Page2({ scale, bgUrl }) {
             <i className="fa-brands fa-discord"></i>
           </div>
         </button>
-        <svg className='position-absolute' width="281" height="73" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className='position-absolute pc-btn-svg' width="281" height="73" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_b_255_1210)">
             <path className="world-svg" d="M0 0H244L280.5 36.3214V72.6427L36.3214 72.6427L0 36.3213V0Z" fill="#07CE02" fill-opacity="0.26" />
           </g>
@@ -721,19 +719,20 @@ export default function Page2({ scale, bgUrl }) {
 
       <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
-          <div className="box position-absolute">
+          <div className="green-box position-absolute">
+            <div className='box'></div>
           </div>
-          <div className="shuffle-top container d-flex justify-content-center align-items-center">
-            <div className="shuffle-left px-5 col-6 d-flex justify-content-start align-items-center">
+          <div className="shuffle-top container py-5 d-flex">
+            <div className="shuffle-left col-6">
               3,314 unique digital <br /> collectibles.
             </div>
-            <div className="shuffle-right p-5 d-flex justify-content-start align-items-start">
-              <div className="shuffle-text1 pe-5 d-flex justify-content-center align-items-center">
+            <div className="shuffle-right d-flex">
+              <div className="shuffle-text1 pe-5 d-flex">
                 <div className="shuffle-sq p-1"></div>
                 <div className='ps-3 animated-title'>NFT COLLECTION</div>
               </div>
-              <div aria-label='Friends of the Future avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.' className="shuffle-text2 pe-5 animated-title">
-                <span style={{ textDecoration: "underline" }}>Friends of the Future</span> <br /> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
+              <div aria-label='Friends of the Future avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.' className="shuffle-text2 pt-3 pe-5 animated-title">
+                <span style={{ textDecoration: "underline" }}>Friends of the Future</span> avatars living in the Ethereum blockchain will have a unique private room full of surprises for the community. This is family, and we love to say it since the creation: by community for community.
               </div>
             </div>
           </div>
@@ -810,10 +809,10 @@ export default function Page2({ scale, bgUrl }) {
 
       </div >
 
-      <div className="page-3 overflow-hidden">
-        <div className="page3-comp1 d-flex position-relative justify-content-between align-items-center">
+      <div className="page-3">
+        <div className="page3-comp1 d-flex position-relative justify-content-between">
 
-          <div className="page3-left position-relative">
+          <div className="page3-left position-relative d-flex align-items-end">
             <div className="chadi ">
               <img className='chadi-img' src="/chadi.png" alt="" />
             </div>
@@ -822,7 +821,7 @@ export default function Page2({ scale, bgUrl }) {
             </div>
           </div>
 
-          <div className="page3-right pt-5 d-flex flex-column justify-content-start ">
+          <div className="page3-right pt-5 d-flex flex-column">
 
             <div className="crystal-top pt-5 pe-5 d-flex justify-content-evenly align-items-center">
               <div className="crystal-text d-flex ps-5">
@@ -998,29 +997,59 @@ export default function Page2({ scale, bgUrl }) {
         <div className="kala-fotf position-fixed d-flex justify-content-center align-items-center">
           <div className="kala-gola"></div>
           <div className="fotf-images position-absolute d-flex flex-column justify-content-center">
-            <div style={{ animation: flag4 ? `${flag?"slide-top 6s linear 0.7s infinite":"slide-top-mob 6s linear 0.7s infinite"}` : "" }} className="fotf-top-img d-flex ">
+            <div style={{ animation: flag4 ? `${flag?"slide-top 12s linear 0.7s infinite":"slide-top-mob 12s linear 0.7s infinite"}` : "" }} className="fotf-top-img d-flex ">
                 <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
                 <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
                 <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
                 <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
                 <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
+                <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+                <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+
                 <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
                 <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
                 <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
                 <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
                 <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
+                <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+                <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
+                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
             </div>
-            <div style={{ animation: flag4 ? `${flag?"slide-bottom 6s linear 0.7s infinite":"slide-bottom-mob 6s linear 0.7s infinite"}` : "" }} className="fotf-bottom-img d-flex justify-content-end">
+            <div style={{ animation: flag4 ? `${flag?"slide-bottom 12s linear 0.7s infinite":"slide-bottom-mob 12s linear 0.7s infinite"}` : "" }} className="fotf-bottom-img d-flex justify-content-end">
               <img className='fotf-img' src="/ALIENS0156.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1757.jpg" alt="" />
               <img className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
               <img className='fotf-img' src="/ALIENS0157.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1758.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0094.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0158.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1759.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0095.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0159.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1766.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0096.jpg" alt="" />
+
               <img className='fotf-img' src="/ALIENS0156.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1757.jpg" alt="" />
               <img className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
               <img className='fotf-img' src="/ALIENS0157.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1758.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0094.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0158.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1759.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0095.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0159.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1766.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0096.jpg" alt="" />
             </div>
           </div>
         </div>

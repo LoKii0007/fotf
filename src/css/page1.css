@@ -13,6 +13,16 @@
 .load-right{
     right: 0%;
 }
+.shadow{
+    top: -40%;
+    left: -16%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    opacity: 0.2;
+    background: radial-gradient(circle, #07CE02 0%, rgba(7,206,2,0) 100%);
+    box-shadow: 0 0 100px #07CE02;
+}
 
 /* -----------------------page 1-------------------------- */
 
@@ -23,6 +33,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    padding-left: 100px;
 }
 .page1-bg{
     right: 0%;
@@ -34,12 +45,23 @@
     z-index: 50;
 }
 .page1-bg2{
+    height: 100vh;
+    width: 100vw;
     mix-blend-mode: lighten;
 }
 .moving-bg{
-    width: 1000px;
+    height: 2000px;
+    width: 2000px;
     opacity: 0.1;
     z-index: 40;
+}
+.page1-bg3{
+    width: 100vw;
+    height: 100vh;
+    left: 50%;
+    top: 10%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /* ----------------------comp1-front------------------------- */
@@ -114,7 +136,6 @@
     border-radius: 0%;
     color: #07CE02;
     background-color: transparent;
-    backdrop-filter: blur(2px);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -212,18 +233,25 @@
     width: 100vw;
     height: 100vh;
     z-index: 100;
+    padding-right: 140px;
 }
 
 .comp2-top , .comp2-bottom{
-    width: 50vw;
+    width: 45vw;
 }
+
 .comp2-top{
-    height: 500px;
+    background-color: transparent;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .comp2-head{
     font-size: 20px;
     color: #07CE02;
+    width: 100%;
+    text-align: left;
 }
 
 .scrollable{
@@ -249,7 +277,6 @@
 .community-top{
     font-size: 50px;
     color: #07CE02;
-    font-weight: 700;
     line-height: 50px;
 }
 
@@ -257,7 +284,6 @@
     font-size: 40px;
     -webkit-text-stroke: 1px #07CE02;
     color: transparent;
-    font-weight: 700;
     line-height: 40px;
 }
 
@@ -328,72 +354,105 @@
 /* -----------------------------media queries--------------------------- */
 
 
-@media screen and (min-width:1921px){
+@media screen and (max-width:1921px) and (min-width:1401px){
     .moving-bg{
-        width: 1400px;
+        width: 1500px;
+    }
+    .comp1-line{
+        font-size: 100px;
+        line-height: 100px;
+    }
+    .discord, .world-btn, .at-btn, .access-btn{
+        font-size: 12px;
+    }
+    .tedi-line{
+        width: 45px;
+    }
+    .pc-btn-svg{
+        height: 60px;
+    }
+    .message svg{
+        width: 80px;
+    }
+    .scrollable{
+        font-size: 14px !important;
+    }
+    .page1-comp3{
+        font-size: 70px;
+        line-height: 100px;
+    }
+    .community-top{
+        font-size: 40px;
+        line-height: 40px;
+        padding-right: 32px !important;
+    }
+    .community-bottom{
+        font-size: 35px;
+        line-height: 35px;
     }
 }
 
 
-@media screen and (max-width:1400px) and (min-width:1201px){
+@media screen and (max-width:1400px) and (min-width:801px){
     .alien1-img{
         width: 1000px;
     }
     .comp1-line{
-        font-size: 120px;
-        line-height: 120px;
+        font-size: 90px;
+        line-height: 90px;
     }
-    .page1-comp3{
-        font-size: 80px;
+    .page1-comp1{
+        padding-left: 100px;
+    }
+    .page1-comp2{
+        padding-right: 140px;
+    }
+    .discord, .world-btn, .at-btn, .access-btn{
+        font-size: 10px;
+    }
+    .tedi-line{
+        width: 35px;
+        transform:translate(-12px, -5px);
+    }
+    .pc-btn-svg{
+        height: 60px;
+    }
+    .comp2-head{
+        padding: 24px 16px !important;
+        padding-bottom: 8px !important;
+        font-size: 18px;
+    }
+    .comp2-text{
+        padding-left: 0px !important;
     }
     .comp2-text-bg svg{
         height: 350px !important;
         transition: 0.5s ease;
     }
     .scrollable{
-        height: 250px;
+        height: 220px;
         overflow: scroll;
+        font-size: 15px !important;
+    }
+    .message svg{
+        width: 70px;
+    }
+    .community-top{
+        font-size: 35px;
+        line-height: 40px;
+        padding-right: 24px !important;
+    }
+    .community-bottom{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .page1-comp3{
+        font-size: 55px;
+        line-height: 80px;
+
     }
 }
 
-@media screen and (max-width:1201px) and (min-width:801px){
-    .alien1-img{
-        width: 1000px;
-        transition: 0.5s ease;
-    }
-    .comp1-line{
-        font-size: 100px;
-        line-height: 100px;
-        transition: 0.5s ease;
-    }
-    .page1-comp3{
-        font-size: 60px;
-        transition: 0.5s ease;
-    }
-    .comp2-top{
-        height: 400px;
-        transition: 0.5s ease;
-    }
-    .scrollable{
-        height: 200px;
-        overflow: scroll;
-    }
-    .message{
-        transform: translateX(-45vw);
-    }
-    .comp2-text-bg svg{
-        height: 310px !important;
-        transition: 0.5s ease;
-    }
-    .community-top{
-        font-size: 42px;
-        transition: 0.5s ease;
-    }
-    .community-bottom{
-        font-size: 36px;
-        transition: 0.5s ease;
-    }
-}
 
 @media screen and (max-width:800px) {
 
@@ -406,6 +465,7 @@
     .page1-comp1{
         display: flex;
         justify-content: center;
+        padding-left: 0% !important;
     }
 
     .page1-front{
@@ -470,13 +530,14 @@
         width:85vw ;
     }
     .comp2-head{
-        font-size: 22px;
+        font-size: 16px;
         padding-bottom: 24px !important;
     }
     .comp2-text{
         line-height: 150%;
+        font-size: 12px;
         max-height: 200px;
-        padding: 0% !important;
+        padding: 0% 32px !important;
     }
     .comp2-text-bg svg{
         width: 85vw !important;

@@ -8,12 +8,15 @@
     overflow: hidden;
     z-index: 100;
 }
+.page3-left{
+    height: 100%;
+}
 .chadi-img{
     height: 800px;
     z-index: 100;
 }
 .stick{
-    top: 0%;
+    bottom: 0%;
     left: 0%;
 }
 .stick-img{
@@ -324,48 +327,38 @@
 
 /* ---------------------media queries---------------- */
 
-@media screen and (max-width:1400px) and (min-width:1201px){
+@media screen and (max-width:1920px) and (min-width:1401px){
     .chadi-img{
-        height: 800px;
-        transition: 0.5s ease;
+       height: 700px;
     }
     .stick-img{
-        height: 600px;
-        transition: 0.5s ease;
+        height: 700px;
+    }
+    .roadmap-top{
+        font-size: 55px;
+    }
+    .road-top{
+        font-size: 14px;
+    }
+    .road-bottom{
+        font-size: 12px;
     }
 }
-
-@media screen and (max-width:1201px) and (min-width:1000px){
+@media screen and (max-width:1400px) and (min-width:801px){
     .chadi-img{
         height: 600px;
-        transition: 0.5s ease;
+     }
+     .stick-img{
+         height: 600px;
+     }
+     .roadmap-top{
+        font-size: 40px;
     }
-    .stick-img{
-        height: 600px;
-        transition: 0.5s ease;
+    .road-top{
+        font-size: 12px;
     }
-}
-
-@media screen and (max-width:999px) and (min-width:801px){
-    .page3-comp1{
-        flex-direction: column-reverse !important;
-        padding: 0% !important;
-    }
-    .chadi-img{
-        height: 400px;
-        transition: 0.5s ease;
-    }
-    .stick-img{
-        height: 400px;
-        transition: 0.5s ease;
-    }
-    .crystal-text{
-        font-size: 16px;
-        width: fit-content;
-        text-align: center;
-    }
-    .page3-comp3-text{
-        font-size: 50px ;
+    .road-bottom{
+        font-size: 10px;
     }
 }
 
@@ -404,7 +397,7 @@
         align-items: center !important;
     }
     .page3-right{
-        padding:0px 48px !important;
+        padding:0px !important;
     }
     .comp31-bottom{
         right: -100px;
@@ -466,7 +459,13 @@
         transform: translateY(100px);
     }
     .roadmap-top{
-        font-size: 40px;
+        font-size: 30px;
+    }
+    .road-top{
+        font-size: 12px;
+    }
+    .road-bottom{
+        font-size: 10px;
     }
     .road{
         height: 100%;
@@ -481,7 +480,6 @@
         align-items: start !important;
     }
     .progress{
-        /* background-color: transparent; */
         height: 100px;
     }
     .roadmap-bottom{

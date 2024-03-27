@@ -29,7 +29,6 @@
 
 .shuffle-left{
     font-size: 32px;
-    font-weight: 600;
     text-transform: uppercase;
 }
 .shuffle-sq{
@@ -110,7 +109,6 @@
     background-size: 100% 100%;
     overflow: hidden;
     z-index: 100;
-    fill: #0D0D0D;
 }
 .box2-content{
     height: 100%;
@@ -158,21 +156,32 @@
 
 /* ---------------------media queries------------- */
 
+@media screen and (max-width:1400px) and (min-width:801px){
+    .shuffle-left{
+       font-size: 24px;
+    }
+    .shuffle-text1, .shuffle-text2{
+        font-size: 12px;
+    }
+}
+
 @media screen and (max-width:800px) {
     .shuffle-top{
         flex-direction: column !important;
         padding-top: 48px !important;
     }
     .shuffle-left{
-        font-size: 25px;
+        font-size: 20px;
         justify-content: center !important;
         width: 100% !important;
         padding: 48px !important;
+        padding-top: 120px !important;
         padding-bottom: 0% !important;
     }
     .shuffle-right{
         justify-content: center !important;
         flex-direction: column !important;
+        padding: 48px !important;
         padding-bottom: 0% !important;
     }
     .shuffle-text1{

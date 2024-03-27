@@ -141,9 +141,20 @@
 
 /* ----------------------------------media queries ------------------------ */
 
-@media screen and (max-width:600px){
+@media screen and (max-width:1920px) and (min-width:1401px){
     .thanks-top{
-        font-size: 40px;
+        font-size: 55px;
+    }
+}
+@media screen and (max-width:1400px) and (min-width:801px){
+    .thanks-top{
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .thanks-top{
+        font-size: 30px;
     }
     .snake1-img{
         height: 150px;
@@ -203,7 +214,7 @@
         transform: translateX(0px);
     }
     100%{
-        transform: translateX(-1500px);
+        transform: translateX(-3600px);
     }
 }
 @keyframes slide-bottom {
@@ -211,7 +222,7 @@
         transform: translateX(0px);
     }
     100%{
-        transform: translateX(1500px);
+        transform: translateX(3600px);
     }
 }
 
@@ -220,7 +231,7 @@
         transform: translateX(0px);
     }
     100%{
-        transform: translateX(-750px);
+        transform: translateX(-1800px);
     }
 }
 @keyframes slide-bottom-mob {
@@ -228,6 +239,6 @@
         transform: translateX(0px);
     }
     100%{
-        transform: translateX(750px);
+        transform: translateX(1800px);
     }
 }

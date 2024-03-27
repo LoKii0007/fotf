@@ -44,6 +44,17 @@ export default function Page1({ scale }) {
             transform: `${scale ? "scale(0.7)" : "scale(1)"}`,
             left: "0%"
         })
+        gsap.to(".page1-bg3", {
+            scrollTrigger: {
+                trigger: ".page1-comp2",
+                start: "top bottom",
+                end: "top top",
+                scrub: 0.5
+            },
+            transformOrigin: "left bottom",
+            transform: `${scale ? "scale(0.8)" : "scale(1)"}`,
+            left: "20%"
+        })
 
         gsap.to(".page1-bg2", {
             scrollTrigger: {
@@ -86,7 +97,7 @@ export default function Page1({ scale }) {
         const tl = gsap.timeline({
             paused: true
         })
-        tl.to(".page1-bg", {
+        tl.to(".page1-bg, .page1-bg3", {
             x: "-25vw",
             opacity: 0,
             duration: 1
@@ -419,9 +430,11 @@ export default function Page1({ scale }) {
             <div className="page1-bg2 position-fixed">
                 <img className='moving-bg' src="/moving-bg.png" alt="" />
             </div>
+            <div style={{ backgroundImage:"url(moving-bg2.svg)" }} className="page1-bg3 position-fixed"></div>
+            <div className="shadow position-fixed"></div>
 
-            <div className="page1 container d-flex flex-column align-items-center justify-content-center">
-                <div className="page1-comp1 container position-relative">
+            <div className="page1 d-flex flex-column align-items-center justify-content-center">
+                <div className="page1-comp1 position-relative">
                     <div className='position-fixed access-btn-mob d-flex align-items-center justify-content-center'>
                         <button className='position-absolute access-btn d-flex p-4'>
                             <div className="b-text b-text-access">ACCESS WHITELIST</div>
@@ -463,7 +476,7 @@ export default function Page1({ scale }) {
                                 </div>
                             </button>
                             <div className="tedi-line">
-                                <svg width="57" height="107" viewBox="0 0 57 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 57 107" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_bd_51_73)">
                                         <path d="M6.80564 0L6.80545 58.5L52.3055 103.5" stroke="#07CE02" />
                                     </g>
@@ -493,12 +506,14 @@ export default function Page1({ scale }) {
                     </div>
                 </div>
 
-                <div id='page1-comp2' className="page1-comp2 container d-flex flex-column justify-content-evenly align-items-end">
-                    <div className="comp2-top p-5 position-relative d-flex flex-column align-items-center">
-                        <div aria-label='FRIENDS OF THE FUTURE 01' className="comp2-head py-3 px-3 animated-title">
+                {/* style={{ backgroundImage:"url(comp2-bg.svg)" }} */}
+
+                <div id='page1-comp2' className="page1-comp2 d-flex flex-column justify-content-evenly align-items-end">
+                    <div className="comp2-top position-relative d-flex flex-column align-items-center">
+                        <div aria-label='FRIENDS OF THE FUTURE 01' className="comp2-head p-5 pb-3 animated-title">
                             FRIENDS OF THE FUTURE 01
                         </div>
-                        <div className="comp2-text px-5 pb-3 position-relative d-flex justify-content-center">
+                        <div className="comp2-text pb-3 ps-4 position-relative d-flex justify-content-center">
                             <div aria-label='This project tells the story of 4 friends that come together thanks to web 3.
                                 Four friends that build their friendship thanks to becoming holders of the Utopia Avatars collection, and make his way to get this resources to create the future of web 3 vision under one slogan: created by community for community.
                                 Friends of the Future stands on the values of transparency, friendship and love for the technology; we love the internet and we build on it, this is just the beginning of a brilliant future together.' className='scrollable px-3 animated-title'>
@@ -558,7 +573,7 @@ export default function Page1({ scale }) {
                     </div>
 
                     <div className="comp2-bottom d-flex flex-column align-items-end">
-                        <div aria-label='BY COMMUNITY' className="community-top animated-title">
+                        <div aria-label='BY COMMUNITY' className="community-top animated-title pe-5">
                             BY COMMUNITY
                         </div>
                         <div aria-label='FOR COMMUNITY' className="community-bottom animated-title">
