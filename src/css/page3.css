@@ -17,7 +17,17 @@
 }
 .stick{
     bottom: 0%;
-    left: 0%;
+    left: -10%;
+    animation: float 4s infinite ease-in-out;
+    transform-origin: bottom center; 
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) skewX(0deg);
+    }
+    50% {
+        transform: translateY(50px) skewX(5deg) ;
+    }
 }
 .stick-img{
     height: 800px;
@@ -39,6 +49,7 @@
 }
 .page3-right{
     height: 100vh;
+    max-width: 800px;
 }
 
 .crystal-text{
@@ -287,10 +298,10 @@
     width: 50px;
     border-top:1px solid #07CE02;
     border-bottom:1px solid #07CE02;
-    z-index: 2000;
-    background-color: yellow;
-    z-index: 1000;
-    top: 0%;
+    z-index: 170;
+    background-color: #0D0D0D;
+    top: 0;
+    left: 50%;
 }
 
 .sq-1 , .sq-3, .sq-5{

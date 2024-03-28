@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <>
       <div id='main' className="main-bg position-fixed">
-        <img src="/main-bg.png" alt="" />
+        <img className='position-relative' src="/image6.png" alt="" />
       </div>
     </>
   )

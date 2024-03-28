@@ -44,28 +44,35 @@ export default function Page1({ scale }) {
             transform: `${scale ? "scale(0.7)" : "scale(1)"}`,
             left: "0%"
         })
-        gsap.to(".page1-bg3", {
-            scrollTrigger: {
-                trigger: ".page1-comp2",
-                start: "top bottom",
-                end: "top top",
-                scrub: 0.5
-            },
-            transformOrigin: "left bottom",
-            transform: `${scale ? "scale(0.8)" : "scale(1)"}`,
-            left: "20%"
-        })
 
-        gsap.to(".page1-bg2", {
+        gsap.to(".moving-bg", {
             scrollTrigger: {
                 trigger: ".page1-comp2",
                 start: "top bottom",
                 end: "top top",
                 scrub: 0.5
             },
-            left: "-1000px",
-            top: "-500px",
+            top: "-100vh",
             opacity: 0
+        })
+        gsap.to(".shadow-svg", {
+            scrollTrigger: {
+                trigger: ".page1-comp2",
+                start: "top bottom",
+                end: "top top",
+                scrub: 1
+            },
+            right: "-250px",
+            top:"-250px"
+        })
+        gsap.to(".sh-svg", {
+            scrollTrigger: {
+                trigger: ".page1-comp2",
+                start: "top bottom",
+                end: "top top",
+                scrub: 0.5
+            },
+            left: "-700px",
         })
         gsap.to(".page1-front", {
             scrollTrigger: {
@@ -119,6 +126,36 @@ export default function Page1({ scale }) {
     // -------- comp3-animations-----------------
 
     useEffect(() => {
+
+        gsap.to(".page2-sh", {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "top bottom",
+                end: "bottom bottom",
+                scrub: 1,
+            },
+            top: 0,
+        })
+        gsap.to(".page2-shadow", {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "center center",
+                end: "bottom top",
+                scrub: 1,
+            },
+            scale: 0.8,
+        })
+        // gsap.to(".shadow-svg", {
+        //     scrollTrigger: {
+        //         trigger: ".page1-comp3",
+        //         start: "center center",
+        //         end: "bottom top",
+        //         scrub: 1,
+        //     },
+        //     y: -700,
+        //     x: -1500
+        // })
+
         if (scale) {
             gsap.to(".web-1", {
                 scrollTrigger: {
@@ -427,11 +464,48 @@ export default function Page1({ scale }) {
             </div>
             <div className="load-left position-fixed"></div>
             <div className="load-right position-fixed"></div>
-            <div className="page1-bg2 position-fixed">
-                <img className='moving-bg' src="/moving-bg.png" alt="" />
+            <img className='moving-bg position-fixed' src="/moving-bg.png" alt="" />
+            <svg className='shadow-svg position-fixed' viewBox="0 0 570 589" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_202_4085)">
+                    <circle cx="285" cy="294.5" r="200" fill="#07CE02" fill-opacity="0.11" />
+                </g>
+                <defs>
+                    <filter id="filter0_f_202_4085" x="-280" y="-261" width="850" height="850" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_202_4085" />
+                    </filter>
+                </defs>
+            </svg>
+            <svg className='sh-svg position-fixed' width="681" height="791" viewBox="0 0 681 791" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_202_4086)">
+                    <circle cx="340.5" cy="395.5" r="260" fill="#07CE02" fill-opacity="0.11" />
+                </g>
+                <defs>
+                    <filter id="filter0_f_202_4086" x="0" y="0" width="932" height="932" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_202_4086" />
+                    </filter>
+                </defs>
+            </svg>
+
+            <div className="position-fixed page2-sh d-flex justify-content-center">
+                <svg className='page2-shadow position-absolute' width="1458" height="963" viewBox="250 0 1458 963" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_202_4243)">
+                        <circle cx="729" cy="481.5" r="550" transform="rotate(128.952 729.404 728.756)" fill="#07CE02" fill-opacity="0.05" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_202_4243" x="0.97168" y="0.323975" width="1456.86" height="1456.86" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                            <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_202_4243" />
+                        </filter>
+                    </defs>
+                </svg>
+
             </div>
-            <div style={{ backgroundImage:"url(moving-bg2.svg)" }} className="page1-bg3 position-fixed"></div>
-            <div className="shadow position-fixed"></div>
+
 
             <div className="page1 d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 position-relative">
@@ -457,7 +531,8 @@ export default function Page1({ scale }) {
                         </svg>
                     </div>
                     <div className="page1-bg position-fixed">
-                        <img className='alien1-img' src="/render.png" alt="" />
+                        <img className='alien1-img position-relative' src="/render.png" alt="" />
+                        <div style={{ backgroundImage: "url(moving-bg2.svg)" }} className="page1-bg3 position-absolute"></div>
                     </div>
                     <div className="page1-front position-fixed pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className="page1-lines d-flex flex-column justify-content-center align-items-center">

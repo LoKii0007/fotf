@@ -1,0 +1,51 @@
+.b-1{
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+}
+.b-top{
+    height: 300px;
+    width: 800px;
+    background-color: aqua;
+    top: 0%;
+}
+.hara{
+    height: 50px;
+    width: 50px;
+    background-color: green;
+}
+.b-2{
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+}
+.b-3{
+    height: 100vh;
+    width: 100vw;
+    background-color: yellow;
+}
+.b-4{
+    height: 100vh;
+    width: 100vw;
+    background-color: yellowgreen;
+}
+.b-image{
+    height: 300px;
+    width: 300px;
+    background-color: antiquewhite;
+    top: 0%;
+    left: 0% ;
+}
+.b-bottom{
+    background-color: brown;
+    width: 100vw;
+    top: 50%;
+}
+.shuf-black{
+    width: 100vw;
+    height: 100vh;
+    scale: 0.5;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform:rotateY(90deg);
+}

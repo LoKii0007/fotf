@@ -57,6 +57,7 @@
     z-index: 90;
     background-color: black;
     opacity: 0;
+    transform: rotateY(90deg);
 }
 .char{
     font-size: 24px;
@@ -87,7 +88,6 @@
     z-index: 100;
     width: 100vw;
     height: 100vh;
-    /* left: 0%; */
     transform: translateY(100vh);
     overflow: hidden;
 }
@@ -95,7 +95,7 @@
     width: 300px;
     height: 300px;
     filter: grayscale(100%);
-    opacity: 0.4;
+    opacity: 0.15;
 }
 
 /* ---------------------------footer----------------------------------  */

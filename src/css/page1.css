@@ -13,16 +13,53 @@
 .load-right{
     right: 0%;
 }
-.shadow{
-    top: -40%;
-    left: -16%;
-    height: 500px;
-    width: 500px;
-    border-radius: 50%;
-    opacity: 0.2;
-    background: radial-gradient(circle, #07CE02 0%, rgba(7,206,2,0) 100%);
-    box-shadow: 0 0 100px #07CE02;
+
+/* -------------------fixed back-----------------  */
+
+.page1-bg{
+    right: 0%;
+    bottom: -10%;
+    overflow: hidden;
 }
+.alien1-img{
+    width: 1200px;
+    z-index: 70;
+}
+.page1-bg3{
+    width: 1000px;
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0%;
+    left: 10%;
+    z-index: 40;
+}
+.sh-svg{
+    width: 700px;
+    right: -300px;
+    bottom: -100px;
+}
+.shadow-svg{
+    width: 650px;
+    left: -300px;
+    top: -300px;
+}
+
+.page1-bg2{
+    height: 100vh;
+    width: 100vw;
+    mix-blend-mode: lighten;
+}
+.moving-bg{
+    height: 100vh;
+    width: 100vw;
+}
+.page2-sh{
+    height: 100vh;
+    width: 100vw;
+    top: 100%;
+}
+
 
 /* -----------------------page 1-------------------------- */
 
@@ -34,34 +71,6 @@
     height: 100vh;
     overflow: hidden;
     padding-left: 100px;
-}
-.page1-bg{
-    right: 0%;
-    bottom: -10%;
-    overflow: hidden;
-}
-.alien1-img{
-    width: 1200px;
-    z-index: 50;
-}
-.page1-bg2{
-    height: 100vh;
-    width: 100vw;
-    mix-blend-mode: lighten;
-}
-.moving-bg{
-    height: 2000px;
-    width: 2000px;
-    opacity: 0.1;
-    z-index: 40;
-}
-.page1-bg3{
-    width: 100vw;
-    height: 100vh;
-    left: 50%;
-    top: 10%;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 /* ----------------------comp1-front------------------------- */
@@ -245,6 +254,7 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    max-width: 700px;
 }
 
 .comp2-head{
@@ -355,8 +365,13 @@
 
 
 @media screen and (max-width:1921px) and (min-width:1401px){
-    .moving-bg{
-        width: 1500px;
+    .shadow-svg{
+        width: 700px;
+        left: -250px;
+        top: -200px;
+    }
+    .sh-svg{
+        width: 600px;
     }
     .comp1-line{
         font-size: 100px;
@@ -396,6 +411,12 @@
 @media screen and (max-width:1400px) and (min-width:801px){
     .alien1-img{
         width: 1000px;
+    }
+    .page1-bg3{
+        width: 1000px;
+        height: 1000px;
+        left: 0%;
+        top: 0%;
     }
     .comp1-line{
         font-size: 90px;
@@ -491,6 +512,12 @@
     }
     .alien1-img{
         width: 100vw;
+    }
+    .page1-bg3{
+        width: 500px;
+        height: 500px;
+        left: 0%;
+        top: 0%;
     }
     .page1-line3 , .page1-line1{
         padding-left: 0% !important;

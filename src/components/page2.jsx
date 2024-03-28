@@ -60,9 +60,9 @@ export default function Page2({ scale, bgUrl }) {
       transform: "scale(50)",
       duration: .5,
     })
-    // .to(".green-box",{
-    //   rotate: "45deg",
-    // })
+      // .to(".green-box",{
+      //   rotate: "45deg",
+      // })
       .to(".box-2, .shuffle-top", {
         y: 0,
         opacity: 1
@@ -76,7 +76,7 @@ export default function Page2({ scale, bgUrl }) {
       .to("#layout-text, .world-svg", {
         fill: "black"
       }, 0)
-      .to(".at-btn",{
+      .to(".at-btn", {
         color: "black"
       }, 0)
 
@@ -113,17 +113,17 @@ export default function Page2({ scale, bgUrl }) {
     tl2.to(".layers", {
       rotateY: "90deg"
     })
-    .to(".box-2", {
-      transform: "rotateY(0deg)",
-    })
-    .to(".shuffle-left , .shuffle-right",{
-      y: "-300px"
-    },0)
+      .to(".box-2", {
+        transform: "rotateY(0deg)",
+      })
+      .to(".shuffle-left , .shuffle-right", {
+        y: "-300px"
+      }, 0)
     ScrollTrigger.create({
       trigger: ".shuffle-bottom",
       start: "50% center",
       end: "50% 49%",
-      scrub:1,
+      scrub: 1,
       onEnter: () => {
         tl2.play()
         setShuffle(false)
@@ -141,16 +141,16 @@ export default function Page2({ scale, bgUrl }) {
 
   useEffect(() => {
 
-    gsap.to(".box-2",{
-      scrollTrigger:{
+    gsap.to(".box-2", {
+      scrollTrigger: {
         trigger: ".shuffle-bottom",
         start: "50% center",
         end: "+=100px",
-        pin:true,
+        pin: true,
         scrub: true,
         // markers: true
       },
-      top:"0%"
+      top: "0%"
     })
 
     gsap.to(".box2-content", {
@@ -473,7 +473,7 @@ export default function Page2({ scale, bgUrl }) {
         end: "+=25px",
         scrub: 1,
       },
-      x: 450,
+      x: 1000,
     })
     gsap.to(".hero-2", {
       scrollTrigger: {
@@ -482,7 +482,7 @@ export default function Page2({ scale, bgUrl }) {
         end: "+=25px",
         scrub: 1,
       },
-      x: -500,
+      x: -1000,
     })
   }, [])
 
@@ -544,6 +544,7 @@ export default function Page2({ scale, bgUrl }) {
       rotateX: "0deg"
     })
 
+    
 
     gsap.to(".snake-1", {
       scrollTrigger: {
@@ -586,6 +587,15 @@ export default function Page2({ scale, bgUrl }) {
         scrub: 1
       },
       opacity: 1
+    })
+    gsap.to(".kala-gola", {
+      scrollTrigger: {
+        trigger: ".thanks-bottom",
+        start: "center 55%",
+        end: "center 55%",
+        scrub: 1
+      },
+      rotateY:"0deg"
     })
 
   }, [])
@@ -666,29 +676,43 @@ export default function Page2({ scale, bgUrl }) {
     })
 
     tl1.to(".char-1", {
-      y: "30vh",
       x: "-30vw"
     });
+    tl1.to(".char-1", {
+      y: "30vh",
+    },0);
 
     tl1.to(".char-2", {
-      y: "10vh",
       x: "-10vw"
+    }, 0);
+    tl1.to(".char-2", {
+      y: "10vh",
     }, 0);
 
 
     tl1.to(".char-3", {
-      y: "-10vh",
       x: "10vw"
+    }, 0)
+    tl1.to(".char-3", {
+      y: "-10vh"
     }, 0)
 
     tl1.to(".char-4", {
-      y: "-30vh",
       x: "30vw"
     }, 0)
-
-    tl1.to(".fotf-images", {
-      y: 0
+    tl1.to(".char-4", {
+      y: "-30vh"
     }, 0)
+
+    gsap.to(".fotf-images", {
+      y: 0,
+      scrollTrigger:{
+        trigger: ".fotf",
+        start: "top top",
+        end: "top top",
+        scrub: 1,
+      }
+    })
 
   }, []);
 
@@ -717,10 +741,25 @@ export default function Page2({ scale, bgUrl }) {
         </svg>
       </div>
 
+      {/* <div className="position-fixed page2-sh justify-content-center align-items-end">
+      <svg className='page2-shadow position-absolute' width="1458" height="963" viewBox="0 0 1458 963" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_f_202_4243)">
+          <circle cx="729.404" cy="728.756" r="578.412" transform="rotate(128.952 729.404 728.756)" fill="#07CE02" fill-opacity="0.05" />
+        </g>
+        <defs>
+          <filter id="filter0_f_202_4243" x="0.97168" y="0.323975" width="1456.86" height="1456.86" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_202_4243" />
+          </filter>
+        </defs>
+      </svg>
+      </div> */}
+
       <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
           <div className="green-box position-absolute">
-            <div className='box'></div>
+            <div className='box position-relative'></div>
           </div>
           <div className="shuffle-top container py-5 d-flex">
             <div className="shuffle-left col-6">
@@ -757,7 +796,7 @@ export default function Page2({ scale, bgUrl }) {
               }
             </div >
 
-            <div style={{ backgroundImage: "url(faltu.svg)" }} className="box-2 d-flex justify-content-center align-items-start">
+            {/* <div style={{ backgroundImage: "url(faltu.svg)" }} className="box-2 d-flex justify-content-center align-items-start">
               <div className="box2-content d-flex flex-column justify-content-evenly align-items-center">
                 <div className="box2-top d-flex flex-column align-items-evenly justify-content-center">
                   <div className="box2-line1 py-3 text-center">we are not here to take <br /> part, we are here to <br /> take over.</div>
@@ -799,7 +838,7 @@ export default function Page2({ scale, bgUrl }) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div >
         </div >
@@ -943,6 +982,7 @@ export default function Page2({ scale, bgUrl }) {
               <div aria-label='kick off' className="road-top text-center animated-title mt-5">kick off</div>
               <div aria-label='We launch the Friends of the Future website and social media' className="road-bottom text-center animated-title">We launch the Friends of the Future website and social media</div>
               <div className="sq-1 sq position-absolute"></div>
+              <div className="stop-pro position-absolute"></div>
             </div>
             <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div aria-label='normies reveal' className="road-top text-center animated-title">normies reveal</div>
@@ -997,34 +1037,34 @@ export default function Page2({ scale, bgUrl }) {
         <div className="kala-fotf position-fixed d-flex justify-content-center align-items-center">
           <div className="kala-gola"></div>
           <div className="fotf-images position-absolute d-flex flex-column justify-content-center">
-            <div style={{ animation: flag4 ? `${flag?"slide-top 12s linear 0.7s infinite":"slide-top-mob 12s linear 0.7s infinite"}` : "" }} className="fotf-top-img d-flex ">
-                <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
-                <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
-                <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
-                <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+            <div style={{ animation: flag4 ? `${flag ? "slide-top 12s linear 0.7s infinite" : "slide-top-mob 12s linear 0.7s infinite"}` : "" }} className="fotf-top-img d-flex ">
+              <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
 
-                <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
-                <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
-                <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
-                <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
-                <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
-                <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0152.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1753.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0080.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0153.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1754.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0081.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0154.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
+              <img className='fotf-img' src="/ALIENS0155.jpg" alt="" />
+              <img className='fotf-img' src="/ELFOS1755.jpg" alt="" />
+              <img className='fotf-img' src="/HUMANOS0082.jpg" alt="" />
             </div>
-            <div style={{ animation: flag4 ? `${flag?"slide-bottom 12s linear 0.7s infinite":"slide-bottom-mob 12s linear 0.7s infinite"}` : "" }} className="fotf-bottom-img d-flex justify-content-end">
+            <div style={{ animation: flag4 ? `${flag ? "slide-bottom 12s linear 0.7s infinite" : "slide-bottom-mob 12s linear 0.7s infinite"}` : "" }} className="fotf-bottom-img d-flex justify-content-end">
               <img className='fotf-img' src="/ALIENS0156.jpg" alt="" />
               <img className='fotf-img' src="/ELFOS1757.jpg" alt="" />
               <img className='fotf-img' src="/HUMANOS0093.jpg" alt="" />
