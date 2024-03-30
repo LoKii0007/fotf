@@ -542,7 +542,7 @@ export default function Page1({ scale }) {
                                 <div className='webkit-of '>OF</div>
                                 <div className='webkit-the '>THE</div>
                             </div>
-                            <div className="page1-line3 comp1-line ps-5 animated-title" aria-label='FUTURE'>FUTURE</div>
+                            <div className="page1-line3 comp1-line ps-5">FUTURE</div>
                         </div>
                         <div className="join-btns ps-5 d-flex align-items-center justify-content-center">
                             <button style={{ backgroundImage: "url(discord.svg)" }} className='discord p-3 d-flex'>
