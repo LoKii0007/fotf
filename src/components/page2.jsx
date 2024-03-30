@@ -310,16 +310,7 @@ export default function Page2({ scale, bgUrl }) {
         scrub: 1
       },
       scale: 2,
-    })
-    gsap.to(".page3-sh", {
-      scrollTrigger: {
-        trigger: ".page3-comp1",
-        start: "top top",
-        end: "top top",
-        scrub: 1
-      },
-      opacity: 0,
-      duration:0.5
+      opacity:0
     })
 
     if (scale) {
@@ -476,7 +467,8 @@ export default function Page2({ scale, bgUrl }) {
         scrub: 1,
       },
       x: `${scale ? "30vw" : 300}`,
-      duration: 2
+      duration: 1,
+      ease:"power2.in"
     })
     gsap.to(".hero-2", {
       scrollTrigger: {
@@ -486,7 +478,8 @@ export default function Page2({ scale, bgUrl }) {
         scrub: 1,
       },
       x: `${scale ? "-30vw" : -300}`,
-      duration: 2
+      duration: 1,
+      ease:"power2.in"
     })
   }, [scale])
 
@@ -923,7 +916,7 @@ export default function Page2({ scale, bgUrl }) {
 
             <div className="crystal-bottom pb-5 pt-3 d-flex justify-content-end ">
               <div className="crystal me-1 d-flex justify-content-center">
-                <video loop autoPlay muted className='crystal-img pe-2' src="/stone.mp4"></video>
+                <video loop autoPlay muted className='crystal-img ' src="/stone.mp4"></video>
               </div>
               <div className="world d-flex align-items-start">
                 <img className='world-img ps-2' src="/wave.png" alt="" />
