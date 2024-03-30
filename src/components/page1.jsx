@@ -55,15 +55,16 @@ export default function Page1({ scale }) {
             top: "-100vh",
             opacity: 0
         })
+        
         gsap.to(".shadow-svg", {
             scrollTrigger: {
                 trigger: ".page1-comp2",
                 start: "top bottom",
                 end: "top top",
+                markers: true,
                 scrub: 1
             },
-            right: "-250px",
-            top:"-250px"
+            right: "-250px"
         })
         gsap.to(".sh-svg", {
             scrollTrigger: {

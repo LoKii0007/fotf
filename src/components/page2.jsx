@@ -149,42 +149,19 @@ export default function Page2({ scale, bgUrl }) {
       opacity: 1,
     })
 
-    // gsap.to(".box-2", {
-    //   scrollTrigger: {
-    //     trigger: ".shuffle-bottom",
-    //     start: "top 20%",
-    //     end: "top 30%",
-    //     //  markers: true,
-    //     pin: true,
-    //     scrub: 1
-    //   },
-    //   // position:"fixed"
-    // })
-
     if (flag) {
 
       gsap.to(".box-2", {
         scrollTrigger: {
           trigger: ".shuffle-bottom",
-          start: "top 10%",
-          end: "top 10%",
+          start: "top 15%",
+          end: "top 15%",
           markers: true,
           scrub: 1,
         },
         height: "80vh",
         width: "80vw",
       })
-
-      // gsap.to(".box-2", {
-      //   scrollTrigger: {
-      //     trigger: ".shuffle-bottom",
-      //     start: "top -10%",
-      //     end: "top -50%",
-      //     markers: true,
-      //     scrub: 1,
-      //   },
-      //   y:"-100vh"
-      // })
 
       gsap.to("#layout-text, .world-svg", {
         scrollTrigger: {
@@ -214,7 +191,7 @@ export default function Page2({ scale, bgUrl }) {
         width: "150vw",
         paddingTop: "15vh",
       })
-        .to("#layout-svg", {
+      tl1.to("#layout-svg", {
           stroke: "#07CE02"
         }, 0)
       tl1.to(".page2-comp1", {
@@ -237,8 +214,9 @@ export default function Page2({ scale, bgUrl }) {
       }, 0)
       ScrollTrigger.create({
         trigger: ".shuffle-bottom",
-        start: "top -5%",
-        end: "top -5%",
+        start: "top 0%",
+        end: "top 0%",
+        markers: true,
         scrub: 1,
         onEnter: () => {
           tl1.play()
@@ -248,61 +226,59 @@ export default function Page2({ scale, bgUrl }) {
         }
       })
     }
-    // else {
-    //   gsap.to(".box-2", {
-    //     scrollTrigger: {
-    //       trigger: ".box-2",
-    //       start: "top 30%",
-    //       end: "top 30%",
-    //       scrub: 1,
-    //     },
-    //     transformOrigin: "top center",
-    //     height: "70vh",
-    //     width: "100vw",
-    //     duration: 1,
-    //   })
+    else {
+      gsap.to(".box-2", {
+        scrollTrigger: {
+          trigger: ".shuffle-bottom",
+          start: "top 10%",
+          end: "top 10%",
+          scrub: 1,
+        },
+        transformOrigin: "top center",
+        height: "70vh",
+        width: "100vw",
+        duration: 1,
+      })
 
-    //   const tl2 = gsap.timeline({
-    //     paused: true,
-    //   })
+      const tl2 = gsap.timeline({
+        paused: true,
+      })
 
-    //   tl2.to(".box-2", {
-    //     height: "150vh",
-    //     transformOrigin: "center center"
-    //   })
-    //     .to("#layout-svg", {
-    //       stroke: "#07CE02"
-    //     }, 0)
-    //     .to("#layout-text", {
-    //       fill: "#07CE02"
-    //     }, 0)
-    //     .to(".world-svg", {
-    //       fill: "#07CE02"
-    //     }, 0)
-    //     .to(".at-btn", {
-    //       color: "#07CE02"
-    //     }, 0)
-    //     .to(".page2-comp1", {
-    //       height: "150vh",
-    //       transformOrigin: "top center"
-    //     }, 0)
-    //     .to(".page2-comp2", {
-    //       height: 0,
-    //     }, 0)
+      tl2.to(".box-2", {
+        height: "150vh",
+        duration:1,
+        transformOrigin: "center center"
+      })
+        .to("#layout-svg", {
+          stroke: "#07CE02"
+        }, 0)
+        .to("#layout-text, .world-svg", {
+          fill: "#07CE02"
+        }, 0)
+        .to(".at-btn", {
+          color: "#07CE02"
+        }, 0)
+        .to(".page2-comp1", {
+          height: "150vh",
+          transformOrigin: "top center"
+        }, 0)
+        .to(".page2-comp2", {
+          height: 0,
+        }, 0)
 
-    //   ScrollTrigger.create({
-    //     trigger: ".box-2",
-    //     start: "top 20%",
-    //     end: "top 20%",
-    //     scrub: 1,
-    //     onEnter: () => {
-    //       tl2.play()
-    //     },
-    //     onEnterBack: () => {
-    //       tl2.reverse()
-    //     }
-    //   })
-    // }
+      ScrollTrigger.create({
+        trigger: ".shuffle-bottom",
+        start: "top top",
+        end: "top top",
+        scrub: 1,
+        onEnter: () => {
+          tl2.play()
+        },
+        onEnterBack: () => {
+          tl2.reverse()
+        }
+      })
+    }
 
   }, [flag])
 
@@ -382,7 +358,7 @@ export default function Page2({ scale, bgUrl }) {
       })
     }
 
-  }, [])
+  }, [scale])
 
   useEffect(() => {
     if (!scale) {
@@ -446,12 +422,12 @@ export default function Page2({ scale, bgUrl }) {
       duration: 1,
     })
     tl2.to(".hero-11", {
-      x: 600,
-      y: -50
+      x: `${flag?600:300}`,
+      y: `${flag?-50:0}`
     }, 0)
     tl2.to(".hero-21", {
-      x: -600,
-      y: -50
+      x: `${flag?-600:-300}`,
+      y: `${flag?-50:0}`
     }, 0)
 
     gsap.to(".comp3-bg", {
@@ -464,7 +440,7 @@ export default function Page2({ scale, bgUrl }) {
       opacity: 1
     })
 
-  }, [])
+  }, [flag])
 
   // animation 3---------------------------
 
@@ -986,7 +962,7 @@ export default function Page2({ scale, bgUrl }) {
               <div aria-label='kick off' className="road-top text-center animated-title mt-5">kick off</div>
               <div aria-label='We launch the Friends of the Future website and social media' className="road-bottom text-center animated-title">We launch the Friends of the Future website and social media</div>
               <div className="sq-1 sq position-absolute"></div>
-              <div className="stop-pro position-absolute"></div>
+              {/* <div className="stop-pro position-absolute"></div> */}
             </div>
             <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div aria-label='normies reveal' className="road-top text-center animated-title">normies reveal</div>

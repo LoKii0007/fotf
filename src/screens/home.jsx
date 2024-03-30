@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
 export default function Home({ bgUrl }) {
-  const [scale, setScale] = useState(window.innerWidth > 600);
+  const [scale, setScale] = useState(false);
   gsap.registerPlugin(ScrollTrigger)
 
 
@@ -51,7 +51,7 @@ export default function Home({ bgUrl }) {
         splitWords();
 
     function handleResize() {
-      setScale(window.innerWidth > 800);
+      setScale(window.innerWidth > 600);
     }
 
     handleResize()

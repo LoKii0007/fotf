@@ -261,7 +261,7 @@ function App() {
       else if (window.innerWidth >= 1300 && window.innerWidth <= 1400 && window.innerHeight >= 600 && window.innerHeight <= 700) {
         setBgUrl(border5)
       }
-      else if(window.innerWidth > 1920){
+      else{
         setBgUrl(border1)
       }
     }

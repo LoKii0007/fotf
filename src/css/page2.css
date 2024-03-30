@@ -109,11 +109,6 @@
     background-size: 100% 100%;
     overflow: hidden;
     z-index: 100;
-    /* top: 30%;
-    transform-origin: center center; */
-    /* height: "80vh";
-    width: "80vw";
-    scale: 0.8; */
 }
 .box2-content{
     height: 100%;
@@ -207,6 +202,18 @@
         background-image: none !important;
         background-color: black;
         height: 400px;
+    }
+    .box2-content{
+        justify-content: center !important;
+    }
+    .box2-top{
+        padding-bottom: 24px ;
+    }
+    .box2-line1{
+        font-size: 16px;
+    }
+    .box2-line2{
+        font-size: 20px;
     }
     .box2-bottom{
         flex-direction: column !important;
