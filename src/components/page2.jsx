@@ -138,110 +138,117 @@ export default function Page2({ scale, bgUrl }) {
 
   useEffect(() => {
 
-    // gsap.to(".box2-content", {
-    //   scrollTrigger: {
-    //     trigger: ".box-2",
-    //     start: "top 20%",
-    //     end: "top 20%",
-    //     //  markers: true,
-    //     scrub: .5
-    //   },
-    //   scale: 1,
-    //   opacity: 1,
-    //   transformOrigin: "center center"
-    // })
+    gsap.to(".box2-content", {
+      scrollTrigger: {
+        trigger: ".shuffle-bottom",
+        start: "top 10%",
+        end: "top 10%",
+        scrub: .5
+      },
+      scale: 1,
+      opacity: 1,
+    })
 
-    // gsap.to(".shuffle-bottom", {
+    // gsap.to(".box-2", {
     //   scrollTrigger: {
     //     trigger: ".shuffle-bottom",
-    //     start: "top 50%",
-    //     end: "top 50%",
+    //     start: "top 20%",
+    //     end: "top 30%",
     //     //  markers: true,
-    //     scrub: .5
+    //     pin: true,
+    //     scrub: 1
     //   },
-    //   position:"fixed",
-    //   top:"50%"
+    //   // position:"fixed"
     // })
 
-    // if (flag) {
-    //   gsap.to(".box-2", {
-    //     scrollTrigger: {
-    //       trigger: ".box-2",
-    //       start: "top 20%",
-    //       end: "top 20%",
-    //       markers: true,
-    //       scrub: 1,
-    //     },
-    //     height: "80vh",
-    //     width: "80vw",
-    //   })
-    //   gsap.to("#layout-text, .world-svg", {
-    //     scrollTrigger: {
-    //       trigger: ".box-2",
-    //       start: "top 20%",
-    //       end: "top 20%",
-    //       scrub: 1,
-    //     },
-    //     fill: "#07CE02"
-    //   })
-    //   gsap.to(".at-btn", {
-    //     scrollTrigger: {
-    //       trigger: ".box-2",
-    //       start: "top 20%",
-    //       end: "top 20%",
-    //       scrub: 1,
-    //     },
-    //     color: "07CE02"
-    //   })
+    if (flag) {
 
-    //   const tl1 = gsap.timeline({
-    //     paused: true,
-    //   })
+      gsap.to(".box-2", {
+        scrollTrigger: {
+          trigger: ".shuffle-bottom",
+          start: "top 10%",
+          end: "top 10%",
+          markers: true,
+          scrub: 1,
+        },
+        height: "80vh",
+        width: "80vw",
+      })
 
-    //   tl1.to(".box-2", {
-    //     height: "150vh",
-    //     width: "150vw",
-    //     paddingTop: "15vh",
-    //   })
-    //     .to("#layout-svg", {
-    //       stroke: "#07CE02"
-    //     }, 0)
-    //   tl1.to(".page2-comp1", {
-    //     height: "150vh",
-    //     transformOrigin: "top center"
-    //   }, 0)
-    //   tl1.to(".box2-line1", {
-    //     fontSize: "32px",
-    //     lineHeight: "32px",
-    //   }, 0)
-    //   tl1.to(".box2-line2", {
-    //     fontSize: "48px",
-    //     lineHeight: "48px",
-    //   }, 0)
-    //   tl1.to(".box2-img", {
-    //     height: "250px",
-    //   }, 0)
-    //   tl1.to(".page2-comp2", {
-    //     height: 0,
-    //   }, 0)
-    //   // tl1.to(".box", {
-    //   //   backgroundColor: "transparent"
-    //   // })
-    //   ScrollTrigger.create({
-    //     trigger: ".box-2",
-    //     start: "top 10%",
-    //     end: "top 10%",
-    //     scrub: 1,
-    //     onEnter: () => {
-    //       tl1.play()
-    //     },
-    //     onLeaveBack: () => {
-    //       tl1.reverse()
-    //     }
-    //   })
-    // }
+      // gsap.to(".box-2", {
+      //   scrollTrigger: {
+      //     trigger: ".shuffle-bottom",
+      //     start: "top -10%",
+      //     end: "top -50%",
+      //     markers: true,
+      //     scrub: 1,
+      //   },
+      //   y:"-100vh"
+      // })
+
+      gsap.to("#layout-text, .world-svg", {
+        scrollTrigger: {
+          trigger: ".box-2",
+          start: "top 20%",
+          end: "top 20%",
+          scrub: 1,
+        },
+        fill: "#07CE02"
+      })
+      gsap.to(".at-btn", {
+        scrollTrigger: {
+          trigger: ".box-2",
+          start: "top 20%",
+          end: "top 20%",
+          scrub: 1,
+        },
+        color: "07CE02"
+      })
+
+      const tl1 = gsap.timeline({
+        paused: true,
+      })
+
+      tl1.to(".box-2", {
+        height: "150vh",
+        width: "150vw",
+        paddingTop: "15vh",
+      })
+        .to("#layout-svg", {
+          stroke: "#07CE02"
+        }, 0)
+      tl1.to(".page2-comp1", {
+        height: "150vh",
+        transformOrigin: "top center"
+      }, 0)
+      tl1.to(".box2-line1", {
+        fontSize: "32px",
+        lineHeight: "32px",
+      }, 0)
+      tl1.to(".box2-line2", {
+        fontSize: "48px",
+        lineHeight: "48px",
+      }, 0)
+      tl1.to(".box2-img", {
+        height: "250px",
+      }, 0)
+      tl1.to(".page2-comp2", {
+        height: 0,
+      }, 0)
+      ScrollTrigger.create({
+        trigger: ".shuffle-bottom",
+        start: "top -5%",
+        end: "top -5%",
+        scrub: 1,
+        onEnter: () => {
+          tl1.play()
+        },
+        onLeaveBack: () => {
+          tl1.reverse()
+        }
+      })
+    }
     // else {
-
     //   gsap.to(".box-2", {
     //     scrollTrigger: {
     //       trigger: ".box-2",
