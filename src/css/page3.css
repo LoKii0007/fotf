@@ -1,6 +1,5 @@
 .page-3{
     width: 100vw;
-    /* background-color: black; */
 }
 .page3-comp1{
     width: 100vw;
@@ -12,7 +11,7 @@
     height: 100%;
 }
 .chadi-img{
-    height: 800px;
+    height: 90vh;
     z-index: 100;
 }
 .stick{
@@ -30,19 +29,21 @@
     }
 }
 .stick-img{
-    height: 800px;
+    height: 90vh;
 }
 .sound-img{
     height: 50px;
-}
-.crystal{
-    border-radius: 100px;
-    overflow: hidden;
-    height: 200px;
     width: 200px;
 }
+.crystal{
+    border-radius: 50%;
+    overflow: hidden;
+    height: 350px;
+    width: 350px;
+}
 .crystal-img{
-    height: 200px;
+    height: 350px;
+    border-radius: 50%;
 }
 .world-img{
     height: 80px;
@@ -56,7 +57,6 @@
     font-size: 16px;
     color: #07CE02;
     line-height: 16px;
-    width: 100%;
     z-index: 500;
 
 }
@@ -196,7 +196,7 @@
     width: 20px;
     background-color: #07CE02;
     opacity: 0;
-    animation: rotate 1.5s linear infinite; 
+    animation: rotate 3s ease infinite; 
     transition: .5s ease-in;
 }
 
@@ -221,16 +221,29 @@
     transition: .5s ease;
     z-index: 50;
     mix-blend-mode: color-dodge;
-    animation: rotate 3s ease-in-out infinite;
+    animation: rotate-2 3s ease-in-out infinite;
 }
 
 @keyframes rotate {
-    from {
+    0% {
       transform: rotate(0deg);
     }
-    to {
+    50% {
       transform: rotate(360deg);
     }
+    100%{
+        transform: rotate(720deg);
+    }
+
+  }
+@keyframes rotate-2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+
   }
 
 .recurso-img{
@@ -290,12 +303,6 @@
     z-index: 200;
 } 
 
-.sq-1{
-    background-color: #07CE02;
-    animation: rotate 1.5s linear infinite; 
-    transition: .5s ease-in;
-}
-
 .sq-1 , .sq-3, .sq-5{
     top: -2.5px;
     transform: translate(-20px, 20px);
@@ -304,7 +311,11 @@
     top: 147.5px;
     transform: translate(-20px, 20px);
 }
-
+.sq-1{
+    background-color: #07CE02;
+    animation: rotate 3s ease infinite; 
+    transition: .5s ease-in;
+}
 .roadmap-bottom{
     height: 300px;
     color: #07CE02;
@@ -334,10 +345,10 @@
 
 @media screen and (max-width:1920px) and (min-width:1401px){
     .chadi-img{
-       height: 700px;
+       height: 800px;
     }
     .stick-img{
-        height: 700px;
+        height: 800px;
     }
     .roadmap-top{
         font-size: 55px;
@@ -351,6 +362,13 @@
     .page3-comp3-text{
         font-size: 90px;
     }
+    .crystal{
+        height: 300px;
+        width: 300px;
+    }
+    .crystal-img{
+        height: 300px;
+    }
 }
 @media screen and (max-width:1400px) and (min-width:801px){
     .chadi-img{
@@ -359,6 +377,13 @@
      .stick-img{
          height: 500px;
      }
+     .crystal{
+        height: 200px;
+        width: 200px;
+    }
+    .crystal-img{
+        height: 200px;
+    }
      .roadmap-top{
         font-size: 40px;
     }
@@ -381,10 +406,16 @@
     .chadi-img, .stick-img{
         height: 350px;
     }
+    .crystal-bottom, .crystal-top{
+        justify-content: center !important;
+    }
     .crystal-text{
         font-size: 16px;
         width: fit-content;
         text-align: center;
+    }
+    .sound{
+        padding: 0% !important;
     }
     .crystal-bottom{
         padding: 36px !important;
@@ -395,8 +426,8 @@
         border-radius: 75px;
     }
     .crystal-img{
-        height: 150px;
-        border-radius: 75px;
+        height: 200px;
+        border-radius: 50%;
     }
     .crstal-text{
         font-size: 16px;

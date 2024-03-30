@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Page2({ scale, bgUrl }) {
 
   const [flag, setFlag] = useState(window.innerWidth > 800)
-  const [resp1, setResp1] = useState(window.innerWidth < 1150 && window.innerWidth >800)
+  const [resp1, setResp1] = useState(window.innerWidth < 1150 && window.innerWidth > 800)
   const [shuffle, setShuffle] = useState(false)
 
   const animation = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -30,7 +30,7 @@ export default function Page2({ scale, bgUrl }) {
     handleResp1()
 
     window.addEventListener("resize", handleResize);
-    window.addEventListener("resize",handleResp1);
+    window.addEventListener("resize", handleResp1);
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -83,6 +83,15 @@ export default function Page2({ scale, bgUrl }) {
       .to(".at-btn", {
         color: "black"
       }, 0)
+      .to(".layer-2", {
+        width:`${flag?700:350}`
+      }, 0)
+      .to(".layer-3", {
+        width:`${flag?900:450}`
+      }, 0)
+      .to(".layer-4", {
+        width:`${flag?1050:525}`
+      }, 0)
 
     ScrollTrigger.create({
       trigger: ".box",
@@ -102,7 +111,7 @@ export default function Page2({ scale, bgUrl }) {
       }
     })
 
-  }, [])
+  }, [flag])
 
   // ---------animation 3 ------------------(black box rotating)------------------
 
@@ -142,7 +151,7 @@ export default function Page2({ scale, bgUrl }) {
 
   useEffect(() => {
 
-    gsap.to(".box2-content", {
+    gsap.to(".box2-content, .page3-sh", {
       scrollTrigger: {
         trigger: ".shuffle-bottom",
         start: "top 15%",
@@ -195,8 +204,8 @@ export default function Page2({ scale, bgUrl }) {
         paddingTop: "15vh",
       })
       tl1.to("#layout-svg", {
-          stroke: "#07CE02"
-        }, 0)
+        stroke: "#07CE02"
+      }, 0)
       tl1.to(".page2-comp1", {
         height: "150vh",
         transformOrigin: "top center"
@@ -248,22 +257,22 @@ export default function Page2({ scale, bgUrl }) {
 
       tl2.to(".box-2", {
         height: "150vh",
-        duration:1,
+        duration: 1,
         transformOrigin: "center center"
       })
-      .to("#layout-svg", {
-        stroke: "#07CE02"
-      }, 0)
-      .to("#layout-text", {
-        fill: "#07CE02"
-      }, 0)
-      .to(".page2-comp1", {
-        height: "150vh",
-        transformOrigin: "top center"
-      }, 0)
-      .to(".page2-comp2", {
-        height: 0,
-      }, 0)
+        .to("#layout-svg", {
+          stroke: "#07CE02"
+        }, 0)
+        .to("#layout-text", {
+          fill: "#07CE02"
+        }, 0)
+        .to(".page2-comp1", {
+          height: "150vh",
+          transformOrigin: "top center"
+        }, 0)
+        .to(".page2-comp2", {
+          height: 0,
+        }, 0)
 
       ScrollTrigger.create({
         trigger: ".shuffle-bottom",
@@ -292,6 +301,26 @@ export default function Page2({ scale, bgUrl }) {
   // -----------animation 1------------------------- 
 
   useEffect(() => {
+
+    gsap.to(".page3-sh", {
+      scrollTrigger: {
+        trigger: ".page3-comp1",
+        start: "top bottom",
+        end: "top top",
+        scrub: 1
+      },
+      scale: 2,
+    })
+    gsap.to(".page3-sh", {
+      scrollTrigger: {
+        trigger: ".page3-comp1",
+        start: "top top",
+        end: "top top",
+        scrub: 1
+      },
+      opacity: 0,
+      duration:0.5
+    })
 
     if (scale) {
       gsap.to(".hero-comp", {
@@ -399,7 +428,7 @@ export default function Page2({ scale, bgUrl }) {
     ScrollTrigger.create({
       trigger: ".page3-comp3",
       start: "top 10%",
-      end: "top top",
+      end: "top 10%",
       scrub: 1,
       onEnter: () => {
         tl2.play()
@@ -419,23 +448,19 @@ export default function Page2({ scale, bgUrl }) {
       duration: 1,
     })
     tl2.to(".hero-11", {
-      x: `${scale?"38vw":300}`,
-      y: `${scale?-50:0}`
+      x: `${scale ? "38vw" : 300}`,
+      y: `${scale ? -50 : 0}`,
+      duration: 0.7
     }, 0)
     tl2.to(".hero-21", {
-      x: `${scale?"-40vw":-300}`,
-      y: `${scale?-50:0}`
+      x: `${scale ? "-40vw" : -300}`,
+      y: `${scale ? -50 : 0}`,
+      duration: 0.7
     }, 0)
-
-    gsap.to(".comp3-bg", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top top",
-        end: "top top",
-        scrub: 1,
-      },
-      opacity: 1
-    })
+    tl2.to(".comp3-bg", {
+      opacity: 1,
+      duration: 0.7
+    }, 0)
 
   }, [scale])
 
@@ -447,19 +472,21 @@ export default function Page2({ scale, bgUrl }) {
       scrollTrigger: {
         trigger: ".page3-comp3",
         start: "top -5%",
-        end: "+=25px",
+        end: "top -5%",
         scrub: 1,
       },
-      x: `${scale?"36vw":300}`,
+      x: `${scale ? "30vw" : 300}`,
+      duration: 2
     })
     gsap.to(".hero-2", {
       scrollTrigger: {
         trigger: ".page3-comp3",
         start: "top -5%",
-        end: "+=25px",
+        end: "top -5%",
         scrub: 1,
       },
-      x:`${scale?"-36vw":-300}`,
+      x: `${scale ? "-30vw" : -300}`,
+      duration: 2
     })
   }, [scale])
 
@@ -467,22 +494,34 @@ export default function Page2({ scale, bgUrl }) {
 
   useEffect(() => {
 
-    gsap.to(".comp3-bg", {
-      scrollTrigger: {
-        trigger: ".page3-comp3",
-        start: "top -10%",
-        end: "top -80%",
-        scrub: .5,
-        // markers: true
-      },
-      y: "-100vh"
-    })
-  }, [])
+    if (!flag) {
+      gsap.to(".comp3-bg", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top -10%",
+          end: "top -80%",
+          scrub: .5,
+        },
+        y: "-100vh"
+      })
+    }
+    if (flag) {
+      gsap.to(".comp3-bg", {
+        scrollTrigger: {
+          trigger: ".page3-comp3",
+          start: "top -10%",
+          end: "top -110%",
+          scrub: .5,
+        },
+        y: "-100vh"
+      })
+    }
+  }, [flag])
 
   // ----------roadmap progress ----------------
 
   useEffect(() => {
-    if(flag){
+    if (flag) {
       gsap.to(".progress", {
         scrollTrigger: {
           trigger: ".road",
@@ -490,7 +529,7 @@ export default function Page2({ scale, bgUrl }) {
           end: "top 60%",
           scrub: 1,
         },
-        width: `${!resp1?"11%":"8%"}`
+        width: `${!resp1 ? "11%" : "8%"}`
       })
       gsap.to(".sq-2, .sq-3, .sq-4, .sq-5, .sq-6, .sq-1", {
         scrollTrigger: {
@@ -499,31 +538,31 @@ export default function Page2({ scale, bgUrl }) {
           end: "top 60%",
           scrub: 1,
         },
-        x:"0px"
+        x: "0px"
       })
     }
   }, [flag])
 
   useEffect(() => {
-    if(!flag){
-        gsap.to(".progress", {
-          scrollTrigger: {
-            trigger: ".road",
-            start: "top bottom",
-            end: "top 80%",
-            scrub: 1,
-          },
-          height:"9%"
-        })
-  gsap.to(".sq-2, .sq-3, .sq-4, .sq-5, .sq-6, .sq", {
-    scrollTrigger: {
-      trigger: ".road",
-      start: "top center",
-      end: "top 40%",
-      scrub: 1,
-    },
-    y:"0px"
-  })
+    if (!flag) {
+      gsap.to(".progress", {
+        scrollTrigger: {
+          trigger: ".road",
+          start: "top bottom",
+          end: "top 80%",
+          scrub: 1,
+        },
+        height: "9%"
+      })
+      gsap.to(".sq-2, .sq-3, .sq-4, .sq-5, .sq-6, .sq", {
+        scrollTrigger: {
+          trigger: ".road",
+          start: "top center",
+          end: "top 40%",
+          scrub: 1,
+        },
+        y: "0px"
+      })
     }
   }, [flag])
 
@@ -555,7 +594,7 @@ export default function Page2({ scale, bgUrl }) {
       rotateX: "0deg"
     })
 
-    
+
 
     gsap.to(".snake-1", {
       scrollTrigger: {
@@ -606,7 +645,7 @@ export default function Page2({ scale, bgUrl }) {
         end: "center 55%",
         scrub: 1
       },
-      rotateY:"0deg"
+      rotateY: "0deg"
     })
 
   }, [])
@@ -691,7 +730,7 @@ export default function Page2({ scale, bgUrl }) {
     });
     tl1.to(".char-1", {
       y: "30vh",
-    },0);
+    }, 0);
 
     tl1.to(".char-2", {
       x: "-10vw"
@@ -717,7 +756,7 @@ export default function Page2({ scale, bgUrl }) {
 
     gsap.to(".fotf-images", {
       y: 0,
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: ".fotf",
         start: "top top",
         end: "top top",
@@ -729,6 +768,21 @@ export default function Page2({ scale, bgUrl }) {
 
   return (
     <>
+
+      <div className="position-fixed page3-sh d-flex justify-content-center align-items-center">
+        <svg className='page3-shadow' width="1920" height="963" viewBox="0 0 1920 963" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_202_4243)">
+            <circle cx="960" cy="481.5" r="700" transform="rotate(128.952 729.404 728.756)" fill="#07CE02" fill-opacity="0.05" />
+          </g>
+          <defs>
+            <filter id="filter0_f_202_4243" x="0.97168" y="0.323975" width="1456.86" height="1456.86" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_202_4243" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
 
       <div className='position-fixed access-btn-pc d-flex justify-content-center align-items-center'>
         <button className='position-absolute at-btn d-flex justify-content-center align-items-center'>
@@ -751,21 +805,6 @@ export default function Page2({ scale, bgUrl }) {
           </defs>
         </svg>
       </div>
-
-      {/* <div className="position-fixed page2-sh justify-content-center align-items-end">
-      <svg className='page2-shadow position-absolute' width="1458" height="963" viewBox="0 0 1458 963" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_f_202_4243)">
-          <circle cx="729.404" cy="728.756" r="578.412" transform="rotate(128.952 729.404 728.756)" fill="#07CE02" fill-opacity="0.05" />
-        </g>
-        <defs>
-          <filter id="filter0_f_202_4243" x="0.97168" y="0.323975" width="1456.86" height="1456.86" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-            <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_202_4243" />
-          </filter>
-        </defs>
-      </svg>
-      </div> */}
 
       <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
@@ -859,7 +898,7 @@ export default function Page2({ scale, bgUrl }) {
       </div >
 
       <div className="page-3">
-        <div className="page3-comp1 d-flex position-relative justify-content-between">
+        <div className="page3-comp1 d-flex position-relative justify-content-center">
 
           <div className="page3-left position-relative d-flex align-items-end">
             <div className="chadi ">
@@ -870,10 +909,10 @@ export default function Page2({ scale, bgUrl }) {
             </div>
           </div>
 
-          <div className="page3-right pt-5 d-flex flex-column">
+          <div className="page3-right pt-5 pe-5 d-flex flex-column">
 
-            <div className="crystal-top pt-5 pe-5 d-flex justify-content-evenly align-items-center">
-              <div className="crystal-text d-flex ps-5">
+            <div className="crystal-top pt-5 d-flex justify-content-end align-items-center">
+              <div className="crystal-text d-flex pe-5">
                 <div className='img-sq mx-2'></div>
                 <div className='serum'>SERUM</div>
               </div>
@@ -882,8 +921,8 @@ export default function Page2({ scale, bgUrl }) {
               </div>
             </div>
 
-            <div className="crystal-bottom pb-5 d-flex justify-content-evenly align-items-center">
-              <div className="crystal d-flex justify-content-center">
+            <div className="crystal-bottom pb-5 pt-3 d-flex justify-content-end ">
+              <div className="crystal me-1 d-flex justify-content-center">
                 <video loop autoPlay muted className='crystal-img pe-2' src="/stone.mp4"></video>
               </div>
               <div className="world d-flex align-items-start">
@@ -894,7 +933,7 @@ export default function Page2({ scale, bgUrl }) {
             <div aria-label='There is a 4th role called the
               Legendaries: only for 20 people, who
               get a serum with it that get a mejastic
-              clothing onboard from the origins of FoF:' className="crstal-text animated-title px-5 m-5 d-flex justify-content-center align-items-start">
+              clothing onboard from the origins of FoF:' className="crstal-text animated-title pe-5 m-5 d-flex justify-content-center align-items-start">
               There is a 4th role called the
               Legendaries: only for 20 people, who
               get a serum with it that get a mejastic
@@ -968,7 +1007,7 @@ export default function Page2({ scale, bgUrl }) {
             </div>
           </div>
           <div className="text-mob pt-5 position-relative d-flex flex-column justify-content-center align-items-center">
-          <div style={{ opacity: isHovered1 ? 1 : 0 }} className="ghoomta-mob1 text-center d-flex justify-content-center align-items-center">
+            <div style={{ opacity: isHovered1 ? 1 : 0 }} className="ghoomta-mob1 text-center d-flex justify-content-center align-items-center">
               Coin launch (airdrop vs  presale)
             </div>
             <div style={{ opacity: isHovered2 ? 1 : 0 }} className="ghoomta-mob2 position-absolute text-center d-flex justify-content-center align-items-center">
@@ -1035,7 +1074,6 @@ export default function Page2({ scale, bgUrl }) {
           </div>
         </div>
       </div>
-
 
       <div className="page-4 d-flex flex-column">
         <div className="thanks d-flex flex-column justify-content-evenly align-items-center">

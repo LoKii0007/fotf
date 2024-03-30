@@ -55,7 +55,7 @@ export default function Page1({ scale }) {
             top: "-100vh",
             opacity: 0
         })
-        
+
         gsap.to(".shadow-svg", {
             scrollTrigger: {
                 trigger: ".page1-comp2",
@@ -109,6 +109,10 @@ export default function Page1({ scale }) {
             opacity: 0,
             duration: 1
         })
+        tl.to(".shadow-svg", {
+            top: "-500px",
+            x: -300
+        }, 0)
         ScrollTrigger.create({
             trigger: ".page1-comp2",
             start: "top top",
@@ -148,12 +152,12 @@ export default function Page1({ scale }) {
         gsap.to(".page2-shadow", {
             scrollTrigger: {
                 trigger: ".page1-comp3",
-                start: "bottom bottom",
-                end: "bottom bottom",
+                start: "bottom top",
+                end: "bottom top",
                 scrub: 1,
             },
-            opacity:0,
-            display:"none"
+            opacity: 0,
+            display: "none"
         })
         gsap.to(".shadow-svg", {
             scrollTrigger: {
@@ -519,14 +523,16 @@ export default function Page1({ scale }) {
 
             <div className="page1 d-flex flex-column align-items-center justify-content-center">
                 <div className="page1-comp1 position-relative">
-                    <div className='position-fixed access-btn-mob d-flex align-items-center justify-content-center'>
-                        <button className='position-absolute access-btn d-flex p-4'>
+                    {/* <div className='position-fixed access-btn-mob d-flex align-items-center justify-content-center'> */}
+                    {/* <button className='position-absolute access-btn d-flex align-items-center justify-content-center p-4'>
                             <div className="b-text b-text-access">ACCESS WHITELIST</div>
                             <div className='discord-icon px-2'>
-                                <i className="fa-brands fa-discord"></i>
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22ZM15.4961 13.938L14.938 9.47273C14.9037 9.19872 14.6538 9.00436 14.3798 9.03861C14.1058 9.07286 13.9115 9.32276 13.9457 9.59677L14.3541 12.8642L6.30697 6.60532L5.69303 7.39468L13.7402 13.6536L10.4727 14.062C10.1987 14.0963 10.0044 14.3462 10.0386 14.6202C10.0729 14.8942 10.3228 15.0885 10.5968 15.0543L15.062 14.4961C15.336 14.4619 15.5304 14.212 15.4961 13.938Z" fill="#07CE02" />
+                                </svg>
                             </div>
-                        </button>
-                        <svg className='position-absolute' width="200" height="60" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        </button> */}
+                    {/* <svg className='position-absolute' width="200" height="60" viewBox="0 0 281 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_b_255_1210)">
                                 <path className="world-svg" d="M0 0H244L280.5 36.3214V72.6427L36.3214 72.6427L0 36.3213V0Z" fill="#07CE02" fill-opacity="0.26" />
                             </g>
@@ -539,7 +545,15 @@ export default function Page1({ scale }) {
                                 </filter>
                             </defs>
                         </svg>
-                    </div>
+                    </div> */}
+                    <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn position-fixed p-4 d-flex align-items-center justify-content-center'>
+                        <div className="b-text">ACCESS WHITELIST</div>
+                        <div className='down-icon px-2'>
+                            <svg width="16" height="16" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22ZM15.4961 13.938L14.938 9.47273C14.9037 9.19872 14.6538 9.00436 14.3798 9.03861C14.1058 9.07286 13.9115 9.32276 13.9457 9.59677L14.3541 12.8642L6.30697 6.60532L5.69303 7.39468L13.7402 13.6536L10.4727 14.062C10.1987 14.0963 10.0044 14.3462 10.0386 14.6202C10.0729 14.8942 10.3228 15.0885 10.5968 15.0543L15.062 14.4961C15.336 14.4619 15.5304 14.212 15.4961 13.938Z" fill="#07CE02" />
+                            </svg>
+                        </div>
+                    </button>
                     <div className="page1-bg position-fixed">
                         <img className='alien1-img position-relative' src="/render.png" alt="" />
                         <div style={{ backgroundImage: "url(moving-bg2.svg)" }} className="page1-bg3 position-absolute"></div>
@@ -581,10 +595,12 @@ export default function Page1({ scale }) {
                                     </defs>
                                 </svg>
                             </div>
-                            <button style={{ backgroundImage: "url(world.svg)" }} className='world-btn p-3 d-flex'>
-                                <div className="b-text">ENTER WL</div>
-                                <div className='discord-icon  px-2'>
-                                    <i className="fa-brands fa-discord"></i>
+                            <button style={{ backgroundImage: "url(world.svg)" }} className='world-btn p-3 d-flex '>
+                                <div className="b-text d-flex align-items-center justify-content-center">ENTER WL</div>
+                                <div className='down-icon  px-2'>
+                                <svg width="1" height="16" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22ZM15.4961 13.938L14.938 9.47273C14.9037 9.19872 14.6538 9.00436 14.3798 9.03861C14.1058 9.07286 13.9115 9.32276 13.9457 9.59677L14.3541 12.8642L6.30697 6.60532L5.69303 7.39468L13.7402 13.6536L10.4727 14.062C10.1987 14.0963 10.0044 14.3462 10.0386 14.6202C10.0729 14.8942 10.3228 15.0885 10.5968 15.0543L15.062 14.4961C15.336 14.4619 15.5304 14.212 15.4961 13.938Z" fill="#07CE02" />
+                            </svg>
                                 </div>
                             </button>
                         </div>
