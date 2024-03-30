@@ -537,10 +537,10 @@ export default function Page1({ scale }) {
                     </div>
                     <div className="page1-front position-fixed pt-5 d-flex flex-column justify-content-center align-items-start">
                         <div className="page1-lines d-flex flex-column justify-content-center align-items-center">
-                            <div aria-label='' className="page1-line1 comp1-line ps-5 animated-title">FRIENDS</div>
+                            <div className="page1-line1 comp1-line ps-5 ">FRIENDS</div>
                             <div className="page1-line2 comp1-line d-flex">
-                                <div aria-label='OF' className='webkit-of animated-title'>OF</div>
-                                <div aria-label='THE' className='webkit-the animated-title'>THE</div>
+                                <div className='webkit-of '>OF</div>
+                                <div className='webkit-the '>THE</div>
                             </div>
                             <div className="page1-line3 comp1-line ps-5 animated-title" aria-label='FUTURE'>FUTURE</div>
                         </div>
