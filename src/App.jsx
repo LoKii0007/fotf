@@ -5,7 +5,6 @@ import Terms from "./components/terms"
 import Legal from "./components/legal"
 import Privacy from "./components/privacy"
 import Home from './screens/home'
-import Pr from './components/pr'
  
 
 function App() {
@@ -280,7 +279,6 @@ function App() {
         <Layout />
         <Routes>
           <Route exact path="/" element={<Home bgUrl={bgUrl} />}></Route>
-          {/* <Route exact path="/" element={ <Pr></Pr> }></Route> */}
           <Route exact path="/terms" element={<Terms bgUrl={bgUrl} />}></Route>
           <Route exact path="/privacy" element={<Privacy bgUrl={bgUrl} />}></Route>
           <Route exact path="/legal" element={<Legal bgUrl={bgUrl} />}></Route>

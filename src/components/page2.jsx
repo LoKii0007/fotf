@@ -11,7 +11,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Page2({ scale, bgUrl }) {
 
-  const [flag, setFlag] = useState(false)
+  const [flag, setFlag] = useState(window.innerWidth > 800)
+  const [resp1, setResp1] = useState(window.innerWidth < 1150 && window.innerWidth >800)
   const [shuffle, setShuffle] = useState(false)
 
   const animation = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -21,13 +22,19 @@ export default function Page2({ scale, bgUrl }) {
     function handleResize() {
       setFlag(window.innerWidth > 800);
     }
+    function handleResp1() {
+      setResp1(window.innerWidth < 1150 && window.innerWidth > 800);
+    }
 
     handleResize()
+    handleResp1()
 
     window.addEventListener("resize", handleResize);
+    window.addEventListener("resize",handleResp1);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleResp1);
     }
   }, [])
 
@@ -141,8 +148,8 @@ export default function Page2({ scale, bgUrl }) {
     gsap.to(".box2-content", {
       scrollTrigger: {
         trigger: ".shuffle-bottom",
-        start: "top 10%",
-        end: "top 10%",
+        start: "top 15%",
+        end: "top 15%",
         scrub: .5
       },
       scale: 1,
@@ -156,7 +163,6 @@ export default function Page2({ scale, bgUrl }) {
           trigger: ".shuffle-bottom",
           start: "top 15%",
           end: "top 15%",
-          markers: true,
           scrub: 1,
         },
         height: "80vh",
@@ -216,7 +222,6 @@ export default function Page2({ scale, bgUrl }) {
         trigger: ".shuffle-bottom",
         start: "top 0%",
         end: "top 0%",
-        markers: true,
         scrub: 1,
         onEnter: () => {
           tl1.play()
@@ -303,7 +308,6 @@ export default function Page2({ scale, bgUrl }) {
           scrub: true
         },
         position: "fixed",
-        right: 48,
         bottom: 0
       })
 
@@ -358,7 +362,7 @@ export default function Page2({ scale, bgUrl }) {
       })
     }
 
-  }, [scale])
+  }, [])
 
   useEffect(() => {
     if (!scale) {
@@ -380,7 +384,6 @@ export default function Page2({ scale, bgUrl }) {
           scrub: 1,
         },
         transformOrigin: "right bottom",
-        // height:300,
         width: 300,
         x: 0
       })
@@ -422,12 +425,12 @@ export default function Page2({ scale, bgUrl }) {
       duration: 1,
     })
     tl2.to(".hero-11", {
-      x: `${flag?600:300}`,
-      y: `${flag?-50:0}`
+      x: `${scale?"38vw":300}`,
+      y: `${scale?-50:0}`
     }, 0)
     tl2.to(".hero-21", {
-      x: `${flag?-600:-300}`,
-      y: `${flag?-50:0}`
+      x: `${scale?"-40vw":-300}`,
+      y: `${scale?-50:0}`
     }, 0)
 
     gsap.to(".comp3-bg", {
@@ -440,7 +443,7 @@ export default function Page2({ scale, bgUrl }) {
       opacity: 1
     })
 
-  }, [flag])
+  }, [scale])
 
   // animation 3---------------------------
 
@@ -453,7 +456,7 @@ export default function Page2({ scale, bgUrl }) {
         end: "+=25px",
         scrub: 1,
       },
-      x: 1000,
+      x: `${scale?"36vw":300}`,
     })
     gsap.to(".hero-2", {
       scrollTrigger: {
@@ -462,9 +465,9 @@ export default function Page2({ scale, bgUrl }) {
         end: "+=25px",
         scrub: 1,
       },
-      x: -1000,
+      x:`${scale?"-36vw":-300}`,
     })
-  }, [])
+  }, [scale])
 
   // animation 4-----------------
 
@@ -485,16 +488,50 @@ export default function Page2({ scale, bgUrl }) {
   // ----------roadmap progress ----------------
 
   useEffect(() => {
-    gsap.to(".progress", {
-      scrollTrigger: {
-        trigger: ".road",
-        start: "top bottom",
-        end: "top 80%",
-        scrub: 0.4,
-      },
-      width: "12vw"
-    })
-  }, [])
+    if(flag){
+      gsap.to(".progress", {
+        scrollTrigger: {
+          trigger: ".road",
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        width: `${!resp1?"11%":"8%"}`
+      })
+      gsap.to(".sq-2, .sq-3, .sq-4, .sq-5, .sq-6, .sq-1", {
+        scrollTrigger: {
+          trigger: ".road",
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        x:"0px"
+      })
+    }
+  }, [flag])
+
+  useEffect(() => {
+    if(!flag){
+        gsap.to(".progress", {
+          scrollTrigger: {
+            trigger: ".road",
+            start: "top bottom",
+            end: "top 80%",
+            scrub: 1,
+          },
+          height:"9%"
+        })
+  gsap.to(".sq-2, .sq-3, .sq-4, .sq-5, .sq-6, .sq", {
+    scrollTrigger: {
+      trigger: ".road",
+      start: "top center",
+      end: "top 40%",
+      scrub: 1,
+    },
+    y:"0px"
+  })
+    }
+  }, [flag])
 
 
   // ---------------------------page 4-----------------------------------
@@ -937,6 +974,20 @@ export default function Page2({ scale, bgUrl }) {
               </div>
             </div>
           </div>
+          <div className="text-mob pt-5 position-relative d-flex flex-column justify-content-center align-items-center">
+          <div style={{ opacity: isHovered1 ? 1 : 0 }} className="ghoomta-mob1 text-center d-flex justify-content-center align-items-center">
+              Coin launch (airdrop vs  presale)
+            </div>
+            <div style={{ opacity: isHovered2 ? 1 : 0 }} className="ghoomta-mob2 position-absolute text-center d-flex justify-content-center align-items-center">
+              Access to the Spartacus private room
+            </div>
+            <div style={{ opacity: isHovered3 ? 1 : 0 }} className="ghoomta-mob3 position-absolute text-center d-flex justify-content-center align-items-center">
+              Welcome Bonus
+            </div>
+            <div style={{ opacity: isHovered4 ? 1 : 0 }} className="ghoomta-mob4 position-absolute text-center d-flex justify-content-center align-items-center">
+              Multiplier from the deposit
+            </div>
+          </div>
           <div className="circ-bottom pt-4 d-flex flex-column justify-content-center align-items-center">
             <div className="perks text-center">perks powered <br /> by spartacus</div>
             <div className="perks-logo">
@@ -962,7 +1013,6 @@ export default function Page2({ scale, bgUrl }) {
               <div aria-label='kick off' className="road-top text-center animated-title mt-5">kick off</div>
               <div aria-label='We launch the Friends of the Future website and social media' className="road-bottom text-center animated-title">We launch the Friends of the Future website and social media</div>
               <div className="sq-1 sq position-absolute"></div>
-              {/* <div className="stop-pro position-absolute"></div> */}
             </div>
             <div className="road-2 rd col-2 p-5 d-flex flex-column position-relative justify-content-center align-items-center">
               <div aria-label='normies reveal' className="road-top text-center animated-title">normies reveal</div>

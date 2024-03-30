@@ -61,7 +61,6 @@ export default function Page1({ scale }) {
                 trigger: ".page1-comp2",
                 start: "top bottom",
                 end: "top top",
-                markers: true,
                 scrub: 1
             },
             right: "-250px"

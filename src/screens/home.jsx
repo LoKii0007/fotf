@@ -6,9 +6,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
 export default function Home({ bgUrl }) {
-  const [scale, setScale] = useState(false);
+  const [scale, setScale] = useState(window.innerWidth > 600);
   gsap.registerPlugin(ScrollTrigger)
-
 
   useEffect(() => {
 

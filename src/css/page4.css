@@ -51,9 +51,9 @@
     width: 100vw;
 }
 .kala-gola{
-    height: 300px;
-    width: 300px;
-    border-radius: 150px;
+    height: 400px;
+    width: 400px;
+    border-radius: 200px;
     z-index: 90;
     background-color: black;
     opacity: 0;
@@ -142,6 +142,11 @@
 /* ----------------------------------media queries ------------------------ */
 
 @media screen and (max-width:1920px) and (min-width:1401px){
+    .kala-gola{
+        height: 300px;
+        width: 300px;
+        border-radius: 150px;
+    }
     .thanks-top{
         font-size: 55px;
     }
@@ -149,6 +154,11 @@
 @media screen and (max-width:1400px) and (min-width:801px){
     .thanks-top{
         font-size: 45px;
+    }
+    .kala-gola{
+        height: 300px;
+        width: 300px;
+        border-radius: 150px;
     }
 }
 
@@ -167,8 +177,18 @@
 
     /* ----------------------------fotf ----------------------------  */
 
-    .char{
-        font-size: 50px;
+    .char-1{
+        left: 35%;
+    }
+    .char-2{
+        left: 45%;
+        padding-left: 10px;
+    }
+    .char-3{
+        left: 55%;
+    }
+    .char-4{
+        left: 65%;
     }
     .fotf-img{
         width: 150px;
