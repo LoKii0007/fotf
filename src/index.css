@@ -9,9 +9,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* body{
-  background-color: black;
-} */
+@font-face {
+  font-family: SpaceMono;
+  src: url(SpaceMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: SpaceGames;
+  src: url(SpaceGames-K7zKD.otf);
+}
 
 body {
   margin: 0;
