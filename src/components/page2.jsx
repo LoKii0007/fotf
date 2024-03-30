@@ -258,7 +258,7 @@ export default function Page2({ scale, bgUrl }) {
       tl2.to(".box-2", {
         height: "150vh",
         duration: 1,
-        transformOrigin: "center center"
+        transformOrigin: "top center"
       })
         .to("#layout-svg", {
           stroke: "#07CE02"
@@ -270,9 +270,9 @@ export default function Page2({ scale, bgUrl }) {
           height: "150vh",
           transformOrigin: "top center"
         }, 0)
-        .to(".page2-comp2", {
-          height: 0,
-        }, 0)
+        // .to(".page2-comp2", {
+        //   height: 0,
+        // }, 0)
 
       ScrollTrigger.create({
         trigger: ".shuffle-bottom",
