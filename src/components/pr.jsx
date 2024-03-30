@@ -88,7 +88,7 @@ export default function Pr() {
             top:"0%"
         },0)
 
-        gsap.to(".shuff-black",{
+        gsap.to(".b-bottom",{
             scrollTrigger:{
                 trigger:".b-4",
                 start:"top bottom",
@@ -96,7 +96,7 @@ export default function Pr() {
                 scrub: true,
                 markers: true
             },
-            y:"-100vh"
+            y:"-150vh"
         })
         
     },[])
@@ -107,7 +107,7 @@ export default function Pr() {
         <div className="b-2 position-relative d-flex flex-column justify-content-between align-items-center">
             <div className="hara position-absolute"></div>
             <div className="b-top position-fixed"></div>
-            <div className="b-bottom position-fixed d-flex flex-column justify-content-between align-items-center">
+            <div className="b-bottom position-fixed d-flex justify-content-between align-items-center">
                 <div className="shuf position-absolute">
                     <div className="b-image position-absolute"></div>
                 </div>

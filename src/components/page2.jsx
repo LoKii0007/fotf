@@ -105,10 +105,7 @@ export default function Page2({ scale, bgUrl }) {
   useEffect(() => {
 
     const tl2 = gsap.timeline({
-      paused: true,
-      onComplete: () => {
-        ScrollTrigger.update()
-      }
+      paused: true
     })
     tl2.to(".layers", {
       rotateY: "90deg"
@@ -141,30 +138,30 @@ export default function Page2({ scale, bgUrl }) {
 
   useEffect(() => {
 
-    gsap.to(".box-2", {
-      scrollTrigger: {
-        trigger: ".shuffle-bottom",
-        start: "50% center",
-        end: "+=100px",
-        pin: true,
-        scrub: true,
-        // markers: true
-      },
-      top: "0%"
-    })
+    // gsap.to(".box2-content", {
+    //   scrollTrigger: {
+    //     trigger: ".box-2",
+    //     start: "top 20%",
+    //     end: "top 20%",
+    //     //  markers: true,
+    //     scrub: .5
+    //   },
+    //   scale: 1,
+    //   opacity: 1,
+    //   transformOrigin: "center center"
+    // })
 
-    gsap.to(".box2-content", {
-      scrollTrigger: {
-        trigger: ".box-2",
-        start: "top 20%",
-        end: "top 20%",
-        //  markers: true,
-        scrub: .5
-      },
-      scale: 1,
-      opacity: 1,
-      transformOrigin: "center center"
-    })
+    // gsap.to(".shuffle-bottom", {
+    //   scrollTrigger: {
+    //     trigger: ".shuffle-bottom",
+    //     start: "top 50%",
+    //     end: "top 50%",
+    //     //  markers: true,
+    //     scrub: .5
+    //   },
+    //   position:"fixed",
+    //   top:"50%"
+    // })
 
     // if (flag) {
     //   gsap.to(".box-2", {
@@ -796,7 +793,7 @@ export default function Page2({ scale, bgUrl }) {
               }
             </div >
 
-            {/* <div style={{ backgroundImage: "url(faltu.svg)" }} className="box-2 d-flex justify-content-center align-items-start">
+            <div style={{ backgroundImage: "url(faltu.svg)" }} className="box-2 d-flex justify-content-center align-items-start">
               <div className="box2-content d-flex flex-column justify-content-evenly align-items-center">
                 <div className="box2-top d-flex flex-column align-items-evenly justify-content-center">
                   <div className="box2-line1 py-3 text-center">we are not here to take <br /> part, we are here to <br /> take over.</div>
@@ -838,7 +835,7 @@ export default function Page2({ scale, bgUrl }) {
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
 
           </div >
         </div >
