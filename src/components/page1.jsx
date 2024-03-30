@@ -546,7 +546,7 @@ export default function Page1({ scale }) {
                             </defs>
                         </svg>
                     </div> */}
-                    <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn position-fixed p-4 d-flex align-items-center justify-content-center'>
+                    <button style={{ backgroundImage: "url(world.svg)" }} className='access-btn position-absolute p-4 d-flex align-items-center justify-content-center'>
                         <div className="b-text">ACCESS WHITELIST</div>
                         <div className='down-icon px-2'>
                             <svg width="16" height="16" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
