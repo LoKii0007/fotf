@@ -145,16 +145,26 @@ export default function Page1({ scale }) {
             },
             scale: 0.8,
         })
-        // gsap.to(".shadow-svg", {
-        //     scrollTrigger: {
-        //         trigger: ".page1-comp3",
-        //         start: "center center",
-        //         end: "bottom top",
-        //         scrub: 1,
-        //     },
-        //     y: -700,
-        //     x: -1500
-        // })
+        gsap.to(".page2-shadow", {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "bottom bottom",
+                end: "bottom bottom",
+                scrub: 1,
+            },
+            opacity:0,
+            display:"none"
+        })
+        gsap.to(".shadow-svg", {
+            scrollTrigger: {
+                trigger: ".page1-comp3",
+                start: "center center",
+                end: "bottom top",
+                scrub: 1,
+            },
+            y: -700,
+            x: -1500
+        })
 
         if (scale) {
             gsap.to(".web-1", {

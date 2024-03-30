@@ -67,9 +67,6 @@ export default function Page2({ scale, bgUrl }) {
       transform: "scale(50)",
       duration: .5,
     })
-      // .to(".green-box",{
-      //   rotate: "45deg",
-      // })
       .to(".box-2, .shuffle-top", {
         y: 0,
         opacity: 1
@@ -235,8 +232,8 @@ export default function Page2({ scale, bgUrl }) {
       gsap.to(".box-2", {
         scrollTrigger: {
           trigger: ".shuffle-bottom",
-          start: "top 10%",
-          end: "top 10%",
+          start: "top 15%",
+          end: "top 15%",
           scrub: 1,
         },
         transformOrigin: "top center",
@@ -254,22 +251,19 @@ export default function Page2({ scale, bgUrl }) {
         duration:1,
         transformOrigin: "center center"
       })
-        .to("#layout-svg", {
-          stroke: "#07CE02"
-        }, 0)
-        .to("#layout-text, .world-svg", {
-          fill: "#07CE02"
-        }, 0)
-        .to(".at-btn", {
-          color: "#07CE02"
-        }, 0)
-        .to(".page2-comp1", {
-          height: "150vh",
-          transformOrigin: "top center"
-        }, 0)
-        .to(".page2-comp2", {
-          height: 0,
-        }, 0)
+      .to("#layout-svg", {
+        stroke: "#07CE02"
+      }, 0)
+      .to("#layout-text", {
+        fill: "#07CE02"
+      }, 0)
+      .to(".page2-comp1", {
+        height: "150vh",
+        transformOrigin: "top center"
+      }, 0)
+      .to(".page2-comp2", {
+        height: 0,
+      }, 0)
 
       ScrollTrigger.create({
         trigger: ".shuffle-bottom",
@@ -775,8 +769,7 @@ export default function Page2({ scale, bgUrl }) {
 
       <div className="page-2">
         <div className="page2-comp1 d-flex flex-column align-items-center justify-content-evenly position-relative">
-          <div className="green-box position-absolute">
-            <div className='box position-relative'></div>
+          <div className="box position-absolute">
           </div>
           <div className="shuffle-top container py-5 d-flex">
             <div className="shuffle-left col-6">
