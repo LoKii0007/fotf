@@ -271,7 +271,7 @@ export default function Page2({ scale, bgUrl }) {
           transformOrigin: "top center"
         }, 0)
         .to(".page2-comp2", {
-          height: "10vh",
+          height: "30vh",
         }, 0)
 
       ScrollTrigger.create({
