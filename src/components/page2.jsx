@@ -174,6 +174,15 @@ export default function Page2({ scale, bgUrl }) {
         height: "80vh",
         width: "80vw",
       })
+      gsap.to(".box-2", {
+        scrollTrigger: {
+          trigger: ".shuffle-bottom",
+          start: "top 15%",
+          end: "top top",
+          scrub: 1,
+        },
+        y:"15%"
+      })
 
       gsap.to("#layout-text, .world-svg", {
         scrollTrigger: {
@@ -207,7 +216,7 @@ export default function Page2({ scale, bgUrl }) {
         stroke: "#07CE02"
       }, 0)
       tl1.to(".page2-comp1", {
-        height: "150vh",
+        height: "170vh",
         transformOrigin: "top center"
       }, 0)
       tl1.to(".box2-line1", {

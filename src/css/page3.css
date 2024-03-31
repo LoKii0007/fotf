@@ -406,6 +406,9 @@
     .chadi-img, .stick-img{
         height: 350px;
     }
+    .crystal-top{
+        padding-top: 16px !important;
+    }
     .crystal-bottom, .crystal-top{
         justify-content: center !important;
     }
@@ -417,6 +420,12 @@
     .sound{
         padding: 0% !important;
     }
+    .world-img{
+        height: 40px;
+    }
+    .sound-img{
+        width: 150px;
+    }
     .crystal-bottom{
         padding: 36px !important;
     }
@@ -426,11 +435,11 @@
         border-radius: 75px;
     }
     .crystal-img{
-        height: 200px;
+        height: 150px;
         border-radius: 50%;
     }
     .crstal-text{
-        font-size: 16px;
+        font-size: 13px;
         margin: 0% !important;
         padding:0px 48px !important;
         align-items: center !important;
