@@ -58,7 +58,9 @@
     width: 100vw;
     top: 100%;
 }
-
+.correction{
+    display: none !important;
+}
 
 /* -----------------------page 1-------------------------- */
 

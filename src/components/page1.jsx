@@ -476,6 +476,7 @@ export default function Page1({ scale }) {
                     {loadingText}
                 </div>
             </div>
+            <div aria-label='a' className="correction display-none animated-title">a</div>
             <div className="load-left position-fixed"></div>
             <div className="load-right position-fixed"></div>
             <img className='moving-bg position-fixed' src="/moving-bg.png" alt="" />
